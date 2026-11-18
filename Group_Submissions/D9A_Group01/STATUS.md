@@ -32,6 +32,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | Date | Actual time | Work completed | Evidence path | Blocker | Next action | Updated by |
 |---|---|---|---|---|---|---|
 | 19/11/2026 | 02:13 | Forked faculty repo to leader's account, renamed fork to `DSD-2026-D9A-Group01`, cloned locally, created group folder `Group_Submissions/D9A_Group01/` from `Group_Template/`, filled team details in `STATUS.md` | `Group_Submissions/D9A_Group01/` | Problem statement not yet assigned; collaborators not yet added | Add the three teammates as collaborators; read assigned problem statement in `Problem_Statements/` | Ojas Karmarkar |
+| 19/11/2026 | 02:30 | Filled team names, roll numbers and repository URL in the group `README.md` (teammates' GitHub usernames still pending) | `Group_Submissions/D9A_Group01/README.md` | Teammates' GitHub usernames not yet available | Collect usernames and add collaborators | Ojas Karmarkar |
 
 Add rows as needed.
 

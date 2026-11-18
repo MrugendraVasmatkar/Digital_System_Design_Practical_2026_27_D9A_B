@@ -5,14 +5,14 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Ojas Karmarkar (D9A) | 27 | ojaskarmarkar15 |
+| Member 2 | Aaditya Suhanda (D9A) | 55 | [Username to be added] |
+| Member 3 | Vedant Sujit Gaikwad (D9B) | 10 | [Username to be added] |
+| Member 4 | Soham Sandeep Kundargi (D9B) | 28 | [Username to be added] |
 
-**Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
-**Repository URL:** [Fork URL]  
+**Class:** D9A (group leader's class; group includes D9A and D9B students)  
+**Group ID:** D9A_Group01  
+**Repository URL:** https://github.com/ojaskarmarkar15/DSD-2026-D9A-Group01  
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
