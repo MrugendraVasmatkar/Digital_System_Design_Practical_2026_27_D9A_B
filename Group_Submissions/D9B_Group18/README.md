@@ -75,8 +75,7 @@
 
 These constraints and assumptions define the operating conditions of the Water Temperature Classifier. The 3-bit input allows eight temperature levels to be represented and classified into three predefined categories. The Mealy FSM provides immediate valve output generation based on the current state and input conditions. The START, ACK and RESET signals provide controlled operation, while the three valve indicators clearly display the classification result. The design can be implemented and verified using Logisim Evolution and Verilog HDL.
 
-## 3. Problem Analysis and Proposed Solution
-Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
+
 
 ## 3. Problem Analysis and Proposed Solution
 
