@@ -1,3 +1,8 @@
 # 03 – Verilog Implementation
 
-Place synthesizable RTL in `RTL/`, testbenches/test vectors in `Testbench/`, and waveforms/logs/verification summaries in `Simulation_Results/`.
+| Path | Contents |
+|---|---|
+| `RTL/mealy_simple.v` | Synthesizable Mealy FSM |
+| `Testbench/game_tb.v` | Testbench (scores 2, 7, 13 with `ack`) |
+| `rtl_elaborated_schematic.png` | Vivado 2018.3 elaborated (RTL) schematic: 23 cells, 11 I/O ports, 39 nets |
+| `Simulation_Results/` | Waveforms, logs and verification summary — **not yet added** |

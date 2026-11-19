@@ -78,6 +78,9 @@ File: `02_FSM_Logisim/fsm_state_diagram.png`
 - Top module and submodules: `mealy_simple` (single module, no submodules)
 - Architecture/coding decisions: 2-bit state register with synchronous reset; Mealy outputs as continuous assignments from state and inputs.
 - Synthesizability considerations: only synthesizable constructs (`always @(posedge clk)`, `assign`); `state` has no power-up value, so reset must be applied after power-up.
+- RTL schematic: Vivado 2018.3 elaborated design for `xc7s50csga324-1` (23 cells, 11 I/O ports, 39 nets). It shows the 2-bit state register, comparators on `score`, multiplexers for the next state, and AND/OR logic for the three LED outputs.
+
+![Vivado elaborated RTL schematic](03_Verilog_Implementation/rtl_elaborated_schematic.png)
 - RTL: `03_Verilog_Implementation/RTL/mealy_simple.v`
 - Testbench: `03_Verilog_Implementation/Testbench/game_tb.v`
 
