@@ -63,7 +63,7 @@ Feasibility: Comparators are standard Logisim Arithmetic-library components that
 ## 4. Architecture
 Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
 
-![Block diagram](path/to/block_diagram.png)
+![Block diagram](Group_Submissions/D9A_B_Group03/02_FSM_Logisim/Architecture_BlockDiagram.jpeg)
 
 Modules:
 1.Asynchronous Input Counter (J-K Flip-Flops D3–D0): A 4-bit ripple counter, falling-edge triggered, with asynchronous RESET. Generates the test input X[3:0], cycling 0→15, replacing the manual switch bank from the base design.
