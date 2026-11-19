@@ -171,62 +171,19 @@ Only the output corresponding to the active category state is HIGH. All other ca
 - Test cases and expected/observed behaviour: 
 The circuit is designed to classify all eight possible combinations of the 3-bit temperature input.
 
-Temp[2:0]
-
-Decimal
-
-Expected output
-
-000
-
-0
-
-VERY COLD
-
-001
-
-1
-
-VERY COLD
-
-010
-
-2
-
-COLD
-
-011
-
-3
-
-COLD
-
-100
-
-4
-
-NEUTRAL
-
-101
-
-5
-
-NEUTRAL
-
-110
-
-6
-
-HOT
-
-111
-
-7
-
-HOT
+| Temp[2:0] | Decimal | Expected Output |
+|-----------|---------|-----------------|
+| 000       | 0       | VERY COLD       |
+| 001       | 1       | VERY COLD       |
+| 010       | 2       | COLD            |
+| 011       | 3       | COLD            |
+| 100       | 4       | NEUTRAL         |
+| 101       | 5       | NEUTRAL         |
+| 110       | 6       | HOT             |
+| 111       | 7       | HOT             |
 
 The expected behaviour is that exactly one category output is HIGH for every valid input combination. The observed behaviour should be recorded after testing all eight combinations in Logisim.
-- Issues and corrections: The classification logic uses three comparators and logic gates to divide the input range into four mutually exclusive temperature categories. The comparator outputs are combined using logic gates to generate the required category signals. Any incorrect output or overlapping category indication should be corrected by checking the comparator conditions and gate connections.
+
 - Screenshot/evidence: [Path/link]
 
 ## 7. Verilog HDL Implementation
