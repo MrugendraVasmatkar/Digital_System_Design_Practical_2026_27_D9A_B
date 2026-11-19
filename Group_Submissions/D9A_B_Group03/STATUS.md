@@ -12,8 +12,8 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 1 | Problem requirements and assumptions documented | Completed | [ ] | [ ] |
 | 2 | Architecture and block diagram prepared | Completed | [ ] | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Completed | [ ] | [ ] |
-| 4 | Logisim circuit implemented | Completed | [](Group_Submissions/D9A_B_Group03/02_FSM_Logisim/logisim_circ_Forbidden_Zone_Rejector_updated.circ)  | [ ] |
-| 5 | Logisim simulation verified | Completed |  [](Group_Submissions/D9A_B_Group03/02_FSM_Logisim/logisim_circ_Forbidden_Zone_Rejector_updated.circ) | [ ] |
+| 4 | Logisim circuit implemented | Completed | [ Evidence](Group_Submissions/D9A_B_Group03/02_FSM_Logisim/logisim_circ_Forbidden_Zone_Rejector_updated.circ)  | [ ] |
+| 5 | Logisim simulation verified | Completed |  [Evidence](Group_Submissions/D9A_B_Group03/02_FSM_Logisim/logisim_circ_Forbidden_Zone_Rejector_updated.circ) | [ ] |
 | 6 | Verilog RTL completed | Not Started | [ ] | [ ] |
 | 7 | Testbench and simulation completed | Not Started | [ ] | [ ] |
 | 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
