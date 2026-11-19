@@ -16,9 +16,9 @@
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
-- **Problem summary:** [In your own words]
-- **Objective:** [What must the system achieve?]
+- **Number/title:** [8]
+- **Problem summary:** [In my problem I has to Add a master level to my existing 3 level Gaming XP System, this required me to change the combinational logic of my circuit and also changes the XP Range assumed earlier.]
+- **Objective:** [The system should be able to correctly identify which level a player belongs to depending on their XP(categorizing them into four levels).]
 - **Inputs and outputs:** [List signals, widths and meaning]
 - **Constraints and assumptions:** [List and justify]
 
