@@ -12,7 +12,7 @@
 
 **Class:** [D9A/D9B]  
 **Group ID:** [D9A/B_Group23]  
-**Repository URL:** [Fork URL]  
+**Repository URL:** [(https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B)]  
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
