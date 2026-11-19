@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 04:30 |
+| Last Updated | 2026-11-20, 05:00 |
 
 ## 2. Problem Statement
 
@@ -129,6 +129,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 03:30 | Clock constraint (create_clock 10 ns) added to constraints; bitstream regenerated; screenshots `constraints_with_clock.png` and `bitstream_generation_completed.png` added; refreshed timing report still pending | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 04:00 | Logisim simulation screenshot added (`02_FSM_Logisim/sim_score13_high.png`, SCORE = 13 gives HIGH LED); other scores, ACK and RESET pending | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 04:30 | Constrained timing run: WNS 7.665 ns, WHS 0.540 ns, 0 failing endpoints, all constraints met; `timing_summary.png` replaced | Samruddhi Samant | Commit link to be added |
+| 2026-11-20, 05:00 | Siddharth (Siddharthqzz29), Deven (DevenBhadane) and Ojas (OjasKadam07) added as collaborators on the group repository and accepted | Samruddhi Samant | Repository settings |
 
 ## 8. Individual Contributions
 
@@ -160,7 +161,6 @@ All members must understand the complete design and be prepared to explain the F
 
 | Issue / Pending Work | Planned Corrective Action | Responsible Member | Target Completion |
 |---|---|---|---|
-| Add members 2–4 as repository collaborators | Usernames recorded in README; send invitations from fork Settings → Collaborators | Samruddhi Samant | [Date] |
 | Testbench must cover all 16 scores, all four FSM states, reset and START/ACK, and be self-checking with PASS/FAIL messages (Q3 of the statement) | Extend `game_tb.v` (current testbench covers scores 2, 7, 13 only) and re-run simulation | Ojas Nitin Kadam / Samruddhi Samant | [Date] |
 | Logisim must be verified for all 16 inputs (Q1 of the statement) | Simulate scores 0-15 in the v2 circuit and capture screenshots | Siddharth Sanjeev Tiwari / Deven Shailendra Bhadane | [Date] |
 | Statement lists a 4-bit input register loaded by START; the design has none | Check with faculty whether it is required, or document why the design samples the score directly | Samruddhi Samant | [Date] |
