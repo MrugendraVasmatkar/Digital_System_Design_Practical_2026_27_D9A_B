@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-19, 16:45 |
+| Last Updated | 2026-11-19, 17:00 |
 
 ## 2. Problem Statement
 
@@ -69,7 +69,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 1 — Design | Identify inputs, outputs, and operating conditions | Completed | `01_Problem_Analysis/io_specification.md` |
 | 1 — Design | Draw FSM state diagram and state table | Not Started | `02_FSM_Logisim/` |
 | 1 — Design | Draw block diagram and define control signals | Not Started | `02_FSM_Logisim/` |
-| 1 — Design | Build and test the architecture in Logisim | In Progress | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ` (circuit built; simulation evidence not yet added) |
+| 1 — Design | Build and test the architecture in Logisim | In Progress | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ` (circuit built; overview screenshot `circuit_overview.png` added; simulation screenshots pending) |
 | 2 — Verilog | Write synthesizable RTL (controller and datapath) | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` |
 | 2 — Verilog | Integrate modules at top level | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` (single module) |
 | 2 — Verilog | Create testbench and run functional simulation | In Progress | `03_Verilog_Implementation/Testbench/game_tb.v` (written; not yet simulated) |
@@ -100,6 +100,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-19, 16:10 | Mealy FSM RTL (`mealy_simple.v`), testbench (`game_tb.v`) and FPGA constraints (`constraints.xdc`) added; simulation and hardware tests not yet run | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 16:30 | Logisim circuit `Game_Score_Categorizer_H2_Mealy_Machine.circ` added (2 D flip-flops, gate-level logic, 3 LEDs); simulation screenshots pending | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 16:45 | Problem analysis added: `problem_statement.md` (assumptions, edge cases, solution) and `io_specification.md` (signals, widths, pins) | Samruddhi Samant | Commit link to be added |
+| 2026-11-19, 17:00 | Logisim circuit overview screenshot `circuit_overview.png` and `02_FSM_Logisim/README.md` added | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 
