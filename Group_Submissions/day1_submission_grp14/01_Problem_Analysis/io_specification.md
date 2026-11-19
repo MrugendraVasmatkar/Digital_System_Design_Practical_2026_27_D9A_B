@@ -20,6 +20,6 @@ I/O standard: LVCMOS33 for all pins (`04_FPGA_Hardware/constraints.xdc`).
 
 | Verilog | Logisim pin |
 |---|---|
-| `score[3:0]` | `S3`, `S2`, `S1`, `S0` |
+| `score[3:0]` | `SCORE` (4-bit pin; the earlier circuit version used `S3`, `S2`, `S1`, `S0`) |
 | `start`, `ack`, `reset`, `clk` | `START`, `ACK`, `RESET`, `CLK` |
 | `low_led`, `med_led`, `high_led` | `LOW`, `MEDIUM`, `HIGH` LEDs |

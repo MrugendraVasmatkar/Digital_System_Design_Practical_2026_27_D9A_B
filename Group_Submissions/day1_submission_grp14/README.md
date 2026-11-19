@@ -41,7 +41,7 @@ Single module `mealy_simple`: a 2-bit state register, next-state logic (score co
 
 - Gate-level circuit screenshot:
 
-![Logisim circuit overview](02_FSM_Logisim/circuit_overview.png)
+![Logisim circuit overview](02_FSM_Logisim/circuit_overview_v2_comparators.png)
 
 ## 5. FSM Design
 State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encoding, state diagram, state table, transition conditions and reset behaviour. If not, justify the alternative.
@@ -71,12 +71,10 @@ File: `02_FSM_Logisim/fsm_state_diagram.png`
 
 ## 6. Logisim Implementation
 - Logisim version: file saved in the Logisim 2.7.1 format (`project source="2.7.1"`)
-- Circuit file: `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ`
+- Circuit file: `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` (final version; earlier version `Game_Score_Categorizer_H2_Mealy_Machine.circ` kept for reference)
 - Test cases and expected/observed behaviour: [simulation not yet documented]
 - Issues and corrections: [Details]
-- Screenshot/evidence: `02_FSM_Logisim/circuit_overview.png` and `02_FSM_Logisim/circuit_overview_v2_comparators.png` (circuit only; simulation screenshots pending)
-
-![Logisim circuit with comparators](02_FSM_Logisim/circuit_overview_v2_comparators.png)
+- Screenshot/evidence: `02_FSM_Logisim/circuit_overview_v2_comparators.png` (circuit only; simulation screenshots pending)
 
 ## 7. Verilog HDL Implementation
 - Tool/version: Xilinx Vivado 2018.3
@@ -133,8 +131,8 @@ Future improvements: debouncing/synchronising `start` and `ack`; seven-segment d
 | Student | Assigned responsibility | Actual contribution/evidence |
 |---|---|---|
 | Samruddhi Samant (Group leader) | Verilog source code, testbench, FPGA constraints, bitstream, presentation, FSM state diagram | `03_Verilog_Implementation/`, `04_FPGA_Hardware/`, `06_Presentation/`, `02_FSM_Logisim/fsm_state_diagram.png` |
-| Siddharth Sanjeev Tiwari | Logisim design and simulation | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ` |
-| Deven Shailendra Bhadane | Logisim design and simulation | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ` |
+| Siddharth Sanjeev Tiwari | Logisim design and simulation | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` |
+| Deven Shailendra Bhadane | Logisim design and simulation | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` |
 | Ojas Nitin Kadam | Verilog source code and testbench | `03_Verilog_Implementation/RTL/`, `03_Verilog_Implementation/Testbench/` |
 
 Every student must be ready to explain the complete design.

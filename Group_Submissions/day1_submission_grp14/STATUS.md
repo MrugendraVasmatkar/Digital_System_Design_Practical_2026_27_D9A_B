@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 02:00 |
+| Last Updated | 2026-11-20, 02:30 |
 
 ## 2. Problem Statement
 
@@ -69,7 +69,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 1 — Design | Identify inputs, outputs, and operating conditions | Completed | `01_Problem_Analysis/io_specification.md` |
 | 1 — Design | Draw FSM state diagram and state table | Completed | `02_FSM_Logisim/fsm_state_diagram.png`; state table in `README.md` section 5 |
 | 1 — Design | Draw block diagram and define control signals | Completed | `02_FSM_Logisim/block_diagram.png` |
-| 1 — Design | Build and test the architecture in Logisim | In Progress | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ` (circuit built; overview screenshot `circuit_overview.png` added; simulation screenshots pending) |
+| 1 — Design | Build and test the architecture in Logisim | In Progress | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` (final circuit built; overview screenshot added; simulation screenshots pending) |
 | 2 — Verilog | Write synthesizable RTL (controller and datapath) | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` |
 | 2 — Verilog | Integrate modules at top level | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` (single module) |
 | 2 — Verilog | Create testbench and run functional simulation | Completed | `03_Verilog_Implementation/Testbench/game_tb.v`; waveform in `Simulation_Results/` |
@@ -124,14 +124,15 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 01:10 | Problem statement number 3H2 recorded in README, problem analysis, STATUS and presentation | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 01:40 | Results added: `05_Results/README.md` (expected vs observed, requirements, measured results, limitations, conclusion) and README section 13 | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 02:00 | Logisim comparator-version screenshot added (`02_FSM_Logisim/circuit_overview_v2_comparators.png`); matching .circ still to be uploaded | Samruddhi Samant | Commit link to be added |
+| 2026-11-20, 02:30 | Updated Logisim circuit `Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` uploaded as the final version (matches the comparator screenshot) | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 
 | Member | Assigned Responsibility | Work Actually Completed | Evidence / Commit Link |
 |---|---|---|---|
 | Samruddhi Samant | Verilog source code, testbench, FPGA constraints, bitstream, presentation, FSM state diagram | Done (see README section 11) | `03_Verilog_Implementation/`, `04_FPGA_Hardware/`, `06_Presentation/`, `02_FSM_Logisim/fsm_state_diagram.png` |
-| Siddharth Sanjeev Tiwari | Logisim design and simulation | Done | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ` |
-| Deven Shailendra Bhadane | Logisim design and simulation | Done | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ` |
+| Siddharth Sanjeev Tiwari | Logisim design and simulation | Done | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` |
+| Deven Shailendra Bhadane | Logisim design and simulation | Done | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` |
 | Ojas Nitin Kadam | Verilog source code and testbench | Done | `03_Verilog_Implementation/RTL/`, `03_Verilog_Implementation/Testbench/` |
 
 All members must understand the complete design and be prepared to explain the FSM, datapath, Verilog code, simulation, and hardware demonstration during the oral examination. Assigned roles do not limit individual responsibility for understanding the project.
