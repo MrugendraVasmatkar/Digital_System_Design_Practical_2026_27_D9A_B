@@ -12,7 +12,7 @@
 
 **Class:** [D9A/D9B]  
 **Group ID:** D9_Group03 
-**Repository URL:** [[Fork URL]](https://github.com/ankyaaa18/DSD_2026_D9A_B_Group3.git)  
+**Repository URL:** [Fork URL](https://github.com/ankyaaa18/DSD_2026_D9A_B_Group3.git)  
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
