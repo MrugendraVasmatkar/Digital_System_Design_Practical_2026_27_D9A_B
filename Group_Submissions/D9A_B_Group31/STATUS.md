@@ -1,11 +1,13 @@
 # Group Progress Status
 
-**Class:** D9A/D9B  
-**Group ID:** D9A_B_Group31
-**Project title:** Weather Alert System (7H3) 
+**Class:** D9A/D9B
+
+**Group ID:** D9A_B_Group31  
+**Project title:** Weather Alert System (7H3)  
 **Group leader:** Aditya Parab
 
 ## 1. Current milestone status
+
 Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 
 | No. | Milestone | Status | Evidence path/link | Last updated |
@@ -14,15 +16,16 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 2 | Architecture and block diagram prepared | Completed | `01_Problem_Analysis/system_block_diagram.png`, `README.md` (Section 4) | 19/11/2026 |
 | 3 | FSM diagram/table completed, if applicable | Completed | `02_FSM_Logisim/moore_fsm_state_diagram.png`, `README.md` (Section 5) | 19/11/2026 |
 | 4 | Logisim circuit implemented | Completed | `02_FSM_Logisim/DSD_FINAL_PRACTICAL (2).circ` | 19/11/2026 |
-| 5 | Logisim simulation verified | Completed | Logisim simulation screenshots / verification table | 19/11/2026 |
-| 6 | Verilog RTL completed | Not Started | [ ] | [ ] |
-| 7 | Testbench and simulation completed | Not Started | [ ] | [ ] |
+| 5 | Logisim simulation verified | Completed | `02_FSM_Logisim/logisim_sim_*.jpg` | 19/11/2026 |
+| 6 | Verilog RTL completed | Completed | `03_Verilog_Implementation/RTL/weather_alert_system.v` (Vivado 2018.3, 6 LUTs, 7 FFs) | 19/11/2026 |
+| 7 | Testbench and simulation completed | Completed | `03_Verilog_Implementation/Testbench/tb_weather_alert_system.v`, `03_Verilog_Implementation/Simulation_Results/vivado_simulation_waveform.jpg` | 19/11/2026 |
 | 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
 | 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
 | 11 | Final Pull Request created | Not Started | [ ] | [ ] |
 
 ## 2. Time-wise progress log
+
 Update at least once every two hours and at each major milestone. Record actual work and actual times; do not pre-fill future updates.
 
 | Date | Actual time | Work completed | Evidence path | Blocker | Next action | Updated by |
@@ -36,26 +39,32 @@ Update at least once every two hours and at each major milestone. Record actual 
 Add rows as needed.
 
 ## 3. Current blockers and support required
+
 | Blocker | Impact | Action being taken | Faculty support required |
 |---|---|---|---|
 | [ ] | [ ] | [ ] | [ ] |
 
 ## 4. End-of-day summary
+
 ### 19 October 2026
-- Completed:
-- In progress:
-- Pending:
-- Evidence uploaded:
-- Plan for 20 October:
+
+* Completed:
+* In progress:
+* Pending:
+* Evidence uploaded:
+* Plan for 20 October:
 
 ### 20 October 2026
-- Completed:
-- Pending:
-- Evidence uploaded:
-- Final submission status:
+
+* Completed:
+* Pending:
+* Evidence uploaded:
+* Final submission status:
 
 ## 5. Group leader confirmation
+
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
 
-**Group leader:** [Name]  
+**Group leader:** [Name]
+
 **Date/time:** [Actual date and time]
