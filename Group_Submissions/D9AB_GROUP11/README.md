@@ -134,13 +134,46 @@ The self-checking testbench (`tb_game_score`) validates end-to-end functionality
 * **Multiplexed 7-Segment Display:** Time-multiplexing reduces pin count and combinational logic compared to driving four independent digits, requiring only a lightweight refresh counter.
 * **Post-Synthesis Footprint:** **31 cells** and **58 nets**.
 
-![Block diagram](path/to/block_diagram.png)
+![Block Diagram](blockdiagram.jpeg)
 
 ## 5. FSM Design
-State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encoding, state diagram, state table, transition conditions and reset behaviour. If not, justify the alternative.
 
-**Diagram:** [Path/link]  
-**State table:** [Path/link]
+The Game Score Categorizer uses a **Moore Finite State Machine (FSM)** to classify the input score and control the indicator LEDs. The FSM operates using a synchronous clock and has five states.
+
+### State Encoding
+
+The FSM uses 3-bit binary encoding:
+
+| State | Encoding | Description |
+|---|---|---|
+| IDLE | 000 | Waiting for START; all LEDs OFF |
+| LOW | 001 | Score from 0–4; Green LED ON |
+| MEDIUM | 010 | Score from 5–10; Yellow LED ON |
+| HIGH | 011 | Score from 11–15; Red LED ON |
+| ERROR | 100 | Score greater than 15; Error LED ON |
+
+### State Transitions
+
+- **IDLE:** The FSM waits for the START signal. When START is asserted, it checks the 5-bit input score (Score[4:0]) and moves to the corresponding category state.
+- **LOW:** Entered when the score is between 0 and 4.
+- **MEDIUM:** Entered when the score is between 5 and 10.
+- **HIGH:** Entered when the score is between 11 and 15.
+- **ERROR:** Entered when the score is greater than 15 (16–31).
+
+When ACK is asserted, the FSM returns from any category state to IDLE. It also returns to IDLE when RESET is asserted.
+
+### Output Behaviour
+
+Since the design follows the Moore model, the outputs depend only on the present state. Each state activates its corresponding LED, while IDLE keeps all indicator LEDs OFF.
+
+### Reset Behaviour
+
+The FSM uses a synchronous, active-high RESET signal. When RESET is asserted, the FSM transitions to the IDLE state, and all indicator LEDs are turned OFF.
+
+### State Diagram and State Table
+
+- **State Diagram:** [View FSM State Diagram](02_FSM_Logisim/state_diagram_corrected.png)
+- **State Table:** [View FSM State Table](02_FSM_Logisim/state_table.png)
 
 ## 6. Logisim Implementation
 - Logisim version: [Version]
