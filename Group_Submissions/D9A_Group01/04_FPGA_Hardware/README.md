@@ -1,38 +1,39 @@
 # 04 – FPGA Hardware
 
 ## Board and tools
-- **Board:** Digilent Arty S7-50
 - **Device:** Xilinx Spartan-7 `XC7S50-CSGA324-1`
+- **Board:** to be confirmed – the supplied constraints use a clock on pin F14, which is not the Arty S7 clock pin (R2)
 - **Tool/version:** Vivado – version to be recorded when implemented
-- **Clock:** 100 MHz on pin R2, constrained with a 10 ns period
+- **Top module:** `gray_code_nbit` (N = 4)
 
 ## Files
 | File | Purpose |
 |---|---|
-| `arty_s7_50_gray_code.xdc` | Pin assignments and clock constraint for `gray_code_top_arty` |
-| `../03_Verilog_Implementation/RTL/gray_code_top_arty_s7.v` | FPGA top-level module |
+| `gray_code_nbit.xdc` | Pin assignments and I/O standards for `gray_code_nbit` (N = 4) |
+| `../03_Verilog_Implementation/RTL/gray_code_nbit.v` | Design / top module |
 
-## Pin mapping (N = 4)
-| Signal | Board resource | Pin |
+## Pin mapping (`gray_code_nbit.xdc`)
+All ports use `LVCMOS33`.
+
+| Port | Function | Pin |
 |---|---|---|
-| `clk` | 100 MHz clock | R2 |
-| `sw[0]` … `sw[3]` | Switches SW0–SW3 (data X) | H14, H18, G18, M5 |
-| `btn[0]` | BTN0 – START (load sample) | G15 |
-| `btn[1]` | BTN1 – ACK (return to IDLE) | K16 |
-| `btn[2]` | BTN2 – RESET | J16 |
-| `led[0]` | LD0 – VALID | E18 |
-| `led[1]` | LD1 – INVALID | F13 |
-| `led[2]` | LD2 – IDLE | E13 |
-| `led[3]` | LD3 – V (detector output) | H15 |
+| `clk` | Clock | F14 |
+| `rst` | Reset (synchronous, active-high) | J2 |
+| `start` | START – take a sample | J5 |
+| `ack` | ACK – return to IDLE | H2 |
+| `x[0]` | Data bit 0 | V2 |
+| `x[1]` | Data bit 1 | U2 |
+| `x[2]` | Data bit 2 | U1 |
+| `x[3]` | Data bit 3 | T2 |
+| `valid_led` | VALID LED | G1 |
+| `invalid_led` | INVALID LED | G2 |
 
-The board has only four switches, so the FPGA demo uses N = 4 (the original problem size). The core RTL is parameterised (the testbench instantiates N = 4 and N = 8).
-
-**Note:** pin numbers must be checked against Digilent's `Arty-S7-50-Master.xdc` before programming.
+Notes: the file has no `create_clock` constraint (timing is unconstrained) and the buttons are used without debouncing.
 
 ## Hardware test procedure
-1. Press BTN2 (RESET). All LEDs except IDLE (LD2) are off.
-2. Set SW3..SW0, press BTN0 (START). One-bit change from the previous sample → LD0 (VALID); otherwise LD1 (INVALID).
-3. Press BTN1 (ACK) to return to IDLE.
+1. Press `rst`. Both LEDs are off (IDLE).
+2. Set `x[3:0]` and press `start`. A one-bit change from the previous sample lights `valid_led`; zero or more than one changed bit lights `invalid_led`.
+3. Press `ack` to return to IDLE, then repeat.
 
 ## Implementation results
 Pending – record synthesis/implementation utilisation and timing reports, bitstream generation and hardware photos/video here.

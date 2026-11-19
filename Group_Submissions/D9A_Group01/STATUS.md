@@ -60,11 +60,11 @@ Sequence: `START` → X, P registers load → next clock V is evaluated → `IDL
 | 1 — Design | Draw FSM state diagram and state table | In Progress | State table in `README.md` §5; diagram image pending |
 | 1 — Design | Draw datapath block diagram and define control signals | In Progress | Described in `README.md` §4; diagram image pending |
 | 1 — Design | Build and test the architecture in Logisim | In Progress | `02_FSM_Logisim/H1_NBit_Gray_Detector_N5.circ` |
-| 2 — Verilog | Write synthesizable FSM controller and datapath RTL | In Progress | `03_Verilog_Implementation/RTL/gray_code_detector.v` (written; not yet compiled in Vivado) |
-| 2 — Verilog | Integrate at top level for FPGA | In Progress | `03_Verilog_Implementation/RTL/gray_code_top_arty_s7.v` |
-| 2 — Verilog | Create testbench and run functional simulation | In Progress | `03_Verilog_Implementation/Testbench/tb_gray_code_detector.v` (written; not yet run) |
+| 2 — Verilog | Write synthesizable FSM controller and datapath RTL | In Progress | `03_Verilog_Implementation/RTL/gray_code_nbit.v` (written; not yet compiled in Vivado) |
+| 2 — Verilog | Top module for FPGA | In Progress | `gray_code_nbit` (N = 4) is the top module |
+| 2 — Verilog | Create testbench and run functional simulation | In Progress | `03_Verilog_Implementation/Testbench/gray_code_nbit_tb.v` (written; not yet run) |
 | 2 — Verilog | Save waveforms and simulation results | Not Started | `03_Verilog_Implementation/Simulation_Results/` |
-| 3 — FPGA | Assign FPGA pins and configure constraints | In Progress | `04_FPGA_Hardware/arty_s7_50_gray_code.xdc` (to be checked against the Digilent master XDC) |
+| 3 — FPGA | Assign FPGA pins and configure constraints | In Progress | `04_FPGA_Hardware/gray_code_nbit.xdc` (pins to be checked against the board) |
 | 3 — FPGA | Synthesize, implement, and generate bitstream | Not Started | `04_FPGA_Hardware/` |
 | 3 — FPGA | Demonstrate the design on FPGA hardware | Not Started | `04_FPGA_Hardware/` |
 | 3 — Results | Record observations and verify expected behaviour | Not Started | `05_Results/` |
@@ -82,10 +82,10 @@ To be run in Logisim and in the Verilog testbench. Actual results are entered on
 | 3 | Samples 0011, 0111, 0101, 1101, 1100 in turn | V = 1 each time, VALID LED on | Pending | Not Tested |
 | 4 | Sample 1111 after 1100 | D = 0011, V = 0, INVALID LED on | Pending | Not Tested |
 | 5 | Same value twice | D = 0000, INVALID | Pending | Not Tested |
-| 6 | Press and hold START for several clocks | Only one sample is taken | Pending | Not Tested |
+| 6 | START while in VALID or INVALID | Ignored until ACK returns the FSM to IDLE | Pending | Not Tested |
 | 7 | ACK | Return to `IDLE` | Pending | Not Tested |
-| 8 | ACK and START together | ACK wins; sample ignored | Pending | Not Tested |
-| 9 | 300 random samples (N = 4 and N = 8) | Match reference model | Pending | Not Tested |
+| 8 | RESET in any state | FSM in IDLE; P = 0 | Pending | Not Tested |
+| 9 | N = 5 sequence 00010, 10010, 10111 | VALID, VALID, INVALID | Pending | Not Tested |
 
 ## 7. Milestone Status
 
@@ -100,7 +100,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 5 | Logisim simulation verified | In Progress | `02_FSM_Logisim/H1_N5_test_vector.txt` (31/31 pass, headless) | 19/11/2026 03:30 |
 | 6 | Verilog RTL completed | In Progress | `03_Verilog_Implementation/RTL/` (written; not yet compiled) | 19/11/2026 15:40 |
 | 7 | Testbench and simulation completed | In Progress | `03_Verilog_Implementation/Testbench/` (written; not yet run) | 19/11/2026 15:40 |
-| 8 | FPGA synthesis and implementation completed | Not Started | Constraints in `04_FPGA_Hardware/` | 19/11/2026 15:40 |
+| 8 | FPGA synthesis and implementation completed | Not Started | Constraints in `04_FPGA_Hardware/gray_code_nbit.xdc` | 19/11/2026 15:40 |
 | 9 | Hardware demonstration completed | Not Started | - | - |
 | 10 | Results, presentation and report uploaded | Not Started | - | - |
 | 11 | Final Pull Request created | Not Started | - | - |
@@ -114,6 +114,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 02:30 | Filled team names, roll numbers and repository URL in the group `README.md` (teammates' GitHub usernames still pending) | `Group_Submissions/D9A_Group01/README.md` | Teammates' GitHub usernames not yet available | Collect usernames and add collaborators | Ojas Karmarkar |
 | 19/11/2026 | 03:30 | Built H1 (N=5) Gray code transition detector in Logisim: 5-bit registers, bitwise XOR, pairwise AND/OR detector, Moore FSM. Simulated with Logisim test vector: 31/31 steps pass (5 required tests + reset + SAMPLE gating) | `02_FSM_Logisim/H1_NBit_Gray_Detector_N5.circ`, `H1_N5_test_vector.txt` | None | Verify by hand in Logisim GUI; start Verilog (Stage 2) | Ojas Karmarkar |
 | 19/11/2026 | 15:40 | Problem statement (Gray Code Transition Detector, H1) documented; wrote parameterised N-bit Verilog RTL (datapath + Moore FSM), self-checking testbench (N=4 and N=8), Arty S7-50 top level and XDC; filled group README sections | `01_Problem_Analysis/`, `03_Verilog_Implementation/`, `04_FPGA_Hardware/` | No simulator run yet; XDC pins not yet checked against Digilent master file | Run testbench in Vivado and save log/waveforms; verify pins; synthesize | Ojas Karmarkar |
+| 19/11/2026 | 20:00 | Replaced the earlier RTL, testbench and constraints with the team's `gray_code_nbit` design (single module, N-bit one-bit-change detector + Moore FSM), `gray_code_nbit_tb.v` (N=4 and N=5) and `gray_code_nbit.xdc`; updated READMEs; added FSM diagram, state table and Logisim screenshots in `02_FSM_Logisim/` | `02_FSM_Logisim/`, `03_Verilog_Implementation/`, `04_FPGA_Hardware/` | Testbench not run yet; one testbench expectation (1100 -> 1111) looks wrong | Run testbench in Vivado, fix expectation, save log/waveforms | Ojas Karmarkar |
 
 Add rows as needed.
 
@@ -145,7 +146,8 @@ All members must understand the complete design and be prepared to explain the F
 
 | Issue / Pending Work | Planned Corrective Action | Responsible Member | Target Completion |
 |---|---|---|---|
-| Verify Arty S7-50 pin assignments | Compare `arty_s7_50_gray_code.xdc` with Digilent's master XDC | Group leader | To be set |
+| Verify pin assignments and board | Compare `gray_code_nbit.xdc` with the board's master XDC (clock F14); add a `create_clock` constraint | Group leader | To be set |
+| Fix testbench expectation | `gray_code_nbit_tb.v` expects VALID for 1100 -> 1111, but it is a two-bit change (V = 0 on the sheet); correct to INVALID and re-run | To be assigned | To be set |
 | Run testbench and record results | Vivado simulation, save log and waveforms in `Simulation_Results/` | To be assigned | To be set |
 | Add block diagram and FSM diagram images | Draw from the problem sheet and add to `README.md` | To be assigned | To be set |
 | Match Logisim (N=5) and Verilog behaviour | Check first-sample and START/ACK handling are the same in both | To be assigned | To be set |

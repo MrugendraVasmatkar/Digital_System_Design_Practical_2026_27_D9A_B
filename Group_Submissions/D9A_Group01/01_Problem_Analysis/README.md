@@ -90,29 +90,25 @@ The other hints (H2 Mealy FSM, H3 ERROR state, H4 valid/invalid counters, H5 pre
 ## 4. Inputs and outputs
 | Signal | Direction | Width | Description |
 |---|---|---:|---|
-| `clk` | Input | 1 | System clock (100 MHz on the FPGA) |
-| `rst` | Input | 1 | Synchronous, active-high reset (clears X, P and the FSM) |
-| `start` | Input | 1 | Rising edge loads the switches into X and the old X into P |
-| `ack` | Input | 1 | Returns the FSM to IDLE; has priority over `start` |
-| `data_in` | Input | N | Input switches `X[N-1:0]` |
-| `valid_led` | Output | 1 | Exactly one bit differs from the previous sample |
-| `invalid_led` | Output | 1 | Zero bits or more than one bit differ |
-| `idle_led` | Output | 1 | FSM is in IDLE (extra indicator) |
-| `state_out` | Output | 2 | FSM state (debug) |
-| `curr_out`, `prev_out` | Output | N | Registers X and P (debug) |
-| `v_out` | Output | 1 | One-bit-change detector output (debug) |
+| `clk` | Input | 1 | System clock |
+| `rst` | Input | 1 | Synchronous, active-high reset (state = IDLE, P = 0) |
+| `start` | Input | 1 | Take a sample; accepted only in IDLE (`P <= x`, then VALID or INVALID) |
+| `ack` | Input | 1 | Returns the FSM from VALID/INVALID to IDLE |
+| `x` | Input | N | Input switches `X[N-1:0]` (default N = 4) |
+| `valid_led` | Output | 1 | Exactly one bit differs from the previous sample (state VALID) |
+| `invalid_led` | Output | 1 | Zero bits or more than one bit differ (state INVALID) |
+
+In `IDLE` both LEDs are off.
 
 ## 5. Assumptions and edge cases
-- After reset `X = P = 0…0`, so the first sample is compared with all zeros (this matches the first row of the sheet's example: Prev 0000, Curr 0001).
-- A held `START` button counts as **one** sample (rising-edge detection).
-- `ACK` and `START` in the same cycle: `ACK` wins, the sample is ignored and X/P are unchanged.
+- After reset `P = 0…0`, so the first sample is compared with all zeros (this matches the first row of the sheet's example: Prev 0000, Curr 0001).
+- `start` is accepted only in `IDLE`; after each sample `ack` must return the FSM to `IDLE` before the next sample.
 - Same value twice (no change) gives INVALID; two or more changed bits give INVALID; a change in the MSB alone is a valid transition.
-- X and P are registered first and `V` is evaluated one clock later, so the FSM output appears two clock edges after `START` is first seen.
+- The LEDs show the result from the clock edge that accepts `start`.
 
 ## 6. Proposed solution
-- **Datapath:** input register X, previous register P, bitwise XOR, general one-bit-change detector (H1 formula, written as a loop so the same code works for any N).
-- **Controller:** Moore FSM (state register, next-state logic, output logic) with the encoding above.
-- **Top level:** the FPGA wrapper adds a switch synchroniser and button debouncers (Arty S7-50, N = 4 because the board has four switches).
-- **Verification plan:** Logisim run of the sheet's sequence; Verilog self-checking testbench with the sheet's sequence, corner cases (no change, multi-bit change, MSB flip, held START, ACK, RESET, ACK/START collision) and random tests against a reference model, for N = 4 and N = 8. The Logisim circuit uses N = 5.
+- **Datapath:** previous-input register `P` (N bits), bitwise XOR `D = X ^ P`, and the general one-bit-change detector `V = (|D) & ~|(D & (D - 1))` (equivalent to the sheet's pair-wise formula, valid for any N).
+- **Controller:** Moore FSM (`IDLE`, `VALID`, `INVALID`) whose outputs depend only on the state.
+- **Verification plan:** Logisim run of the sheet's sequence; Verilog self-checking testbench for N = 4 (sheet sequence plus no-change and two-bit cases) and N = 5 (H1 check).
 
-Where to find the work: `02_FSM_Logisim/` (Logisim), `03_Verilog_Implementation/` (RTL and testbench), `04_FPGA_Hardware/` (constraints). Current progress is in `STATUS.md`.
+Where to find the work: `02_FSM_Logisim/` (Logisim, FSM diagram and table), `03_Verilog_Implementation/` (RTL and testbench), `04_FPGA_Hardware/` (constraints). Current progress is in `STATUS.md`.
