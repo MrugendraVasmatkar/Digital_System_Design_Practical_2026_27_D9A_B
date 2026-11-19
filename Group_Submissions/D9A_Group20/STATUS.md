@@ -20,7 +20,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/reports/` (8 LUT, 24 FF, timing met WNS +7.656 ns, 0 DRC), `gaming_xp_top.bit` | 19/11/2026 |
 | 9 | Hardware demonstration completed | Blocked | Board not available; bitstream ready, test steps in `04_FPGA_Hardware/FPGA_Steps.md` | 19/11/2026 |
 | 10 | Results, presentation and report uploaded | In Progress | `05_Results/Results_and_Conclusion.md` drafted; presentation and report not uploaded | 19/11/2026 |
-| 11 | Final Pull Request created | Not Started | [ ] | [ ] |
+| 11 | Final Pull Request created | Completed | [PR #12](https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/12) (open; updates with each push) | 19/11/2026 |
 
 ## 2. Time-wise progress log
 Update at least once every two hours and at each major milestone. Record actual work and actual times; do not pre-fill future updates.

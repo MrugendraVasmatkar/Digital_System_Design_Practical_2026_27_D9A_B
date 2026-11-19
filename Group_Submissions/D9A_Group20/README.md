@@ -13,7 +13,7 @@
 **Class:** D9A (group leader and Member 4); Members 2 and 3 are listed as D9B in the faculty group sheet  
 **Group ID:** D9A_Group20  
 **Repository URL:** [https://github.com/pxrthj/DSD-2026-D9A-Group20](https://github.com/pxrthj/DSD-2026-D9A-Group20)  
-**Final Pull Request URL:** `[TO FILL after the Pull Request is created]`
+**Final Pull Request URL:** [https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/12](https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/12)
 
 ## 2. Assigned Problem Statement
 - **Number/title:** Problem 8 – Gaming XP Level Decoder (Moore FSM), with suggested modification **H3: Add ERROR state for invalid input**
@@ -168,4 +168,4 @@ Maintain time-wise updates in `STATUS.md`.
 - [ ] Results, challenges and conclusion documented (hardware part pending).
 - [ ] Presentation and final report uploaded.
 - [x] STATUS.md is up to date.
-- [ ] Final Pull Request created and URL recorded.
+- [x] Final Pull Request created and URL recorded.
