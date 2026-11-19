@@ -12,14 +12,15 @@
 
 **Class:** D9A/D9B  
 **Group ID:** D9B_Group18  
-**Repository URL:** [Fork URL]  
+**Repository URL:** https://github.com/parthn17/DSD_2026_D9A_B_Group18.git 
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
-- **Problem summary:** [In your own words]
-- **Objective:** [What must the system achieve?]
-- **Inputs and outputs:** [List signals, widths and meaning]
+- **Number/title:** Water Temperature Classifier
+- **Problem summary:** The Water Temperature Classifier Modification H2 designs and verifies a digital controller that classifies a 3-bit temperature input (0–7) and immediately activates the corresponding water valve.
+- **Objective:** The system must classify a 3-bit temperature input into three categories—Cold, Neutral, or Hot—and immediately activate the corresponding water valve
+- **Inputs and outputs:** Inputs : Temp[2:0], Start, Acknowledgement, Reset
+                          Outputs : Cold Valve, Neutral Valve, Hot Valve
 - **Constraints and assumptions:** [List and justify]
 
 ## 3. Problem Analysis and Proposed Solution
@@ -50,8 +51,8 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 - Top module and submodules: [Names]
 - Architecture/coding decisions: [Details]
 - Synthesizability considerations: [Details]
-- RTL: `03_Verilog_Implementation/RTL/`
-- Testbench: `03_Verilog_Implementation/Testbench/`
+- RTL: `Group_Submissions/D9B_Group18/03_Verilog_Implementation/RTL`
+- Testbench: `Group_Submissions/D9B_Group18/03_Verilog_Implementation/Testbench`
 
 ## 8. Verification and Simulation Results
 | Test ID | Inputs/conditions | Expected output | Observed output | Pass/Fail |
