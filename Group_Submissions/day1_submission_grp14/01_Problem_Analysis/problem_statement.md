@@ -1,6 +1,47 @@
 # Problem Statement 3H2 and Analysis - Game Score Categorizer (Mealy FSM)
 
-> **Note:** Problem statement number: 3H2. The official statement text from faculty is not copied here; this analysis is derived from the group's design (`mealy_simple.v`, `Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ`). Confirm the wording below against the assigned statement.
+> **Problem 3H2:** the assigned task is the **Game Score Categorizer** (problem 3) with **hint H2, "Mealy FSM with immediate output"** as the group's sub-problem. The text below is transcribed from the faculty handout; a photo of the handout is saved as [`assigned_problem_statement_3H2.png`](assigned_problem_statement_3H2.png).
+
+## 0. Assigned problem statement (from the handout)
+
+**Base problem, Game Score Categorizer.** A 4-bit score (switches S3–S0) is classified into three categories:
+
+| Score (dec) | Score[3:0] (bin) | Category (output) |
+|---|---|---|
+| 0–4 | 0000–0100 | LOW |
+| 5–10 | 0101–1010 | MEDIUM |
+| 11–15 | 1011–1111 | HIGH |
+
+The base design (handout) is a Moore FSM with: a 4-bit input register, a range decoder (comparators), an FSM controller with state register, next-state and output logic, and three indicator LEDs (LOW green, MEDIUM yellow, HIGH red). Controls: START (load/sample score), ACK (return to IDLE), RESET (synchronous, active-high). States and encoding: IDLE 00 (all LEDs off), LOW 01, MEDIUM 10, HIGH 11.
+
+**Q1, Logisim design:** design and simulate the complete FSM and datapath in Logisim (4-bit score input interface, range decoder, state register, next-state logic and output logic). Show the circuit diagram and verify all 16 input combinations (0 to 15).
+
+**Q2, FSM state diagram:** draw the FSM state diagram and specify the state encoding and state outputs.
+
+**Q3, Verilog testbench and verification:** write a Verilog testbench (Verilog only) to verify the design for all 16 score values (0 to 15), all four FSM states, reset, START/ACK operation and correct LED outputs. Include self-checking expected-result comparison, a test sequence and pass/fail messages.
+
+**Hint H2, Mealy FSM with immediate output (the group's sub-problem):**
+- Re-design the Game Score Categorizer using a Mealy FSM.
+- Generate the score category output based on the current state and input (Score[3:0]).
+- Draw the Mealy state diagram and implement it in Logisim and Verilog.
+
+### How the group's work maps to the statement
+
+| Requirement | Status | Where |
+|---|---|---|
+| Ranges LOW 0–4, MEDIUM 5–10, HIGH 11–15 | Matches the handout | RTL, Logisim (comparators), state table |
+| Range decoder (comparators) | Done in Logisim v2 (SCORE < 5, SCORE > 10); in the RTL as comparisons | `02_FSM_Logisim/`, `mealy_simple.v` |
+| Mealy FSM, outputs from current state and Score[3:0] (H2) | Done | `mealy_simple.v`, state table and diagram |
+| Mealy state diagram, state encoding | Done | `02_FSM_Logisim/fsm_state_diagram.png`, README section 5 |
+| Logisim and Verilog implementation | Done | `.circ`, `mealy_simple.v` |
+| START, ACK, RESET behaviour (sync active-high reset) | Done | RTL, state table |
+| 4-bit input register that START loads | **Differs:** the design has no separate 4-bit register; the score is read directly when START is seen in IDLE and the state register holds the category | RTL, block diagram |
+| Logisim verified for all 16 inputs | **Pending** | simulation screenshots needed |
+| Testbench for all 16 scores, all four states, reset, START/ACK | **Not yet:** the current testbench covers scores 2, 7 and 13 only | `game_tb.v` |
+| Self-checking testbench with pass/fail messages | **Not yet:** the current testbench only prints values | `game_tb.v` |
+
+---
+
 
 ## 1. Problem summary (Problem 3H2)
 

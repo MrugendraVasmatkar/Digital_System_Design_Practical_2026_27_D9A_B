@@ -4,5 +4,6 @@
 |---|---|
 | [`problem_statement.md`](problem_statement.md) | Problem summary, objective, assumptions, edge cases, proposed solution, timing note, feasibility |
 | [`io_specification.md`](io_specification.md) | Input/output list with widths, FPGA pins and Logisim names |
+| `assigned_problem_statement_3H2.png` | Photo of the faculty handout for problem 3H2 |
 
-Status: draft based on the group's implemented design. Problem statement number: 3H2. Topic: Game Score Categorizer (Mealy FSM).
+Status: complete. Problem statement 3H2 (Game Score Categorizer, hint H2: Mealy FSM with immediate output), transcribed from the faculty handout with a requirement mapping. The handout photo is `assigned_problem_statement_3H2.png`.
