@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-19, 21:00 |
+| Last Updated | 2026-11-19, 21:30 |
 
 ## 2. Problem Statement
 
@@ -72,8 +72,8 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 1 — Design | Build and test the architecture in Logisim | In Progress | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ` (circuit built; overview screenshot `circuit_overview.png` added; simulation screenshots pending) |
 | 2 — Verilog | Write synthesizable RTL (controller and datapath) | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` |
 | 2 — Verilog | Integrate modules at top level | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` (single module) |
-| 2 — Verilog | Create testbench and run functional simulation | In Progress | `03_Verilog_Implementation/Testbench/game_tb.v` (written; not yet simulated) |
-| 2 — Verilog | Save waveforms and simulation results | Not Started | `03_Verilog_Implementation/Simulation_Results/` |
+| 2 — Verilog | Create testbench and run functional simulation | Completed | `03_Verilog_Implementation/Testbench/game_tb.v`; waveform in `Simulation_Results/` |
+| 2 — Verilog | Save waveforms and simulation results | In Progress | `03_Verilog_Implementation/Simulation_Results/behavioral_simulation_waveform.png` (console log pending) |
 | 3 — FPGA | Assign FPGA pins and configure constraints | Completed | `04_FPGA_Hardware/constraints.xdc` |
 | 3 — FPGA | Synthesize, implement, and generate bitstream | In Progress | `04_FPGA_Hardware/synthesized_design_io_ports.png` (Vivado shows write_bitstream Complete; reports not yet uploaded) |
 | 3 — FPGA | Demonstrate the design on FPGA hardware | Not Started | `04_FPGA_Hardware/` |
@@ -110,6 +110,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-19, 20:20 | Vivado 2018.3 synthesized-design screenshot added (`04_FPGA_Hardware/synthesized_design_io_ports.png`); pins match constraints; bitstream generation shown complete | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 20:45 | Vivado elaborated RTL schematic added (`03_Verilog_Implementation/rtl_elaborated_schematic.png`) and linked in README section 7 | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 21:00 | RESET=1 (from any state) arrow added to the FSM state diagram | Samruddhi Samant | Commit link to be added |
+| 2026-11-19, 21:30 | Vivado behavioral simulation run; waveform `behavioral_simulation_waveform.png` added (scores 2, 7, 13 give LOW, MEDIUM, HIGH LED; LEDs off after ack); README section 8 updated | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 

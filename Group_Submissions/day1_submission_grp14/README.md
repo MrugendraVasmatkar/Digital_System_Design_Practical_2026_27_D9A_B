@@ -85,17 +85,19 @@ File: `02_FSM_Logisim/fsm_state_diagram.png`
 - Testbench: `03_Verilog_Implementation/Testbench/game_tb.v`
 
 ## 8. Verification and Simulation Results
-Testbench `game_tb.v` has 3 test cases. **Not yet simulated**: the "Observed output" column must be filled from an actual run.
+Testbench `game_tb.v` has 3 test cases, simulated in the Vivado Simulator (Behavioral Simulation, top `game_tb`). The observed values below are read from the waveform; the Tcl console `$display` log is not yet uploaded.
 
 | Test ID | Inputs/conditions | Expected output | Observed output | Pass/Fail |
 |---|---|---|---|---|
-| T01 | score=2, `start`=1 (then `ack`) | LOW LED on (1 0 0); all off after `ack` | [not yet run] | [ ] |
-| T02 | score=7, `start`=1 (then `ack`) | MEDIUM LED on (0 1 0); all off after `ack` | [not yet run] | [ ] |
-| T03 | score=13, `start`=1 (then `ack`) | HIGH LED on (0 0 1); all off after `ack` | [not yet run] | [ ] |
+| T01 | score=2, `start`=1 (then `ack`) | LOW LED on (1 0 0); all off after `ack` | Waveform: `low_led` high while `start` is high with score 2; goes low when `ack` rises (start of the window is cropped) | Pass |
+| T02 | score=7, `start`=1 (then `ack`) | MEDIUM LED on (0 1 0); all off after `ack` | Waveform: `med_led` high while `start` is high with score 7; low after `ack` | Pass |
+| T03 | score=13, `start`=1 (then `ack`) | HIGH LED on (0 0 1); all off after `ack` | Waveform: `high_led` high while `start` is high with score 13 (`d`); low after `ack` | Pass |
 
-Tool/version: [Details]  
-Number passed/failed: [Details]  
-Waveform/log path: [Path]
+Tool/version: Vivado 2018.3 Simulator (behavioral, functional)  
+Number passed/failed: 3 passed, 0 failed (by waveform inspection)  
+Waveform/log path: `03_Verilog_Implementation/Simulation_Results/behavioral_simulation_waveform.png` (console log pending)
+
+![Behavioral simulation waveform](03_Verilog_Implementation/Simulation_Results/behavioral_simulation_waveform.png)
 
 ## 9. FPGA Hardware Implementation
 - FPGA board/device: Xilinx Spartan-7 XC7S50-CSGA324-1 (part `xc7s50csga324-1`)
