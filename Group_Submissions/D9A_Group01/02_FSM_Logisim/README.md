@@ -9,6 +9,8 @@ Contains the Moore FSM description (state encoding, state table), the Logisim `.
 | `H1_NBit_Gray_Detector_N5.circ` | Earlier H1 circuit for N = 5 |
 | `H1_N5_test_vector.txt` | Test vector used for the N = 5 circuit (31/31 steps passed in the headless run recorded in `../STATUS.md`) |
 | `generate_circ.ps1` | Script used to generate the N = 5 circuit |
+| `FSM_Moore_state_diagram.png` | Moore FSM state diagram (IDLE, VALID, INVALID) |
+| `FSM_state_table.png` | State encoding / Moore outputs table and state transition table |
 | `screenshots/H1_logisim_circuit.png` | Circuit diagram of `Gray_Code_Transition_Detector_H1.circ` |
 | `screenshots/H1_logisim_evolution_window.png` | The same circuit open in Logisim-evolution v5.0.0 |
 
@@ -20,6 +22,20 @@ Contains the Moore FSM description (state encoding, state table), the Logisim `.
 | `INVALID` | 10 | V = 0 (zero or more than one bit change) | INVALID LED on (S1) |
 
 State 11 never occurs. `ACK` or `RESET` returns the FSM to `IDLE`. Outputs depend only on the state (Moore).
+
+### State transition table
+| Present state | Input V = 0 | Input V = 1 | Meaning |
+|---|---|---|---|
+| `IDLE` (00) | `INVALID` (10) | `VALID` (01) | Start evaluating the detector result |
+| `VALID` (01) | `INVALID` (10) | `VALID` (01) | Stay VALID for a one-bit change, otherwise go INVALID |
+| `INVALID` (10) | `INVALID` (10) | `VALID` (01) | Stay INVALID for zero or multiple-bit change, go VALID for a one-bit change |
+
+`V` is the detector result for the current comparison: `V = 1` means exactly one bit changed, `V = 0` means zero bits or more than one bit changed. Transitions are taken only when a sample is accepted (`START`), as in the Logisim and Verilog implementations. `RESET` forces `IDLE` (00).
+
+### State diagram and table (images)
+![Moore state diagram](FSM_Moore_state_diagram.png)
+
+![State encoding and transition table](FSM_state_table.png)
 
 ## Circuit description (`Gray_Code_Transition_Detector_H1.circ`)
 | Block | Components | Function |
