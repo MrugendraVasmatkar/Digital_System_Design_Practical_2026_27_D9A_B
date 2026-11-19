@@ -126,14 +126,14 @@ Confirm the physical board model and pinout before hardware programming. The pre
 Future improvements: add after final simulation and hardware validation.
 
 ## 11. Task Allocation and Individual Contribution
-| Student | Responsibility | Actual contribution/evidence |
+| Student | Responsibility | Actual contribution and supporting evidence |
 |---|---|---|
-| Kaif Bagwan | Group leadership, integration and repository coordination | Record actual design, integration and documentation work as it is completed. |
-| Kartik Mishra | To be agreed by the group | Pending group confirmation and evidence. |
-| Vedant Pathare | To be agreed by the group | Pending group confirmation and evidence. |
-| Arya Ukirde | To be agreed by the group | Pending group confirmation and evidence. |
+| Kaif Bagwan | Group leadership, integration and repository coordination | Coordinated the group submission structure, repository updates and overall integration/documentation. Evidence: [group submission folder](./), [current RTL](03_Verilog_Implementation/RTL/age_group_detector_core.v), [submission README](README.md). |
+| Kartik Mishra | **Ideation and initial design contribution** | Contributed to project ideation and helped shape the overall age-group detector solution and its classification/decision flow. Supporting project evidence: [problem-analysis reference image](01_Problem_Analysis/WhatsApp%20Image%202026-11-19%20at%203.57.32%20PM.jpeg), [problem analysis and proposed solution](README.md#3-problem-analysis-and-proposed-solution), and [FSM design/transition table](README.md#5-fsm-design). |
+| Vedant Pathare | **Logisim circuit implementation** | Worked on the FSM/logic implementation in Logisim and the associated circuit files. Evidence: [DSDPRA.circ](02_FSM_Logisim/DSDPRA.circ), [DSDlogs.circ](02_FSM_Logisim/DSDlogs.circ), and [Logisim folder README](02_FSM_Logisim/README.md). The final circuit should still be opened and checked against the current 5-bit Verilog design, and a fresh Logisim simulation screenshot should be added. |
+| Arya Ukirde | **Testbench development and simulation** | Worked on the Verilog testbench and simulation verification, including boundary-age checks, the full 0–31 decoder sweep, CHILD/TEEN/ADULT state checks, forced all-comparators-zero ERROR tests, acknowledgement and reset cases. Evidence: [current testbench source](03_Verilog_Implementation/Testbench/tb_age_group_detector.v), [XSim simulation artefacts](03_Verilog_Implementation/Simulation_Results/XSim/), and [XSim output image](03_Verilog_Implementation/Simulation_Results/XSim/image.png). A fresh simulation using the latest 5-bit RTL/testbench pair is still required before reporting final PASS/FAIL results. |
 
-Update this table with each student's actual contributions. Every student must be able to explain the complete project.
+**Evidence note:** The links above attach the relevant group project artefacts for each assigned contribution. They support the listed work but do not independently prove individual file authorship; retain each member's commits or a short individual work log if the faculty asks for authorship-level evidence. Every student should be able to explain the complete project.
 
 ## 12. Progress Log
 Maintain timestamped updates, evidence paths, blockers and next actions in `STATUS.md`. Update it at least once every two hours and at each major milestone.
@@ -145,21 +145,32 @@ Pending a fresh simulation of the current 5-bit RTL/testbench pair, alignment an
 Complete after the team has reviewed the final design, simulation and hardware demonstration.
 
 ## 15. Final Submission Checklist
-- [ ] Full team details and roll numbers confirmed against the official roster.
-- [ ] Official H3 title and problem statement wording included.
-- [ ] Requirements, assumptions, I/O list and proposed solution documented.
-- [ ] Architecture/block diagram uploaded.
-- [ ] FSM diagram and state table uploaded and consistent with final RTL.
-- [ ] Logisim source files and simulation evidence included.
-- [ ] Current 5-bit synthesizable RTL included in `03_Verilog_Implementation/RTL/`.
-- [ ] Matching testbench and test vectors included in `03_Verilog_Implementation/Testbench/`.
-- [ ] Fresh simulation logs, waveform and verification summary included in `03_Verilog_Implementation/Simulation_Results/`.
-- [ ] Vivado project source/testbench updated to current 5-bit design.
-- [ ] XDC pin mapping matches the actual board and the 5-bit interface.
-- [ ] Fresh synthesis/implementation reports and bitstream included.
-- [ ] Hardware demonstration evidence included if performed.
-- [ ] Expected-versus-observed tests and conclusion documented in `05_Results/`.
-- [ ] Final presentation uploaded in `06_Presentation/`.
-- [ ] Final report uploaded in `07_Final_Report/`.
-- [ ] `STATUS.md` updated with actual times, evidence and blockers.
-- [ ] Final Pull Request targets the faculty master repository and specified base branch.
+
+### Completed and present in the repository
+- [x] Required `Group_Submissions/D9A_Group29/` submission folder and main folder structure created.
+- [x] Initial problem-analysis reference material uploaded under `01_Problem_Analysis/`.
+- [x] Both Logisim circuit source files (`DSDlogs.circ` and `DSDPRA.circ`) included under `02_FSM_Logisim/`.
+- [x] Current dedicated 5-bit synthesizable RTL included in `03_Verilog_Implementation/RTL/`.
+- [x] Matching 5-bit testbench source included in `03_Verilog_Implementation/Testbench/`.
+- [x] Existing XSim simulation artefacts retained under `03_Verilog_Implementation/Simulation_Results/XSim/` (these are not yet accepted as fresh verification of the current 5-bit source).
+- [x] Existing Vivado project archive, implementation reports and bitstream retained under `04_FPGA_Hardware/` (they still need to be regenerated from the final 5-bit design).
+- [x] Individual contribution roles and links to supporting project artefacts added in Section 11.
+- [x] Current design approach, FSM states/state table, and testbench coverage described in this README.
+
+### Still pending before final submission
+- [ ] Confirm all team details and roll numbers against the official faculty roster; add Kaif's roll number and verify the D9B section details shown for Vedant and Arya.
+- [ ] Insert the exact official H3 title and problem-statement wording.
+- [ ] Complete the formal requirements/assumptions analysis against the official H3 statement.
+- [ ] Upload the final architecture/block diagram.
+- [ ] Upload a separate FSM diagram and verify that it matches the final RTL.
+- [ ] Open and verify the Logisim circuit against the final 5-bit design; add fresh Logisim simulation screenshots/evidence.
+- [ ] Run the current 5-bit RTL and testbench together; save fresh simulation logs, waveform and PASS/FAIL verification summary.
+- [ ] Update the archived Vivado project source and testbench to the current 5-bit design.
+- [ ] Verify the actual FPGA board model and pinout, then update the XDC to match the 5-bit interface.
+- [ ] Regenerate synthesis/implementation reports and the bitstream from the corrected final Vivado project.
+- [ ] Add physical FPGA demonstration evidence, if the hardware demo is part of the submission requirement.
+- [ ] Add expected-versus-observed test results and the verified conclusion in `05_Results/`.
+- [ ] Upload the final presentation in `06_Presentation/`.
+- [ ] Upload the final report in `07_Final_Report/`.
+- [ ] Copy/commit this revised README and STATUS, then add the actual update time and evidence to `STATUS.md`.
+- [ ] Create the final Pull Request targeting the faculty master repository and faculty-specified base branch.
