@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-19, 23:00 |
+| Last Updated | 2026-11-19, 23:15 |
 
 ## 2. Problem Statement
 
@@ -75,7 +75,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 2 — Verilog | Create testbench and run functional simulation | Completed | `03_Verilog_Implementation/Testbench/game_tb.v`; waveform in `Simulation_Results/` |
 | 2 — Verilog | Save waveforms and simulation results | In Progress | `03_Verilog_Implementation/Simulation_Results/behavioral_simulation_waveform.png` (console log pending) |
 | 3 — FPGA | Assign FPGA pins and configure constraints | Completed | `04_FPGA_Hardware/constraints.xdc` |
-| 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/synthesized_design_io_ports.png`, `04_FPGA_Hardware/implemented_design.png`, `04_FPGA_Hardware/utilization_report.png` (timing summary uploaded but design is unconstrained: no create_clock yet) |
+| 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/implemented_design.png`, `04_FPGA_Hardware/utilization_report.png` (timing summary uploaded but design is unconstrained: no create_clock yet) |
 | 3 — FPGA | Demonstrate the design on FPGA hardware | Not Started | `04_FPGA_Hardware/` |
 | 3 — Results | Record observations and verify expected behaviour | Not Started | `05_Results/` |
 | 3 — Presentation | Prepare slides (max 3, excluding title) and demonstration | Not Started | `06_Presentation/` |
@@ -107,7 +107,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-19, 19:20 | FPGA device recorded in README section 9: Spartan-7 XC7S50-CSGA324-1 | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 19:35 | Pull Request opened to faculty repo: https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/33 | Samruddhi Samant | PR 33 |
 | 2026-11-19, 20:00 | Group ID renamed to `day1_submission_grp14` (folder renamed from D9A_Group14); project topic confirmed as Game Score Categorizer (Mealy FSM) | Samruddhi Samant | Commit link to be added |
-| 2026-11-19, 20:20 | Vivado 2018.3 synthesized-design screenshot added (`04_FPGA_Hardware/synthesized_design_io_ports.png`); pins match constraints; bitstream generation shown complete | Samruddhi Samant | Commit link to be added |
+| 2026-11-19, 20:20 | Vivado 2018.3 synthesized-design screenshot added (later removed from the repo); pins match constraints; bitstream generation shown complete | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 20:45 | Vivado elaborated RTL schematic added (`03_Verilog_Implementation/rtl_elaborated_schematic.png`) and linked in README section 7 | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 21:00 | RESET=1 (from any state) arrow added to the FSM state diagram | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 21:30 | Vivado behavioral simulation run; waveform `behavioral_simulation_waveform.png` added (scores 2, 7, 13 give LOW, MEDIUM, HIGH LED; LEDs off after ack); README section 8 updated | Samruddhi Samant | Commit link to be added |
@@ -115,6 +115,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-19, 22:20 | Vivado utilization report added (`04_FPGA_Hardware/utilization_report.png`); README section 9 updated | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 22:40 | Vivado power report added (`04_FPGA_Hardware/power_report.png`); README section 9 updated | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 23:00 | Vivado timing summary added (`04_FPGA_Hardware/timing_summary.png`); design is unconstrained, create_clock still to be added | Samruddhi Samant | Commit link to be added |
+| 2026-11-19, 23:15 | Synthesized-design screenshot removed from the repo (implemented design, utilization, power and timing screenshots remain) | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 

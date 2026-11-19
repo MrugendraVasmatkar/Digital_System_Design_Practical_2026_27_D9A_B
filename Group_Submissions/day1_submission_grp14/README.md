@@ -105,9 +105,7 @@ Waveform/log path: `03_Verilog_Implementation/Simulation_Results/behavioral_simu
 - Clock/constraints: `04_FPGA_Hardware/constraints.xdc` (LVCMOS33; clk F14, reset T1, start J2, ack J1, score V2/U2/U1/T2, LEDs G1/G2/F1). No `create_clock` constraint yet.
 - Synthesis/implementation summary: Synthesis, implementation and bitstream generation completed for `xc7s50csga324-1` (Vivado status bar: "write_bitstream Complete"). Implemented design: 24 cells, 11 I/O ports, 32 nets. Vivado re-encoded the FSM as one-hot (`FSM_onehot_state_reg`, 4 flip-flops) with LUTs and I/O buffers. Pin assignments match `constraints.xdc` (score T2/U1/U2/V2, ack J1, clk F14, high_led F1; LVCMOS33, outputs 12 mA slow slew). Utilisation (Vivado, post-implementation): 6 Slice LUTs of 32600, 4 slice registers of 65200, 2 slices of 8150, 11 bonded IOBs of 210, 1 BUFGCTRL of 32 (LUTs, registers and slices under 1%; IOBs about 5%; BUFGCTRL about 3%). Power (Vivado estimate, default activity): total 3.43 W = 3.348 W dynamic (I/O 3.229 W, signals 0.077 W, logic 0.043 W) + 0.082 W static; junction temperature 41.9 °C, thermal margin 43.1 °C. Timing summary: the design is unconstrained ("no user specified timing constraints"; WNS and WHS show inf, 15 endpoints, 0 failing), so no clock-frequency timing was verified. A `create_clock` constraint is still to be added.
 - Programming and hardware test result: [not yet done]
-- Evidence path: `04_FPGA_Hardware/` (`synthesized_design_io_ports.png`)
-
-![Vivado synthesized design - I/O ports](04_FPGA_Hardware/synthesized_design_io_ports.png)
+- Evidence path: `04_FPGA_Hardware/`
 
 ![Vivado implemented design - schematic and I/O ports](04_FPGA_Hardware/implemented_design.png)
 
