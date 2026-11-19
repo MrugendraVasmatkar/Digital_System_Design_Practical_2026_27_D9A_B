@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../age_group_detector_core.srcs/sources_1/new/age_group_detector_core.v" \
+"../../../../age_group_detector_core.srcs/sim_1/new/tb_age_group_detector.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
