@@ -78,7 +78,72 @@ These constraints and assumptions define the operating conditions of the Water T
 ## 3. Problem Analysis and Proposed Solution
 Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
 
-[Write here]
+## 3. Problem Analysis and Proposed Solution
+
+### 1. Requirements
+
+The objective of this project is to design a 3-bit Water Temperature Classifier that identifies the temperature category of water and activates the corresponding valve output. The system accepts a 3-bit binary input representing temperature levels from 0 to 7.
+
+The temperature is classified into three categories:
+
+- **COLD:** Input values from 0 to 2.
+- **NEUTRAL:** Input values from 3 to 5.
+- **HOT:** Input values from 6 to 7.
+
+The system consists of a 3-bit input register, range decoder, Finite State Machine (FSM), clock, and three output indicators representing the COLD, NEUTRAL, and HOT valves.
+
+The FSM is controlled using START, ACK, and RESET signals. For the H2 modification, the original Moore FSM is redesigned as a Mealy FSM to generate valve outputs immediately based on the current state and temperature input.
+
+### 2. Edge Cases
+
+The system must correctly classify all eight possible combinations of the 3-bit input.
+
+- Input 000 (0) must be classified as COLD.
+- Input 001 (1) must be classified as COLD.
+- Input 010 (2) must be classified as COLD.
+- Input 011 (3) must be classified as NEUTRAL.
+- Input 100 (4) must be classified as NEUTRAL.
+- Input 101 (5) must be classified as NEUTRAL.
+- Input 110 (6) must be classified as HOT.
+- Input 111 (7) must be classified as HOT.
+
+Additional operating conditions:
+
+- RESET must return the FSM to its initial IDLE state.
+- START must initiate the temperature classification process.
+- ACK must acknowledge the result and return the FSM to IDLE.
+- Only one valve output should be active at a time.
+- All valve outputs must remain OFF when the system is reset or disabled.
+
+### 3. Proposed Solution
+
+The proposed solution is to implement a 3-bit Water Temperature Classifier using a Mealy Finite State Machine.
+
+The system first accepts the temperature input through three switches (T2, T1, T0). A 3-bit register stores the input value. The stored value is then passed to a range decoder, which uses comparator logic to classify the temperature as COLD, NEUTRAL, or HOT.
+
+The classification signals are processed by the Mealy FSM controller. The FSM uses state registers, combinational logic gates, and control signals such as START, ACK, and RESET to manage the operation.
+
+Unlike the original Moore FSM, the Mealy FSM generates the valve outputs based on both the current state and the current temperature input. This allows the outputs to respond immediately to input changes without waiting for an additional state transition.
+
+The three output indicators represent the COLD, NEUTRAL, and HOT valve conditions.
+
+### 4. Distinctive Features
+
+- Uses a Mealy FSM instead of the original Moore FSM for immediate output generation.
+- Supports all eight possible combinations of the 3-bit temperature input.
+- Classifies temperature into three predefined categories: COLD, NEUTRAL, and HOT.
+- Uses comparator-based range detection for accurate temperature classification.
+- Includes START, ACK, and RESET controls for managing system operation.
+- Uses three separate output indicators to display the detected temperature category.
+- Uses a register to store the temperature input and ensure synchronized operation.
+
+### 5. Feasibility
+
+The proposed design is feasible because it uses basic digital components such as registers, comparators, flip-flops, logic gates, and LEDs. The 3-bit input provides only eight possible combinations, making temperature classification simple and efficient.
+
+The Mealy FSM requires a small number of states and can be implemented using basic sequential and combinational logic. The circuit can be designed and tested using Logisim Evolution and implemented in Verilog HDL for simulation and verification using Vivado.
+
+The project provides a practical demonstration of digital logic design, comparator-based classification, sequential circuits, and Finite State Machines. It can also be extended in the future by connecting an actual temperature sensor and electrically controlled water valves.
 
 ## 4. Architecture
 Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
