@@ -13,7 +13,7 @@
 **Class:** D9A/D9B  
 **Group ID:** D9A_B_Group31  
 **Repository URL:** https://github.com/adityaparabvesid25/DSD-2026-D9A-B-Group31  
-**Final Pull Request URL:** [URL]
+**Final Pull Request URL:** https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/10
 
 ## 2. Assigned Problem Statement
 - **Number/title:** 7H3 — Weather Alert System with Invalid Input `ERROR` State (Hint H3)
