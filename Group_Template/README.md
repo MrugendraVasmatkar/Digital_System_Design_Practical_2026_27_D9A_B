@@ -5,22 +5,38 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Ankita karmakar | 22 | ankyaaa18 |
+| Member 2 | Chaitanya Jadhav | 19 | chaitanyarj49 |
+| Member 3 | Manas Narkar | [Roll no.] | [Username] |
+| Member 4 | Vidyesh Raut | [Roll no.] | [Username] |
 
 **Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
+**Group ID:** D9_Group03 
 **Repository URL:** [Fork URL]  
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
-- **Problem summary:** [In your own words]
-- **Objective:** [What must the system achieve?]
-- **Inputs and outputs:** [List signals, widths and meaning]
-- **Constraints and assumptions:** [List and justify]
+- **Number/title:** 6H1 / Forbidden Zone Rejector
+- **Problem summary:** The Forbidden Zone Rejector is a digital system designed to identify and reject input values falling within a predefined forbidden range. The system accepts a n-bit binary input (parameterizable) and checks whether its decimal equivalent lies within the forbidden zone which is configurable [L,H].
+- **Objective:**
+  1. To accept binary input values and detect whether they fall within a specified forbidden range.
+  2. To generate an ACCEPT output for values outside the forbidden zone.
+  3. To generate a REJECT output for values within the forbidden zone.
+  4. To extend the design to support parameterizable input widths and configurable forbidden-zone limits.
+  5. To verify the functionality of the circuit through simulation and testbench verification.
+- **Inputs and outputs:**
+  | Inputs/Output Signal | Width | Description | G
+  |---|---|---|
+  | X | n | Binary input value to be checked | 
+  | L | n | Lower limit of the forbidden zone | 
+  | H | n | Higher limit of the forbidden zone. |
+  | Y | 1 | Result whether Rejected or accepted |
+- **Constraints and assumptions:**
+  1. The initial implementation uses a 4-bit unsigned binary input, allowing decimal values from 0 to 15.
+  2. The default forbidden zone is from 6 to 9, including both boundary values.
+  3. The input is considered forbidden when L ≤ X ≤ H.
+  4. Values outside the forbidden range are considered acceptable.
+  5. The configurable limits must satisfy 0 ≤ L ≤ H ≤ 2^N − 1.
 
 ## 3. Problem Analysis and Proposed Solution
 Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
