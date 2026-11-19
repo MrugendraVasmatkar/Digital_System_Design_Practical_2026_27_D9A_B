@@ -172,6 +172,8 @@ What did the team learn? What would you improve?
 - [x] Architecture/block diagram included.
 - [x] FSM diagram/table or justified alternative included.
 - [ ] Logisim source and simulation evidence uploaded.
+  - [x] Logisim source uploaded (`02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ`).
+  - [ ] Simulation evidence: score 13 (HIGH) uploaded; LOW, MEDIUM, ACK, RESET and the remaining scores pending (see `02_FSM_Logisim/logisim_test_plan.md`).
 - [x] Verilog RTL and testbench uploaded.
 - [ ] Simulation results and test cases documented.
 - [ ] FPGA implementation and hardware evidence uploaded.
