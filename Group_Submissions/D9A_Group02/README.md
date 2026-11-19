@@ -5,14 +5,14 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | [Vasudha Saxena] | [52] | [star388] |
+| Member 2 | [Tanisha Dembla] | [8] | [tanishadembla88-commits] |
+| Member 3 | [Prakhar Srivastava] | [62] | [prakharsrivastavwork-ship-it] |
+| Member 4 | [Hadi Ansari] | [1] | [hadiansari25] |
 
 **Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
-**Repository URL:** [Fork URL]  
+**Group ID:** [D9A_Group02]  
+**Repository URL:** [https://github.com/star388/DSD-2026-D9A-Group02]  
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
