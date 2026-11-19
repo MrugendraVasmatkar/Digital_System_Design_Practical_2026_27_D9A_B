@@ -14,7 +14,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 1 | Problem requirements and assumptions documented | Completed | https://docs.google.com/document/d/1Y3f19ccyAWOuHTmcKxUKXCJ4mraLcUXDPXZT47sXAvA/edit?tab=t.0| [ ] |
 | 2 | Architecture and block diagram prepared | Completed | https://docs.google.com/document/d/1EbxZ4pvZt-DQTi53vrYNyFnS8w5s_qI3FKJPH9AKmxM/edit?tab=t.0 | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Completed | Provided in solution document 1 - https://docs.google.com/document/d/1Y3f19ccyAWOuHTmcKxUKXCJ4mraLcUXDPXZT47sXAvA/edit?tab=t.0 | [ ] |
-| 4 | Logisim circuit implemented | Completed| https://drive.google.com/file/d/1_Pz3cSd8n4PJyweCEZ0f0fe_3s31HFap/view?usp=sharing | [ ] |
+| 4 | Logisim circuit implemented | In Progress | https://drive.google.com/file/d/1_Pz3cSd8n4PJyweCEZ0f0fe_3s31HFap/view?usp=sharing | [ ] |
 | 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
 | 6 | Verilog RTL completed | Not Started | [ ] | [ ] |
 | 7 | Testbench and simulation completed | Not Started | [ ] | [ ] |
@@ -39,7 +39,7 @@ Add rows as needed.
 ## 3. Current blockers and support required
 | Blocker | Impact | Action being taken | Faculty support required |
 |---|---|---|---|
-| [ ] | [ ] | [ ] | [ ] |
+| Differentiating input change | Fails proper incrementation of States | Brainstorming other possibilities, one being change in FSM integration by increasing states to simplify | Feedback on existing logic of datapath only approach or change in FSM |
 
 ## 4. End-of-day summary
 ### 19 October 2026
@@ -58,5 +58,5 @@ Add rows as needed.
 ## 5. Group leader confirmation
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
 
-**Group leader:** [Name]  
-**Date/time:** [Actual date and time]
+**Group leader:** Tanav Patil  
+**Date/time:** 19-11-26 / 16:10
