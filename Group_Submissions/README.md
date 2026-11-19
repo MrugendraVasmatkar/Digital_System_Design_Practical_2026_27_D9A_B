@@ -6,13 +6,13 @@
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
 | Group leader | Parth Nemade | 42 | parthn17 |
-| Member 2 | Arnav Dhole | 09 | [Username] |
+| Member 2 | Arnav Dhole | 09 | arnavdhole3-sudo |
 | Member 3 | Aryan Mansukh | 32 | aryanmansukh69-a11y |
 | Member 4 | Mugdha Parab | 38 | mugdhap0407 |
 
 **Class:** D9A/D9B 
 **Group ID:** D9B_Group18  
-**Repository URL:** [Fork URL]  
+**Repository URL:**https://github.com/parthn17/DSD_2026_D9A_B_Group18.git 
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
