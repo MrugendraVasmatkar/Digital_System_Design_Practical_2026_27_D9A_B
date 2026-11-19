@@ -10,8 +10,8 @@
 | Member 3 | Aryan Mansukh | 32 |aryanmansukh69-a11y |
 | Member 4 | Mugdha Parab | 38 | mugdhap0407 |
 
-**Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
+**Class:** D9A/D9B  
+**Group ID:** D9B_Group18  
 **Repository URL:** [Fork URL]  
 **Final Pull Request URL:** [URL]
 
@@ -39,14 +39,14 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 **State table:** [Path/link]
 
 ## 6. Logisim Implementation
-- Logisim version: [Version]
-- Circuit file: [Path to `.circ`]
+- Logisim version: Logisim v2.7.2
+- Circuit file: Group_Submissions/D9B_Group18/02_FSM_Logisim/Water_Temperature_H2.circ
 - Test cases and expected/observed behaviour: [Details]
 - Issues and corrections: [Details]
-- Screenshot/evidence: [Path/link]
+- Screenshot/evidence: Group_Submissions/D9B_Group18/02_FSM_Logisim/logisim_sim_ss.jpeg
 
 ## 7. Verilog HDL Implementation
-- Tool/version: [Details]
+- Tool/version: Vivado 2018.3
 - Top module and submodules: [Names]
 - Architecture/coding decisions: [Details]
 - Synthesizability considerations: [Details]
