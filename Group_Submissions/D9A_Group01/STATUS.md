@@ -1,4 +1,4 @@
-# Group Progress Status
+﻿# Group Progress Status
 
 **Class:** D9A  
 **Group ID:** D9A_Group01  
@@ -17,8 +17,8 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 1 | Problem requirements and assumptions documented | Not Started | - | - |
 | 2 | Architecture and block diagram prepared | Not Started | - | - |
 | 3 | FSM diagram/table completed, if applicable | Not Started | - | - |
-| 4 | Logisim circuit implemented | Not Started | - | - |
-| 5 | Logisim simulation verified | Not Started | - | - |
+| 4 | Logisim circuit implemented | Completed | `02_FSM_Logisim/H1_NBit_Gray_Detector_N5.circ` | 19/11/2026 03:30 |
+| 5 | Logisim simulation verified | In Progress | `02_FSM_Logisim/H1_N5_test_vector.txt` (31/31 pass, headless) | 19/11/2026 03:30 |
 | 6 | Verilog RTL completed | Not Started | - | - |
 | 7 | Testbench and simulation completed | Not Started | - | - |
 | 8 | FPGA synthesis and implementation completed | Not Started | - | - |
@@ -33,6 +33,8 @@ Update at least once every two hours and at each major milestone. Record actual 
 |---|---|---|---|---|---|---|
 | 19/11/2026 | 02:13 | Forked faculty repo to leader's account, renamed fork to `DSD-2026-D9A-Group01`, cloned locally, created group folder `Group_Submissions/D9A_Group01/` from `Group_Template/`, filled team details in `STATUS.md` | `Group_Submissions/D9A_Group01/` | Problem statement not yet assigned; collaborators not yet added | Add the three teammates as collaborators; read assigned problem statement in `Problem_Statements/` | Ojas Karmarkar |
 | 19/11/2026 | 02:30 | Filled team names, roll numbers and repository URL in the group `README.md` (teammates' GitHub usernames still pending) | `Group_Submissions/D9A_Group01/README.md` | Teammates' GitHub usernames not yet available | Collect usernames and add collaborators | Ojas Karmarkar |
+
+| 19/11/2026 | 03:30 | Built H1 (N=5) Gray code transition detector in Logisim: 5-bit registers, bitwise XOR, pairwise AND/OR detector, Moore FSM. Simulated with Logisim test vector: 31/31 steps pass (5 required tests + reset + SAMPLE gating) | `02_FSM_Logisim/H1_NBit_Gray_Detector_N5.circ`, `H1_N5_test_vector.txt` | None | Verify by hand in Logisim GUI; start Verilog (Stage 2) | Ojas Karmarkar |
 
 Add rows as needed.
 
@@ -61,3 +63,4 @@ I confirm that this status reflects the work completed by the group and that the
 
 **Group leader:** Ojas Karmarkar  
 **Date/time:** [Actual date and time]
+
