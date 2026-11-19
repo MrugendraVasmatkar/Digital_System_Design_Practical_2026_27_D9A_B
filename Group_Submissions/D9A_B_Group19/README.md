@@ -17,15 +17,23 @@
 
 ## 2. Assigned Problem Statement
 - **Number/title:** 9/Password Attempt Monitor(3-bit)
-- **Problem summary:** [In your own words]
-- **Objective:** [What must the system achieve?]
-- **Inputs and outputs:** [List signals, widths and meaning]
-- **Constraints and assumptions:** [List and justify]
+- **Problem summary:** 
+- **Objective:**  To Design a Password Attempt Monitor (3-Bit) using a Register, Range decoder and a FSM Moore Machine.
+- **Inputs and outputs:** Three 3-bit input, Three LED output, One ACK output
+- **Constraints and assumptions:** 
 
 ## 3. Problem Analysis and Proposed Solution
-Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
+Problem Statement: To Design a Password Attempt Monitor (3-Bit) with a modification of changing the Moore machine used with Mealy machine
 
-[Write here]
+Requirements: Three switches, A 3-bit input register, A Range Decoder, FSM Mealy Machine, Three D Flip-flops, Three LEDs
+
+Inputs/Output: 1. Three inputs A0in, A1in and A2in to the 3-bit input register. 
+               2. 3-bit input to the Decoder which gives output according to the range
+               3. 8 states assigned to the FSM Mealy machine 
+               4. Output through one green, one yellow, and one red LED and one acknowledgement output.
+
+Solution: We added one more flip flop to convert the Moore machine to Mealy machine. Initially there were 4 states assigned but to solve the modification we took 8 states and increased one more Flip-flop. The range in decoder was also changed and the conditions were changed simultaneously. The other system was kept same without any modification.
+
 
 ## 4. Architecture
 Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
