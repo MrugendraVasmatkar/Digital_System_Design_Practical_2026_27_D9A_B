@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-19, 23:15 |
+| Last Updated | 2026-11-19, 23:40 |
 
 ## 2. Problem Statement
 
@@ -68,7 +68,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 1 — Design | Understand and document the problem statement | In Progress | `01_Problem_Analysis/problem_statement.md` (draft; official statement to be confirmed) |
 | 1 — Design | Identify inputs, outputs, and operating conditions | Completed | `01_Problem_Analysis/io_specification.md` |
 | 1 — Design | Draw FSM state diagram and state table | Completed | `02_FSM_Logisim/fsm_state_diagram.png`; state table in `README.md` section 5 |
-| 1 — Design | Draw block diagram and define control signals | Not Started | `02_FSM_Logisim/` |
+| 1 — Design | Draw block diagram and define control signals | Completed | `02_FSM_Logisim/block_diagram.png` |
 | 1 — Design | Build and test the architecture in Logisim | In Progress | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ` (circuit built; overview screenshot `circuit_overview.png` added; simulation screenshots pending) |
 | 2 — Verilog | Write synthesizable RTL (controller and datapath) | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` |
 | 2 — Verilog | Integrate modules at top level | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` (single module) |
@@ -116,6 +116,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-19, 22:40 | Vivado power report added (`04_FPGA_Hardware/power_report.png`); README section 9 updated | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 23:00 | Vivado timing summary added (`04_FPGA_Hardware/timing_summary.png`); design is unconstrained, create_clock still to be added | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 23:15 | Synthesized-design screenshot removed from the repo (implemented design, utilization, power and timing screenshots remain) | Samruddhi Samant | Commit link to be added |
+| 2026-11-19, 23:40 | Block diagram added (`02_FSM_Logisim/block_diagram.png`) and described in README section 4 | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 

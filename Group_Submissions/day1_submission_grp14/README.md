@@ -35,7 +35,10 @@ Insert/link the block diagram and explain modules, data/control flow and design 
 
 Single module `mealy_simple`: a 2-bit state register, next-state logic (score comparators plus `start`/`ack`/`reset`) and combinational Mealy output logic. There is no separate datapath.
 
-- **Block diagram:** [to be added]
+- **Block diagram:** `02_FSM_Logisim/block_diagram.png`. Score switches feed a range decoder (comparators giving L, M, H); START, ACK and RESET plus the decoded range feed the next-state logic (D1, D0) and the 2-bit state register, whose Q1 Q0 outputs feed back and go through a state decoder to the output logic. START, ACK and L/M/H also go directly to the output logic, which makes the outputs Mealy.
+
+![Block diagram](02_FSM_Logisim/block_diagram.png)
+
 - Gate-level circuit screenshot:
 
 ![Logisim circuit overview](02_FSM_Logisim/circuit_overview.png)
@@ -149,7 +152,7 @@ What did the team learn? What would you improve?
 
 ## 15. Final Submission Checklist
 - [ ] Team details and problem analysis complete.
-- [ ] Architecture/block diagram included.
+- [x] Architecture/block diagram included.
 - [ ] FSM diagram/table or justified alternative included.
 - [ ] Logisim source and simulation evidence uploaded.
 - [x] Verilog RTL and testbench uploaded.
