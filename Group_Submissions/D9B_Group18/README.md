@@ -21,7 +21,59 @@
 - **Objective:** The system must classify a 3-bit temperature input into three categories—Cold, Neutral, or Hot—and immediately activate the corresponding water valve
 - **Inputs and outputs:** Inputs : Temp[2:0], Start, Acknowledgement, Reset
                           Outputs : Cold Valve, Neutral Valve, Hot Valve
-- **Constraints and assumptions:** [List and justify]
+- **Constraints and assumptions:** ## Constraints and Assumptions
+
+### 1. Constraints
+
+1. **Input Constraint:** The system accepts a 3-bit binary temperature input (T2, T1, T0), representing values from 0 to 7.
+
+2. **Temperature Classification Constraint:** The input temperature must be classified into three categories:
+   - COLD: 0–2
+   - NEUTRAL: 3–5
+   - HOT: 6–7
+
+3. **Input Register Constraint:** A 3-bit register is used to store the temperature input before classification. The register operates using a clock signal.
+
+4. **Clock Constraint:** The system uses a clock signal to synchronize the register and FSM state transitions.
+
+5. **START Constraint:** The START input initiates the temperature classification process.
+
+6. **ACK Constraint:** The ACK input acknowledges the classification result and returns the FSM to its IDLE state.
+
+7. **RESET Constraint:** The RESET input initializes the FSM to the IDLE state and turns OFF all valve outputs.
+
+8. **FSM Constraint:** The system uses a Finite State Machine based on the Mealy model for controlling the temperature classification and valve outputs.
+
+9. **Output Constraint:** The system has three valve indicators:
+   - COLD valve: Activated for temperature values 0–2.
+   - NEUTRAL valve: Activated for temperature values 3–5.
+   - HOT valve: Activated for temperature values 6–7.
+
+10. **Mealy Output Constraint:** The valve outputs depend on the current FSM state and temperature input, allowing immediate output generation without waiting for an additional state transition.
+
+### 2. Assumptions
+
+1. **Digital Temperature Input:** The 3-bit input is assumed to represent a digitally encoded temperature level rather than an actual temperature in degrees Celsius.
+
+2. **Valid Input Range:** All eight combinations from 000 to 111 are considered valid inputs.
+
+3. **Fixed Classification Ranges:** The temperature classification ranges are predefined and remain unchanged during system operation.
+
+4. **Stable Input:** The temperature input is assumed to remain stable during the register capture and classification process.
+
+5. **Initial State:** The FSM is assumed to start in the IDLE state after RESET is activated.
+
+6. **Mutually Exclusive Outputs:** Only one valve output is expected to be ON at a time, depending on the detected temperature category.
+
+7. **Acknowledgement:** The ACK signal is assumed to return the FSM to IDLE, allowing a new classification cycle.
+
+8. **Clock Operation:** The clock is assumed to provide valid pulses for synchronizing the register and FSM operations.
+
+9. **Ideal Operation:** The digital circuit is assumed to operate without hardware faults, electrical noise or unexpected signal fluctuations.
+
+### 3. Justification
+
+These constraints and assumptions define the operating conditions of the Water Temperature Classifier. The 3-bit input allows eight temperature levels to be represented and classified into three predefined categories. The Mealy FSM provides immediate valve output generation based on the current state and input conditions. The START, ACK and RESET signals provide controlled operation, while the three valve indicators clearly display the classification result. The design can be implemented and verified using Logisim Evolution and Verilog HDL.
 
 ## 3. Problem Analysis and Proposed Solution
 Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
