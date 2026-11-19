@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 04:00 |
+| Last Updated | 2026-11-20, 04:30 |
 
 ## 2. Problem Statement
 
@@ -75,7 +75,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 2 — Verilog | Create testbench and run functional simulation | Completed | `03_Verilog_Implementation/Testbench/game_tb.v`; waveform in `Simulation_Results/` |
 | 2 — Verilog | Save waveforms and simulation results | In Progress | `03_Verilog_Implementation/Simulation_Results/behavioral_simulation_waveform.png` (console log pending) |
 | 3 — FPGA | Assign FPGA pins and configure constraints | Completed | `04_FPGA_Hardware/constraints.xdc` |
-| 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/implemented_design.png`, `04_FPGA_Hardware/utilization_report.png` (timing summary uploaded but design is unconstrained: no create_clock yet) |
+| 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/implemented_design.png`, `04_FPGA_Hardware/utilization_report.png` (timing met with a 10 ns clock constraint) |
 | 3 — FPGA | Demonstrate the design on FPGA hardware | Not Started | `04_FPGA_Hardware/` |
 | 3 — Results | Record observations and verify expected behaviour | In Progress | `05_Results/README.md` (simulation results recorded; hardware results pending) |
 | 3 — Presentation | Prepare slides (title + 4 content slides per guidelines) and demonstration | In Progress | `06_Presentation/Group14_DSD_Presentation.pptx` (draft; hardware demo and real challenges still to fill) |
@@ -128,6 +128,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 03:00 | Assigned statement 3H2 (hint H2, Mealy FSM) transcribed into the problem analysis with a requirement mapping; photo of the handout added | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 03:30 | Clock constraint (create_clock 10 ns) added to constraints; bitstream regenerated; screenshots `constraints_with_clock.png` and `bitstream_generation_completed.png` added; refreshed timing report still pending | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 04:00 | Logisim simulation screenshot added (`02_FSM_Logisim/sim_score13_high.png`, SCORE = 13 gives HIGH LED); other scores, ACK and RESET pending | Samruddhi Samant | Commit link to be added |
+| 2026-11-20, 04:30 | Constrained timing run: WNS 7.665 ns, WHS 0.540 ns, 0 failing endpoints, all constraints met; `timing_summary.png` replaced | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 

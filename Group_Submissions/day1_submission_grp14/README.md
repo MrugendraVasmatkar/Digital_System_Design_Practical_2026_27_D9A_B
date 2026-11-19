@@ -109,7 +109,7 @@ Waveform/log path: `03_Verilog_Implementation/Simulation_Results/behavioral_simu
 - FPGA board/device: Xilinx Spartan-7 XC7S50-CSGA324-1 (part `xc7s50csga324-1`)
 - Tool/version: Xilinx Vivado 2018.3 (project `dsd_practs_sammm`)
 - Clock/constraints: `04_FPGA_Hardware/constraints.xdc` (LVCMOS33; clk F14, reset T1, start J2, ack J1, score V2/U2/U1/T2, LEDs G1/G2/F1). Clock constraint added: `create_clock -period 10.000 [get_ports clk]` (10 ns, 100 MHz); see `constraints_with_clock.png`.
-- Synthesis/implementation summary: Synthesis, implementation and bitstream generation completed for `xc7s50csga324-1` (Vivado status bar: "write_bitstream Complete"). Implemented design: 24 cells, 11 I/O ports, 32 nets. Vivado re-encoded the FSM as one-hot (`FSM_onehot_state_reg`, 4 flip-flops) with LUTs and I/O buffers. Pin assignments match `constraints.xdc` (score T2/U1/U2/V2, ack J1, clk F14, high_led F1; LVCMOS33, outputs 12 mA slow slew). Utilisation (Vivado, post-implementation): 6 Slice LUTs of 32600, 4 slice registers of 65200, 2 slices of 8150, 11 bonded IOBs of 210, 1 BUFGCTRL of 32 (LUTs, registers and slices under 1%; IOBs about 5%; BUFGCTRL about 3%). Power (Vivado estimate, default activity): total 3.43 W = 3.348 W dynamic (I/O 3.229 W, signals 0.077 W, logic 0.043 W) + 0.082 W static; junction temperature 41.9 °C, thermal margin 43.1 °C. Timing summary: the design is unconstrained ("no user specified timing constraints"; WNS and WHS show inf, 15 endpoints, 0 failing), so no clock-frequency timing was verified. After adding the clock constraint, implementation was re-run and the bitstream regenerated (Vivado: "Bitstream Generation successfully completed", `bitstream_generation_completed.png`). The timing summary visible in that screenshot is still the old report (Vivado shows the implemented design as out-of-date); a refreshed timing report is pending.
+- Synthesis/implementation summary: Synthesis, implementation and bitstream generation completed for `xc7s50csga324-1` (Vivado status bar: "write_bitstream Complete"). Implemented design: 24 cells, 11 I/O ports, 32 nets. Vivado re-encoded the FSM as one-hot (`FSM_onehot_state_reg`, 4 flip-flops) with LUTs and I/O buffers. Pin assignments match `constraints.xdc` (score T2/U1/U2/V2, ack J1, clk F14, high_led F1; LVCMOS33, outputs 12 mA slow slew). Utilisation (Vivado, post-implementation): 6 Slice LUTs of 32600, 4 slice registers of 65200, 2 slices of 8150, 11 bonded IOBs of 210, 1 BUFGCTRL of 32 (LUTs, registers and slices under 1%; IOBs about 5%; BUFGCTRL about 3%). Power (Vivado estimate, default activity): total 3.43 W = 3.348 W dynamic (I/O 3.229 W, signals 0.077 W, logic 0.043 W) + 0.082 W static; junction temperature 41.9 °C, thermal margin 43.1 °C. Timing (after adding `create_clock -period 10.000`): WNS = 7.665 ns, WHS = 0.540 ns, WPWS = 4.500 ns, 0 failing endpoints, "All user specified timing constraints are met" (`timing_summary.png`; the first run, before the clock constraint, showed inf slack).
 - Programming and hardware test result: [not yet done]
 - Evidence path: `04_FPGA_Hardware/`
 
@@ -130,7 +130,7 @@ Explain differences between simulation and hardware results, if any.
 ## 10. Challenges, Debugging and Improvements
 | Issue | Root cause | Correction | Outcome |
 |---|---|---|---|
-| Design was unconstrained: Timing Summary showed WNS/WHS = inf and "no user specified timing constraints" | The constraints file had only pin and I/O-standard lines, with no clock definition | Added `create_clock -period 10.000 [get_ports clk]` to the constraints, re-ran implementation and regenerated the bitstream | Bitstream regenerated successfully; refreshed timing report to be confirmed |
+| Design was unconstrained: Timing Summary showed WNS/WHS = inf and "no user specified timing constraints" | The constraints file had only pin and I/O-standard lines, with no clock definition | Added `create_clock -period 10.000 [get_ports clk]` to the constraints, re-ran implementation and regenerated the bitstream | Timing met at 10 ns (WNS 7.665 ns, WHS 0.540 ns, 0 failing endpoints); bitstream regenerated |
 
 Future improvements: debouncing/synchronising `start` and `ack`; seven-segment display of the score; parameterised thresholds.
 
@@ -152,13 +152,13 @@ Summarise requirements met, correctness of simulation/hardware results, measured
 
 **Requirements met:** the Mealy FSM classifies the score into LOW (0–4), MEDIUM (5–10) and HIGH (11–15), lights exactly one LED, holds it until ACK and clears it afterwards. Verified in Vivado behavioral simulation for scores 2, 7 and 13 (3 of 3 cases pass, from the waveform). Full tables: [`05_Results/README.md`](05_Results/README.md).
 
-**Measured results (Vivado 2018.3, XC7S50-CSGA324-1):** 6 Slice LUTs, 4 flip-flops, 2 slices, 11 IOBs, 1 BUFGCTRL; estimated power 3.43 W (mostly I/O); bitstream generated.
+**Measured results (Vivado 2018.3, XC7S50-CSGA324-1):** 6 Slice LUTs, 4 flip-flops, 2 slices, 11 IOBs, 1 BUFGCTRL; estimated power 3.43 W (mostly I/O); timing met at a 10 ns clock (WNS 7.665 ns, WHS 0.540 ns, 0 failing endpoints); bitstream generated.
 
 **Hardware results:** pending (board demonstration not yet done).
 
-**Limitations:** only three scores simulated (boundary scores and reset mid-round untested); clock timing not yet verified because the first timing run had no clock constraint; START and ACK are not debounced.
+**Limitations:** only three scores simulated (boundary scores and reset mid-round untested); timing was checked only at a 10 ns clock constraint; START and ACK are not debounced.
 
-**Conclusion:** the design meets the functional behaviour in simulation and fits easily on the target FPGA. The hardware demonstration and a constrained timing run remain.
+**Conclusion:** the design meets the functional behaviour in simulation and fits easily on the target FPGA. The hardware demonstration remains.
 
 ## 14. Team Reflection
 What did the team learn? What would you improve?

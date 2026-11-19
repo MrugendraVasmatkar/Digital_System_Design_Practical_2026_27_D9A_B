@@ -46,18 +46,18 @@ Hardware demonstration is pending. Fill this table from the board, and add photo
 | Bonded IOBs | 11 of 210 | `utilization_report.png` |
 | BUFGCTRL | 1 of 32 | `utilization_report.png` |
 | Estimated power | 3.43 W total (3.348 W dynamic, mostly I/O; 0.082 W static); junction 41.9 °C | `04_FPGA_Hardware/power_report.png` |
-| Timing | Not yet confirmed: the first run was unconstrained (WNS/WHS = inf). A 10 ns clock constraint was then added and the bitstream regenerated, but the timing summary captured afterwards is still the old report | `04_FPGA_Hardware/timing_summary.png`, `constraints_with_clock.png`, `bitstream_generation_completed.png` |
+| Timing (10 ns clock, `create_clock -period 10.000`) | Met: WNS 7.665 ns, WHS 0.540 ns, WPWS 4.500 ns; 0 failing endpoints; "All user specified timing constraints are met". The first run, before the constraint, showed inf slack | `04_FPGA_Hardware/timing_summary.png`, `constraints_with_clock.png` |
 
-The timing row will be updated once Vivado is reloaded and Report Timing Summary is re-run on the constrained design.
+Timing was first reported as unconstrained (inf); after adding the clock constraint, the constrained run above meets timing.
 
 ## 4. Limitations
 
 - Simulation covers only three scores; boundary scores and reset mid-round are not tested.
 - Hardware demonstration is pending.
-- No verified clock-frequency timing yet.
+- Timing is verified only at a 10 ns (100 MHz) clock constraint; the board clock frequency should be confirmed.
 - START and ACK are not debounced or synchronised, so a bouncing button could misfire on hardware.
 - The score is not displayed; only the category LED is shown.
 
 ## 5. Conclusion
 
-The Mealy FSM for problem 3H2 behaves as specified for the three simulated scores: it lights the LOW, MEDIUM or HIGH LED and clears it on ACK. It implements on the XC7S50 with 6 LUTs and 4 flip-flops, and a bitstream was generated. Remaining work: boundary and reset tests in simulation, the hardware demonstration, and a constrained timing run.
+The Mealy FSM for problem 3H2 behaves as specified for the three simulated scores: it lights the LOW, MEDIUM or HIGH LED and clears it on ACK. It implements on the XC7S50 with 6 LUTs and 4 flip-flops, and a bitstream was generated. Remaining work: boundary and reset tests in simulation, the hardware demonstration, .
