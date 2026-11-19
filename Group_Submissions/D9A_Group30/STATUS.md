@@ -1,9 +1,9 @@
 # Group Progress Status
 
 **Class:** [D9A/D9B]  
-**Group ID:** [D9A_Group01]  
-**Project title:** [Title]  
-**Group leader:** [Name]
+**Group ID:** [D9A_Group30]  
+**Project title:** [TGaming XP Level Decoder]  
+**Group leader:** [Shruthi Vimalnath Nair]
 
 ## 1. Current milestone status
 Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
@@ -11,12 +11,12 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
 | 1 | Problem requirements and assumptions documented | Not Started | [ ] | [ ] |
-| 2 | Architecture and block diagram prepared | Not Started | [ ] | [ ] |
-| 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
-| 4 | Logisim circuit implemented | Not Started | [ ] | [ ] |
+| 2 | Architecture and block diagram prepared | Completed| [ ] | [ ] |
+| 3 | FSM diagram/table completed, if applicable | Completed | [ ] | [ ] |
+| 4 | Logisim circuit implemented | Completed | [ ] | [ ] |
 | 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
-| 6 | Verilog RTL completed | Not Started | [ ] | [ ] |
-| 7 | Testbench and simulation completed | Not Started | [ ] | [ ] |
+| 6 | Verilog RTL completed | Completed | [ ] | [ ] |
+| 7 | Testbench and simulation completed | Completed | [ ] | [ ] |
 | 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
 | 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
@@ -57,5 +57,5 @@ Add rows as needed.
 ## 5. Group leader confirmation
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
 
-**Group leader:** [Name]  
+**Group leader:** Shruthi Vimalnath Nair
 **Date/time:** [Actual date and time]
