@@ -7,7 +7,7 @@ Place synthesizable RTL in `RTL/`, testbenches/test vectors in `Testbench/`, and
 |---|---|
 | `RTL/gray_code_nbit.v` | Design: parameter `N` (default 4), previous-input register, general one-bit-change detector and Moore FSM; also the FPGA top module |
 | `Testbench/gray_code_nbit_tb.v` | Self-checking testbench with a 4-bit (N = 4) and a 5-bit (N = 5, H1 check) instance |
-| `Simulation_Results/` | To be filled with the simulator log and waveform screenshots |
+| `Simulation_Results/gray_code_nbit_tb_waveform.png` | Vivado waveform of the behavioural simulation of `gray_code_nbit_tb` |
 
 ## Design summary (`gray_code_nbit`)
 | Port | Dir. | Width | Description |
@@ -40,4 +40,21 @@ Place synthesizable RTL in `RTL/`, testbenches/test vectors in `Testbench/`, and
 3. Save the Tcl console log and waveform screenshots in `Simulation_Results/`.
 
 ## Verification status
-Testbench has **not been run yet**; results are to be recorded here and in the group `README.md`. Known item to check first: the step `1100 -> 1111` is labelled "1-bit change" and expects VALID, but `1100 ^ 1111 = 0011` is a two-bit change (V = 0, as in the problem sheet's example table), so that step is expected to report a FAIL until the expected value is corrected to INVALID.
+Behavioural simulation was run in Vivado 2018.3 (project `ojasgraycode`, simulation time about 256 ns). The waveform is saved as `Simulation_Results/gray_code_nbit_tb_waveform.png`.
+
+![Testbench waveform](Simulation_Results/gray_code_nbit_tb_waveform.png)
+
+**Result (from the waveform counters): 11 steps passed, 1 failed (12 steps in total).**
+
+| Step | Input | DUT output in the waveform | Result |
+|---|---|---|---|
+| N=4, 1 – 6 | `0001, 0011, 0111, 0101, 1101, 1100` | VALID | Pass |
+| N=4, 7 | `1100 -> 1111` | INVALID (two bits change, `V = 0`, as in the problem sheet) | **Fail** – the testbench expects VALID (wrong expected value in the testbench) |
+| N=4, 8 | `1111 -> 1111` | INVALID | Pass |
+| N=4, 9 | `1111 -> 1001` | INVALID | Pass |
+| N=5, 1 – 2 | `00010, 10010` | VALID | Pass |
+| N=5, 3 | `10010 -> 10111` | INVALID | Pass |
+
+The single failure comes from the testbench line `run_step_4bit(4'b1111, 1'b1)`, which labels `1100 -> 1111` as a one-bit change; the design output matches the sheet. Correct the expected value to `1'b0` and re-run to obtain 12/12 passes, then replace the waveform and record the Tcl console log here.
+
+Note: the same `start` pulse is applied to both instances, so the N=5 instance also receives (invalid) samples with `x5 = 0` during the N=4 steps; these are not checked by the testbench.

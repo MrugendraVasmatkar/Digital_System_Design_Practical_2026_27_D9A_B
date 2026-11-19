@@ -86,22 +86,22 @@ The self-checking testbench `gray_code_nbit_tb.v` drives an N = 4 and an N = 5 i
 
 | Test ID | Inputs/conditions | Expected output | Observed output | Pass/Fail |
 |---|---|---|---|---|
-| T01 | N=4: 0000 → 0001, 0011, 0111, 0101, 1101, 1100 (one bit each) | VALID after each | Pending simulation | Not run |
-| T02 | N=4: 1100 → 1111 (two bits change) | INVALID (sheet: V = 0); testbench currently expects VALID – to be corrected | Pending simulation | Not run |
-| T03 | N=4: 1111 → 1111 (no change) | INVALID | Pending simulation | Not run |
-| T04 | N=4: 1111 → 1001 (two bits) | INVALID | Pending simulation | Not run |
-| T05 | N=5: 00000 → 00010, then 10010 (one bit each) | VALID | Pending simulation | Not run |
-| T06 | N=5: 10010 → 10111 (two bits) | INVALID | Pending simulation | Not run |
+| T01 | N=4: 0000 → 0001, 0011, 0111, 0101, 1101, 1100 (one bit each) | VALID after each | VALID after each (waveform) | Pass |
+| T02 | N=4: 1100 → 1111 (two bits change) | INVALID (sheet: V = 0); testbench currently expects VALID – to be corrected | INVALID from the DUT; testbench flagged FAIL because its expected value is wrong | Fail (testbench expectation) |
+| T03 | N=4: 1111 → 1111 (no change) | INVALID | INVALID | Pass |
+| T04 | N=4: 1111 → 1001 (two bits) | INVALID | INVALID | Pass |
+| T05 | N=5: 00000 → 00010, then 10010 (one bit each) | VALID | VALID | Pass |
+| T06 | N=5: 10010 → 10111 (two bits) | INVALID | INVALID | Pass |
 
-Tool/version: [To be recorded]  
-Number passed/failed: [To be recorded – testbench has not been run yet]  
-Waveform/log path: `03_Verilog_Implementation/Simulation_Results/`
+Tool/version: Vivado 2018.3 (behavioural simulation)  
+Number passed/failed: 11 passed, 1 failed (the failure is the wrong expected value for `1100 -> 1111` in the testbench; the DUT output matches the sheet)  
+Waveform/log path: `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_waveform.png` (Tcl console log still to be added)
 
 ## 9. FPGA Hardware Implementation
 - FPGA board/device: Spartan-7 `XC7S50-CSGA324-1` (board to be confirmed)
-- Tool/version: Vivado – version to be recorded
+- Tool/version: Vivado 2018.3
 - Clock/constraints: `04_FPGA_Hardware/gray_code_nbit.xdc` (clock F14, `rst` J2, `start` J5, `ack` H2, `x[3:0]` on V2, U2, U1, T2, `valid_led` G1, `invalid_led` G2; all LVCMOS33); N = 4
-- Synthesis/implementation summary: [Pending]
+- Synthesis/implementation summary: synthesis, implementation and bitstream generation completed for `xc7s50csga324-1` (screenshots in `04_FPGA_Hardware/`); utilisation and timing numbers still to be added
 - Programming and hardware test result: [Pending]
 - Evidence path: `04_FPGA_Hardware/`
 
@@ -140,8 +140,8 @@ Maintain time-wise updates in `STATUS.md`.
 - [ ] FSM diagram/table or justified alternative included (state table added; diagram image pending).
 - [ ] Logisim source and simulation evidence uploaded (N = 5 circuit uploaded; screenshots pending).
 - [x] Verilog RTL and testbench uploaded.
-- [ ] Simulation results and test cases documented.
-- [ ] FPGA implementation and hardware evidence uploaded (constraints uploaded; reports and photos pending).
+- [ ] Simulation results and test cases documented (waveform and 11/12 result uploaded; testbench fix and Tcl log pending).
+- [ ] FPGA implementation and hardware evidence uploaded (constraints, schematic and implemented-design screenshots uploaded; reports and hardware photos pending).
 - [ ] Results, challenges and conclusion documented.
 - [ ] Presentation and final report uploaded.
 - [ ] STATUS.md is up to date.
