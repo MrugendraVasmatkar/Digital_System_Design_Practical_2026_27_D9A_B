@@ -166,14 +166,14 @@ What did the team learn? What would you improve?
 [Write here]
 
 ## 15. Final Submission Checklist
-- [ ] Team details and problem analysis complete.
+- [x] Team details and problem analysis complete.
 - [x] Architecture/block diagram included.
-- [ ] FSM diagram/table or justified alternative included.
+- [x] FSM diagram/table or justified alternative included.
 - [ ] Logisim source and simulation evidence uploaded.
 - [x] Verilog RTL and testbench uploaded.
 - [ ] Simulation results and test cases documented.
 - [ ] FPGA implementation and hardware evidence uploaded.
 - [ ] Results, challenges and conclusion documented.
 - [ ] Presentation and final report uploaded.
-- [ ] STATUS.md is up to date.
-- [ ] Final Pull Request created and URL recorded.
+- [x] STATUS.md is up to date.
+- [x] Final Pull Request created and URL recorded (PR #33; the PR stays open for updates).
