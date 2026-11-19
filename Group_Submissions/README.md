@@ -5,8 +5,8 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
+| Group leader | SHEKHAR EPILI|  12 | Tarnished008 |
+| Member 2 |SRUSHTI fHANSE | 13 | [Username] |
 | Member 3 | [Name] | [Roll no.] | [Username] |
 | Member 4 | [Name] | [Roll no.] | [Username] |
 
