@@ -199,6 +199,8 @@ Asserting active-high `rst = 1` (`RST = 1`) **asynchronously** clears both `inpu
 - **Number passed/failed:** 9 / 9 test vectors passed (0 errors)
 - **Waveform evidence:**
   ![Vivado Behavioral Simulation Waveform](03_Verilog_Implementation/Simulation_Results/vivado_simulation_waveform.jpg)
+- **Tcl Console log:**
+  ![Vivado Tcl Console Log](03_Verilog_Implementation/Simulation_Results/vivado_tcl_console.jpg)
 
 ## 9. FPGA Hardware Implementation
 - FPGA board/device: [Details]
