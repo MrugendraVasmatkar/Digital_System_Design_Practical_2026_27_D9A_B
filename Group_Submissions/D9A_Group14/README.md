@@ -16,49 +16,87 @@
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
-- **Problem summary:** [In your own words]
-- **Objective:** [What must the system achieve?]
-- **Inputs and outputs:** [List signals, widths and meaning]
-- **Constraints and assumptions:** [List and justify]
+- **Number/title:** Game Score Categorizer (Mealy FSM) — official number/title [to be confirmed against the assigned statement]
+- **Problem summary:** A 4-bit game score is entered and `start` is pressed. The system classifies the score as LOW, MEDIUM or HIGH and lights the matching LED until the user presses `ack`, then returns to idle.
+- **Objective:** Classify the score (LOW 0–4, MEDIUM 5–10, HIGH 11–15), show exactly one LED, hold it until `ack`, using a Mealy FSM.
+- **Inputs and outputs:** Inputs `clk`, `reset`, `start`, `ack` (1 bit each) and `score[3:0]`. Outputs `low_led`, `med_led`, `high_led` (1 bit each). Full table with FPGA pins: [`01_Problem_Analysis/io_specification.md`](01_Problem_Analysis/io_specification.md).
+- **Constraints and assumptions:** Synchronous active-high reset; `start` only acted on in `IDLE`; `ack` only acted on in result states. Full list in [`01_Problem_Analysis/problem_statement.md`](01_Problem_Analysis/problem_statement.md).
 
 ## 3. Problem Analysis and Proposed Solution
 Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
 
-[Write here]
+Full analysis: [`01_Problem_Analysis/problem_statement.md`](01_Problem_Analysis/problem_statement.md).
+
+In short: a 4-state Mealy FSM (2 flip-flops plus gates). Boundary scores 4/5 and 10/11, `start` held high, `ack` in `IDLE`, and `reset` mid-round are handled as listed there. Feasible on any FPGA: 11 I/O pins, 2 flip-flops.
 
 ## 4. Architecture
 Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
 
-![Block diagram](path/to/block_diagram.png)
+Single module `mealy_simple`: a 2-bit state register, next-state logic (score comparators plus `start`/`ack`/`reset`) and combinational Mealy output logic. There is no separate datapath.
+
+- **Block diagram:** [to be added]
+- Gate-level circuit screenshot:
+
+![Logisim circuit overview](02_FSM_Logisim/circuit_overview.png)
 
 ## 5. FSM Design
 State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encoding, state diagram, state table, transition conditions and reset behaviour. If not, justify the alternative.
 
-**Diagram:** [Path/link]  
-**State table:** [Path/link]
+**Type:** Mealy FSM. **Encoding:** `IDLE`=00, `LOW`=01, `MED`=10, `HIGH`=11. **Reset:** synchronous, active-high, returns to `IDLE`.
+
+**State table** (from `mealy_simple.v`):
+
+| Present state | Condition | Next state | Outputs (low, med, high) |
+|---|---|---|---|
+| IDLE | `start`=0 | IDLE | 0 0 0 |
+| IDLE | `start`=1, score ≤ 4 | LOW | 1 0 0 |
+| IDLE | `start`=1, 5 ≤ score ≤ 10 | MED | 0 1 0 |
+| IDLE | `start`=1, score ≥ 11 | HIGH | 0 0 1 |
+| LOW | `ack`=0 | LOW | 1 0 0 |
+| LOW | `ack`=1 | IDLE | 0 0 0 |
+| MED | `ack`=0 | MED | 0 1 0 |
+| MED | `ack`=1 | IDLE | 0 0 0 |
+| HIGH | `ack`=0 | HIGH | 0 0 1 |
+| HIGH | `ack`=1 | IDLE | 0 0 0 |
+
+**Diagram:**
+
+```mermaid
+stateDiagram-v2
+    [*] --> IDLE : reset
+    IDLE --> LOW : start and score<=4 / low_led=1
+    IDLE --> MED : start and 5<=score<=10 / med_led=1
+    IDLE --> HIGH : start and score>=11 / high_led=1
+    LOW --> IDLE : ack / LEDs off
+    MED --> IDLE : ack / LEDs off
+    HIGH --> IDLE : ack / LEDs off
+```
+
+**Hand-drawn diagram / separate state table file:** [to be added if required]
 
 ## 6. Logisim Implementation
-- Logisim version: [Version]
-- Circuit file: [Path to `.circ`]
-- Test cases and expected/observed behaviour: [Details]
+- Logisim version: file saved in the Logisim 2.7.1 format (`project source="2.7.1"`)
+- Circuit file: `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ`
+- Test cases and expected/observed behaviour: [simulation not yet documented]
 - Issues and corrections: [Details]
-- Screenshot/evidence: [Path/link]
+- Screenshot/evidence: `02_FSM_Logisim/circuit_overview.png` (circuit only; simulation screenshots pending)
 
 ## 7. Verilog HDL Implementation
 - Tool/version: [Details]
-- Top module and submodules: [Names]
-- Architecture/coding decisions: [Details]
-- Synthesizability considerations: [Details]
-- RTL: `03_Verilog_Implementation/RTL/`
-- Testbench: `03_Verilog_Implementation/Testbench/`
+- Top module and submodules: `mealy_simple` (single module, no submodules)
+- Architecture/coding decisions: 2-bit state register with synchronous reset; Mealy outputs as continuous assignments from state and inputs.
+- Synthesizability considerations: only synthesizable constructs (`always @(posedge clk)`, `assign`); `state` has no power-up value, so reset must be applied after power-up.
+- RTL: `03_Verilog_Implementation/RTL/mealy_simple.v`
+- Testbench: `03_Verilog_Implementation/Testbench/game_tb.v`
 
 ## 8. Verification and Simulation Results
+Testbench `game_tb.v` has 3 test cases. **Not yet simulated**: the "Observed output" column must be filled from an actual run.
+
 | Test ID | Inputs/conditions | Expected output | Observed output | Pass/Fail |
 |---|---|---|---|---|
-| T01 | [ ] | [ ] | [ ] | [ ] |
-| T02 | [ ] | [ ] | [ ] | [ ] |
-| T03 | [ ] | [ ] | [ ] | [ ] |
+| T01 | score=2, `start`=1 (then `ack`) | LOW LED on (1 0 0); all off after `ack` | [not yet run] | [ ] |
+| T02 | score=7, `start`=1 (then `ack`) | MEDIUM LED on (0 1 0); all off after `ack` | [not yet run] | [ ] |
+| T03 | score=13, `start`=1 (then `ack`) | HIGH LED on (0 0 1); all off after `ack` | [not yet run] | [ ] |
 
 Tool/version: [Details]  
 Number passed/failed: [Details]  
@@ -67,7 +105,7 @@ Waveform/log path: [Path]
 ## 9. FPGA Hardware Implementation
 - FPGA board/device: [Details]
 - Tool/version: [Details]
-- Clock/constraints: [Details]
+- Clock/constraints: `04_FPGA_Hardware/constraints.xdc` (LVCMOS33; clk F14, reset T1, start J2, ack J1, score V2/U2/U1/T2, LEDs G1/G2/F1). No `create_clock` constraint yet.
 - Synthesis/implementation summary: [Details]
 - Programming and hardware test result: [Details]
 - Evidence path: `04_FPGA_Hardware/`
@@ -79,7 +117,7 @@ Explain differences between simulation and hardware results, if any.
 |---|---|---|---|
 | [ ] | [ ] | [ ] | [ ] |
 
-Future improvements: [Details]
+Future improvements: debouncing/synchronising `start` and `ack`; seven-segment display of the score; parameterised thresholds.
 
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
@@ -109,7 +147,7 @@ What did the team learn? What would you improve?
 - [ ] Architecture/block diagram included.
 - [ ] FSM diagram/table or justified alternative included.
 - [ ] Logisim source and simulation evidence uploaded.
-- [ ] Verilog RTL and testbench uploaded.
+- [x] Verilog RTL and testbench uploaded.
 - [ ] Simulation results and test cases documented.
 - [ ] FPGA implementation and hardware evidence uploaded.
 - [ ] Results, challenges and conclusion documented.
