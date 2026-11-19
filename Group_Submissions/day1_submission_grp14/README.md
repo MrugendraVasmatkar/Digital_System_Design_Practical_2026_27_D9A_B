@@ -74,7 +74,7 @@ File: `02_FSM_Logisim/fsm_state_diagram.png`
 - Screenshot/evidence: `02_FSM_Logisim/circuit_overview.png` (circuit only; simulation screenshots pending)
 
 ## 7. Verilog HDL Implementation
-- Tool/version: [Details]
+- Tool/version: Xilinx Vivado 2018.3
 - Top module and submodules: `mealy_simple` (single module, no submodules)
 - Architecture/coding decisions: 2-bit state register with synchronous reset; Mealy outputs as continuous assignments from state and inputs.
 - Synthesizability considerations: only synthesizable constructs (`always @(posedge clk)`, `assign`); `state` has no power-up value, so reset must be applied after power-up.
@@ -96,11 +96,13 @@ Waveform/log path: [Path]
 
 ## 9. FPGA Hardware Implementation
 - FPGA board/device: Xilinx Spartan-7 XC7S50-CSGA324-1 (part `xc7s50csga324-1`)
-- Tool/version: [Details]
+- Tool/version: Xilinx Vivado 2018.3 (project `dsd_practs_sammm`)
 - Clock/constraints: `04_FPGA_Hardware/constraints.xdc` (LVCMOS33; clk F14, reset T1, start J2, ack J1, score V2/U2/U1/T2, LEDs G1/G2/F1). No `create_clock` constraint yet.
-- Synthesis/implementation summary: [Details]
-- Programming and hardware test result: [Details]
-- Evidence path: `04_FPGA_Hardware/`
+- Synthesis/implementation summary: Synthesis done for `xc7s50csga324-1`; the Vivado status bar shows "write_bitstream Complete". Pin assignments in the I/O Ports view match `constraints.xdc` (score T2/U1/U2/V2, ack J1, clk F14; LVCMOS33). Screenshot below. Utilisation/timing reports not yet uploaded.
+- Programming and hardware test result: [not yet done]
+- Evidence path: `04_FPGA_Hardware/` (`synthesized_design_io_ports.png`)
+
+![Vivado synthesized design - I/O ports](04_FPGA_Hardware/synthesized_design_io_ports.png)
 
 Explain differences between simulation and hardware results, if any.
 

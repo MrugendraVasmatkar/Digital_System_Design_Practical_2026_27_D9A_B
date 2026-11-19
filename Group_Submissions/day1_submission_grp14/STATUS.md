@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-19, 20:00 |
+| Last Updated | 2026-11-19, 20:20 |
 
 ## 2. Problem Statement
 
@@ -75,7 +75,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 2 — Verilog | Create testbench and run functional simulation | In Progress | `03_Verilog_Implementation/Testbench/game_tb.v` (written; not yet simulated) |
 | 2 — Verilog | Save waveforms and simulation results | Not Started | `03_Verilog_Implementation/Simulation_Results/` |
 | 3 — FPGA | Assign FPGA pins and configure constraints | Completed | `04_FPGA_Hardware/constraints.xdc` |
-| 3 — FPGA | Synthesize, implement, and generate bitstream | Not Started | `04_FPGA_Hardware/` |
+| 3 — FPGA | Synthesize, implement, and generate bitstream | In Progress | `04_FPGA_Hardware/synthesized_design_io_ports.png` (Vivado shows write_bitstream Complete; reports not yet uploaded) |
 | 3 — FPGA | Demonstrate the design on FPGA hardware | Not Started | `04_FPGA_Hardware/` |
 | 3 — Results | Record observations and verify expected behaviour | Not Started | `05_Results/` |
 | 3 — Presentation | Prepare slides (max 3, excluding title) and demonstration | Not Started | `06_Presentation/` |
@@ -107,6 +107,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-19, 19:20 | FPGA device recorded in README section 9: Spartan-7 XC7S50-CSGA324-1 | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 19:35 | Pull Request opened to faculty repo: https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/33 | Samruddhi Samant | PR 33 |
 | 2026-11-19, 20:00 | Group ID renamed to `day1_submission_grp14` (folder renamed from D9A_Group14); project topic confirmed as Game Score Categorizer (Mealy FSM) | Samruddhi Samant | Commit link to be added |
+| 2026-11-19, 20:20 | Vivado 2018.3 synthesized-design screenshot added (`04_FPGA_Hardware/synthesized_design_io_ports.png`); pins match constraints; bitstream generation shown complete | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 
