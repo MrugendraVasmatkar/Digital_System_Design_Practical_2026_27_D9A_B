@@ -11,7 +11,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
 | 1 | Problem requirements and assumptions documented | Completed | Group_Submissions/D9A_Group16/01_Problem_Analysis/Problem_analysis.md | 19/11/2026 |
-| 2 | Architecture and block diagram prepared | Completed | [ ] | 19/11/2026 |
+| 2 | Architecture and block diagram prepared | Completed | Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Block_Diagram.jpeg | 19/11/2026 |
 | 3 | FSM diagram/table completed, if applicable | Completed | Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/FSM_Diagram.png.png | 19/11/26 |
 | 4 | Logisim circuit implemented | Completed | Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Water_Temp.circ | 19/11/26 |
 | 5 | Logisim simulation verified | completed | Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Simulation_Evidence.jpeg | 19/11/26 |
@@ -27,9 +27,9 @@ Update at least once every two hours and at each major milestone. Record actual 
 
 | Date | Actual time | Work completed | Evidence path | Blocker | Next action | Updated by |
 |---|---|---|---|---|---|---|
-| 19/10/2026 | 11🕦| documentation and analysis of problem statement | Group_Submissions/D9A_Group16/01_Problem_Analysis/Problem_analysis.md | [ ] | [ ] | [ ] |
-| 19/10/2026 | 2🕝 | FSM state and transition table | [ ]Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/FSM_State_Transition_table.md  | [ ] | [ ] | [ ] |
-| 19/10/2026 | 2🕝 | Logisim Designing and Implementation | Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Simulation_Evidence.jpeg
+| 19/10/2026 | 11:30 am| documentation and analysis of problem statement | Group_Submissions/D9A_Group16/01_Problem_Analysis/Problem_analysis.md | [ ] | [ ] | [ ] |
+| 19/10/2026 | 2:30 am | FSM state and transition table | [ ]Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/FSM_State_Transition_table.md  | [ ] | [ ] | [ ] |
+| 19/10/2026 | 3:30 pm | Logisim Designing and Implementation | Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Simulation_Evidence.jpeg
 Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Water_Temp.circ| [ ] | [ ] | [ ] |
 | 19/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
