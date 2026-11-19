@@ -47,12 +47,17 @@ Add rows as needed.
 ## 4. End-of-day summary
 
 ### 19 October 2026
+Completed: Problem statement analysis and assumptions (7H3), System Block Diagram, 5-state Moore FSM Diagram and state tables, Logisim v26 schematic and full 5-state interactive verification (Idle, Calm, Breezy, Storm, Error), final Verilog RTL (weather_alert_system.v), behavioral testbench (tb_weather_alert_system.v), Vivado 2018.3 behavioral waveform verification and RTL synthesis (6 Slice LUTs, 7 Flip-Flops, 0 latches), and README.md Sections 1–7.
 
-* Completed:
-* In progress:
-* Pending:
-* Evidence uploaded:
-* Plan for 20 October:
+In progress: Uploading and linking image/evidence paths in the GitHub repository, drafting README.md Sections 8–15, and preparing for FPGA implementation.
+
+Pending: FPGA pin constraints, bitstream implementation, and hardware demonstration (Milestones 8–9), final presentation slides and report (Milestone 10), and Final Pull Request (Milestone 11).
+
+Evidence uploaded: README.md (Sections 1–7), STATUS.md, weather_alert_system.v, tb_weather_alert_system.v, Logisim schematic PDF (THE LOGISIM D9A_B_GROUP31.pdf), Block & FSM diagrams, Logisim 5-state screenshots, and Vivado synthesis/waveform screenshots (paths to be finalized on push).
+
+Plan for 20 November: Push all diagram and simulation images into the repository and update links in README.md, complete README.md Sections 8–15 (verification table, challenges, task allocation, conclusion, team reflection), complete FPGA implementation/hardware demo, upload presentation/report, and open the Final Pull Request.
+
+
 
 ### 20 October 2026
 
