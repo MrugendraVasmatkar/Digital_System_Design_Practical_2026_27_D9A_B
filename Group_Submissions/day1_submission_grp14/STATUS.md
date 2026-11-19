@@ -1,4 +1,4 @@
-# Project Status Report — Score-based LED Indicator (Mealy FSM)
+# Project Status Report — Game Score Categorizer (Mealy FSM)
 
 > **Purpose:** `STATUS.md` for the Digital System Design Practical and Oral Examination, following `Sample STATUS_Soda_Dispenser_Sample.md`.
 > Update this file whenever a task is completed and before each faculty review.
@@ -8,18 +8,18 @@
 | Item | Details |
 |---|---|
 | Class | D9A / D9B |
-| Group Number | Group 14 (Group ID: D9A_Group14) |
-| Project Title | Score-based LED indicator using a Mealy FSM (`mealy_simple`) — title to be confirmed |
+| Group Number | Group 14 (Group ID: day1_submission_grp14) |
+| Project Title | Game Score Categorizer (Mealy FSM) |
 | Group Leader | Samruddhi Samant — D9A Roll No. 49 |
 | Member 2 | Siddharth Sanjeev Tiwari — D9A Roll No. 58 |
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-19, 19:35 |
+| Last Updated | 2026-11-19, 20:00 |
 
 ## 2. Problem Statement
 
-[Official problem statement title/number to be confirmed.] Design implemented so far: a Mealy FSM that reads a 4-bit `score` when `start` is asserted and lights one LED (low, medium or high). The LED stays on until the user acknowledges with `ack`.
+Topic: Game Score Categorizer (Mealy FSM). Design implemented so far: a Mealy FSM that reads a 4-bit `score` when `start` is asserted and lights one LED (low, medium or high). The LED stays on until the user acknowledges with `ack`.
 
 ### Operating assumptions
 
@@ -106,6 +106,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-19, 19:05 | Group number and members 2-4 GitHub usernames recorded in README | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 19:20 | FPGA device recorded in README section 9: Spartan-7 XC7S50-CSGA324-1 | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 19:35 | Pull Request opened to faculty repo: https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/33 | Samruddhi Samant | PR 33 |
+| 2026-11-19, 20:00 | Group ID renamed to `day1_submission_grp14` (folder renamed from D9A_Group14); project topic confirmed as Game Score Categorizer (Mealy FSM) | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 
