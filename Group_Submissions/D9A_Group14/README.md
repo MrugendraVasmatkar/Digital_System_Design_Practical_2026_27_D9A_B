@@ -59,20 +59,11 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 | HIGH | `ack`=0 | HIGH | 0 0 1 |
 | HIGH | `ack`=1 | IDLE | 0 0 0 |
 
-**Diagram:**
+**State diagram** (label = input / output as Low, Med, High LED; circle colour = LED colour):
 
-```mermaid
-stateDiagram-v2
-    [*] --> IDLE : reset
-    IDLE --> LOW : start and score<=4 / low_led=1
-    IDLE --> MED : start and 5<=score<=10 / med_led=1
-    IDLE --> HIGH : start and score>=11 / high_led=1
-    LOW --> IDLE : ack / LEDs off
-    MED --> IDLE : ack / LEDs off
-    HIGH --> IDLE : ack / LEDs off
-```
+![FSM state diagram](02_FSM_Logisim/fsm_state_diagram.png)
 
-**Hand-drawn diagram / separate state table file:** [to be added if required]
+File: `02_FSM_Logisim/fsm_state_diagram.png`
 
 ## 6. Logisim Implementation
 - Logisim version: file saved in the Logisim 2.7.1 format (`project source="2.7.1"`)

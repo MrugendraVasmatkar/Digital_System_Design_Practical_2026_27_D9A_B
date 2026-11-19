@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-19, 17:15 |
+| Last Updated | 2026-11-19, 18:55 |
 
 ## 2. Problem Statement
 
@@ -67,7 +67,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 |---|---|---|---|
 | 1 — Design | Understand and document the problem statement | In Progress | `01_Problem_Analysis/problem_statement.md` (draft; official statement to be confirmed) |
 | 1 — Design | Identify inputs, outputs, and operating conditions | Completed | `01_Problem_Analysis/io_specification.md` |
-| 1 — Design | Draw FSM state diagram and state table | In Progress | State table and Mermaid diagram in README.md section 5 (derived from RTL); no separate drawing file yet |
+| 1 — Design | Draw FSM state diagram and state table | Completed | `02_FSM_Logisim/fsm_state_diagram.png`; state table in `README.md` section 5 |
 | 1 — Design | Draw block diagram and define control signals | Not Started | `02_FSM_Logisim/` |
 | 1 — Design | Build and test the architecture in Logisim | In Progress | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ` (circuit built; overview screenshot `circuit_overview.png` added; simulation screenshots pending) |
 | 2 — Verilog | Write synthesizable RTL (controller and datapath) | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` |
@@ -102,6 +102,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-19, 16:45 | Problem analysis added: `problem_statement.md` (assumptions, edge cases, solution) and `io_specification.md` (signals, widths, pins) | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 17:00 | Logisim circuit overview screenshot `circuit_overview.png` and `02_FSM_Logisim/README.md` added | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 17:15 | Group README sections 2-5, 7 and 9 filled from the design; FSM state table and state diagram added | Samruddhi Samant | Commit link to be added |
+| 2026-11-19, 18:55 | FSM state diagram image `fsm_state_diagram.png` added and linked in README section 5 | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 
