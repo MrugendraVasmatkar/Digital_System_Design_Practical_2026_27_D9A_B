@@ -11,16 +11,30 @@
 | Member 4 | Harikesh Menon | 33 | 2025harikeshmenon-collab |
 
 **Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
-**Repository URL:** [Fork URL]  
+**Group ID:** D9AB_GROUP11  
+**Repository URL:** https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11.git
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
-- **Problem summary:** [In your own words]
-- **Objective:** [What must the system achieve?]
-- **Inputs and outputs:** [List signals, widths and meaning]
-- **Constraints and assumptions:** [List and justify]
+- **Number/title:** Game Score Categorizer
+- **Problem summary:** The Game Score Categorizer is a digital system designed to classify an input game score into predefined categories. It processes a 5-bit binary score and determines the corresponding category. The result is displayed using a seven-segment display, providing a simple and understandable visual representation.
+- **Objective:** To design and implement a digital system that accepts a binary score, categorizes it into the appropriate range, and displays the corresponding category. The system uses a Finite State Machine (FSM) to control the classification and display process.
+- **Inputs and outputs:** Inputs:
+S[4:0] – 5-bit binary score input.
+START – Initiates the classification process.
+ACK – Acknowledgement input.
+RESET – Resets the system to its initial state.
+Outputs:
+Category indicators: Low (L), Medium (M), High (H), and Error (E).
+Seven-segment display output to indicate the classified category.
+Idle condition represented by a dash (-).
+- **Constraints and assumptions:** The score input is represented using 5 bits.
+The system operates on predefined score classification ranges.
+Classification is initiated using the START signal.
+RESET returns the system to its initial idle state.
+ACK is used for acknowledgement and control of the classification sequence.
+The system uses an FSM-based control mechanism.
+Only one category is displayed at a time.
 
 ## 3. Problem Analysis and Proposed Solution
 Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
