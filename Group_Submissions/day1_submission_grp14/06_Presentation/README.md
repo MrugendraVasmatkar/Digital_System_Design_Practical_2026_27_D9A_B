@@ -6,4 +6,4 @@
 
 Slides: (1) title, team, class; (2) problem statement, objectives, requirements, architecture; (3) FSM, Logisim and Verilog RTL; (4) testbench, simulation, utilization, FPGA flow; (5) expected vs observed, challenges, conclusion, individual contributions.
 
-**Still to fill before the final version:** the University logo, the hardware demonstration results, and a timing result once a clock constraint is added. The college logo is in `assets/vesit_logo.png`.
+**Still to fill before the final version:** the hardware demonstration results, and a timing result once a clock constraint is added. Logos are in `assets/` (`vesit_logo.png`, `university_logo.png`).

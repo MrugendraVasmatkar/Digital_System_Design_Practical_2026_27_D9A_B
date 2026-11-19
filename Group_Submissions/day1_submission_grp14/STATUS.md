@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 00:30 |
+| Last Updated | 2026-11-20, 00:50 |
 
 ## 2. Problem Statement
 
@@ -78,7 +78,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/implemented_design.png`, `04_FPGA_Hardware/utilization_report.png` (timing summary uploaded but design is unconstrained: no create_clock yet) |
 | 3 — FPGA | Demonstrate the design on FPGA hardware | Not Started | `04_FPGA_Hardware/` |
 | 3 — Results | Record observations and verify expected behaviour | Not Started | `05_Results/` |
-| 3 — Presentation | Prepare slides (title + 4 content slides per guidelines) and demonstration | In Progress | `06_Presentation/Group14_DSD_Presentation.pptx` (draft; University logo and hardware demo still to fill) |
+| 3 — Presentation | Prepare slides (title + 4 content slides per guidelines) and demonstration | In Progress | `06_Presentation/Group14_DSD_Presentation.pptx` (draft; hardware demo and real challenges still to fill) |
 | 3 — Submission | Complete final report and checklist | Not Started | `07_Final_Report/` |
 
 ## 6. Functional Test Plan
@@ -120,6 +120,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-19, 23:59 | Draft presentation added (`06_Presentation/Group14_DSD_Presentation.pptx`): title slide + 4 content slides | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 00:10 | Presentation updated with VESIT college logo, college name and department (Electronics and Telecommunication) | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 00:30 | Individual contributions recorded in README section 11, STATUS section 8 and presentation slide 5 | Samruddhi Samant | Commit link to be added |
+| 2026-11-20, 00:50 | University logo added to the presentation title slide | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 
