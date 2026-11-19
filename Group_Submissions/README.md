@@ -5,18 +5,18 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Parth Nemade | 42 | parthn17 |
+| Member 2 | Arnav Dhole | 09 | [Username] |
+| Member 3 | Aryan Mansukh | 32 | aryanmansukh69-a11y |
+| Member 4 | Mugdha Parab | 38 | mugdhap0407 |
 
-**Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
+**Class:** D9A/D9B 
+**Group ID:** D9B_Group18  
 **Repository URL:** [Fork URL]  
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
+- **Number/title:** 1
 - **Problem summary:** [In your own words]
 - **Objective:** [What must the system achieve?]
 - **Inputs and outputs:** [List signals, widths and meaning]
@@ -39,15 +39,15 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 **State table:** [Path/link]
 
 ## 6. Logisim Implementation
-- Logisim version: [Version]
+- Logisim version: logisim-evolution-5.0.0
 - Circuit file: [Path to `.circ`]
 - Test cases and expected/observed behaviour: [Details]
 - Issues and corrections: [Details]
 - Screenshot/evidence: [Path/link]
 
 ## 7. Verilog HDL Implementation
-- Tool/version: [Details]
-- Top module and submodules: [Names]
+- Tool/version: vivado 2018.3
+- Top module and submodules: top_boolean and water_temp_mealy
 - Architecture/coding decisions: [Details]
 - Synthesizability considerations: [Details]
 - RTL: `03_Verilog_Implementation/RTL/`
