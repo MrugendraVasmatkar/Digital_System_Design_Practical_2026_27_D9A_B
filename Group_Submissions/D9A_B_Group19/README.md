@@ -54,11 +54,12 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 - Screenshot/evidence: [Path/link]
 
 ## 7. Verilog HDL Implementation
-- Tool/version: [Details]
-- Top module and submodules: [Names]
+- Tool/version: AMD Vivado Simulator
+- Top module and submodules: 1. top_module
+- Submodule: 1. input_register 2. decoder_3to8 3. mealy_fsm
 - Architecture/coding decisions: [Details]
 - Synthesizability considerations: [Details]
-- RTL: `03_Verilog_Implementation/RTL/`
+- RTL: Group_Submissions/D9A_B_Group19/03_Verilog_Implementation
 - Testbench: `03_Verilog_Implementation/Testbench/`
 
 ## 8. Verification and Simulation Results
