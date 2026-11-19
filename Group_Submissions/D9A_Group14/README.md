@@ -95,7 +95,7 @@ Number passed/failed: [Details]
 Waveform/log path: [Path]
 
 ## 9. FPGA Hardware Implementation
-- FPGA board/device: [Details]
+- FPGA board/device: Xilinx Spartan-7 XC7S50-CSGA324-1 (part `xc7s50csga324-1`)
 - Tool/version: [Details]
 - Clock/constraints: `04_FPGA_Hardware/constraints.xdc` (LVCMOS33; clk F14, reset T1, start J2, ack J1, score V2/U2/U1/T2, LEDs G1/G2/F1). No `create_clock` constraint yet.
 - Synthesis/implementation summary: [Details]

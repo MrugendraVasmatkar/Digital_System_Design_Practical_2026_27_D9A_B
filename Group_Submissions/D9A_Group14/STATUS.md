@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-19, 19:05 |
+| Last Updated | 2026-11-19, 19:20 |
 
 ## 2. Problem Statement
 
@@ -104,6 +104,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-19, 17:15 | Group README sections 2-5, 7 and 9 filled from the design; FSM state table and state diagram added | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 18:55 | FSM state diagram image `fsm_state_diagram.png` added and linked in README section 5 | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 19:05 | Group number and members 2-4 GitHub usernames recorded in README | Samruddhi Samant | Commit link to be added |
+| 2026-11-19, 19:20 | FPGA device recorded in README section 9: Spartan-7 XC7S50-CSGA324-1 | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 
