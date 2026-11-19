@@ -2,8 +2,8 @@
 
 **Class:** [D9A/D9B]  
 **Group ID:** [D9A_Group01]  
-**Project title:** [Title]  
-**Group leader:** [Name]
+**Project title:** [Password attempt Monitor]  
+**Group leader:** [Shlok Kesarkar]
 
 ## 1. Current milestone status
 Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
