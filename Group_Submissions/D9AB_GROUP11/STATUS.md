@@ -7,10 +7,9 @@
 
 ## 1. Current milestone status
 Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
-
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
-| 1 | Problem requirements and assumptions documented | In Progress | [ ] | [ ] |
+| 1 | Problem requirements and assumptions documented |Completed  | [https://docs.google.com/document/d/1NXrjz70RfDS-FcJMeP1wkRe8GuhmOGCB2sgvAF5Sy2U/edit?usp=sharing ] | [ ] |
 | 2 | Architecture and block diagram prepared | Not Started | [ ] | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
 | 4 | Logisim circuit implemented | Not Started | [ ] | [ ] |
