@@ -5,10 +5,10 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Shlok Kesarkar] | [65] | [shlokkesarkar22-tech] |
+| Group leader | [Shlok Kesarkar] | [65/D9B] | [shlokkesarkar22-tech] |
 | Member 2 | [Diksha Dineshchandra Mishra ] | [34/D9B] | [Diksham-16] |
-| Member 3 | [lakshya kiran Sawardekar ] | [51] | [TheUltimate25] |
-| Member 4 | [Parth Raut] | [46] | [parth-1312] |
+| Member 3 | [lakshya kiran Sawardekar ] | [51/D9A] | [TheUltimate25] |
+| Member 4 | [Parth Raut] | [46/D9A] | [parth-1312] |
 
 **Class:** [D9A/D9B]  
 **Group ID:** [D9A/B_Group23]  
