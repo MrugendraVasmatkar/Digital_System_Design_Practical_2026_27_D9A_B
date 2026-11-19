@@ -35,7 +35,7 @@ Insert/link the block diagram and explain modules, data/control flow and design 
 ## 5. FSM Design
 State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encoding, state diagram, state table, transition conditions and reset behaviour. If not, justify the alternative.
 
-**Diagram:** [Path/link]  
+**Diagram:** Group_Submissions/D9A_B_Group19/01_Problem_Analysis/FSM State Diagram.jpeg
 **State table:** [Path/link]
 
 ## 6. Logisim Implementation
