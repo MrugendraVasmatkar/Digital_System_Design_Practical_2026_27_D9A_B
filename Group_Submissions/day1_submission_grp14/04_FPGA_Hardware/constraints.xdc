@@ -1,3 +1,4 @@
+create_clock -period 10.000 [get_ports clk]
 set_property IOSTANDARD LVCMOS33 [get_ports {score[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {score[2]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {score[1]}]

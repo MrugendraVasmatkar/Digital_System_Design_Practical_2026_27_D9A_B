@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 03:00 |
+| Last Updated | 2026-11-20, 03:30 |
 
 ## 2. Problem Statement
 
@@ -126,6 +126,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 02:00 | Logisim comparator-version screenshot added (`02_FSM_Logisim/circuit_overview_v2_comparators.png`); matching .circ still to be uploaded | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 02:30 | Updated Logisim circuit `Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` uploaded as the final version (matches the comparator screenshot) | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 03:00 | Assigned statement 3H2 (hint H2, Mealy FSM) transcribed into the problem analysis with a requirement mapping; photo of the handout added | Samruddhi Samant | Commit link to be added |
+| 2026-11-20, 03:30 | Clock constraint (create_clock 10 ns) added to constraints; bitstream regenerated; screenshots `constraints_with_clock.png` and `bitstream_generation_completed.png` added; refreshed timing report still pending | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 

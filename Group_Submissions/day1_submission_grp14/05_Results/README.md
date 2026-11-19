@@ -46,9 +46,9 @@ Hardware demonstration is pending. Fill this table from the board, and add photo
 | Bonded IOBs | 11 of 210 | `utilization_report.png` |
 | BUFGCTRL | 1 of 32 | `utilization_report.png` |
 | Estimated power | 3.43 W total (3.348 W dynamic, mostly I/O; 0.082 W static); junction 41.9 °C | `04_FPGA_Hardware/power_report.png` |
-| Timing | Not verified: the design was unconstrained (no clock constraint), so WNS/WHS showed inf | `04_FPGA_Hardware/timing_summary.png` |
+| Timing | Not yet confirmed: the first run was unconstrained (WNS/WHS = inf). A 10 ns clock constraint was then added and the bitstream regenerated, but the timing summary captured afterwards is still the old report | `04_FPGA_Hardware/timing_summary.png`, `constraints_with_clock.png`, `bitstream_generation_completed.png` |
 
-The timing row will be replaced once a `create_clock` constraint has been added and implementation re-run.
+The timing row will be updated once Vivado is reloaded and Report Timing Summary is re-run on the constrained design.
 
 ## 4. Limitations
 
