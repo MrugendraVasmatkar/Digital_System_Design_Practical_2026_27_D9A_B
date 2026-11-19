@@ -16,8 +16,8 @@
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
-- **Problem summary:** [In your own words]
+- **Number/title:** 9. Password Attempt Monitor (3-bit)
+- **Problem summary:** In this project we used a input register to register the 3-bit password. Then declared the range using the comparator for different warnings. Finally we used a Mealy State Machine to get the output for different states
 - **Objective:** [What must the system achieve?]
 - **Inputs and outputs:** [List signals, widths and meaning]
 - **Constraints and assumptions:** [List and justify]
