@@ -5,10 +5,10 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Vedang Patil | 51 | VedangPatil-prog |
+| Member 2 | Soham Mukherjee | 37 | sohamm1032 |
+| Member 3 | Somen Pinge | 44 | Somen006 |
+| Member 4 | Aaryan Bhabhe | 66 | abhabhe05-max |
 
 **Class:** [D9A/D9B]  
 **Group ID:** [e.g. D9A_Group01]  
