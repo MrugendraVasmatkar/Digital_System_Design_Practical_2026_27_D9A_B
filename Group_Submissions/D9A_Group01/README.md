@@ -43,7 +43,7 @@ Block diagram (from the problem sheet): **Datapath** = 4-bit (N-bit) input regis
 
 Data flow: switches → X register → (X, P) → XOR → one-bit detector → V → next-state logic → state register → output logic → LEDs. START loads the registers, ACK/RESET return the FSM to IDLE.
 
-[Block diagram image to be added: `path/to/block_diagram.png`]
+![Block diagram](01_Problem_Analysis/block_diagram.png)
 
 ## 5. FSM Design
 - **Type:** Moore (outputs depend only on the state).
@@ -136,7 +136,7 @@ Maintain time-wise updates in `STATUS.md`.
 
 ## 15. Final Submission Checklist
 - [x] Team details and problem analysis complete (GitHub usernames of three members still missing).
-- [ ] Architecture/block diagram included (text description added; diagram image pending).
+- [x] Architecture/block diagram included (`01_Problem_Analysis/block_diagram.png`).
 - [ ] FSM diagram/table or justified alternative included (state table added; diagram image pending).
 - [ ] Logisim source and simulation evidence uploaded (N = 5 circuit uploaded; screenshots pending).
 - [x] Verilog RTL and testbench uploaded.

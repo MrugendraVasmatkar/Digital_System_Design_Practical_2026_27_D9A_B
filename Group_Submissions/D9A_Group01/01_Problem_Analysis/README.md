@@ -111,4 +111,9 @@ In `IDLE` both LEDs are off.
 - **Controller:** Moore FSM (`IDLE`, `VALID`, `INVALID`) whose outputs depend only on the state.
 - **Verification plan:** Logisim run of the sheet's sequence; Verilog self-checking testbench for N = 4 (sheet sequence plus no-change and two-bit cases) and N = 5 (H1 check).
 
+### Block diagram / architecture
+![N-bit Gray code transition detector block diagram](block_diagram.png)
+
+Input processing (Gray code transition checker, output V) feeds the Moore FSM (IDLE 00, VALID 01, INVALID 10) with its 2-flip-flop state register; the FSM output indicates a valid Gray code transition.
+
 Where to find the work: `02_FSM_Logisim/` (Logisim, FSM diagram and table), `03_Verilog_Implementation/` (RTL and testbench), `04_FPGA_Hardware/` (constraints). Current progress is in `STATUS.md`.

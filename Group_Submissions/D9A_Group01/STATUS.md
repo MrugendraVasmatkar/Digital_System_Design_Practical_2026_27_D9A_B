@@ -58,7 +58,7 @@ Sequence: `START` → X, P registers load → next clock V is evaluated → `IDL
 | 1 — Design | Understand and document the problem statement | Completed | `01_Problem_Analysis/README.md` |
 | 1 — Design | Identify inputs, outputs, and operating conditions | Completed | `01_Problem_Analysis/README.md` |
 | 1 — Design | Draw FSM state diagram and state table | In Progress | State table in `README.md` §5; diagram image pending |
-| 1 — Design | Draw datapath block diagram and define control signals | In Progress | Described in `README.md` §4; diagram image pending |
+| 1 — Design | Draw datapath block diagram and define control signals | Completed | `01_Problem_Analysis/block_diagram.png` |
 | 1 — Design | Build and test the architecture in Logisim | In Progress | `02_FSM_Logisim/H1_NBit_Gray_Detector_N5.circ` |
 | 2 — Verilog | Write synthesizable FSM controller and datapath RTL | In Progress | `03_Verilog_Implementation/RTL/gray_code_nbit.v` (compiled, simulated and implemented in Vivado 2018.3) |
 | 2 — Verilog | Top module for FPGA | Completed | `gray_code_nbit` (N = 4) is the top module |
@@ -94,7 +94,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
 | 1 | Problem requirements and assumptions documented | Completed | `01_Problem_Analysis/README.md` | 19/11/2026 15:40 |
-| 2 | Architecture and block diagram prepared | In Progress | `README.md` §4 (text; diagram image pending) | 19/11/2026 15:40 |
+| 2 | Architecture and block diagram prepared | Completed | `01_Problem_Analysis/block_diagram.png` | 19/11/2026 23:34 |
 | 3 | FSM diagram/table completed, if applicable | In Progress | `README.md` §5 (table done; diagram image pending) | 19/11/2026 15:40 |
 | 4 | Logisim circuit implemented | Completed | `02_FSM_Logisim/H1_NBit_Gray_Detector_N5.circ` | 19/11/2026 03:30 |
 | 5 | Logisim simulation verified | In Progress | `02_FSM_Logisim/H1_N5_test_vector.txt` (31/31 pass, headless) | 19/11/2026 03:30 |
@@ -117,6 +117,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 20:00 | Replaced the earlier RTL, testbench and constraints with the team's `gray_code_nbit` design (single module, N-bit one-bit-change detector + Moore FSM), `gray_code_nbit_tb.v` (N=4 and N=5) and `gray_code_nbit.xdc`; updated READMEs; added FSM diagram, state table and Logisim screenshots in `02_FSM_Logisim/` | `02_FSM_Logisim/`, `03_Verilog_Implementation/`, `04_FPGA_Hardware/` | Testbench not run yet; one testbench expectation (1100 -> 1111) looks wrong | Run testbench in Vivado, fix expectation, save log/waveforms | Ojas Karmarkar |
 | 19/11/2026 | 20:15 | Ran behavioural simulation in Vivado 2018.3 (11 of 12 steps pass; the single fail is a wrong expected value for 1100 -> 1111 in the testbench), ran synthesis, implementation and bitstream generation for xc7s50csga324-1; uploaded waveform, schematic and implemented-design screenshots | `03_Verilog_Implementation/Simulation_Results/`, `04_FPGA_Hardware/` | Testbench expected value to fix; hardware demo not done | Fix testbench and re-run; add Tcl log and utilisation/timing numbers; program the board and record the demo | Ojas Karmarkar |
 | 19/11/2026 | 20:30 | Uploaded Vivado utilisation and timing-summary screenshots: 8 LUTs, 7 registers, 3 slices, 10 IOBs of xc7s50csga324-1; timing summary is NA because no clock constraint is defined | `04_FPGA_Hardware/vivado_utilization.png`, `04_FPGA_Hardware/vivado_timing_summary.png` | No `create_clock` in the XDC | Add the clock constraint, re-run implementation, record slack | Ojas Karmarkar |
+| 19/11/2026 | 23:34 | Added the architecture / block diagram image and linked it in the group README and problem analysis | `01_Problem_Analysis/block_diagram.png` | None | Fix testbench expected value and re-run; add Logisim step table; hardware demo | Ojas Karmarkar |
 
 Add rows as needed.
 
