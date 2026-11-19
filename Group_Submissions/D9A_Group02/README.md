@@ -16,11 +16,24 @@
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [8]
-- **Problem summary:** [In my problem I has to Add a master level to my existing 3 level Gaming XP System, this required me to change the combinational logic of my circuit and also changes the XP Range assumed earlier.]
-- **Objective:** [The system should be able to correctly identify which level a player belongs to depending on their XP(categorizing them into four levels).]
-- **Inputs and outputs:** [List signals, widths and meaning]
-- **Constraints and assumptions:** [List and justify]
+- **Number/title:** 8
+- **Problem summary:** In my problem I has to Add a master level to my existing 3 level Gaming XP System, this required me to change the combinational logic of my circuit and also changes the XP Range assumed earlier.
+- **Objective:** The system should be able to correctly identify which level a player belongs to depending on their XP(categorizing them into four levels).
+- **Inputs and outputs:**
+-   * `clk` (1-bit, Input): System clock (positive-edge triggered).
+    * `reset` (1-bit, Input): Synchronous active-high reset; clears input register and returns FSM to `IDLE`.
+    * `start` (1-bit, Input): Initiates XP classification from `IDLE`.
+    * `ack` (1-bit, Input): Acknowledges the displayed level and returns the FSM to `IDLE`.
+    * `xp_in[3:0]` (4-bit, Input): 4-bit unsigned XP value from switches (`X3` to `X0`).
+    * `led_beginner` (1-bit, Output): Active-high LED for XP `0–3`.
+    * `led_intermediate` (1-bit, Output): Active-high LED for XP `4–7`.
+    * `led_expert` (1-bit, Output): Active-high LED for XP `8–11`.
+    * `led_master` (1-bit, Output): Active-high LED for XP `12–15`.
+* **Constraints and assumptions:**
+    * `xp_in[3:0]` is treated as an unsigned binary integer (`0` to `15`).
+    * Adding the Master state increases total states to 5 (`IDLE` + 4 levels), requiring a 3-bit state register ($\lceil \log_2 5 \rceil = 3$ flip-flops).
+    * Outputs must follow a strict **Moore** architecture (LEDs depend only on the current state, with all LEDs OFF in `IDLE`).
+    * `reset`, `start`, and `ack` are synchronous control signals sampled on the rising edge of `clk`.
 
 ## 3. Problem Analysis and Proposed Solution
 Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
