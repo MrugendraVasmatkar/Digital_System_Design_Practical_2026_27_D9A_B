@@ -1,8 +1,8 @@
 # Group Progress Status
 
 **Class:** [D9A/D9B]  
-**Group ID:** [D9A_Group30]  
-**Project title:** [TGaming XP Level Decoder]  
+**Group ID:** [D9A/B_Group30]  
+**Project title:** [Gaming XP Level Decoder]  
 **Group leader:** [Shruthi Vimalnath Nair]
 
 ## 1. Current milestone status
@@ -10,7 +10,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
-| 1 | Problem requirements and assumptions documented | Not Started | [ ] | [ ] |
+| 1 | Problem requirements and assumptions documented | Completed | [ ] | [ ] |
 | 2 | Architecture and block diagram prepared | Completed| [ ] | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Completed | [ ] | [ ] |
 | 4 | Logisim circuit implemented | Completed | [ ] | [ ] |
@@ -27,10 +27,10 @@ Update at least once every two hours and at each major milestone. Record actual 
 
 | Date | Actual time | Work completed | Evidence path | Blocker | Next action | Updated by |
 |---|---|---|---|---|---|---|
-| 19/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 19/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 19/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| 19/10/2026 | [10:40] | [Problem Analysis ] | [ ] | [ ] | [ ] | [ Krishna Pandey] |
+| 19/10/2026 | [10:00] | [ Logism ] | [ ] | [ ] | [ ] | [Shruthi Vimalnath Nair ] |
+| 19/10/2026 | [3:50] | [ Verilog code] | [ ] | [ ] | [ ] | [Aryan Jadhav ] |
+| 19/10/2026 | [3:54] | [ Testbench] | [ ] | [ ] | [ ] | [Krishna Pandey ] |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 Add rows as needed.
@@ -42,11 +42,11 @@ Add rows as needed.
 
 ## 4. End-of-day summary
 ### 19 October 2026
-- Completed:
+- Completed: Problem requirements and solution, Block Diagram and state diagram, Logisim developement of the ps, Verilog and Testbench coding and simulation.
 - In progress:
-- Pending:
-- Evidence uploaded:
-- Plan for 20 October:
+- Pending:FPGA implementation and synthesis, results, presentation and project demonstration
+- Evidence uploaded: 
+- Plan for 20 October: FPGA Hardware implementation and presentation.
 
 ### 20 October 2026
 - Completed:
