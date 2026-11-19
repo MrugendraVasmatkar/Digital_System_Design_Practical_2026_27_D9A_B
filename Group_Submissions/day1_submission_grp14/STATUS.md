@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-19, 20:45 |
+| Last Updated | 2026-11-19, 21:00 |
 
 ## 2. Problem Statement
 
@@ -109,6 +109,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-19, 20:00 | Group ID renamed to `day1_submission_grp14` (folder renamed from D9A_Group14); project topic confirmed as Game Score Categorizer (Mealy FSM) | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 20:20 | Vivado 2018.3 synthesized-design screenshot added (`04_FPGA_Hardware/synthesized_design_io_ports.png`); pins match constraints; bitstream generation shown complete | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 20:45 | Vivado elaborated RTL schematic added (`03_Verilog_Implementation/rtl_elaborated_schematic.png`) and linked in README section 7 | Samruddhi Samant | Commit link to be added |
+| 2026-11-19, 21:00 | RESET=1 (from any state) arrow added to the FSM state diagram | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 
