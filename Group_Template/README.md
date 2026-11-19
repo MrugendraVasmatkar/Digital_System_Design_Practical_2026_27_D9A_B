@@ -20,7 +20,47 @@
 - **Problem summary:** [The Password Attempt Monitor is a digital system designed to monitor and classify password attempts using a 3-bit input. The system uses digital logic circuits and a Moore Finite State Machine (FSM) to categorize password attempts into three levels: No Warning, Warning, and Lockout.
 The system accepts a 3-bit input representing the number of password attempts and processes it using a range decoder. Based on the input value, the FSM changes its state and activates the corresponding LED indicator.]
 - **Objective:** [Design, simulate, and implement a 3-bit password attempt monitor that classifies attempt counts into three categories, controls indicator LEDs using a Moore FSM, and tracks total occurrences of each category using three independent 4-bit counters (H4)]
-- **Inputs and outputs:** [List signals, widths and meaning]
+- **Inputs and outputs:** [A2
+
+1 bit
+
+Most significant bit of the 3-bit input.
+
+A1
+
+1 bit
+
+Middle bit of the 3-bit input.
+
+A0
+
+1 bit
+
+Least significant bit of the 3-bit input.
+
+START
+
+1 bit
+
+Enables the category counter to increment.
+
+ACK
+
+1 bit
+
+Acknowledgement input reserved for future functionality; currently unused.
+
+RESET
+
+1 bit
+
+Clears all three category counters when activated.
+
+CLK
+
+1 bit
+
+Clock signal used to synchronize counter operations.]
 - **Constraints and assumptions:** [List and justify]
 
 ## 3. Problem Analysis and Proposed Solution
