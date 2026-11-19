@@ -13,6 +13,8 @@
 | `../03_Verilog_Implementation/RTL/gray_code_nbit.v` | Design / top module |
 | `gray_code_nbit_synthesized_schematic.png` | Vivado schematic of the synthesized netlist |
 | `vivado_implemented_design_xc7s50.png` | Vivado implemented design (device package view) for `xc7s50csga324-1` |
+| `vivado_utilization.png` | Vivado utilization report (hierarchy view) |
+| `vivado_timing_summary.png` | Vivado design timing summary |
 
 ## Pin mapping (`gray_code_nbit.xdc`)
 All ports use `LVCMOS33`.
@@ -48,6 +50,24 @@ The netlist uses `IBUF`/`OBUF` buffers on `clk`, `rst`, `start`, `ack`, `x[3:0]`
 ### Implemented design
 ![Implemented design](vivado_implemented_design_xc7s50.png)
 
+### Utilization (`xc7s50csga324-1`)
+![Utilization](vivado_utilization.png)
+
+| Resource | Used | Available |
+|---|---:|---:|
+| Slice LUTs (all used as logic) | 8 | 32600 |
+| Slice registers | 7 | 65200 |
+| Slices | 3 | 8150 |
+| Bonded IOB | 10 | 210 |
+| BUFGCTRL | 1 | 32 |
+
+The 7 registers are the 4 previous-input bits and the 3 one-hot state bits; the 10 IOBs are `clk`, `rst`, `start`, `ack`, `x[3:0]`, `valid_led` and `invalid_led`.
+
+### Timing summary
+![Timing summary](vivado_timing_summary.png)
+
+Vivado reports "There are no user specified timing constraints", so all setup, hold and pulse-width values show NA. The constraint file has no `create_clock` line; adding `create_clock -period 10.000 [get_ports clk]` (100 MHz) and re-running implementation will give real slack numbers.
+
 ### Still to record
-- Utilisation and timing summary (the report files exist in the Vivado project; add the numbers or screenshots here).
+- Timing slack after adding the clock constraint.
 - Programming the board and the hardware test result (photos/video) following the test procedure above.

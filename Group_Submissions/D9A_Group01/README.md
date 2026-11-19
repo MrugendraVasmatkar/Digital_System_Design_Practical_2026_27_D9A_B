@@ -101,7 +101,7 @@ Waveform/log path: `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_
 - FPGA board/device: Spartan-7 `XC7S50-CSGA324-1` (board to be confirmed)
 - Tool/version: Vivado 2018.3
 - Clock/constraints: `04_FPGA_Hardware/gray_code_nbit.xdc` (clock F14, `rst` J2, `start` J5, `ack` H2, `x[3:0]` on V2, U2, U1, T2, `valid_led` G1, `invalid_led` G2; all LVCMOS33); N = 4
-- Synthesis/implementation summary: synthesis, implementation and bitstream generation completed for `xc7s50csga324-1` (screenshots in `04_FPGA_Hardware/`); utilisation and timing numbers still to be added
+- Synthesis/implementation summary: synthesis, implementation and bitstream generation completed for `xc7s50csga324-1` (screenshots in `04_FPGA_Hardware/`); utilisation: 8 LUTs, 7 registers, 3 slices, 10 IOBs (`04_FPGA_Hardware/`); timing summary shows NA because no clock constraint is defined
 - Programming and hardware test result: [Pending]
 - Evidence path: `04_FPGA_Hardware/`
 

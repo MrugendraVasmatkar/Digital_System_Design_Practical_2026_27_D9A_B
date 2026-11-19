@@ -65,7 +65,7 @@ Sequence: `START` → X, P registers load → next clock V is evaluated → `IDL
 | 2 — Verilog | Create testbench and run functional simulation | In Progress | `03_Verilog_Implementation/Testbench/gray_code_nbit_tb.v` (run in Vivado 2018.3: 11 of 12 steps pass; one wrong expected value to fix) |
 | 2 — Verilog | Save waveforms and simulation results | In Progress | `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_waveform.png` (Tcl console log still to be added) |
 | 3 — FPGA | Assign FPGA pins and configure constraints | Completed | `04_FPGA_Hardware/gray_code_nbit.xdc` (pins to be checked against the board) |
-| 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/` (schematic and implemented-design screenshots; utilisation and timing numbers still to be added) |
+| 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/` (schematic, implemented-design, utilisation and timing-summary screenshots; timing is unconstrained – no clock constraint yet) |
 | 3 — FPGA | Demonstrate the design on FPGA hardware | Not Started | `04_FPGA_Hardware/` |
 | 3 — Results | Record observations and verify expected behaviour | Not Started | `05_Results/` |
 | 3 — Presentation | Prepare slides and final demonstration | Not Started | `06_Presentation/` |
@@ -116,6 +116,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 15:40 | Problem statement (Gray Code Transition Detector, H1) documented; wrote parameterised N-bit Verilog RTL (datapath + Moore FSM), self-checking testbench (N=4 and N=8), Arty S7-50 top level and XDC; filled group README sections | `01_Problem_Analysis/`, `03_Verilog_Implementation/`, `04_FPGA_Hardware/` | No simulator run yet; XDC pins not yet checked against Digilent master file | Run testbench in Vivado and save log/waveforms; verify pins; synthesize | Ojas Karmarkar |
 | 19/11/2026 | 20:00 | Replaced the earlier RTL, testbench and constraints with the team's `gray_code_nbit` design (single module, N-bit one-bit-change detector + Moore FSM), `gray_code_nbit_tb.v` (N=4 and N=5) and `gray_code_nbit.xdc`; updated READMEs; added FSM diagram, state table and Logisim screenshots in `02_FSM_Logisim/` | `02_FSM_Logisim/`, `03_Verilog_Implementation/`, `04_FPGA_Hardware/` | Testbench not run yet; one testbench expectation (1100 -> 1111) looks wrong | Run testbench in Vivado, fix expectation, save log/waveforms | Ojas Karmarkar |
 | 19/11/2026 | 20:15 | Ran behavioural simulation in Vivado 2018.3 (11 of 12 steps pass; the single fail is a wrong expected value for 1100 -> 1111 in the testbench), ran synthesis, implementation and bitstream generation for xc7s50csga324-1; uploaded waveform, schematic and implemented-design screenshots | `03_Verilog_Implementation/Simulation_Results/`, `04_FPGA_Hardware/` | Testbench expected value to fix; hardware demo not done | Fix testbench and re-run; add Tcl log and utilisation/timing numbers; program the board and record the demo | Ojas Karmarkar |
+| 19/11/2026 | 20:30 | Uploaded Vivado utilisation and timing-summary screenshots: 8 LUTs, 7 registers, 3 slices, 10 IOBs of xc7s50csga324-1; timing summary is NA because no clock constraint is defined | `04_FPGA_Hardware/vivado_utilization.png`, `04_FPGA_Hardware/vivado_timing_summary.png` | No `create_clock` in the XDC | Add the clock constraint, re-run implementation, record slack | Ojas Karmarkar |
 
 Add rows as needed.
 
@@ -147,7 +148,7 @@ All members must understand the complete design and be prepared to explain the F
 
 | Issue / Pending Work | Planned Corrective Action | Responsible Member | Target Completion |
 |---|---|---|---|
-| Verify pin assignments and board | Compare `gray_code_nbit.xdc` with the board's master XDC (clock F14); add a `create_clock` constraint | Group leader | To be set |
+| Verify pin assignments and board; add clock constraint | Compare `gray_code_nbit.xdc` with the board's master XDC (clock F14); add `create_clock -period 10.000 [get_ports clk]` and re-run implementation (timing summary currently NA) | Group leader | To be set |
 | Fix testbench expectation | `gray_code_nbit_tb.v` expects VALID for 1100 -> 1111, but it is a two-bit change (V = 0 on the sheet); correct to INVALID and re-run | To be assigned | To be set |
 | Run testbench and record results | Vivado simulation, save log and waveforms in `Simulation_Results/` | To be assigned | To be set |
 | Add block diagram and FSM diagram images | Draw from the problem sheet and add to `README.md` | To be assigned | To be set |
