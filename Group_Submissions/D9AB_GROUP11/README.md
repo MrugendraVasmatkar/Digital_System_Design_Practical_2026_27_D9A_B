@@ -72,7 +72,67 @@ A Moore FSM is implemented with five states: IDLE, LOW, MEDIUM, HIGH and ERROR. 
 The design is feasible using basic digital components such as registers, comparators, combinational logic gates and flip-flops. It can be implemented and tested in Logisim and described using Verilog HDL. The modular architecture also makes the system suitable for FPGA implementation and further enhancements.
 
 ## 4. Architecture
-Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
+# Game Score Classifier (Moore FSM)
+
+A synchronous Verilog hardware design that latches a 5-bit score input, classifies it into range categories using a Moore Finite State Machine (FSM), indicates the category via status LEDs, and displays both the latched score and current state on a 4-digit multiplexed 7-segment display.
+
+---
+
+## Architecture & Modules
+
+| Module | Instance(s) | Role |
+| :--- | :--- | :--- |
+| `btn_cond` | `c_ack`, `c_start`, `c_rst` | Conditions push buttons via a synchronizer, delayed copy (`lvl_d`), and edge detector. `c_ack` and `c_start` output a single-clock pulse; `c_rst` outputs a synchronized level. |
+| `game_score_fsm` | `u_fsm` | Moore FSM and datapath. Latches `sw[4:0]` into `score_reg` on `START`, decodes the score range, and drives the state register and LED outputs. |
+| `seg7_driver` | `u_seg` | Time-multiplexes the 4-digit 7-segment display (`an[3:0]`, `seg[6:0]`, `dp`) to show the latched score and current FSM state. |
+
+### Top-Level I/O (25 Ports)
+* **Inputs:** `clk`, `btn_rst`, `btn_start`, `btn_ack`, `sw[4:0]`
+* **Outputs:** `led[3:0]`, `an[3:0]`, `seg[6:0]`, `dp`
+
+---
+
+## Data & Control Flow
+
+### Data Flow
+1. The user sets the 5-bit score on `sw[4:0]` and presses `START`.
+2. The value is captured into `score_reg[4:0]`.
+3. Combinational range-decoding logic in the FSM next-state path classifies the score:
+
+| Score Range | State | Encoding | LED Indicator | Output Pin |
+| :--- | :--- | :---: | :--- | :--- |
+| *None yet* | `S_IDLE` | `0` | All off | `4'b0000` |
+| `0 – 4` | `S_LOW` | `1` | `led_low` | `led[0]` |
+| `5 – 10` | `S_MED` | `2` | `led_med` | `led[1]` |
+| `11 – 15` | `S_HIGH` | `3` | `led_high` | `led[2]` |
+| `> 15` (`16 – 31`) | `S_ERR` | `4` | `led_err` | `led[3]` |
+
+4. The state register drives `led[3:0]` directly and passes the state alongside `score_reg` to `seg7_driver`.
+
+### Control Flow
+* **Start:** `S_IDLE` $\rightarrow$ Category state (`S_LOW`, `S_MED`, `S_HIGH`, or `S_ERR`) on `START`.
+* **Acknowledge:** Any category state or `S_ERR` $\rightarrow$ `S_IDLE` on `ACK`.
+* **Reset:** Any state $\rightarrow$ `S_IDLE` on `RST` (includes recovery from the `S_ERR` out-of-range state).
+
+---
+
+## Verification
+
+The self-checking testbench (`tb_game_score`) validates end-to-end functionality:
+* Applies initial reset, then sweeps through score values using repeated `START` and `ACK` sequences.
+* Compares FSM state, `led[3:0]`, and `score_reg` against expected values, tracking totals in `pass_cnt` and `fail_cnt`.
+* **Expected Waveform Behavior:** State transitions `0 -> 1/2/3 -> 0` per valid score sweep, with LED category transitions occurring cleanly at thresholds `5` and `11`.
+
+---
+
+## Design Trade-Offs & Synthesis
+
+* **Moore vs. Mealy:** Outputs depend strictly on the current state, ensuring glitch-free LED transitions aligned to clock edges at the cost of one clock cycle of latency compared to a Mealy machine.
+* **Button Conditioning:** Synchronizing and edge-detecting buttons requires a few extra flip-flops but prevents metastability, eliminates switch bounce, and guarantees a single trigger per press. `RST` remains level-sensitive so reset can take effect immediately.
+* **5-Bit Input Width:** Expanding the switch input by 1 bit beyond a standard 4-bit (`0–15`) specification allows explicit detection of out-of-range values (`16–31`) via `S_ERR` rather than silently wrapping around.
+* **Binary State Encoding (3-bit):** Compact representation for 5 states (with synthesis free to re-encode). One-hot encoding would reduce decode latency at the expense of extra flip-flops, which is unnecessary at this scale.
+* **Multiplexed 7-Segment Display:** Time-multiplexing reduces pin count and combinational logic compared to driving four independent digits, requiring only a lightweight refresh counter.
+* **Post-Synthesis Footprint:** **31 cells** and **58 nets**.
 
 ![Block diagram](path/to/block_diagram.png)
 
