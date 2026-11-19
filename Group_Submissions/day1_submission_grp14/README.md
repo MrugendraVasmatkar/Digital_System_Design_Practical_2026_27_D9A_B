@@ -143,7 +143,15 @@ Maintain time-wise updates in `STATUS.md`.
 ## 13. Final Results and Conclusion
 Summarise requirements met, correctness of simulation/hardware results, measured results, limitations and conclusion.
 
-[Write here]
+**Requirements met:** the Mealy FSM classifies the score into LOW (0–4), MEDIUM (5–10) and HIGH (11–15), lights exactly one LED, holds it until ACK and clears it afterwards. Verified in Vivado behavioral simulation for scores 2, 7 and 13 (3 of 3 cases pass, from the waveform). Full tables: [`05_Results/README.md`](05_Results/README.md).
+
+**Measured results (Vivado 2018.3, XC7S50-CSGA324-1):** 6 Slice LUTs, 4 flip-flops, 2 slices, 11 IOBs, 1 BUFGCTRL; estimated power 3.43 W (mostly I/O); bitstream generated.
+
+**Hardware results:** pending (board demonstration not yet done).
+
+**Limitations:** only three scores simulated (boundary scores and reset mid-round untested); clock timing not yet verified because the first timing run had no clock constraint; START and ACK are not debounced.
+
+**Conclusion:** the design meets the functional behaviour in simulation and fits easily on the target FPGA. The hardware demonstration and a constrained timing run remain.
 
 ## 14. Team Reflection
 What did the team learn? What would you improve?
