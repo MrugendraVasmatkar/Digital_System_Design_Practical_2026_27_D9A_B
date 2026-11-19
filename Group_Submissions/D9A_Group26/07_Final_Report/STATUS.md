@@ -35,4 +35,24 @@ Update at least once every two hours and at each major milestone. Record actual 
 ## 3. Current blockers and support required
 | Blocker | Impact | Action being taken | Faculty support required |
 |---|---|---|---|
-| Full 16-input Logisim simulation sweep and final presentation/report upload scheduled for Day 2 | Milestones 5 and 10 marked `In Progress` at Day 1 cutoff | `.circ` source and schematic uploaded
+| Full 16-input Logisim simulation sweep and final presentation/report upload scheduled for Day 2 | Milestones 5 and 10 marked `In Progress` at Day 1 cutoff | `.circ` source and schematic uploaded; completing 16-value simulation verification, presentation upload, and final report on Day 2 (`20/11/2026`) | None |
+
+## 4. End-of-day summary
+### 19 November 2026 (Day 1)
+- Completed: Problem analysis, I/O specifications, Moore FSM state tables, Logisim-evolution circuit (`logidsim_group26.circ` and `logisim_circuit.jpg`), Verilog RTL (`gaming_xp.v`), Vivado behavioral simulation (`waveforms.png`, `tcl.png`), Vivado RTL schematic (`37 Cells`, `23 I/O Ports`, `62 Nets`), expected vs. observed results documentation, and Pull Request #18.
+- In progress: Full 16-input (`0–15`) Logisim simulation sweep verification and 5-slide presentation deck (`D9A_Group26_Gaming_XP_Decoder`).
+- Pending: Logisim simulation state screenshots, presentation file upload in `06_Presentation/`, and final report document in `07_Final_Report/` (scheduled for `20/11/2026`).
+- Evidence uploaded: `D9A_Group26/README.md`, `01_Problem_Analysis/README.md`, `02_FSM_Logisim/` (`README.md`, `logidsim_group26.circ`, `logisim_circuit.jpg`), `03_Verilog_Implementation/` (`README.md`, `gaming_xp.v`, `tb_gaming_xp.v`, `waveforms.png`, `tcl.png`), `04_FPGA_Hardware/` (`README.md`, `rtl_schematic.jpeg`), `05_Results/README.md`, `06_Presentation/README.md`, `07_Final_Report/` (`README.md`, `STATUS.md`).
+- Plan for 20 November 2026: Run full 16-value Logisim verification sweep, upload final presentation slides and report document, and prepare all four members for viva voce.
+
+### 20 November 2026 (Day 2)
+- Completed: Pending Day 2 execution.
+- Pending: Pending Day 2 execution.
+- Evidence uploaded: Pending Day 2 execution.
+- Final submission status: PR #18 Open and synced on `krishav01-stack:main`.
+
+## 5. Group leader confirmation
+I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
+
+**Group leader:** Krishav Maurya  
+**Date/time:** 19/11/2026, 21:55 IST
