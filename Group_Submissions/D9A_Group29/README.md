@@ -1,140 +1,165 @@
-﻿# Digital System Design – Group Project
+# Digital System Design – Group Project Submission
 
-> This is the group submission README. Retain all mandatory headings. Replace pending items with verified information as the project progresses. Do not claim simulation or hardware completion without evidence.
+> Group submission for D9A_Group29. This document follows the mandatory faculty template headings. Keep the headings, update pending items as work progresses, and claim completion only when supported by evidence.
 
 ## 1. Team Details
 | Role | Student name | Roll number / class | GitHub username |
 |---|---|---|---|
-| Group leader | Kaif Bagwan | Pending | [kaifjbagwan4116-coder](https://github.com/kaifjbagwan4116-coder) |
-| Member 2 | Kartik Mishra | 36 / D9A | [2025kartikmishra-debug](https://github.com/2025kartikmishra-debug) |
-| Member 3 | Vedant Pathare | 47 / D9B | [vedantpathare1137-crypto](https://github.com/vedantpathare1137-crypto) |
-| Member 4 | Arya Ukirde | 66 / D9B | [d2026aryaukirde-max](https://github.com/d2026aryaukirde-max) |
+| Group leader | Kaif Bagwan | Pending confirmation | [kaifjbagwan4116-coder](https://github.com/kaifjbagwan4116-coder) |
+| Member 2 | Kartik Mishra | 36 / D9A* | [2025kartikmishra-debug](https://github.com/2025kartikmishra-debug) |
+| Member 3 | Vedant Pathare | 47 / D9B* | [vedantpathare1137-crypto](https://github.com/vedantpathare1137-crypto) |
+| Member 4 | Arya Ukirde | 66 / D9B* | [d2026aryaukirde-max](https://github.com/d2026aryaukirde-max) |
 
-**Class / group:** D9A  
+**Group class:** D9A  
 **Group ID:** D9A_Group29  
 **Assigned problem statement:** H3  
-**Repository URL:** https://github.com/kaifjbagwan4116-coder/DSD-2026-D9A-Group29  
+**Repository:** https://github.com/kaifjbagwan4116-coder/DSD-2026-D9A-Group29  
 **Faculty master repository:** https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B  
 **Final Pull Request URL:** Pending
 
-**Roster check:** The supplied team screenshot shows Kartik as D9A roll 36, Vedant as D9B roll 47, and Arya as D9B roll 66. Confirm the D9B class details and group eligibility against the official faculty roster. Kaif's roll number is still pending.
+\*The class and roll details above were transcribed from the team screenshot previously supplied. Confirm them against the official faculty roster. Kaif's roll number is still pending.
 
 ## 2. Assigned Problem Statement
-- **Number/title:** H3. The exact official title and wording should be copied from the faculty-issued H3 problem statement.
-- **Problem summary:** The project files currently supplied with the repository indicate an age-group classification / age-group detector FSM. This is a working description based on the existing files, not a substitute for the official H3 statement.
-- **Objective:** Complete the design stated in H3 and demonstrate its operation using the required FSM/Logisim, Verilog, simulation and FPGA workflow. Refine this statement after checking the official problem wording.
-- **Inputs and outputs (current supplied baseline):** The preserved Verilog snapshot has a clock, reset, start and acknowledgement controls, a 6-bit age input, and four LED status outputs. The board-level wrapper uses a 6-bit switch input and three button inputs. These details describe the supplied baseline only; reconcile them with the latest intended 5-bit H3 implementation before final sign-off.
-- **Constraints and assumptions:** Confirm the valid age range, age-category boundaries, invalid-input handling, reset/acknowledgement behaviour, FPGA board/device and pin mapping against the official H3 statement and actual hardware.
+- **Number/title:** H3 — copy the exact official title and wording from the faculty-issued problem statement before final submission.
+- **Project description:** The current implementation is an age-group classification system using comparator/decoder outputs and a finite-state machine.
+- **Objective:** Classify a 5-bit age input into CHILD, TEEN or ADULT states, and enter ERROR when none of the three category-detect signals is asserted. The exact interpretation and limits must be checked against the official H3 statement.
+- **Inputs:** The updated RTL uses a 5-bit age input (`age_in[4:0]` / board input `sw[4:0]`), clock, reset, start and acknowledgement controls. The board wrapper has three button inputs.
+- **Outputs:** Four status LEDs representing CHILD, TEEN, ADULT and ERROR.
+- **Current category boundaries in RTL:** CHILD = 0–12, TEEN = 13–19, ADULT = 20–31.
+- **Error condition:** `no_match_debug = ~(child_detect | teen_detect | adult_detect)`. The FSM enters ERROR when all three category-detect signals are zero.
+- **Assumptions/constraints:** Confirm these ranges and all required input/output behaviour against the official H3 statement. Confirm the actual FPGA board pinout before relying on the XDC.
 
 ## 3. Problem Analysis and Proposed Solution
-The problem-analysis folder contains the supplied analysis placeholder and image. Complete this section from the official H3 statement by documenting the requirements, assumptions, input/output definitions, boundary cases, proposed solution and why the design is feasible.
+The updated Verilog separates age-range detection from sequential control:
 
-The current repository snapshot suggests a state-machine-based age classifier. Do not treat the existing 6-bit RTL as the final specification; align the analysis and proposed solution with the final approved 5-bit implementation.
+1. `age_range_decoder` generates `child_detect`, `teen_detect` and `adult_detect` from the 5-bit age input.
+2. `age_group_fsm` consumes those signals. When `start` is asserted in IDLE, it stores the age and selects CHILD, TEEN or ADULT. If all three detection signals are zero, it selects ERROR.
+3. A reset returns the FSM to IDLE. An acknowledgement from any result state returns it to IDLE.
+4. The board wrapper synchronizes button and switch inputs, forms start/acknowledgement pulses and drives the four LEDs.
 
-**Evidence location:** `01_Problem_Analysis/`
+The testbench also forces all three comparator/detector signals low to exercise the ERROR path. This is a deliberate fault-condition testbench stimulus, not an assertion that a valid 5-bit age naturally falls outside the three configured ranges.
+
+**Evidence:** `01_Problem_Analysis/`
 
 ## 4. Architecture
-The preserved project snapshot contains an age-group FSM and a board-level wrapper. In the supplied baseline, the wrapper synchronizes the button and switch inputs, generates start/acknowledgement pulses and connects the FSM status to four LEDs.
+The current RTL contains three logical blocks:
 
-Add the final block diagram here and update this description if the final RTL architecture changes.
+- **Age range decoder:** combinational comparisons for CHILD, TEEN and ADULT.
+- **FSM controller:** sequential state storage and transitions among IDLE, CHILD, TEEN, ADULT and ERROR.
+- **Board wrapper:** input synchronization, edge/pulse generation and LED connection.
+
+Add the final block diagram to `01_Problem_Analysis/` and ensure it matches the uploaded RTL.
 
 **Block diagram:** Pending  
 **Architecture evidence:** `01_Problem_Analysis/`
 
 ## 5. FSM Design
-The supplied baseline defines the states `IDLE`, `CHILD`, `TEEN`, `ADULT` and `ERROR`. Its LED outputs are decoded from the current state, which is consistent with a Moore-style output arrangement. The baseline uses a 3-bit state register and transitions from `IDLE` on `start`; the result states return to `IDLE` on acknowledgement. Reset returns the FSM to `IDLE`.
+The RTL uses five states: `IDLE`, `CHILD`, `TEEN`, `ADULT` and `ERROR`, encoded with three bits. LED outputs are decoded from the current state, giving Moore-style outputs.
 
-These are observations about the currently preserved baseline only. Verify the state model, state encoding, transition conditions and age thresholds against the final 5-bit RTL and official H3 requirements.
+| Current state | Condition | Next state | LED output |
+|---|---|---|---|
+| IDLE | `start=0` | IDLE | All off |
+| IDLE | `start=1`, child detect=1 | CHILD | CHILD |
+| IDLE | `start=1`, teen detect=1 | TEEN | TEEN |
+| IDLE | `start=1`, adult detect=1 | ADULT | ADULT |
+| IDLE | `start=1`, all three detect signals=0 | ERROR | ERROR |
+| CHILD / TEEN / ADULT / ERROR | `ack=0` | Hold current state | Corresponding LED remains on |
+| CHILD / TEEN / ADULT / ERROR | `ack=1` | IDLE | All off |
+| Any state | `reset=1` | IDLE | All off |
 
-**FSM diagram:** Pending  
-**State table:** Pending  
-**Logisim circuit:** `02_FSM_Logisim/DSDlogs.circ`
+**FSM diagram:** Pending upload  
+**State table:** Included above; add a separate diagram/table image if required by faculty.  
+**Logisim circuits:** `02_FSM_Logisim/DSDlogs.circ` and `02_FSM_Logisim/DSDPRA.circ`.
+
+The two Logisim circuit files are preserved. Confirm which circuit corresponds to the final 5-bit implementation and include simulation screenshots/evidence; do not assume a source file is verified merely because it is present.
 
 ## 6. Logisim Implementation
-- **Logisim version:** Pending confirmation.
-- **Circuit file:** `02_FSM_Logisim/DSDlogs.circ`.
-- **Test cases and expected/observed behaviour:** Pending verification and documentation.
-- **Issues and corrections:** Add actual issues and fixes after review.
-- **Screenshot/evidence:** Add Logisim simulation screenshots/evidence under `02_FSM_Logisim/`.
-
-The supplied `.circ` source file has been copied into the required folder. Its behaviour still needs to be checked against the final H3 FSM.
+- **Circuit files:** `02_FSM_Logisim/DSDlogs.circ` and `02_FSM_Logisim/DSDPRA.circ`.
+- **Logisim version:** The `DSDPRA.circ` file identifies Logisim-evolution v4.1.0; confirm the version used for the final circuit/demo.
+- **Test cases and expected/observed behaviour:** Pending final circuit simulation and comparison with the Verilog FSM.
+- **Issues and corrections:** Record actual debugging changes here.
+- **Screenshot/evidence:** `01_Problem_Analysis/` currently contains the supplied image; add clearly identified Logisim simulation evidence under `02_FSM_Logisim/`.
 
 ## 7. Verilog HDL Implementation
-- **Tool/version:** Vivado project files are present in the supplied project snapshot; confirm the exact version used for the final build.
-- **Top module and submodules (supplied baseline):** `age_group_detector_core` and `age_group_fsm`.
-- **Architecture/coding decisions:** The supplied snapshot has a board-level wrapper and an FSM module. Review and update this description after the final 5-bit RTL is incorporated.
-- **Synthesizability considerations:** Confirm the final RTL uses synthesizable constructs and that the final top module and constraints target the intended FPGA.
-- **RTL:** `03_Verilog_Implementation/RTL/`
-- **Testbench:** `03_Verilog_Implementation/Testbench/`
-- **Preserved Vivado project:** `04_FPGA_Hardware/Vivado_Project/age_group_fsm/`
+- **Tool/version:** Vivado 2018.3 is identified in the preserved project file.
+- **Target part recorded in preserved project:** `xc7s50csga324-1`.
+- **RTL:** `03_Verilog_Implementation/RTL/age_group_detector_core.v`.
+- **Testbench:** `03_Verilog_Implementation/Testbench/tb_age_group_detector.v`.
+- **Simulation artefacts:** `03_Verilog_Implementation/Simulation_Results/XSim/`.
+- **Module names:** `age_range_decoder`, `age_group_fsm` and `age_group_detector_core`.
 
-**Version note:** The supplied RTL snapshot uses a 6-bit age input. The latest intended H3 implementation is 5-bit. Keep the supplied snapshot as the preserved starting point, but update the dedicated RTL and matching testbench when the final 5-bit source is ready.
+The current dedicated RTL and testbench use a 5-bit age input. The FSM checks the combined no-match condition before category selection, so ERROR is selected when CHILD, TEEN and ADULT detect signals are all zero.
 
 ## 8. Verification and Simulation Results
-| Test ID | Inputs/conditions | Expected output | Observed output | Pass/Fail |
-|---|---|---|---|---|
-| T01 | Add final H3 test vector | Pending | Pending | Pending |
-| T02 | Add final H3 boundary test | Pending | Pending | Pending |
-| T03 | Add final invalid/reset/acknowledgement test as applicable | Pending | Pending | Pending |
+The updated testbench includes:
 
-**Tool/version:** Existing XSim project artefacts are present; confirm the simulator version used for the final run.  
-**Number passed/failed:** Not yet confirmed for the final 5-bit design.  
-**Waveform/log path:** `03_Verilog_Implementation/Simulation_Results/`
+- Boundary checks for ages 0, 12, 13, 19, 20 and 31.
+- A sweep across all 32 possible 5-bit age values to check that the decoder produces exactly one category indication for each configured value.
+- FSM checks for CHILD, TEEN and ADULT, including LED outputs and latched age.
+- An injected all-comparators-zero condition to verify transition to ERROR.
+- Acknowledgement return-to-IDLE and reset-from-ERROR checks.
 
-The local folder check found 18 files under the simulation-results location. These are existing supplied artefacts; the folder-preparation script did not run a new simulation. Re-run the final testbench against the final RTL and record actual expected/observed results before marking verification complete.
+**Testbench source:** `03_Verilog_Implementation/Testbench/tb_age_group_detector.v`  
+**Existing XSim artefacts:** `03_Verilog_Implementation/Simulation_Results/XSim/`
+
+**Verification status:** The updated testbench is present in the repository, but the stored XSim compile/elaboration artefacts reference the older Vivado project snapshot. Re-run the updated testbench against the current 5-bit RTL and save a fresh run log/waveform before reporting final pass/fail totals. Do not state “ALL TESTS PASSED” until a fresh run confirms it.
 
 ## 9. FPGA Hardware Implementation
-- **FPGA board/device:** Confirm the exact physical board and FPGA part number.
-- **Tool/version:** Confirm the version used for the final implementation run.
-- **Clock/constraints:** `04_FPGA_Hardware/age_group_detector_boolean.xdc`. Verify clock, package pins and I/O standards against the actual board.
-- **Synthesis/implementation summary:** The supplied files include 12 implementation-report files in the checked reports folder. Confirm that they correspond to the final RTL and target device.
-- **Programming and hardware test result:** Not yet confirmed by this folder-preparation step. Record actual programming and board observations after testing.
-- **Evidence path:** `04_FPGA_Hardware/`
+- **Tool/version recorded in project:** Vivado 2018.3.
+- **FPGA part recorded in project:** `xc7s50csga324-1`.
+- **Constraints:** `04_FPGA_Hardware/age_group_detector_boolean.xdc`.
+- **Implementation reports:** `04_FPGA_Hardware/Implementation_Reports/`.
+- **Bitstream:** `04_FPGA_Hardware/Bitstream/age_group_detector_core.bit`.
+- **Vivado project archive:** `04_FPGA_Hardware/Vivado_Project/age_group_fsm/`.
 
-The local folder check found one bitstream file. Its presence does not prove that it corresponds to the final 5-bit RTL or that it has been programmed and tested on the physical board. Keep hardware evidence and claims tied to an actual demonstration.
+**Important hardware integration issue:** The current dedicated RTL uses a 5-bit switch input (`sw[4:0]`), but the preserved XDC still contains a pin constraint for `sw[5]`. The archived Vivado project source and testbench are also older 6-bit versions. Update the Vivado project source/testbench and XDC to match the current 5-bit RTL, then rerun synthesis/implementation and regenerate the bitstream before treating the existing reports or bitstream as final for this design.
+
+Confirm the physical board model and pinout before hardware programming. The presence of a bitstream or reports does not prove the latest design was programmed or demonstrated on the board.
 
 ## 10. Challenges, Debugging and Improvements
-| Issue | Root cause | Correction | Outcome |
-|---|---|---|---|
-| Supplied RTL snapshot uses a 6-bit input, while the latest intended H3 implementation is 5-bit | Existing project files represent an earlier implementation snapshot | Reconcile RTL, testbench, constraints and implementation outputs with the final design | Pending final update and verification |
-| FPGA board and XDC pin mapping need confirmation | Physical board details have not yet been confirmed in this README | Verify board model, FPGA part and pinout before the final implementation and hardware test | Pending |
+| Issue | Action / status |
+|---|---|
+| ERROR condition must occur when all three category detect outputs are zero | Current FSM explicitly checks `no_match_debug` and selects ERROR. Testbench injects `000` on the three signals to verify this path. |
+| Input width changed from the earlier 6-bit snapshot to 5-bit | Dedicated RTL and testbench have been updated to 5-bit; archived Vivado project source/testbench and XDC still need alignment. |
+| Existing implementation reports/bitstream may not match the latest RTL | Rebuild with the final source and corrected constraints before claiming final hardware results. |
 
-**Future improvements:** Add after final verification and group review.
+Future improvements: add after final simulation and hardware validation.
 
 ## 11. Task Allocation and Individual Contribution
-| Student | Assigned responsibility | Actual contribution/evidence |
+| Student | Responsibility | Actual contribution/evidence |
 |---|---|---|
-| Kaif Bagwan | Group leadership and repository coordination | Fork setup, local submission-folder preparation and initial folder verification; add further evidence as work progresses |
-| Kartik Mishra | To be agreed by the group | Pending actual contribution record |
-| Vedant Pathare | To be agreed by the group | Pending actual contribution record |
-| Arya Ukirde | To be agreed by the group | Pending actual contribution record |
+| Kaif Bagwan | Group leadership, integration and repository coordination | Record actual design, integration and documentation work as it is completed. |
+| Kartik Mishra | To be agreed by the group | Pending group confirmation and evidence. |
+| Vedant Pathare | To be agreed by the group | Pending group confirmation and evidence. |
+| Arya Ukirde | To be agreed by the group | Pending group confirmation and evidence. |
 
-Update this table with each student's actual work. Every student must be ready to explain the complete project.
+Update this table with each student's actual contributions. Every student must be able to explain the complete project.
 
 ## 12. Progress Log
-Maintain time-wise progress, evidence paths, blockers and next actions in `STATUS.md`. Update it at least once every two hours and at every major milestone.
+Maintain timestamped updates, evidence paths, blockers and next actions in `STATUS.md`. Update it at least once every two hours and at each major milestone.
 
 ## 13. Final Results and Conclusion
-Pending completion of the final H3 problem analysis, 5-bit RTL/testbench reconciliation, final simulation, FPGA implementation review and physical hardware testing. Report measured results, limitations and conclusions only after verifying the corresponding evidence.
+Pending a fresh simulation of the current 5-bit RTL/testbench pair, alignment and rerun of the Vivado project with corrected constraints, and physical FPGA demonstration. Complete this section only with verified results and observed behaviour.
 
 ## 14. Team Reflection
-Complete this section after the group has reviewed the final design and demonstration. Record actual learning outcomes and proposed improvements.
+Complete after the team has reviewed the final design, simulation and hardware demonstration.
 
 ## 15. Final Submission Checklist
-- [ ] Full team names, roll numbers and GitHub usernames completed and checked against the official roster.
-- [ ] Official H3 problem statement title and wording included.
-- [ ] Requirements, assumptions, input/output definitions and proposed solution documented.
-- [ ] Architecture/block diagram included.
-- [ ] FSM diagram and state table included and consistent with final RTL.
-- [ ] Logisim `.circ` source and simulation evidence included.
-- [ ] Final synthesizable Verilog RTL uploaded in `03_Verilog_Implementation/RTL/`.
-- [ ] Matching testbench and test vectors uploaded in `03_Verilog_Implementation/Testbench/`.
-- [ ] Final simulation waveforms, logs and verification summary uploaded in `03_Verilog_Implementation/Simulation_Results/`.
-- [ ] FPGA board/device details and verified XDC constraints documented.
-- [ ] Implementation reports and relevant bitstream included in `04_FPGA_Hardware/`.
-- [ ] Actual hardware evidence included if hardware testing has been completed.
-- [ ] Test cases, expected/observed comparison and conclusion documented in `05_Results/`.
+- [ ] Full team details and roll numbers confirmed against the official roster.
+- [ ] Official H3 title and problem statement wording included.
+- [ ] Requirements, assumptions, I/O list and proposed solution documented.
+- [ ] Architecture/block diagram uploaded.
+- [ ] FSM diagram and state table uploaded and consistent with final RTL.
+- [ ] Logisim source files and simulation evidence included.
+- [ ] Current 5-bit synthesizable RTL included in `03_Verilog_Implementation/RTL/`.
+- [ ] Matching testbench and test vectors included in `03_Verilog_Implementation/Testbench/`.
+- [ ] Fresh simulation logs, waveform and verification summary included in `03_Verilog_Implementation/Simulation_Results/`.
+- [ ] Vivado project source/testbench updated to current 5-bit design.
+- [ ] XDC pin mapping matches the actual board and the 5-bit interface.
+- [ ] Fresh synthesis/implementation reports and bitstream included.
+- [ ] Hardware demonstration evidence included if performed.
+- [ ] Expected-versus-observed tests and conclusion documented in `05_Results/`.
 - [ ] Final presentation uploaded in `06_Presentation/`.
 - [ ] Final report uploaded in `07_Final_Report/`.
-- [ ] `STATUS.md` is current and evidence paths are valid.
-- [ ] Final Pull Request created against the faculty master repository and correct base branch.
+- [ ] `STATUS.md` updated with actual times, evidence and blockers.
+- [ ] Final Pull Request targets the faculty master repository and specified base branch.
