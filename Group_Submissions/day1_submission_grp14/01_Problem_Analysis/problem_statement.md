@@ -1,6 +1,6 @@
 # Problem Statement and Analysis — Game Score Categorizer (Mealy FSM)
 
-> **Note:** The official problem statement text from faculty is not yet copied here. This analysis is derived from the group's design (`mealy_simple.v`, `Game_Score_Categorizer_H2_Mealy_Machine.circ`). Replace/confirm the wording below against the assigned statement.
+> **Note:** Problem statement number: 3H2. The official statement text from faculty is not copied here; this analysis is derived from the group's design (`mealy_simple.v`, `Game_Score_Categorizer_H2_Mealy_Machine.circ`). Confirm the wording below against the assigned statement.
 
 ## 1. Problem summary
 

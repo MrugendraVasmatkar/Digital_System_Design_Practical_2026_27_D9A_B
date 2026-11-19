@@ -17,7 +17,7 @@
 
 ## 2. Assigned Problem Statement
 - **Group number:** 14 (Group ID: day1_submission_grp14)
-- **Number/title:** Game Score Categorizer (Mealy FSM) — problem statement number [to be added]
+- **Number/title:** Problem statement 3H2 - Game Score Categorizer (Mealy FSM)
 - **Problem summary:** A 4-bit game score is entered and `start` is pressed. The system classifies the score as LOW, MEDIUM or HIGH and lights the matching LED until the user presses `ack`, then returns to idle.
 - **Objective:** Classify the score (LOW 0–4, MEDIUM 5–10, HIGH 11–15), show exactly one LED, hold it until `ack`, using a Mealy FSM.
 - **Inputs and outputs:** Inputs `clk`, `reset`, `start`, `ack` (1 bit each) and `score[3:0]`. Outputs `low_led`, `med_led`, `high_led` (1 bit each). Full table with FPGA pins: [`01_Problem_Analysis/io_specification.md`](01_Problem_Analysis/io_specification.md).
