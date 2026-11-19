@@ -1,9 +1,9 @@
 # Group Progress Status
 
 **Class:** [D9A/D9B]  
-**Group ID:** [D9A_Group01]  
-**Project title:** [Title]  
-**Group leader:** [Name]
+**Group ID:** [D9A_D9BGroup18]  
+**Project title:** [Water temprature comparator]  
+**Group leader:** [Parth Nemade]
 
 ## 1. Current milestone status
 Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
