@@ -5,10 +5,10 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Hardik Patil | 49 | hardikpatil0317-star |
+| Member 2 | Kanishka Puthran | 45 | puthrankanishka2323-ai |
+| Member 3 | Aran Mishra | 35 | 2025aranmishra-code |
+| Member 4 | Harikesh Menon | 33 | 2025harikeshmenon-collab |
 
 **Class:** [D9A/D9B]  
 **Group ID:** [e.g. D9A_Group01]  
