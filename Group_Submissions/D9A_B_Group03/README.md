@@ -92,7 +92,7 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 
 ## 6. Logisim Implementation
 - Logisim version: Logisim-evolution v3.9.0
-- Circuit file: [Path to `.circ`]
+- Circuit file: [Circuit File](Group_Submissions/D9A_B_Group03/02_FSM_Logisim/logisim_circ_Forbidden_Zone_Rejector_updated.circ)
 - Test cases and expected/observed behaviour: The asynchronous counter cycles X[3:0] through all values 0–15 on each CLK pulse. For each value, Y is expected to read 0 (LED reflecting reject) for L ≤ X ≤ H and 1 otherwise. With L=6, H=9, values 6–9 should reject and all others accept, matching the original truth table provided with the problem statement
 - Issues and corrections: Comparator wiring fixes and splitter connections
 - Screenshot/evidence: [Screenshot](Group_Submissions/D9A_B_Group03/02_FSM_Logisim/Logisim_circuit.png)
