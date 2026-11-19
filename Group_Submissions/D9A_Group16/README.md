@@ -100,67 +100,34 @@ The modular design makes testing, debugging, and future modifications easier.
 ![Block diagram](path/to/block_diagram.png)
 
 ## 5. FSM Design
-State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encoding, state diagram, state table, transition conditions and reset behaviour. If not, justify the alternative.
+The proposed design uses a **Moore Finite State Machine (FSM)**, in which the outputs depend on the current state.
 
-The proposed design uses a Moore Finite State Machine (FSM), where the outputs depend on the current state.
+### States and State Encoding
 
-The FSM consists of five states:
+| State     | Encoding | Function |
+|-----------|----------|----------|
+| IDLE      | 000      | Waits for the START signal |
+| VERY_COLD | 001      | Indicates temperature from 0–1 |
+| COLD      | 010      | Indicates temperature from 2–3 |
+| NEUTRAL   | 011      | Indicates temperature from 4–5 |
+| HOT       | 100      | Indicates temperature from 6–7 |
 
-State
+### Transition Conditions
 
-Encoding
+1. When RESET = 1, the FSM transitions to the IDLE state.
+2. In the IDLE state, the FSM remains in IDLE while START = 0.
+3. When START = 1, the FSM checks the temperature category and transitions to the corresponding state.
+4. The FSM remains in the selected category state while ACK = 0.
+5. When ACK = 1, the FSM returns to the IDLE state.
 
-Function
-
-IDLE
-
-000
-
-Waits for the START signal
-
-VERY_COLD
-
-001
-
-Indicates temperature from 0–1
-
-COLD
-
-010
-
-Indicates temperature from 2–3
-
-NEUTRAL
-
-011
-
-Indicates temperature from 4–5
-
-HOT
-
-100
-
-Indicates temperature from 6–7
-
-Transition conditions:
-
-On RESET, the FSM enters the IDLE state.
-
-In IDLE, the FSM remains there while START = 0.
-
-When START = 1, the FSM checks the temperature category and transitions to the corresponding state.
-
-The FSM remains in the selected category state while ACK = 0.
-
-When ACK = 1, the FSM returns to IDLE.
-
-Reset behaviour:
+### Reset Behaviour
 
 The reset signal forces the FSM into the IDLE state, where all category outputs remain LOW.
 
-Output behaviour:
+### Output Behaviour
 
 Only the output corresponding to the active category state is HIGH. All other category outputs remain LOW.
+
 
 **Diagram:** [Path/link]  
 **State table:** [Path/link]
