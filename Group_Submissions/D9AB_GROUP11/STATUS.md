@@ -1,16 +1,16 @@
 # Group Progress Status
 
 **Class:** [D9A/D9B]  
-**Group ID:** [D9A_Group01]  
-**Project title:** [Title]  
-**Group leader:** [Name]
+**Group ID:** [D9AB_GROUP11]  
+**Project title:** [Game Score Categorizer]  
+**Group leader:** [Hardik Patil]
 
 ## 1. Current milestone status
 Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
-| 1 | Problem requirements and assumptions documented | Not Started | [ ] | [ ] |
+| 1 | Problem requirements and assumptions documented | In Progress | [ ] | [ ] |
 | 2 | Architecture and block diagram prepared | Not Started | [ ] | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
 | 4 | Logisim circuit implemented | Not Started | [ ] | [ ] |
