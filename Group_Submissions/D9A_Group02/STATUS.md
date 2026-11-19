@@ -15,8 +15,8 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
 | 4 | Logisim circuit implemented | Not Started | [ ] | [ ] |
 | 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
-| 6 | Verilog RTL completed | Completed | [ ] | 19-11-2026, 3:05 |
-| 7 | Testbench and simulation completed | Completed | Group_Submissions/D9A_Group02/05_Results/tcl console result.png, Group_Submissions/D9A_Group02/05_Results/waveform screenshot.png | 19-11-2026, 3:00 |
+| 6 | Verilog RTL completed | Completed | Group_Submissions/D9A_Group02/03_Verilog_Implementation/RTL/gaming_xp_decoder.v | 19-11-2026, 3:05 |
+| 7 | Testbench and simulation completed | Completed | Group_Submissions/D9A_Group02/05_Results/tcl console result.png, Group_Submissions/D9A_Group02/05_Results/waveform screenshot.png, Group_Submissions/D9A_Group02/03_Verilog_Implementation/Testbench/tb_gaming_xp_decoder.v | 19-11-2026, 3:00 |
 | 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
 | 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
@@ -27,7 +27,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 
 | Date | Actual time | Work completed | Evidence path | Blocker | Next action | Updated by |
 |---|---|---|---|---|---|---|
-| 19/10/2026 | 3:01 | RTL and Testbench Simulation | Group_Submissions/D9A_Group02/05_Results/waveform screenshot.png, Group_Submissions/D9A_Group02/05_Results/tcl console result.png | [ ] | Create Logisim | Vasudha Saxena |
+| 19/10/2026 | 3:01 | RTL and Testbench Simulation | Group_Submissions/D9A_Group02/05_Results/waveform screenshot.png, Group_Submissions/D9A_Group02/05_Results/tcl console result.png, Group_Submissions/D9A_Group02/03_Verilog_Implementation/RTL/gaming_xp_decoder.v, Group_Submissions/D9A_Group02/03_Verilog_Implementation/Testbench/tb_gaming_xp_decoder.v | [ ] | Create Logisim | Vasudha Saxena |
 | 19/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 19/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
