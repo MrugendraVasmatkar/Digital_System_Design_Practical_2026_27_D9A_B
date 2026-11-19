@@ -103,13 +103,14 @@ Waveform/log path: `03_Verilog_Implementation/Simulation_Results/behavioral_simu
 - FPGA board/device: Xilinx Spartan-7 XC7S50-CSGA324-1 (part `xc7s50csga324-1`)
 - Tool/version: Xilinx Vivado 2018.3 (project `dsd_practs_sammm`)
 - Clock/constraints: `04_FPGA_Hardware/constraints.xdc` (LVCMOS33; clk F14, reset T1, start J2, ack J1, score V2/U2/U1/T2, LEDs G1/G2/F1). No `create_clock` constraint yet.
-- Synthesis/implementation summary: Synthesis, implementation and bitstream generation completed for `xc7s50csga324-1` (Vivado status bar: "write_bitstream Complete"). Implemented design: 24 cells, 11 I/O ports, 32 nets. Vivado re-encoded the FSM as one-hot (`FSM_onehot_state_reg`, 4 flip-flops) with LUTs and I/O buffers. Pin assignments match `constraints.xdc` (score T2/U1/U2/V2, ack J1, clk F14, high_led F1; LVCMOS33, outputs 12 mA slow slew). Utilisation/timing reports not yet uploaded.
+- Synthesis/implementation summary: Synthesis, implementation and bitstream generation completed for `xc7s50csga324-1` (Vivado status bar: "write_bitstream Complete"). Implemented design: 24 cells, 11 I/O ports, 32 nets. Vivado re-encoded the FSM as one-hot (`FSM_onehot_state_reg`, 4 flip-flops) with LUTs and I/O buffers. Pin assignments match `constraints.xdc` (score T2/U1/U2/V2, ack J1, clk F14, high_led F1; LVCMOS33, outputs 12 mA slow slew). Utilisation (Vivado, post-implementation): 6 Slice LUTs of 32600, 4 slice registers of 65200, 2 slices of 8150, 11 bonded IOBs of 210, 1 BUFGCTRL of 32 (all under 1% except I/O). Timing report not yet uploaded.
 - Programming and hardware test result: [not yet done]
 - Evidence path: `04_FPGA_Hardware/` (`synthesized_design_io_ports.png`)
 
 ![Vivado synthesized design - I/O ports](04_FPGA_Hardware/synthesized_design_io_ports.png)
 
 ![Vivado implemented design - schematic and I/O ports](04_FPGA_Hardware/implemented_design.png)
+n![Vivado utilization report](04_FPGA_Hardware/utilization_report.png)
 
 Explain differences between simulation and hardware results, if any.
 
