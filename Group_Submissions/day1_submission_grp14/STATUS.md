@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-19, 22:40 |
+| Last Updated | 2026-11-19, 23:00 |
 
 ## 2. Problem Statement
 
@@ -75,7 +75,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 2 — Verilog | Create testbench and run functional simulation | Completed | `03_Verilog_Implementation/Testbench/game_tb.v`; waveform in `Simulation_Results/` |
 | 2 — Verilog | Save waveforms and simulation results | In Progress | `03_Verilog_Implementation/Simulation_Results/behavioral_simulation_waveform.png` (console log pending) |
 | 3 — FPGA | Assign FPGA pins and configure constraints | Completed | `04_FPGA_Hardware/constraints.xdc` |
-| 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/synthesized_design_io_ports.png`, `04_FPGA_Hardware/implemented_design.png`, `04_FPGA_Hardware/utilization_report.png` (timing report not yet uploaded) |
+| 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/synthesized_design_io_ports.png`, `04_FPGA_Hardware/implemented_design.png`, `04_FPGA_Hardware/utilization_report.png` (timing summary uploaded but design is unconstrained: no create_clock yet) |
 | 3 — FPGA | Demonstrate the design on FPGA hardware | Not Started | `04_FPGA_Hardware/` |
 | 3 — Results | Record observations and verify expected behaviour | Not Started | `05_Results/` |
 | 3 — Presentation | Prepare slides (max 3, excluding title) and demonstration | Not Started | `06_Presentation/` |
@@ -114,6 +114,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-19, 22:00 | Vivado implemented design screenshot added (`04_FPGA_Hardware/implemented_design.png`); README section 9 updated | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 22:20 | Vivado utilization report added (`04_FPGA_Hardware/utilization_report.png`); README section 9 updated | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 22:40 | Vivado power report added (`04_FPGA_Hardware/power_report.png`); README section 9 updated | Samruddhi Samant | Commit link to be added |
+| 2026-11-19, 23:00 | Vivado timing summary added (`04_FPGA_Hardware/timing_summary.png`); design is unconstrained, create_clock still to be added | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 
