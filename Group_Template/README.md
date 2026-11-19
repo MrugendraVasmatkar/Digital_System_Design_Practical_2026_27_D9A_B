@@ -6,9 +6,9 @@
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
 | Group leader | Ankita karmakar | 22 | ankyaaa18 |
-| Member 2 | Chaitanya Jadhav | 19 | chaitanyarj49 |
-| Member 3 | Manas Narkar | [Roll no.] | [Username] |
-| Member 4 | Vidyesh Raut | [Roll no.] | [Username] |
+| Member 2 | Chaitanya Jadhav | 19 | chaitanyarj49-ux |
+| Member 3 | Manas Narkar | 41 | 2025Man-nar |
+| Member 4 | Vidyesh Raut | 47 | 2025vidyeshraut-lang |
 
 **Class:** [D9A/D9B]  
 **Group ID:** D9_Group03 
@@ -25,12 +25,13 @@
   4. To extend the design to support parameterizable input widths and configurable forbidden-zone limits.
   5. To verify the functionality of the circuit through simulation and testbench verification.
 - **Inputs and outputs:**
-  | Inputs/Output Signal | Width | Description | G
+  | Inputs/Output Signal | Width | Description | 
   |---|---|---|
   | X | n | Binary input value to be checked | 
   | L | n | Lower limit of the forbidden zone | 
   | H | n | Higher limit of the forbidden zone. |
   | Y | 1 | Result whether Rejected or accepted |
+  
 - **Constraints and assumptions:**
   1. The initial implementation uses a 4-bit unsigned binary input, allowing decimal values from 0 to 15.
   2. The default forbidden zone is from 6 to 9, including both boundary values.
