@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-19, 22:20 |
+| Last Updated | 2026-11-19, 22:40 |
 
 ## 2. Problem Statement
 
@@ -113,6 +113,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-19, 21:30 | Vivado behavioral simulation run; waveform `behavioral_simulation_waveform.png` added (scores 2, 7, 13 give LOW, MEDIUM, HIGH LED; LEDs off after ack); README section 8 updated | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 22:00 | Vivado implemented design screenshot added (`04_FPGA_Hardware/implemented_design.png`); README section 9 updated | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 22:20 | Vivado utilization report added (`04_FPGA_Hardware/utilization_report.png`); README section 9 updated | Samruddhi Samant | Commit link to be added |
+| 2026-11-19, 22:40 | Vivado power report added (`04_FPGA_Hardware/power_report.png`); README section 9 updated | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 
