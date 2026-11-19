@@ -17,8 +17,8 @@
 
 ## 2. Assigned Problem Statement
 - **Number/title:** [9H4/Password Attempt Monitor]
-- **Problem summary:** [Design, simulate, and implement a 3-bit password attempt monitor that classifies attempt counts into three categories, controls indicator LEDs using a Moore FSM, and tracks total occurrences of each category using three independent 4-bit counters (H4)]
-- **Objective:** [What must the system achieve?]
+- **Problem summary:** []
+- **Objective:** [Design, simulate, and implement a 3-bit password attempt monitor that classifies attempt counts into three categories, controls indicator LEDs using a Moore FSM, and tracks total occurrences of each category using three independent 4-bit counters (H4)]
 - **Inputs and outputs:** [List signals, widths and meaning]
 - **Constraints and assumptions:** [List and justify]
 
