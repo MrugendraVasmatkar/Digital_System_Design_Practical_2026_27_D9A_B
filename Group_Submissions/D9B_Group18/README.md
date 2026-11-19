@@ -145,7 +145,7 @@ The Mealy FSM requires a small number of states and can be implemented using bas
 The project provides a practical demonstration of digital logic design, comparator-based classification, sequential circuits, and Finite State Machines. It can also be extended in the future by connecting an actual temperature sensor and electrically controlled water valves.
 
 ## 4. Architecture
-4.2 Modules Explanation
+Modules Explanation
 1. Input Module: Three switches (T2, T1, T0) provide 3-bit temperature values from 0 to 7.
 
 2. Input Register: Stores the 3-bit input on the rising edge of the clock.
