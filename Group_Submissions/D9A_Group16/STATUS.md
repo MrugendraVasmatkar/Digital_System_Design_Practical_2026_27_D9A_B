@@ -29,8 +29,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 |---|---|---|---|---|---|---|
 | 19/10/2026 | 11:30 am| documentation and analysis of problem statement | Group_Submissions/D9A_Group16/01_Problem_Analysis/Problem_analysis.md | [ ] | [ ] | [ ] |
 | 19/10/2026 | 2:30 am | FSM state and transition table | [ ]Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/FSM_State_Transition_table.md  | [ ] | [ ] | [ ] |
-| 19/10/2026 | 3:30 pm | Logisim Designing and Implementation | Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Simulation_Evidence.jpeg
-Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Water_Temp.circ| [ ] | [ ] | [ ] |
+| 19/10/2026 | 3:30 pm | Logisim Designing and Implementation | Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Simulation_Evidence.jpeg| [ ] | [ ] | [ ] |
 | 19/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
