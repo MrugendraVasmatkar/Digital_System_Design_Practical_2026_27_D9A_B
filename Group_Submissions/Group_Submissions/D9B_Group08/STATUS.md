@@ -39,7 +39,7 @@ Add rows as needed.
 ## 3. Current blockers and support required
 | Blocker | Impact | Action being taken | Faculty support required |
 |---|---|---|---|
-| Differentiating input change | Fails proper incrementation of States | Brainstorming other possibilities, one being change in FSM integration by increasing states to simplify | Feedback on existing logic of datapath only approach or change in FSM |
+| Differentiating input change | Fails proper incrementation of Accept and Reject | Brainstorming other possibilities, one being change in FSM integration by increasing states to simplify | Feedback on existing logic of datapath only approach or change in FSM |
 
 ## 4. End-of-day summary
 ### 19 October 2026
@@ -59,4 +59,4 @@ Add rows as needed.
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
 
 **Group leader:** Tanav Patil  
-**Date/time:** 19-11-26 / 16:10
+**Date/time:** 19-11-26 / 16:14
