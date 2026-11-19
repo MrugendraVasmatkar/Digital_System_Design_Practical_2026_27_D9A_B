@@ -1,20 +1,19 @@
 # Group Progress Status
 
-**Class:** [D9A/D9B]  
-**Group ID:** [D9A_Group01]  
-**Project title:** [Title]  
-**Group leader:** [Name]
-
+**Class:** D9A and D9B
+**Group ID:** D9A_B_Group03
+**Project title:** FORBIDDEN ZONE REJECTOR  
+**Group leader:** Ankita karmakar
 ## 1. Current milestone status
 Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
-| 1 | Problem requirements and assumptions documented | Not Started | [ ] | [ ] |
-| 2 | Architecture and block diagram prepared | Not Started | [ ] | [ ] |
-| 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
-| 4 | Logisim circuit implemented | Not Started | [ ] | [ ] |
-| 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
+| 1 | Problem requirements and assumptions documented | Completed | [ ] | [ ] |
+| 2 | Architecture and block diagram prepared | Completed | [ ] | [ ] |
+| 3 | FSM diagram/table completed, if applicable | Completed | [ ] | [ ] |
+| 4 | Logisim circuit implemented | Completed | [ ] | [ ] |
+| 5 | Logisim simulation verified | Completed | [ ] | [ ] |
 | 6 | Verilog RTL completed | Not Started | [ ] | [ ] |
 | 7 | Testbench and simulation completed | Not Started | [ ] | [ ] |
 | 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
@@ -42,11 +41,11 @@ Add rows as needed.
 
 ## 4. End-of-day summary
 ### 19 October 2026
-- Completed:
-- In progress:
+- Completed: Logisim Circuit implemented and simulated
+- In progress: Verilog RTL
 - Pending:
 - Evidence uploaded:
-- Plan for 20 October:
+- Plan for 20 October: Verilog RTL & Simulation + Hardware Implemenentation
 
 ### 20 October 2026
 - Completed:
@@ -57,5 +56,5 @@ Add rows as needed.
 ## 5. Group leader confirmation
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
 
-**Group leader:** [Name]  
-**Date/time:** [Actual date and time]
+**Group leader:** Ankita Karmakar 
+**Date/time:** 18 November 2026 / 5 pm
