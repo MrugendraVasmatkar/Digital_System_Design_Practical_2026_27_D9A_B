@@ -5,10 +5,10 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Parth Nemade | 42 | parthn17 |
+| Member 2 | Arnav Dhole | 09 | arnavdhole3-sudo |
+| Member 3 | Aryan Mansukh | 32 |aryanmansukh69-a11y |
+| Member 4 | Mugdha Parab | 38 | mugdhap0407 |
 
 **Class:** [D9A/D9B]  
 **Group ID:** [e.g. D9A_Group01]  
