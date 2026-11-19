@@ -5,13 +5,13 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
+| Group leader | [Shlok Kesarkar] | [65] | [shlokkesarkar22-tech] |
+| Member 2 | [Diksha Dineshchandra Mishra ] | [34/D9B] | [Diksham-16] |
+| Member 3 | [lakshya kiran Sawardekar ] | [51] | [TheUltimate25] |
 | Member 4 | [Name] | [Roll no.] | [Username] |
 
 **Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
+**Group ID:** [D9A/B_Group23]  
 **Repository URL:** [Fork URL]  
 **Final Pull Request URL:** [URL]
 
