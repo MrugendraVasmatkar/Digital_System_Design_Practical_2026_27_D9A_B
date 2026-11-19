@@ -11,8 +11,8 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
-| 1 | Problem requirements and assumptions documented | Not Started | https://docs.google.com/document/d/1Y3f19ccyAWOuHTmcKxUKXCJ4mraLcUXDPXZT47sXAvA/edit?tab=t.0| [ ] |
-| 2 | Architecture and block diagram prepared | Not Started | https://docs.google.com/document/d/1EbxZ4pvZt-DQTi53vrYNyFnS8w5s_qI3FKJPH9AKmxM/edit?tab=t.0 | [ ] |
+| 1 | Problem requirements and assumptions documented | Completed | https://docs.google.com/document/d/1Y3f19ccyAWOuHTmcKxUKXCJ4mraLcUXDPXZT47sXAvA/edit?tab=t.0| [ ] |
+| 2 | Architecture and block diagram prepared | Completed | https://docs.google.com/document/d/1EbxZ4pvZt-DQTi53vrYNyFnS8w5s_qI3FKJPH9AKmxM/edit?tab=t.0 | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
 | 4 | Logisim circuit implemented | Not Started | [ ] | [ ] |
 | 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
