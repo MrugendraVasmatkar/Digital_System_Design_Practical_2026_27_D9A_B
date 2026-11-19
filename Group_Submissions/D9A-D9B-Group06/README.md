@@ -5,18 +5,18 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Shruti Sudesh Ingale  | 17 | shrutiingale99-alt |
+| Member 2 | Bhumi Umesh Dhuri | 10 | bhumidhuri |
+| Member 3 | Soham Jitendra Sarang | 57 | sohamsarang-45 |
+| Member 4 | Prajkta Waghchaure | 64 | Prajkta9621 |
 
-**Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
-**Repository URL:** [Fork URL]  
+**Class:** D9A-D9B  
+**Group ID:**  D9A-D9B_Group06 
+**Repository URL:** https://github.com/shrutiingale99-alt/DSD-2026-D9A-D9B-Group06
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
+- **Number/title:** WEATHER ALERT SYSTEM
 - **Problem summary:** [In your own words]
 - **Objective:** [What must the system achieve?]
 - **Inputs and outputs:** [List signals, widths and meaning]
