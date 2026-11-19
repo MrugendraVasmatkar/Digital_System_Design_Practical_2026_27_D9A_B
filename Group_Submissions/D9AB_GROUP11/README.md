@@ -30,6 +30,7 @@ MEDIUM – Indicates a score between 5 and 10.
 HIGH – Indicates a score between 11 and 15.
 ERROR – Indicates an invalid score greater than 15.
 LED indicators display the corresponding category.
+
 - **Constraints and assumptions:** The score is represented using a 5-bit binary input.
 Valid scores range from 0 to 15.
 Scores greater than 15 are treated as invalid inputs.
@@ -48,6 +49,7 @@ The system accepts a binary score as input and uses a range decoder to determine
 - **High:** Scores from 11 to 15.
 - **Error:** Scores greater than 15, which are considered invalid.
 The proposed design consists of an input register, range decoder, Moore FSM controller and output logic. When the START signal is activated, the input score is processed and classified. The FSM transitions to the appropriate category state, activating the corresponding LED indicator. The system remains in the detected category state until an ACK signal is received, returning it to the IDLE state. RESET can also be used to return the system to its initial state.
+
 **Edge Cases:**
 - A score of 0 must be correctly classified as LOW.
 - Scores at the category boundaries (4, 5, 10 and 11) must be classified correctly.
@@ -55,14 +57,17 @@ The proposed design consists of an input register, range decoder, Moore FSM cont
 - Scores greater than 15 must activate the ERROR state and Error LED.
 - RESET must return the system to IDLE.
 - ACK must clear the current category indication and return the system to IDLE.
+- 
 **Proposed Solution:**
 A Moore FSM is implemented with five states: IDLE, LOW, MEDIUM, HIGH and ERROR. The input score is evaluated using combinational range-decoding logic, and the FSM controls the corresponding output indicators. Since the outputs depend only on the current state, the design provides predictable sequential behaviour.
+
 **Distinctive Features:**
 - Four-category score classification.
 - Additional ERROR state for invalid score detection.
 - Moore FSM-based sequential control.
 - LED-based visual indication of the detected category.
 - START, ACK and RESET controls for managing system operation.
+- 
 **Feasibility:**
 The design is feasible using basic digital components such as registers, comparators, combinational logic gates and flip-flops. It can be implemented and tested in Logisim and described using Verilog HDL. The modular architecture also makes the system suitable for FPGA implementation and further enhancements.
 
