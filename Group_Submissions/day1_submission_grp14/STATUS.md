@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 03:30 |
+| Last Updated | 2026-11-20, 04:00 |
 
 ## 2. Problem Statement
 
@@ -69,7 +69,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 1 — Design | Identify inputs, outputs, and operating conditions | Completed | `01_Problem_Analysis/io_specification.md` |
 | 1 — Design | Draw FSM state diagram and state table | Completed | `02_FSM_Logisim/fsm_state_diagram.png`; state table in `README.md` section 5 |
 | 1 — Design | Draw block diagram and define control signals | Completed | `02_FSM_Logisim/block_diagram.png` |
-| 1 — Design | Build and test the architecture in Logisim | In Progress | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` (final circuit built; overview screenshot added; simulation screenshots pending) |
+| 1 — Design | Build and test the architecture in Logisim | In Progress | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` (final circuit built; overview screenshot added; Logisim simulation screenshot for score 13 (HIGH) added in `sim_score13_high.png`; other scores, ACK and RESET still pending) |
 | 2 — Verilog | Write synthesizable RTL (controller and datapath) | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` |
 | 2 — Verilog | Integrate modules at top level | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` (single module) |
 | 2 — Verilog | Create testbench and run functional simulation | Completed | `03_Verilog_Implementation/Testbench/game_tb.v`; waveform in `Simulation_Results/` |
@@ -127,6 +127,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 02:30 | Updated Logisim circuit `Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` uploaded as the final version (matches the comparator screenshot) | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 03:00 | Assigned statement 3H2 (hint H2, Mealy FSM) transcribed into the problem analysis with a requirement mapping; photo of the handout added | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 03:30 | Clock constraint (create_clock 10 ns) added to constraints; bitstream regenerated; screenshots `constraints_with_clock.png` and `bitstream_generation_completed.png` added; refreshed timing report still pending | Samruddhi Samant | Commit link to be added |
+| 2026-11-20, 04:00 | Logisim simulation screenshot added (`02_FSM_Logisim/sim_score13_high.png`, SCORE = 13 gives HIGH LED); other scores, ACK and RESET pending | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 

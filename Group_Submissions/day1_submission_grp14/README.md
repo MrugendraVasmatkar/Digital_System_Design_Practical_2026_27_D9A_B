@@ -72,7 +72,10 @@ File: `02_FSM_Logisim/fsm_state_diagram.png`
 ## 6. Logisim Implementation
 - Logisim version: file saved in the Logisim 2.7.1 format (`project source="2.7.1"`)
 - Circuit file: `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` (final version; earlier version `Game_Score_Categorizer_H2_Mealy_Machine.circ` kept for reference)
-- Test cases and expected/observed behaviour: [simulation not yet documented]
+- Test cases and expected/observed behaviour: score 13 (SCORE = 1101): expected HIGH LED on, observed HIGH LED lit (red) with LOW and MEDIUM unlit and the `HIGHc` probe active, see `sim_score13_high.png`. Other scores (0-15), ACK and RESET are still to be simulated and documented.
+
+![Logisim simulation, score 13 gives HIGH](02_FSM_Logisim/sim_score13_high.png)
+
 - Issues and corrections: [Details]
 - Screenshot/evidence: `02_FSM_Logisim/circuit_overview_v2_comparators.png` (circuit only; simulation screenshots pending)
 
