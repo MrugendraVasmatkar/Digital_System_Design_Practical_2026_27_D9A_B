@@ -157,6 +157,7 @@ Modules Explanation
 4. FSM Controller: Uses a Mealy FSM to control classification through START, ACK and RESET signals.
 
 5. Output Module: Three LEDs indicate COLD, NEUTRAL and HOT valve conditions.
+
 4.3 Data and Control Flow
 1. User enters temperature using three switches.
 2. Register stores the input on the clock edge.
@@ -166,12 +167,15 @@ Modules Explanation
 6. FSM enters WAIT_ACK state.
 7. ACK returns the FSM to IDLE.
 8. RESET initializes the FSM and turns OFF all outputs.
+
 4.4 Design Trade-offs
 1. Mealy FSM: Faster output response but sensitive to input glitches.
 2. Comparator Decoder: Simple classification but requires multiple gates.
 3. 3-Bit Register: Provides synchronized input but increases hardware.
 4. Three LEDs: Clear output indication but requires additional components.
 5. START, ACK and RESET: Provide controlled operation but increase circuit complexity.
+
+
 4.5 Architecture Summary
 The Water Temperature Classifier uses a 3-bit input register, comparator-based range decoder and Mealy FSM to classify temperature into COLD, NEUTRAL and HOT categories. It supports all eight input combinations and controls three corresponding LED indicators. The design can be implemented and verified using Logisim Evolution and Verilog HDL with Vivado.
 ![Block diagram](path/to/block_diagram.png)
