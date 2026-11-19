@@ -1,9 +1,9 @@
 # Group Progress Status
 
-**Class:** [D9A/D9B]  
-**Group ID:** [D9A_Group01]  
-**Project title:** [Title]  
-**Group leader:** [Name]
+**Class:** D9A/D9B  
+**Group ID:** D9A_B_Group31
+**Project title:** Weather Alert System (7H3) 
+**Group leader:** Aditya Parab
 
 ## 1. Current milestone status
 Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
