@@ -1,3 +1,3 @@
-# 01 – Problem Analysis
+# 02 – FSM and Logisim
 
-Upload the problem statement, requirements, assumptions, input/output definitions, constraints and proposed solution explanation here.
+Upload FSM diagram, state table, Logisim `.circ` source and simulation evidence. If FSM is not applicable, explain the alternative control approach.
