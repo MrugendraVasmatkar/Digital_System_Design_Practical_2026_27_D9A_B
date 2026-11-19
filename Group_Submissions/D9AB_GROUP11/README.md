@@ -16,30 +16,55 @@
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** Game Score Categorizer
-- **Problem summary:** The Game Score Categorizer is a digital system designed to classify an input game score into predefined categories. It processes a 5-bit binary score and determines the corresponding category. The result is displayed using a seven-segment display, providing a simple and understandable visual representation.
-- **Objective:** To design and implement a digital system that accepts a binary score, categorizes it into the appropriate range, and displays the corresponding category. The system uses a Finite State Machine (FSM) to control the classification and display process.
+- **Number/title:** Game Score Categorizer – H3: Add Error State for Invalid Input.
+- **Problem summary:** The Game Score Categorizer is a digital system designed to classify an input game score into different categories based on predefined score ranges. The system uses a Moore Finite State Machine (FSM) to identify whether the score belongs to the Low, Medium, High or Error category. An additional Error state is incorporated to detect invalid inputs exceeding the maximum valid score of 15.
+- **Objective:** To design and implement a digital system that accepts a binary score, classifies it into the appropriate category and displays the corresponding output using LEDs. The system must also detect invalid scores and activate an Error LED. It should return to the IDLE state upon receiving RESET or ACK.
 - **Inputs and outputs:** Inputs:
 S[4:0] – 5-bit binary score input.
-START – Initiates the classification process.
-ACK – Acknowledgement input.
-RESET – Resets the system to its initial state.
+START – Initiates the score classification process.
+ACK – Acknowledges the result and returns the system to IDLE.
+RESET – Resets the FSM to its initial IDLE state.
 Outputs:
-Category indicators: Low (L), Medium (M), High (H), and Error (E).
-Seven-segment display output to indicate the classified category.
-Idle condition represented by a dash (-).
-- **Constraints and assumptions:** The score input is represented using 5 bits.
-The system operates on predefined score classification ranges.
+LOW – Indicates a score between 0 and 4.
+MEDIUM – Indicates a score between 5 and 10.
+HIGH – Indicates a score between 11 and 15.
+ERROR – Indicates an invalid score greater than 15.
+LED indicators display the corresponding category.
+- **Constraints and assumptions:** The score is represented using a 5-bit binary input.
+Valid scores range from 0 to 15.
+Scores greater than 15 are treated as invalid inputs.
+The system uses a Moore FSM for sequential control.
 Classification is initiated using the START signal.
-RESET returns the system to its initial idle state.
-ACK is used for acknowledgement and control of the classification sequence.
-The system uses an FSM-based control mechanism.
-Only one category is displayed at a time.
+ACK returns the system to IDLE after displaying the result.
+RESET asynchronously returns the system to the initial IDLE state.
+Only one category output is active at a time.
 
 ## 3. Problem Analysis and Proposed Solution
-Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
 
-[Write here]
+The Game Score Categorizer is designed to classify numerical game scores into predefined categories using digital logic and a Moore Finite State Machine (FSM).
+The system accepts a binary score as input and uses a range decoder to determine the corresponding category. The classification is divided into four categories:
+- **Low:** Scores from 0 to 4.
+- **Medium:** Scores from 5 to 10.
+- **High:** Scores from 11 to 15.
+- **Error:** Scores greater than 15, which are considered invalid.
+The proposed design consists of an input register, range decoder, Moore FSM controller and output logic. When the START signal is activated, the input score is processed and classified. The FSM transitions to the appropriate category state, activating the corresponding LED indicator. The system remains in the detected category state until an ACK signal is received, returning it to the IDLE state. RESET can also be used to return the system to its initial state.
+**Edge Cases:**
+- A score of 0 must be correctly classified as LOW.
+- Scores at the category boundaries (4, 5, 10 and 11) must be classified correctly.
+- A score of 15 must be classified as HIGH.
+- Scores greater than 15 must activate the ERROR state and Error LED.
+- RESET must return the system to IDLE.
+- ACK must clear the current category indication and return the system to IDLE.
+**Proposed Solution:**
+A Moore FSM is implemented with five states: IDLE, LOW, MEDIUM, HIGH and ERROR. The input score is evaluated using combinational range-decoding logic, and the FSM controls the corresponding output indicators. Since the outputs depend only on the current state, the design provides predictable sequential behaviour.
+**Distinctive Features:**
+- Four-category score classification.
+- Additional ERROR state for invalid score detection.
+- Moore FSM-based sequential control.
+- LED-based visual indication of the detected category.
+- START, ACK and RESET controls for managing system operation.
+**Feasibility:**
+The design is feasible using basic digital components such as registers, comparators, combinational logic gates and flip-flops. It can be implemented and tested in Logisim and described using Verilog HDL. The modular architecture also makes the system suitable for FPGA implementation and further enhancements.
 
 ## 4. Architecture
 Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
