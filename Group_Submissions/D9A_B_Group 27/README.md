@@ -5,19 +5,19 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Aarish Das | 7 | [aarishds-bit] |
+| Member 2 | Aryan Bhumkar | 4 | AryanBhumkar |
+| Member 3 | Kanishk Vikram Singh | 58 | Kanishk-Vikram-Singh141 |
+| Member 4 | Sahil Balani | 70 | d2026sahilbalani-design |
 
 **Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
-**Repository URL:** [Fork URL]  
-**Final Pull Request URL:** [URL]
+**Group ID:** [e.g. D9A_Group27]  
+**Repository URL:** [https://github.com/aarishds-bit/Digital_System]  
+**Final Pull Request URL:** (https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/34)]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
-- **Problem summary:** [In your own words]
+- **Number/title:** [Age group detector 2H4 – Add Category Counters]
+- **Problem summary:** [The project involves designing an Age Group Detector that accepts a person's age as a digital input and classifies it into one of three categories: Child, Teen or Adult.The system uses a Finite State Machine (FSM) to control the classification process. A 2-bit counter-based method is incorporated after the FSM and before the LED output stage to implement the category-counting and output-control logic.]
 - **Objective:** [What must the system achieve?]
 - **Inputs and outputs:** [List signals, widths and meaning]
 - **Constraints and assumptions:** [List and justify]
