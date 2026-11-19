@@ -42,9 +42,10 @@ Add rows as needed.
 
 ## 4. End-of-day summary
 ### 19 October 2026
-- Completed:
+- Completed:Problem requirements and assumptions documented	completed,Architecture and block diagram prepared	completed,FSM diagram/table completed, if applicable	completed	,Logisim circuit implemented	completed,Logisim simulation verified	completed,Verilog RTL completed	completed,Testbench and simulation completed
 - In progress:
-- Pending:
+ -Pending: FPGA synthesis and implementation completed, Hardware demonstration completed,Results, presentation and report uploaded
+Final Pull Request created 
 - Evidence uploaded:
 - Plan for 20 October:
 
