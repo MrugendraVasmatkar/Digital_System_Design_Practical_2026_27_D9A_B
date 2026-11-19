@@ -13,7 +13,7 @@
 **Class:** D9A / D9B (Group 14)  
 **Group ID:** D9A_Group14  
 **Repository URL:** https://github.com/planetsamzz77/DSD-2026-D9A-Group14  
-**Final Pull Request URL:** [URL]
+**Final Pull Request URL:** https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/33  
 
 ## 2. Assigned Problem Statement
 - **Group number:** 14 (D9A_Group14)
