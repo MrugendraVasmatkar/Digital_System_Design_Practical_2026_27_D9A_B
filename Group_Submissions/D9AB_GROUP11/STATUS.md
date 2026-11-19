@@ -10,8 +10,9 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
 | 1 | Problem requirements and assumptions documented |Completed  | [https://docs.google.com/document/d/1NXrjz70RfDS-FcJMeP1wkRe8GuhmOGCB2sgvAF5Sy2U/edit?usp=sharing ] | [ ] |
-| 2 | Architecture and block diagram prepared | Not Started | [ ] | [ ] |
-| 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
+| 2 | Architecture and block diagram prepared | completed | [ <img width="1286" height="762" alt="image" src="https://github.com/user-attachments/assets/6085dd50-b4f7-43a3-b390-67d95879372d" />
+] | [ ] |
+| 3 | FSM diagram/table completed, if applicable | completed | [https://docs.google.com/document/d/1-fAGOHX7oNCu6y1qPojZ8qcaM1KL04kfSzLRYz9FYGs/edit?usp=sharing ] | [ ] |
 | 4 | Logisim circuit implemented | Not Started | [ ] | [ ] |
 | 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
 | 6 | Verilog RTL completed | Not Started | [ ] | [ ] |
