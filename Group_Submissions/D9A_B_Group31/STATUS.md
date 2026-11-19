@@ -1,4 +1,4 @@
-# Group Progress Status
+﻿# Group Progress Status
 
 **Class:** D9A/D9B  
 **Group ID:** D9A_B_Group31
@@ -10,11 +10,11 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
-| 1 | Problem requirements and assumptions documented | Not Started | [ ] | [ ] |
-| 2 | Architecture and block diagram prepared | Not Started | [ ] | [ ] |
-| 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
-| 4 | Logisim circuit implemented | Not Started | [ ] | [ ] |
-| 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
+| 1 | Problem requirements and assumptions documented | Completed | `README.md` (Sections 2–3) | 19/11/2026 |
+| 2 | Architecture and block diagram prepared | Completed | `system_block_diagram.png`, `README.md` (Section 4) | 19/11/2026 |
+| 3 | FSM diagram/table completed, if applicable | Completed | `moore_fsm_state_diagram.png`, `README.md` (Section 5) | 19/11/2026 |
+| 4 | Logisim circuit implemented | Completed | `02_FSM_Logisim/DSD_FINAL_PRACTICAL (2).circ` | 19/11/2026 |
+| 5 | Logisim simulation verified | Completed | Logisim simulation screenshots / verification table | 19/11/2026 |
 | 6 | Verilog RTL completed | Not Started | [ ] | [ ] |
 | 7 | Testbench and simulation completed | Not Started | [ ] | [ ] |
 | 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
