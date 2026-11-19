@@ -11,8 +11,8 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 |---:|---|---|---|---|
 | 1 | Problem requirements and assumptions documented | Not Started | [ ] | [ ] |
 | 2 | Architecture and block diagram prepared | Not Started | [ ] | [ ] |
-| 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
-| 4 | Logisim circuit implemented | Not Started | [ ] | [ ] |
+| 3 | FSM diagram/table completed, if applicable | Completed | Group_Submissions/D9A_B_Group19/02_FSM_Logisim | 19/11/26 |
+| 4 | Logisim circuit implemented | Completed | Group_Submissions/D9A_B_Group19/02_FSM_Logisim | 19/11/26 |
 | 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
 | 6 | Verilog RTL completed | Not Started | [ ] | [ ] |
 | 7 | Testbench and simulation completed | Not Started | [ ] | [ ] |
