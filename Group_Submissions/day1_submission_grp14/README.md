@@ -130,10 +130,10 @@ Future improvements: debouncing/synchronising `start` and `ack`; seven-segment d
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
 |---|---|---|
-| Group leader | [ ] | [ ] |
-| Member 2 | [ ] | [ ] |
-| Member 3 | [ ] | [ ] |
-| Member 4 | [ ] | [ ] |
+| Samruddhi Samant (Group leader) | Verilog source code, testbench, FPGA constraints, bitstream, presentation, FSM state diagram | `03_Verilog_Implementation/`, `04_FPGA_Hardware/`, `06_Presentation/`, `02_FSM_Logisim/fsm_state_diagram.png` |
+| Siddharth Sanjeev Tiwari | Logisim design and simulation | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ` |
+| Deven Shailendra Bhadane | Logisim design and simulation | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ` |
+| Ojas Nitin Kadam | Verilog source code and testbench | `03_Verilog_Implementation/RTL/`, `03_Verilog_Implementation/Testbench/` |
 
 Every student must be ready to explain the complete design.
 

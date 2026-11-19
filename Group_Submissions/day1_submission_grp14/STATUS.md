@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 00:10 |
+| Last Updated | 2026-11-20, 00:30 |
 
 ## 2. Problem Statement
 
@@ -78,7 +78,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/implemented_design.png`, `04_FPGA_Hardware/utilization_report.png` (timing summary uploaded but design is unconstrained: no create_clock yet) |
 | 3 — FPGA | Demonstrate the design on FPGA hardware | Not Started | `04_FPGA_Hardware/` |
 | 3 — Results | Record observations and verify expected behaviour | Not Started | `05_Results/` |
-| 3 — Presentation | Prepare slides (title + 4 content slides per guidelines) and demonstration | In Progress | `06_Presentation/Group14_DSD_Presentation.pptx` (draft; University logo, contributions and hardware demo still to fill) |
+| 3 — Presentation | Prepare slides (title + 4 content slides per guidelines) and demonstration | In Progress | `06_Presentation/Group14_DSD_Presentation.pptx` (draft; University logo and hardware demo still to fill) |
 | 3 — Submission | Complete final report and checklist | Not Started | `07_Final_Report/` |
 
 ## 6. Functional Test Plan
@@ -119,15 +119,16 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-19, 23:40 | Block diagram added (`02_FSM_Logisim/block_diagram.png`) and described in README section 4 | Samruddhi Samant | Commit link to be added |
 | 2026-11-19, 23:59 | Draft presentation added (`06_Presentation/Group14_DSD_Presentation.pptx`): title slide + 4 content slides | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 00:10 | Presentation updated with VESIT college logo, college name and department (Electronics and Telecommunication) | Samruddhi Samant | Commit link to be added |
+| 2026-11-20, 00:30 | Individual contributions recorded in README section 11, STATUS section 8 and presentation slide 5 | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 
 | Member | Assigned Responsibility | Work Actually Completed | Evidence / Commit Link |
 |---|---|---|---|
-| Samruddhi Samant | To be assigned | To be updated | Add link |
-| Siddharth Sanjeev Tiwari | To be assigned | To be updated | Add link |
-| Deven Shailendra Bhadane | To be assigned | To be updated | Add link |
-| Ojas Nitin Kadam | To be assigned | To be updated | Add link |
+| Samruddhi Samant | Verilog source code, testbench, FPGA constraints, bitstream, presentation, FSM state diagram | Done (see README section 11) | `03_Verilog_Implementation/`, `04_FPGA_Hardware/`, `06_Presentation/`, `02_FSM_Logisim/fsm_state_diagram.png` |
+| Siddharth Sanjeev Tiwari | Logisim design and simulation | Done | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ` |
+| Deven Shailendra Bhadane | Logisim design and simulation | Done | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ` |
+| Ojas Nitin Kadam | Verilog source code and testbench | Done | `03_Verilog_Implementation/RTL/`, `03_Verilog_Implementation/Testbench/` |
 
 All members must understand the complete design and be prepared to explain the FSM, datapath, Verilog code, simulation, and hardware demonstration during the oral examination. Assigned roles do not limit individual responsibility for understanding the project.
 
