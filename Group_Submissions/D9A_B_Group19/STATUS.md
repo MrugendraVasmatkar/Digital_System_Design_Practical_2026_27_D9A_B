@@ -18,7 +18,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 7 | Testbench and simulation completed | Completed |Group_Submissions/D9A_B_Group19/03_Verilog_Implementation/password_attempt_monitor.xpr| 19/11/26 |
 | 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
-| 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
+| 10 | Results, presentation and report uploaded | Presentation Uplaoded | Group_Submissions/D9A_B_Group19/06_Presentation/Password_Attempt_Monitor_PPT.pptx | 19/11/26 |
 | 11 | Final Pull Request created | Not Started | [ ] | [ ] |
 
 ## 2. Time-wise progress log
