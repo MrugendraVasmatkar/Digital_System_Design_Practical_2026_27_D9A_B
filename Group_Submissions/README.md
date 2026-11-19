@@ -5,18 +5,18 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Chirag Guin | D9B-12 | chiragGuin |
+| Member 2 | Vivek Jadhav | D9B-18 | vivekjadhav-bot |
+| Member 3 | Yash Kukreja | D9A-28 | Yashrajkukreja01 |
+| Member 4 | Ridhi Lulla | D9A-69 | ridhilulla |
 
 **Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
-**Repository URL:** [Fork URL]  
-**Final Pull Request URL:** [URL]
+**Group ID:** D9B_Group24  
+**Repository URL:** [https://github.com/chiragGuin/DSD-2026-D9B-Group24}  
+**Final Pull Request URL:** []
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
+- **Number/title:** 9H1 - Password Attempt Monitor (3-bit)
 - **Problem summary:** [In your own words]
 - **Objective:** [What must the system achieve?]
 - **Inputs and outputs:** [List signals, widths and meaning]
