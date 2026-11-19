@@ -12,11 +12,11 @@
 
 **Class:** [D9A/D9B]  
 **Group ID:** [e.g. D9A_Group01]  
-**Repository URL:** [Fork URL]  
+**Repository URL:** (https://github.com/VedangPatil-prog/DSD_2026_D9A_B_Group19) 
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
+- **Number/title:** 9/Password Attempt Monitor(3-bit)
 - **Problem summary:** [In your own words]
 - **Objective:** [What must the system achieve?]
 - **Inputs and outputs:** [List signals, widths and meaning]
