@@ -5,14 +5,14 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | [PARTH AMIT JOSHI] | [25] | [Username] |
+| Member 2 | [SHRADDHA BHARAT LAMANE] | [29] | [Username] |
+| Member 3 | [MAITREYEE DAHIWALE] | [06] | [Username] |
+| Member 4 | [SUMIT SAMIR SANE] | [50] | [Username] |
 
 **Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
-**Repository URL:** [Fork URL]  
+**Group ID:** [e.g. D9A_Group20]  
+**Repository URL:** [[Fork URL](https://github.com/pxrthj/DSD-2026-D9A-Group20/)]  
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
