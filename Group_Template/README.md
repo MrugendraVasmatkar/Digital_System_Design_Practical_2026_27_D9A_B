@@ -5,10 +5,10 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Snehal Gharmude] | [16] | [lumora-driod] |
-| Member 2 | [Sachin Mane] | [30] | [2025sachinmane] |
-| Member 3 | [Sheetal Panda] | [44] | [Sheetal-VESIT] |
-| Member 4 | [Vidisha Bagwe] | [02] | [VidishaBagwe] |
+| Group leader | Snehal Gharmude | 16 | lumora-driod |
+| Member 2 | Sachin Mane | 30 | 2025sachinmane |
+| Member 3 | Sheetal Panda | 44 | Sheetal-VESIT |
+| Member 4 | Vidisha Bagwe | 02 | VidishaBagwe |
 
 **Class:** [D9A/D9B]  
 **Group ID:** [D9A/D9B_Group07]  
