@@ -88,9 +88,11 @@ File: `02_FSM_Logisim/fsm_state_diagram.png`
 
 ![Vivado elaborated RTL schematic](03_Verilog_Implementation/rtl_elaborated_schematic.png)
 - RTL: `03_Verilog_Implementation/RTL/mealy_simple.v`
-- Testbench: `03_Verilog_Implementation/Testbench/game_tb.v`
+- Testbench: `03_Verilog_Implementation/Testbench/game_tb.v` (basic, 3 scores) and `game_tb_full.v` (self-checking: all 16 scores, all four states, reset, START/ACK, 400 random cycles against a reference model, PASS/FAIL messages; written, not yet simulated)
 
 ## 8. Verification and Simulation Results
+**Full testbench (`game_tb_full.v`):** written to meet the handout (Q3) and **not yet simulated**. It must be run in Vivado (top `game_tb_full`, `mealy_simple.v` as the design) and the console log with the final line "RESULT: ALL ... CHECKS PASSED" saved in `Simulation_Results/`. Until then, the results below are for the basic testbench only.
+
 Testbench `game_tb.v` has 3 test cases, simulated in the Vivado Simulator (Behavioral Simulation, top `game_tb`). The observed values below are read from the waveform; the Tcl console `$display` log is not yet uploaded.
 
 | Test ID | Inputs/conditions | Expected output | Observed output | Pass/Fail |

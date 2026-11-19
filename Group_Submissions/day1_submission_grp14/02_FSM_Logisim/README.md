@@ -7,6 +7,7 @@
 | `Game_Score_Categorizer_H2_Mealy_Machine.circ` | Earlier version: four separate score pins S3–S0 with gate-level range logic (kept for reference) |
 | `circuit_overview.png` | Screenshot of the earlier version |
 | `sim_score13_high.png` | Logisim simulation screenshot: SCORE = 1101 (13), HIGH LED lit, LOW and MEDIUM off |
+| `logisim_test_plan.md` | Step-by-step plan and expected-results table for verifying all 16 scores, ACK and RESET in Logisim (observed column to be filled) |
 | `fsm_state_diagram.png` | FSM state diagram (IDLE, LOW, MEDIUM, HIGH; transitions labelled input / output) |
 | `block_diagram.png` | Block diagram: score switches, range decoder, next-state logic, state register, state decoder, Mealy output logic, controls and LEDs |
 
