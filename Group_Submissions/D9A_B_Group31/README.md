@@ -67,7 +67,7 @@ The entire design requires minimal hardware resources—one 4-bit register, one 
 
 ## 4. Architecture
 
-![Block diagram](system_block_diagram.png)
+![Block diagram](01_Problem_Analysis/system_block_diagram.png)
 
 ### Module Breakdown
 1. **Input Interface & 4-Bit Input Register:** Combines the four wind input switches (`W0` LSB through `W3` MSB forming `w[3:0]`) into a 4-bit unsigned bus and latches the reading on the rising edge of `CLK` (asynchronously cleared to `0000` on `RST = 1`).
@@ -104,7 +104,7 @@ Yes, the system uses a **5-state Moore Finite State Machine (FSM)**. A Moore arc
 
 **Diagram:**
 
-![Moore FSM State Diagram](moore_fsm_state_diagram.png)  
+![Moore FSM State Diagram](02_FSM_Logisim/moore_fsm_state_diagram.png)  
 **State table:** See the State Encoding, Moore Output, and State Transition tables below.
 
 ### State Encoding and Moore Output Table
