@@ -145,8 +145,37 @@ The Mealy FSM requires a small number of states and can be implemented using bas
 The project provides a practical demonstration of digital logic design, comparator-based classification, sequential circuits, and Finite State Machines. It can also be extended in the future by connecting an actual temperature sensor and electrically controlled water valves.
 
 ## 4. Architecture
-Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
+Modules Explanation
+1. Input Module (Switches): Provides a 3-bit temperature input (T2, T1, T0), representing values from 0 to 7.
 
+2. Input Register (3-bit): Stores the temperature input on the rising edge of the clock, ensuring stable data for classification.
+
+3. Temperature Classification Module (Comparator/Range Decoder): Compares the registered input with predefined temperature ranges and generates three signals:
+- COLD = 1 for 0–2
+- NEUTRAL = 1 for 3–5
+- HOT = 1 for 6–7
+4. FSM Controller (Mealy FSM): Controls the classification process using the state register, next-state logic and output logic. START initiates classification, ACK acknowledges the result, and RESET initializes the FSM.
+
+5. Output Module: Controls three LED indicators representing the COLD, NEUTRAL and HOT valve outputs.
+4.3 Data and Control Flow
+1. The three-bit temperature input (T2, T1, T0) is provided through input switches.
+2. The input register captures and stores the temperature value using the clock signal.
+3. The range decoder classifies the stored temperature into COLD, NEUTRAL or HOT.
+4. The Mealy FSM processes the classification signals along with START, ACK and RESET.
+5. When START is activated in IDLE, the corresponding valve output is generated immediately based on the temperature category.
+6. The FSM transitions to the WAIT_ACK state and waits for acknowledgement.
+7. When ACK is activated, the FSM returns to IDLE.
+8. RESET initializes the FSM to IDLE and turns OFF all valve outputs.
+4.4 Design Trade-offs
+Aspect	Chosen design	Trade-off / justification
+FSM model	Mealy FSM	Provides immediate output response but may be more sensitive to input glitches.
+Temperature detection	Comparator-based range decoder	Simple and fast classification, but requires multiple logic gates.
+Input handling	3-bit register	Provides stable, synchronized input at the cost of additional hardware.
+Output system	Three separate LEDs	Clearly indicates each temperature category but requires three output indicators.
+State control	START, ACK and RESET	Provides controlled operation but requires additional control logic.
+
+4.5 Architecture Summary
+The proposed architecture combines input storage, comparator-based temperature classification and a Mealy FSM controller to achieve automatic water temperature classification. The design supports all eight possible 3-bit input combinations and provides immediate valve indication through three separate outputs. It is suitable for implementation and verification using Logisim Evolution and Verilog HDL.
 ![Block diagram](path/to/block_diagram.png)
 
 ## 5. FSM Design
