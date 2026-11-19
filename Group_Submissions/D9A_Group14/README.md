@@ -6,9 +6,9 @@
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
 | Group leader | Samruddhi Samant | D9A-49 | planetsamzz77 |
-| Member 2 | Siddharth Sanjeev Tiwari | D9A-58 | [Username] |
-| Member 3 | Deven Shailendra Bhadane | D9B-2 | [Username] |
-| Member 4 | Ojas Nitin Kadam | D9B-20 | [Username] |
+| Member 2 | Siddharth Sanjeev Tiwari | D9A-58 | Siddharthqzz29 |
+| Member 3 | Deven Shailendra Bhadane | D9B-2 | DevenBhadane |
+| Member 4 | Ojas Nitin Kadam | D9B-20 | OjasKadam07 |
 
 **Class:** D9A / D9B (Group 14)  
 **Group ID:** D9A_Group14  
@@ -16,7 +16,8 @@
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** Game Score Categorizer (Mealy FSM) — official number/title [to be confirmed against the assigned statement]
+- **Group number:** 14 (D9A_Group14)
+- **Number/title:** Game Score Categorizer (Mealy FSM) — official problem statement number/title [to be confirmed against the assigned statement]
 - **Problem summary:** A 4-bit game score is entered and `start` is pressed. The system classifies the score as LOW, MEDIUM or HIGH and lights the matching LED until the user presses `ack`, then returns to idle.
 - **Objective:** Classify the score (LOW 0–4, MEDIUM 5–10, HIGH 11–15), show exactly one LED, hold it until `ack`, using a Mealy FSM.
 - **Inputs and outputs:** Inputs `clk`, `reset`, `start`, `ack` (1 bit each) and `score[3:0]`. Outputs `low_led`, `med_led`, `high_led` (1 bit each). Full table with FPGA pins: [`01_Problem_Analysis/io_specification.md`](01_Problem_Analysis/io_specification.md).
