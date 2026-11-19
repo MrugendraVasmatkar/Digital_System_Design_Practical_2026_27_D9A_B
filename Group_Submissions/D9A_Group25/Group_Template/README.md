@@ -5,22 +5,23 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Devang Joshi | 24 | devang277 |
+| Member 2 | Shivansh Sinha | 61 | shivanshsinha6 |
+| Member 3 | Atharva Londhe | 31 | londheATHARVA |
+| Member 4 | Shubham Pansare | 46 | Hxhjdjdi |
 
-**Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
-**Repository URL:** [Fork URL]  
+**Class:** D9A  
+**Group ID:**  D9A_Group25  
+**Repository URL:** https://github.com/devang277/DSD-2026-D9A-Group25  
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
-- **Problem summary:** [In your own words]
-- **Objective:** [What must the system achieve?]
-- **Inputs and outputs:** [List signals, widths and meaning]
-- **Constraints and assumptions:** [List and justify]
+- **Number/title:** 8H5
+- **Problem summary:** To show the player's previous level when their level changes in a game xp level indicator (4-bit)
+- **Objective:** To retrieve and store when there is a change in XP level and clock should go HIGH. the change must reflect in a separate set of LEDs as per previous state
+- **Inputs and outputs:** inputs: clk, rst, st, ack, sw_0, sw_1, sw_2, sw_3
+outputs: led1, led2, led3, led4, led5, led6
+- **Constraints and assumptions:** 
 
 ## 3. Problem Analysis and Proposed Solution
 Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
