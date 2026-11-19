@@ -16,4 +16,4 @@
 - Physical FPGA board programming and pin constraints (`.xdc`) were not required per faculty instructions for this submission.
 
 ## 4. Evidence in This Folder
-- `rtl_schematic.png` — Vivado elaborated RTL schematic (`xc7s25csga324-1`) showing the range comparator, three parallel 4-bit level counters, and 4-state Moore FSM.
+- `rtl_schematic.jpeg` — Vivado elaborated RTL schematic (`xc7s25csga324-1`) showing the range comparator, three parallel 4-bit level counters, and 4-state Moore FSM.
