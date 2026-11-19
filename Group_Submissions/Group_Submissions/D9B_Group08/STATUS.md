@@ -1,9 +1,10 @@
 # Group Progress Status
 
-**Class:** [D9A/D9B]  
-**Group ID:** [D9A_Group01]  
-**Project title:** [Title]  
-**Group leader:** [Name]
+**Class:** D9A/D9B  
+**Group ID:** D9B_Group08
+
+**Project title:** FORBIDDEN ZONE DETECTOR (4-BIT)  
+**Group leader:** Tanav Patil
 
 ## 1. Current milestone status
 Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
