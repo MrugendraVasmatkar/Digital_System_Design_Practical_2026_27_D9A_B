@@ -1,4 +1,4 @@
-# Input / Output Specification — `mealy_simple`
+# Input / Output Specification - Problem 3H2 (`mealy_simple`)
 
 | Signal | Direction | Width | FPGA pin | Description |
 |---|---|---:|---|---|
