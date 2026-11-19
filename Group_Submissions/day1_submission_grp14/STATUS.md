@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 01:40 |
+| Last Updated | 2026-11-20, 02:00 |
 
 ## 2. Problem Statement
 
@@ -123,6 +123,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 00:50 | University logo added to the presentation title slide | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 01:10 | Problem statement number 3H2 recorded in README, problem analysis, STATUS and presentation | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 01:40 | Results added: `05_Results/README.md` (expected vs observed, requirements, measured results, limitations, conclusion) and README section 13 | Samruddhi Samant | Commit link to be added |
+| 2026-11-20, 02:00 | Logisim comparator-version screenshot added (`02_FSM_Logisim/circuit_overview_v2_comparators.png`); matching .circ still to be uploaded | Samruddhi Samant | Commit link to be added |
 
 ## 8. Individual Contributions
 

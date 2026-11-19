@@ -4,6 +4,7 @@
 |---|---|
 | `Game_Score_Categorizer_H2_Mealy_Machine.circ` | Logisim source: Mealy FSM with 2 D flip-flops (`Q1_FF`, `Q0_FF`) and gate-level logic |
 | `circuit_overview.png` | Screenshot of the full circuit (inputs S3–S0, START, ACK, RESET, CLK; outputs LOWc/MEDc/HIGHc and LOW/MEDIUM/HIGH LEDs) |
+| `circuit_overview_v2_comparators.png` | Screenshot of a second Logisim version: one 4-bit SCORE input and two comparators (SCORE < 5, SCORE > 10) feeding the same 2-flip-flop FSM. The `.circ` file for this version is not uploaded yet |
 | `fsm_state_diagram.png` | FSM state diagram (IDLE, LOW, MEDIUM, HIGH; transitions labelled input / output) |
 | `block_diagram.png` | Block diagram: score switches, range decoder, next-state logic, state register, state decoder, Mealy output logic, controls and LEDs |
 

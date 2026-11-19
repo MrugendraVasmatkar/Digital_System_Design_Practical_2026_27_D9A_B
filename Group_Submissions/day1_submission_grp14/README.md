@@ -74,7 +74,9 @@ File: `02_FSM_Logisim/fsm_state_diagram.png`
 - Circuit file: `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine.circ`
 - Test cases and expected/observed behaviour: [simulation not yet documented]
 - Issues and corrections: [Details]
-- Screenshot/evidence: `02_FSM_Logisim/circuit_overview.png` (circuit only; simulation screenshots pending)
+- Screenshot/evidence: `02_FSM_Logisim/circuit_overview.png` and `02_FSM_Logisim/circuit_overview_v2_comparators.png` (circuit only; simulation screenshots pending)
+
+![Logisim circuit with comparators](02_FSM_Logisim/circuit_overview_v2_comparators.png)
 
 ## 7. Verilog HDL Implementation
 - Tool/version: Xilinx Vivado 2018.3
