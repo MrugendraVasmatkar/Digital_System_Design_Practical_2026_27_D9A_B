@@ -65,9 +65,4 @@ tests in Logisim.
 
 The Water Temperature Classifier was successfully designed to classify 3-bit binary temperature inputs into four categories: Very Cold, Cold, Neutral, and Hot. The Logisim simulation was tested with all eight possible input combinations, and all outputs matched their expected classifications. With 8 out of 8 test cases passing, the circuit achieved 100% functional accuracy, demonstrating the correctness of the implemented classification logic.
 
-## 6. Evidence
 
-- Logisim circuit: 
-- Simulation screenshots: Add screenshots of all test cases.
-- Test results: Add the final expected-versus-observed
-  comparison.
