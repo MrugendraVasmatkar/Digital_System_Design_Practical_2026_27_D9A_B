@@ -1,0 +1,62 @@
+# Group Progress Status
+
+**Class:** [D9A/D9B]  
+**Group ID:** [D9A/B_Group30]  
+**Project title:** [Gaming XP Level Decoder]  
+**Group leader:** [Shruthi Vimalnath Nair]
+
+## 1. Current milestone status
+Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
+
+| No. | Milestone | Status | Evidence path/link | Last updated |
+|---:|---|---|---|---|
+| 1 | Problem requirements and assumptions documented | Completed | [ ] | [ ] |
+| 2 | Architecture and block diagram prepared | Completed| [ ] | [ ] |
+| 3 | FSM diagram/table completed, if applicable | Completed | [ ] | [ ] |
+| 4 | Logisim circuit implemented | Completed | [ ] | [ ] |
+| 5 | Logisim simulation verified | Completed | [ ] | [ ] |
+| 6 | Verilog RTL completed | Completed | [ ] | [ ] |
+| 7 | Testbench and simulation completed | Completed | [ ] | [ ] |
+| 8 | FPGA synthesis and implementation completed | Completed | [ ] | [ ] |
+| 9 | Hardware demonstration completed | Completed | [ ] | [ ] |
+| 10 | Results, presentation and report uploaded | Completed | [ ] | [ ] |
+| 11 | Final Pull Request created | Not Started | [ ] | [ ] |
+
+## 2. Time-wise progress log
+Update at least once every two hours and at each major milestone. Record actual work and actual times; do not pre-fill future updates.
+
+| Date | Actual time | Work completed | Evidence path | Blocker | Next action | Updated by |
+|---|---|---|---|---|---|---|
+| 19/10/2026 | [10:40] | [Problem Analysis ] | [ ] | [ ] | [ ] | [ Krishna Pandey] |
+| 19/10/2026 | [10:00] | [ Logism ] | [ ] | [ ] | [ ] | [Shruthi Vimalnath Nair ] |
+| 19/10/2026 | [3:50] | [ Verilog code] | [ ] | [ ] | [ ] | [Aryan Jadhav ] |
+| 19/10/2026 | [3:54] | [ Testbench] | [ ] | [ ] | [ ] | [Krishna Pandey ] |
+| 20/10/2026 | [10:30] | [Constaint File ] | [ ] | [ ] | [ ] | [Aryan Jadhav] |
+| 20/10/2026 | [12:30] | [FPGA Implementation ] | [ ] | [ ] | [ ] | [Shruthi Vimalnath Nair] |
+
+Add rows as needed.
+
+## 3. Current blockers and support required
+| Blocker | Impact | Action being taken | Faculty support required |
+|---|---|---|---|
+| [ ] | [ ] | [ ] | [ ] |
+
+## 4. End-of-day summary
+### 19 October 2026
+- Completed: Problem requirements and solution, Block Diagram and state diagram, Logisim developement of the ps, Verilog and Testbench coding and simulation.
+- In progress:
+- Pending:FPGA implementation and synthesis, results, presentation and project demonstration
+- Evidence uploaded: on Github
+- Plan for 20 October: FPGA Hardware implementation and presentation.
+
+### 20 October 2026
+- Completed: Contraint File and bitstream generation, implementation on FPGA Spartan 7 board.
+- Pending: Report and final submission
+- Evidence uploaded: on Github
+- Final submission status:
+
+## 5. Group leader confirmation
+I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
+
+**Group leader:** Shruthi Vimalnath Nair
+**Date/time:** [Actual date and time]
