@@ -1,34 +1,35 @@
 # Final Submission Checklist
 
-**Class:** [D9A/D9B] | **Group ID:** [ ] | **Project:** [ ] | **Group leader:** [ ]
+**Class:** [D9A/D9B] | **Group ID:** [32 ] | **Project:** [Age Group Detector] | **Group leader:** [Vaibhavi Bhamare ]
 
 ## Project files
-- [ ] Problem analysis, requirements and assumptions.
-- [ ] Proposed architecture and block diagram.
-- [ ] FSM diagram/state table, or explanation if FSM is not applicable.
-- [ ] Logisim `.circ` source and simulation evidence.
-- [ ] Verilog RTL source files.
-- [ ] Testbench and test vectors.
-- [ ] Simulation waveforms/logs and verification summary.
-- [ ] FPGA constraints and implementation files, where applicable.
-- [ ] Synthesis/implementation reports and hardware evidence.
-- [ ] Expected-versus-observed results and conclusion.
-- [ ] Presentation.
-- [ ] Final project report.
+- [Done ] Problem analysis, requirements and assumptions.
+- [Done  ] Proposed architecture and block diagram.
+- [Done  ] FSM diagram/state table, or explanation if FSM is not applicable.
+- [Done  ] Logisim `.circ` source and simulation evidence.
+- [Done  ] Verilog RTL source files.
+- [Done  ] Testbench and test vectors.
+- [Done  ] Simulation waveforms/logs and verification summary.
+- [Done  ] FPGA constraints and implementation files, where applicable.
+- [Done  ] Synthesis/implementation reports and hardware evidence.
+- [Done  ] Expected-versus-observed results and conclusion.
+- [Done  ] Presentation.
+- [Done  ] Final project report.
 
 ## Repository checks
+- [Done  ] Final project report.
 - [ ] Repository name follows the required format.
-- [ ] All four members are listed in README.
-- [ ] Mandatory README headings are complete.
-- [ ] STATUS.md contains actual time-wise updates.
-- [ ] Files are in correct folders and open correctly.
-- [ ] Meaningful commits are present.
-- [ ] No passwords, tokens or confidential information uploaded.
-- [ ] Pull Request targets the faculty master repository and correct branch.
-- [ ] Pull Request title and description identify the group and project.
-- [ ] Pull Request URL shared with faculty as instructed.
+- [Done   ] All four members are listed in README.
+- [Done   ] Mandatory README headings are complete.
+- [Done   ] STATUS.md contains actual time-wise updates.
+- [Done   ] Files are in correct folders and open correctly.
+- [Done   ] Meaningful commits are present.
+- [Done   ] No passwords, tokens or confidential information uploaded.
+- [Done   ] Pull Request targets the faculty master repository and correct branch.
+- [Done   ] Pull Request title and description identify the group and project.
+- [Done   ] Pull Request URL shared with faculty as instructed.
 
 ## Group leader declaration
 I confirm that I have checked the submission and that it contains the group's project work and supporting evidence to the best of my knowledge.
 
-**Name:** [ ] | **Date/time:** [ ] | **Pull Request URL:** [ ]
+**Name:** [Vaibhavi Bhamare ] | **Date/time:** [20th October 2026 10.43 am ] | **Pull Request URL:** [ https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/17#issue-6487901179]

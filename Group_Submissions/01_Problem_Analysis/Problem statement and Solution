@@ -1,0 +1,97 @@
+# 01 – Problem Analysis
+
+## 1. Project Title
+**Age Group Detector using Verilog HDL and Moore Finite State Machine (FSM)**
+
+## 2. Problem Statement
+
+Design and implement a digital system that accepts a 5-bit binary age input and classifies it into four categories:
+
+- Child: 0–12
+- Teen: 13–19
+- Adult: 20–25
+- Senior: 26–31
+
+The system uses a range decoder and a Moore Finite State Machine to determine the age category and activate the corresponding LED indicator. The original three-category design is modified by adding a fourth category, Senior.
+
+## 3. Objectives
+
+- To design a 5-bit age input system using Verilog HDL.
+- To implement range-based age classification logic.
+- To develop a six-state Moore FSM.
+- To implement START, ACK and RESET control operations.
+- To indicate the detected category using four LEDs.
+- To verify all 32 possible input combinations through simulation.
+- To implement the design using a Spartan-7 FPGA and Xilinx Vivado.
+
+## 4. System Requirements
+
+**Hardware Requirements:**
+- Boolean FPGA development board (Spartan-7)
+- Five slide switches for age input
+- Three push buttons for START, ACK and RESET
+- Four LED indicators
+- USB programming cable
+
+**Software Requirements:**
+- Xilinx Vivado 2018.3
+- Verilog HDL
+- Vivado Behavioral Simulation
+
+## 5. Input and Output Definitions
+
+### Inputs
+
+| Signal | Width | Description |
+|---|---|---|
+| clk | 1 bit | Clock signal |
+| reset | 1 bit | Active-high reset |
+| start | 1 bit | Initiates age capture |
+| ack | 1 bit | Returns FSM to IDLE |
+| age_switches[4:0] | 5 bits | Binary age input (0–31) |
+
+### Outputs
+
+| Signal | Width | Description |
+|---|---|---|
+| child_led | 1 bit | Green LED for Child |
+| teen_led | 1 bit | Yellow LED for Teen |
+| adult_led | 1 bit | Red LED for Adult |
+| senior_led | 1 bit | Blue LED for Senior |
+
+## 6. Age Classification
+
+| Binary Range | Decimal Range | Category | LED |
+|---|---|---|---|
+| 00000–01100 | 0–12 | Child | Green |
+| 01101–10011 | 13–19 | Teen | Yellow |
+| 10100–11001 | 20–25 | Adult | Red |
+| 11010–11111 | 26–31 | Senior | Blue |
+
+## 7. Constraints and Assumptions
+
+1. The system accepts a 5-bit unsigned binary input representing ages from 0 to 31.
+2. Each age belongs to exactly one classification category.
+3. The input age is stored when START is activated in the IDLE state.
+4. The FSM operates synchronously with the rising edge of the clock.
+5. The design follows the Moore FSM model, where outputs depend only on the current state.
+6. RESET is active HIGH and returns the FSM to IDLE.
+7. ACK returns the FSM from a classification state to IDLE.
+8. Only one category LED is activated at a time.
+9. All LEDs remain OFF in the IDLE and CHECK states.
+
+## 8. Proposed Solution
+
+The proposed system consists of a 5-bit input register, range comparison logic, a Moore FSM controller and four LED outputs.
+
+Initially, the user enters an age using five switches. When START is activated, the input register captures the binary value. The registered age is evaluated in the CHECK state, and the FSM transitions to the corresponding classification state.
+
+The output logic activates the appropriate LED based on the current FSM state. The ACK signal returns the system to IDLE, while RESET initialises the system and clears the input register.
+
+The design is developed using Verilog HDL, simulated using Xilinx Vivado and intended for implementation on the Spartan-7 FPGA board.
+
+## 9. Expected Outcome
+
+The system is expected to correctly classify all 32 possible age inputs into the four predefined categories. The corresponding LED should turn ON for the detected category, while all other LEDs remain OFF.
+
+The design is verified using a Verilog testbench that checks all possible input combinations and reports PASS or FAIL results.

@@ -1,0 +1,72 @@
+# 05 – Results
+
+## 1. Simulation Summary
+
+The Age Group Detector was tested using Xilinx Vivado 2018.3 Behavioral Simulation. The Verilog testbench verified all 32 possible 5-bit age inputs (0–31).
+
+| Parameter | Result |
+|---|---|
+| Total test cases | 32 |
+| Passed | 32 |
+| Failed | 0 |
+| Accuracy | 100% |
+| Simulation status | ALL TESTS PASSED |
+
+## 2. Test Case Table
+
+| Test Case | Age (Decimal) | Age (Binary) | Expected Output |
+|---|---:|---|---|
+| 1 | 0 | 00000 | Child |
+| 2 | 12 | 01100 | Child |
+| 3 | 13 | 01101 | Teen |
+| 4 | 19 | 10011 | Teen |
+| 5 | 20 | 10100 | Adult |
+| 6 | 25 | 11001 | Adult |
+| 7 | 26 | 11010 | Senior |
+| 8 | 31 | 11111 | Senior |
+
+All 32 input combinations were checked by the testbench. The table highlights the boundary values of each category.
+
+## 3. Expected vs Observed Results
+
+| Age Range | Expected Category | Observed Verification |
+|---|---|---|
+| 0–12 | Child | PASS |
+| 13–19 | Teen | PASS |
+| 20–25 | Adult | PASS |
+| 26–31 | Senior | PASS |
+
+The testbench reported 32 successful comparisons and zero failures.
+
+## 4. Simulation Waveform and Verification Evidence
+
+The Vivado simulation waveform shows the clock, reset, START, ACK, age input and category LED signals.
+
+The Tcl Console displays the following verification summary:
+
+- TOTAL TESTS: 32
+- PASSED: 32
+- FAILED: 0
+- ALL TESTS PASSED!
+
+**Evidence files:**
+
+- Waveform: `03_Verilog_Implementation/Simulation_Results/simulation_waveform.png`
+- Verification log: `03_Verilog_Implementation/Simulation_Results/simulation_log.txt`
+
+## 5. Accuracy and Correctness Analysis
+
+The design successfully classifies the complete 5-bit input range into four age categories. Boundary conditions at ages 12, 13, 19, 20, 25 and 26 are particularly important for verifying correct range detection.
+
+The testbench results indicate 100% correctness across the 32 tested input combinations.
+
+## 6. Known Limitations
+
+- The input range is restricted to 0–31 because of the 5-bit input.
+- Physical FPGA output verification is separate from behavioral simulation.
+- Pushbutton debouncing and synchronisation may be required for reliable hardware operation.
+- Hardware testing must be completed to confirm the physical LED outputs.
+
+## 7. Conclusion
+
+The simulation results confirm that the Age Group Detector correctly classifies all 32 possible input combinations according to the specified four age groups. The design successfully demonstrates range detection, register-based input storage and Moore FSM operation.

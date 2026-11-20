@@ -1,0 +1,173 @@
+
+module age_group_detector (
+    input wire clk,
+    input wire reset,
+    input wire start,
+    input wire ack,
+    input wire [4:0] age_switches,
+
+    output reg child_led,
+    output reg teen_led,
+    output reg adult_led,
+    output reg senior_led
+);
+
+    // =====================================
+    // 1. FSM STATE ENCODING
+    // =====================================
+
+    localparam IDLE   = 3'b000;
+    localparam CHECK  = 3'b001;
+    localparam CHILD  = 3'b010;
+    localparam TEEN   = 3'b011;
+    localparam ADULT  = 3'b100;
+    localparam SENIOR = 3'b101;
+
+    reg [2:0] state_reg;
+    reg [2:0] next_state;
+
+    // =====================================
+    // 2. AGE INPUT REGISTER
+    // =====================================
+
+    reg [4:0] age_reg;
+
+    always @(posedge clk) begin
+        if (reset)
+            age_reg <= 5'b00000;
+
+        else if (state_reg == IDLE && start)
+            age_reg <= age_switches;
+    end
+
+    // =====================================
+    // 3. RANGE DECODER
+    // =====================================
+
+    reg [1:0] age_category;
+
+    always @(*) begin
+
+        if (age_reg < 5'd13)
+            age_category = 2'b00;  // CHILD
+
+        else if (age_reg < 5'd20)
+            age_category = 2'b01;  // TEEN
+
+        else if (age_reg < 5'd26)
+            age_category = 2'b10;  // ADULT
+
+        else
+            age_category = 2'b11;  // SENIOR
+
+    end
+
+    // =====================================
+    // 4. FSM STATE REGISTER
+    // =====================================
+
+    always @(posedge clk) begin
+
+        if (reset)
+            state_reg <= IDLE;
+
+        else
+            state_reg <= next_state;
+
+    end
+
+    // =====================================
+    // 5. NEXT STATE LOGIC
+    // =====================================
+
+    always @(*) begin
+
+        next_state = state_reg;
+
+        case (state_reg)
+
+            IDLE: begin
+                if (start)
+                    next_state = CHECK;
+                else
+                    next_state = IDLE;
+            end
+
+            CHECK: begin
+
+                case (age_category)
+
+                    2'b00: next_state = CHILD;
+                    2'b01: next_state = TEEN;
+                    2'b10: next_state = ADULT;
+                    2'b11: next_state = SENIOR;
+
+                    default: next_state = IDLE;
+
+                endcase
+
+            end
+
+            CHILD: begin
+                if (ack)
+                    next_state = IDLE;
+            end
+
+            TEEN: begin
+                if (ack)
+                    next_state = IDLE;
+            end
+
+            ADULT: begin
+                if (ack)
+                    next_state = IDLE;
+            end
+
+            SENIOR: begin
+                if (ack)
+                    next_state = IDLE;
+            end
+
+            default: next_state = IDLE;
+
+        endcase
+
+    end
+
+    // =====================================
+    // 6. MOORE OUTPUT DECODER
+    // =====================================
+
+    always @(*) begin
+
+        child_led = 1'b0;
+        teen_led = 1'b0;
+        adult_led = 1'b0;
+        senior_led = 1'b0;
+
+        case (state_reg)
+
+            CHILD:
+                child_led = 1'b1;
+
+            TEEN:
+                teen_led = 1'b1;
+
+            ADULT:
+                adult_led = 1'b1;
+
+            SENIOR:
+                senior_led = 1'b1;
+
+            default: begin
+                child_led = 1'b0;
+                teen_led = 1'b0;
+                adult_led = 1'b0;
+                senior_led = 1'b0;
+            end
+
+        endcase
+
+    end
+
+endmodule

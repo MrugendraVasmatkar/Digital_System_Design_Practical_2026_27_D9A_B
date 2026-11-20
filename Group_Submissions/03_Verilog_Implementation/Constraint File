@@ -1,0 +1,32 @@
+
+# CLOCK - 100 MHz
+set_property -dict {PACKAGE_PIN F14 IOSTANDARD LVCMOS33} [get_ports clk]
+create_clock -period 10.000 -name sys_clk [get_ports clk]
+
+# AGE INPUT SWITCHES
+set_property -dict {PACKAGE_PIN V2 IOSTANDARD LVCMOS33} [get_ports {age_switches[0]}]
+set_property -dict {PACKAGE_PIN U2 IOSTANDARD LVCMOS33} [get_ports {age_switches[1]}]
+set_property -dict {PACKAGE_PIN U1 IOSTANDARD LVCMOS33} [get_ports {age_switches[2]}]
+set_property -dict {PACKAGE_PIN T2 IOSTANDARD LVCMOS33} [get_ports {age_switches[3]}]
+set_property -dict {PACKAGE_PIN T1 IOSTANDARD LVCMOS33} [get_ports {age_switches[4]}]
+
+# RESET - BTN0
+set_property -dict {PACKAGE_PIN J2 IOSTANDARD LVCMOS33} [get_ports reset]
+
+# START - BTN1
+set_property -dict {PACKAGE_PIN J5 IOSTANDARD LVCMOS33} [get_ports start]
+
+# ACK - BTN2
+set_property -dict {PACKAGE_PIN H2 IOSTANDARD LVCMOS33} [get_ports ack]
+
+# CHILD LED - LED0
+set_property -dict {PACKAGE_PIN G1 IOSTANDARD LVCMOS33} [get_ports child_led]
+
+# TEEN LED - LED1
+set_property -dict {PACKAGE_PIN G2 IOSTANDARD LVCMOS33} [get_ports teen_led]
+
+# ADULT LED - LED2
+set_property -dict {PACKAGE_PIN F1 IOSTANDARD LVCMOS33} [get_ports adult_led]
+
+# SENIOR LED - LED3
+set_property -dict {PACKAGE_PIN F2 IOSTANDARD LVCMOS33} [get_ports senior_led]

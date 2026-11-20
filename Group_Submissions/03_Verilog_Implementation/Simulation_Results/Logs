@@ -1,0 +1,43 @@
+# run 1000ns
+PASS: Age=0, Expected=0001, Actual=0001
+PASS: Age=1, Expected=0001, Actual=0001
+PASS: Age=2, Expected=0001, Actual=0001
+PASS: Age=3, Expected=0001, Actual=0001
+PASS: Age=4, Expected=0001, Actual=0001
+PASS: Age=5, Expected=0001, Actual=0001
+PASS: Age=6, Expected=0001, Actual=0001
+PASS: Age=7, Expected=0001, Actual=0001
+PASS: Age=8, Expected=0001, Actual=0001
+PASS: Age=9, Expected=0001, Actual=0001
+PASS: Age=10, Expected=0001, Actual=0001
+PASS: Age=11, Expected=0001, Actual=0001
+PASS: Age=12, Expected=0001, Actual=0001
+PASS: Age=13, Expected=0010, Actual=0010
+PASS: Age=14, Expected=0010, Actual=0010
+PASS: Age=15, Expected=0010, Actual=0010
+PASS: Age=16, Expected=0010, Actual=0010
+PASS: Age=17, Expected=0010, Actual=0010
+PASS: Age=18, Expected=0010, Actual=0010
+PASS: Age=19, Expected=0010, Actual=0010
+PASS: Age=20, Expected=0100, Actual=0100
+PASS: Age=21, Expected=0100, Actual=0100
+PASS: Age=22, Expected=0100, Actual=0100
+PASS: Age=23, Expected=0100, Actual=0100
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'age_group_detector_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1219.773 ; gain = 3.406
+run all
+PASS: Age=24, Expected=0100, Actual=0100
+PASS: Age=25, Expected=0100, Actual=0100
+PASS: Age=26, Expected=1000, Actual=1000
+PASS: Age=27, Expected=1000, Actual=1000
+PASS: Age=28, Expected=1000, Actual=1000
+PASS: Age=29, Expected=1000, Actual=1000
+PASS: Age=30, Expected=1000, Actual=1000
+PASS: Age=31, Expected=1000, Actual=1000
+--------------------------------
+TOTAL TESTS : 32
+PASSED      : 32
+FAILED      : 0
+--------------------------------
+ALL TESTS PASSED!
