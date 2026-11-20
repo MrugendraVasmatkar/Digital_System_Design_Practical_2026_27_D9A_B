@@ -1,0 +1,15 @@
+module COMPARATOR #(
+    parameter width = 4
+)(
+    input  wire [width-1:0] a,
+    input  wire [width-1:0] b,
+    output reg              GT,
+    output reg              LT,
+    output reg              EQ
+);
+    always @(*) begin
+        GT = (a > b);
+        LT = (a < b);
+        EQ = (a == b);
+    end
+endmodule
