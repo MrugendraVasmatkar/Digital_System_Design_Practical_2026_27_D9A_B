@@ -21,8 +21,31 @@
 The system accepts a 3-bit input representing the number of password attempts and processes it using a range decoder. Based on the input value, the FSM changes its state and activates the corresponding LED indicator.]
 - **Objective:** [Design, simulate, and implement a 3-bit password attempt monitor that classifies attempt counts into three categories, controls indicator LEDs using a Moore FSM, and tracks total occurrences of each category using three independent 4-bit counters (H4)]
 - **Inputs and outputs:** [A2 1 bit Most significant bit of the 3-bit input.
-                           A1 1 bit Middle bit of the 3-bit input.]
-- **Constraints and assumptions:** [List and justify]
+                           A1 1 bit Middle bit of the 3-bit input.
+                           A0 1 bit Least significant bit of the 3-bit input.
+                           START 1 bit Enables the category counter to increment.
+                           ACK 1 bit Acknowledgement input reserved for future functionality; currently unused.
+                           RESET 1 bit Clears all three category counters when activated.
+                           CLK 1 bit Clock signal used to synchronize counter operations
+                           NOWOUT 1 bit Indicates that the input belongs to the NOW category (000–001).
+                           WARNOUT 1 bit Indicates that the input belongs to the WARN category (010–100).
+                           LOCKOUT 1 bit Indicates that the input belongs to the LOCK category (101–111).
+                           NOW_COUNT 4 bits Stores the total number of NOW category attempts.
+                           WARN_COUNT 4 bits Stores the total number of WARN category attempts.
+                           LOCK_COUNT 4 bits Stores the total number of LOCK category attempts.]
+- **Constraints and assumptions:** [3-bit input: The system uses three input bits (A2, A1, A0), providing eight possible input combinations.
+Category classification: Inputs are divided into three categories:
+NOW: 000–001
+WARN: 010–100
+LOCK: 101–111
+Counter width: Each category counter is 4 bits wide and can represent values from 0 to 15.
+Clock operation: Counters operate on the rising edge of the clock signal.
+Start condition: A counter increments only when START is HIGH and the corresponding category is active.
+Reset condition: When RESET is activated, all three counters are cleared to zero.
+Single attempt per clock: START should be activated for one clock cycle for each attempt to prevent unwanted multiple counting.
+Acknowledgement: ACK is included as an input but is not used in the current implementation.
+Counter overflow: Since the counters are 4 bits wide, they return to zero after reaching 15 and receiving another increment.
+Category independence: Each category has its own counter, allowing the system to maintain separate attempt totals.]
 
 ## 3. Problem Analysis and Proposed Solution
 Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
