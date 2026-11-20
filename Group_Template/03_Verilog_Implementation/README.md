@@ -1,7 +1,7 @@
 # 03 – Verilog Implementation
 
 Place synthesizable RTL in `RTL/`, testbenches/test vectors in `Testbench/`, and waveforms/logs/verification summaries in `Simulation_Results/`.
-<img width="1920" height="991" alt="image" src="https://github.com/user-attachments/assets/56c5561b-9652-402b-8780-0b5527ce5933" />
+<img width="1920" height="991" alt="image" src="https://github.com/user-attachments/assets/a2314657-e6c4-42b5-9e30-b03939f32359" />
 
 <img width="1582" height="815" alt="image" src="https://github.com/user-attachments/assets/65dc0d2b-6d86-4ceb-8216-5786834a1d0e" />
 
