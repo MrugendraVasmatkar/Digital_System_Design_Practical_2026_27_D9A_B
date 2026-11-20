@@ -1,0 +1,68 @@
+## Problem Statement
+
+Design a digital Password Attempt Monitor using a Moore finite-state machine (FSM). The monitor classifies an attempt as NOW, WARN, or LOCKOUT based on its value and displays the active category using LEDs. For modification H3, the design must include an ERROR state and error LED for invalid attempts. The FSM returns to IDLE after ACK or RESET.
+
+## Requirements
+
+- Classify valid attempts as follows:
+  - 0–1: NOW / no warning
+  - 2–4: WARN
+  - 5–7: LOCKOUT
+- Add an ERROR state for invalid values 8–15.
+- Show the current state using LEDs:
+  - NOW: green
+  - WARN: yellow
+  - LOCKOUT: red
+  - ERROR : blue
+  - IDLE: all category LEDs off
+- Use START to sample an attempt, ACK to return to IDLE, and RESET to reset the FSM to IDLE.
+- Verify the valid ranges, invalid range, state transitions, and LED outputs in Logisim and with a Verilog testbench.
+
+## Assumptions
+
+- The attempt is an unsigned 4-bit value, `A3:A0`, with `A3` as the most significant bit.
+- Values 0–7 are valid. Values 8–15 are invalid and must enter ERROR.
+- START, ACK, and RESET are active-high signals.
+- The attempt is stable when it is sampled.
+- The FSM is Moore-style: LED outputs depend on the current state.
+- The ERROR state remains active until ACK or RESET returns the FSM to IDLE.
+
+The original monitor uses a 3-bit attempt input, which can represent only 0–7. This H3 implementation adds `A3` so values above 7 can be represented and detected. If the design must retain exactly 3 input bits, values above 7 cannot occur; undefined inputs can only be tested in simulation.
+
+## Input and Output Definitions
+
+| Signal | Direction | Width | Meaning |
+
+| A3:A0 | Input | 4 bits | Attempt value; A3=1 represents 8–15 and is invalid |
+| CLK | Input | 1 bit | Clock for sequential state updates |
+| START | Input | 1 bit | Samples an attempt and starts classification |
+| ACK | Input | 1 bit | Returns the FSM from an active state to IDLE |
+| RESET | Input | 1 bit | Resets the FSM to IDLE |
+| NOW_LED | Output | 1 bit | Indicates attempt 0–1 |
+| WARN_LED | Output | 1 bit | Indicates attempt 2–4 |
+| LOCK_LED | Output | 1 bit | Indicates attempt 5–7 |
+| ERROR_LED | Output | 1 bit | Indicates invalid attempt 8–15 |
+
+## Constraints
+
+- The category ranges must not overlap.
+- Only one category state may be active at a time.
+- RESET must return the FSM to IDLE from any state.
+- ACK must return the FSM from NOW, WARN, LOCKOUT, or ERROR to IDLE.
+- If S-R flip-flops are used, their Set and Reset inputs must not be asserted together.
+
+## Proposed Solution
+
+The four attempt bits are sampled when START is asserted. The range logic sends values 8–15 to ERROR when `A3=1`. When A3=0, it classifies the lower three bits: 0–1 as NOW, 2–4 as WARN, and 5–7 as LOCKOUT.
+
+The FSM stores the active category and drives the corresponding LED. In the proposed one-hot implementation, the state bits are ordered `NOW, WARN, LOCK, ERROR`:
+
+| State | State bits |
+
+| IDLE | 000 |
+| NOW | 001 |
+| WARN | 010 |
+| LOCKOUT | 011 |
+| ERROR | 100 |
+
+IDLE is represented by all four state bits being off.
