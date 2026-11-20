@@ -168,7 +168,11 @@ Maintain time-wise updates in `STATUS.md`.
 ## 13. Final Results and Conclusion
 Summarise requirements met, correctness of simulation/hardware results, measured results, limitations and conclusion.
 
-[Write here]
+[The Password Attempt Monitor successfully classifies all eight possible 3-bit input combinations into NOW, WARN, and LOCK categories. Three independent 4-bit counters track the number of attempts in each category. The START signal controls counting, and RESET clears all counters. After testing all eight combinations once, the expected counter values are:
+NOW_COUNT = 2
+WARN_COUNT = 3
+LOCK_COUNT = 3
+Conclusion:- This project demonstrates the practical implementation of combinational logic, sequential circuits, and counters using Logisim Evolution and Verilog HDL. The simulation verifies the classification and counting operations. It helped us understand how digital logic components work together to build a simple monitoring system.]
 
 ## 14. Team Reflection
 What did the team learn? What would you improve?
