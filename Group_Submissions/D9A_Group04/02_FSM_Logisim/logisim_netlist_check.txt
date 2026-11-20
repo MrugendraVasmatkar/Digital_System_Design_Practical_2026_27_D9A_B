@@ -1,0 +1,19 @@
+score= 0 state=001 LED=['LOW'] PASS
+score= 1 state=001 LED=['LOW'] PASS
+score= 2 state=001 LED=['LOW'] PASS
+score= 3 state=001 LED=['LOW'] PASS
+score= 4 state=001 LED=['LOW'] PASS
+score= 5 state=010 LED=['MEDIUM'] PASS
+score= 6 state=010 LED=['MEDIUM'] PASS
+score= 7 state=010 LED=['MEDIUM'] PASS
+score= 8 state=010 LED=['MEDIUM'] PASS
+score= 9 state=011 LED=['HIGH'] PASS
+score=10 state=011 LED=['HIGH'] PASS
+score=11 state=011 LED=['HIGH'] PASS
+score=12 state=011 LED=['HIGH'] PASS
+score=13 state=100 LED=['EXCELLENT'] PASS
+score=14 state=100 LED=['EXCELLENT'] PASS
+score=15 state=100 LED=['EXCELLENT'] PASS
+unused states 101/110/111 recover to IDLE: PASS
+components: {'Pin': 7, 'Clock': 1, 'NOT Gate': 6, 'Splitter': 2, 'Register': 1, 'Comparator': 3, 'Constant': 3, 'AND Gate': 12, 'OR Gate': 5, 'D Flip-Flop': 3, 'Decoder': 1, 'LED': 4}
+fails 0
