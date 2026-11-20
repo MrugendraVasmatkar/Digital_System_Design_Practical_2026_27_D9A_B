@@ -1,0 +1,97 @@
+Digital System Design – Group Project
+
+1. Team Details
+Role	Student name	Roll number	GitHub username
+Group leader	[ Pragathi Balamurugan]	[55 D9B]	[ Pragathi-06-bit]
+Member 2	[ Nimai Gujja ]	        [ 13 D9B ]	[ nimai-gujja ]
+Member 3	[ Aditya Patil ]	[ 39 D9A]	[ 2025adityapatil-ai]
+Member 4	[ Aniruddh Yadav ]	[ 62 D9A]	[ aniruddhyadav145-debug]
+Class: [D9A/D9B]
+Group ID: [D9A-B_Group5]
+Repository URL: [Fork URL]
+Final Pull Request URL: [URL]
+
+2. Assigned Problem Statement
+Number/title: [ 9- Password Attempt Monitor ]
+Problem summary: [ Password attempt monitor is to be designed where as per the number of attempts the respective led should glow]
+Objective: [ Read an attempt value, identify its category, and show that category using a Moore FSM. The circuit must support NOW, WARN, LOCKOUT, and ERROR states. START begins processing, while ACK or RESET returns the FSM to IDLE.]
+Inputs and outputs: [ input - CLK, ACK, START, RESET, A3,A2,A1,A1  output- NOW LED, WARN LED, LOCK LED, ERROR LED]
+
+3. Problem Analysis and Proposed Solution
+The circuit must divide the input range into four non-overlapping categories: 0–1, 2–4, 5–7, and 8–15. The boundary values 1/2, 4/5, and 7/8 require particular attention so that adjacent categories do not overlap or leave gaps.
+Two comparators check the attempt value against the boundaries 2 and 5.
+Combinational gates use those results and A3 to select a category:
+NOW: attempt value is less than 2.
+WARN: attempt value is at least 2 and less than 5.
+LOCKOUT: attempt value is at least 5 and at most 7.
+ERROR: A3=1, which represents values 8–15.
+
+
+4. Architecture
+Submitted in the written sheet at the end DAY 2.
+
+5. FSM Design
+The type of machine used here is moore. the state diagram is been submitted in the written document at the end of day 2.
+
+
+6. Logisim Implementation
+Logisim version: [Version]
+Circuit file: [ Group_Submissions/D9A-B_Group5/02_FSM_Logisim/FINALdsdCircuit_PASSWORD.circ]
+Issues and corrections: [ Wile implementing ERROR state the NOW led was also turning on simultaneously along with the error led. the circuit could not distinguish between the ERROR and NOW state, hence we had to add and XOR gate for now where it was able to distinguish between the ERROR and now state and the only the ERROR LED turned on when the number of attempts exceeds 8]
+Screenshot/evidence: [ Group_Submissions/D9A-B_Group5/02_FSM_Logisim/FINALdsdCircuit_PASSWORD.circ]
+
+7. Verilog HDL Implementation
+Tool/version: [Details]
+Top module and submodules: [Names]
+Architecture/coding decisions: [Details]
+Synthesizability considerations: [Details]
+RTL: 03_Verilog_Implementation/RTL/
+Testbench: 03_Verilog_Implementation/Testbench/
+8. Verification and Simulation Results
+Test ID	Inputs/conditions	Expected output	Observed output	Pass/Fail
+T01	[ ]	[ ]	[ ]	[ ]
+T02	[ ]	[ ]	[ ]	[ ]
+T03	[ ]	[ ]	[ ]	[ ]
+Tool/version: [Details]
+Path for Verilog code : [ Group_Submissions/D9A-B_Group5/03_Verilog_Implementation/project_2.xpr ]
+Waveform/log path: [Path]
+
+9. FPGA Hardware Implementation
+FPGA board/device: [Details]
+Tool/version: [Details]
+Clock/constraints: [Details]
+Synthesis/implementation summary: [ FPGA was implemented as per the given solution code in vivado and Logisim and the test worked and evidence vedio was uploaded as well ]
+Programming and hardware test result: [ FPGA was implemented as per the XDC file attached ]
+Evidence path: [ Group_Submissions/D9A-B_Group5/04_FPGA_Hardware/WhatsApp Video 2026-11-20 at 3.14.32 PM.mp4 ]
+
+10. Challenges, Debugging and Improvements
+Issue	Root cause	Correction	Outcome
+[ Both the NOW LED AND ERROR LED was on during ERROR state ]	[ The ERROR led could not differentiate between the error state and assumed it as now state by default ]	[ An XOR gate was placed before NOW led which turns it on only when odd number of inputs are high i.e when only ACK is sent or NOW state ]	[ By placing the XOR gate the NOW led did not assume ERROR state as NOW state and it was able to distinguish between them ]
+Future improvements: [ instead of sending the 4th input through the comparator, a direct led can be attached to it and whenever the 4th input is on the ERROR led would glow, instead of sending the 4th input inside the whole comparator. this would have decreased the hardware as well ]
+
+11. Task Allocation and Individual Contribution
+Student	Assigned responsibility	Actual contribution/evidence
+Group leader	[ Pragathi Balamurugan ]	[ Git hub uploading and Logisim ]
+Member 2	[ Aditya Patil]	[ Logisim ]
+Member 3	[ Nimai Gujja ]	[ Vivado]
+Member 4	[  Aniruddh Yadav ]	[ Vivado ]
+Every student must be ready to explain the complete design.
+
+12. Progress Log
+Maintain time-wise updates in STATUS.md. 
+
+13. Final Results and Conclusion.
+Our Modification of an error state led was successfully implemented in logistic, vivado and Fpga. The complete design is in working condition.
+
+ 
+14. Team Reflection
+Instead of increasing the hardware and logic design, we could have directly added an error LED just after the 4 input which would have decreased the hardware. We should have approached for a more easier design with less hardware. Though our logic was right a much easier and simple logic of just adding an led would have been more appreciated.
+
+15. Final Submission Checklist
+Final report [done]
+Logisim circuit [done]
+Vivado xpr file [done]
+FPGA XDC file [done]
+FPGA implementation evidence video [done]
+Presentation ppt [done]
+problem analysis [done]
