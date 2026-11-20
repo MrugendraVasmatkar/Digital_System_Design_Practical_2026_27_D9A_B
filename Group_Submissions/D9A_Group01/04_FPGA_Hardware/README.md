@@ -70,12 +70,19 @@ The 7 registers are the 4 previous-input bits and the 3 one-hot state bits; the 
 Vivado reports "There are no user specified timing constraints", so all setup, hold and pulse-width values show NA. The constraint file has no `create_clock` line; adding `create_clock -period 10.000 [get_ports clk]` (100 MHz) and re-running implementation will give real slack numbers.
 
 ### Hardware demonstration (RealDigital Boolean Board)
-The bitstream was programmed onto the board (USB cable connected to the PROG/UART port). In both photos the power LED and the FPGA DONE LED are lit, which indicates the device was configured, and green user LEDs are lit.
+The bitstream was programmed onto the board (USB cable connected to the PROG/UART port). In both photos the power LED and the FPGA DONE LED are lit, which indicates the device was configured.
 
-![Boolean board running the design - photo 1](boolean_board_demo_1.jpg)
+| Photo | Observed result on the board | Meaning |
+|---|---|---|
+| `boolean_board_demo_1.jpg` | VALID LED lit | Exactly one bit changed from the previous sample |
+| `boolean_board_demo_2.jpg` | INVALID LED lit | Zero bits or more than one bit changed |
 
-![Boolean board running the design - photo 2](boolean_board_demo_2.jpg)
+The switch settings used for each photo are not recorded yet; add them next to the rows above.
+
+![Boolean board - photo 1: VALID](boolean_board_demo_1.jpg)
+
+![Boolean board - photo 2: INVALID](boolean_board_demo_2.jpg)
 
 ### Still to record
 - Timing slack after adding the clock constraint.
-- A table of the VALID / INVALID LED state observed for each input (`x[3:0]`, `start`, `ack`, `rst`), following the test procedure above, so the photos can be matched to inputs.
+- The switch settings (x[3:0]) and button sequence behind each photo, and further input cases (no change, two-bit change, ACK, RST) if tested.

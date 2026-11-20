@@ -8,7 +8,7 @@
 | Verilog behavioural simulation (N = 4 and N = 5) | Vivado 2018.3 | Design output matches the expected value in 12 of 12 steps; the testbench reports 11 passed / 1 failed because of one wrong expected value | `../03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_waveform.png` |
 | Synthesis, implementation, bitstream | Vivado 2018.3, `xc7s50csga324-1` | Completed; 8 LUTs, 7 registers, 3 slices, 10 IOBs | `../04_FPGA_Hardware/` |
 | Timing | Vivado 2018.3 | Not evaluated: no clock constraint, all values NA | `../04_FPGA_Hardware/vivado_timing_summary.png` |
-| Hardware demonstration | RealDigital Boolean Board | Bitstream programmed (DONE LED lit); photos uploaded; observed LED state per input still to be recorded | `../04_FPGA_Hardware/boolean_board_demo_1.jpg`, `boolean_board_demo_2.jpg` |
+| Hardware demonstration | RealDigital Boolean Board | Bitstream programmed (DONE LED lit); photo 1 shows VALID, photo 2 shows INVALID; the input values for each photo are still to be recorded | `../04_FPGA_Hardware/boolean_board_demo_1.jpg`, `boolean_board_demo_2.jpg` |
 
 ## 2. Test cases: expected versus observed (Verilog simulation)
 `V = 1` means exactly one bit of `D = X xor P` is 1. The first sample of each instance is compared with `P = 0`.
