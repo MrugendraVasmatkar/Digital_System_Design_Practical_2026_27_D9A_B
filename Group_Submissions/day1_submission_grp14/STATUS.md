@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 11:00 |
+| Last Updated | 2026-11-20, 11:30 |
 
 ## 2. Problem Statement
 
@@ -126,7 +126,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 02:00 | Logisim comparator-version screenshot added (`02_FSM_Logisim/circuit_overview_v2_comparators.png`); matching .circ still to be uploaded | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 02:30 | Updated Logisim circuit `Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` uploaded as the final version (matches the comparator screenshot) | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 03:00 | Assigned statement 3H2 (hint H2, Mealy FSM) transcribed into the problem analysis with a requirement mapping; photo of the handout added | Samruddhi Samant | Commit link to be added |
-| 2026-11-20, 03:30 | Clock constraint (create_clock 10 ns) added to constraints; bitstream regenerated; screenshots `constraints_with_clock.png` and `bitstream_generation_completed.png` added; refreshed timing report still pending | Samruddhi Samant | Commit link to be added |
+| 2026-11-20, 03:30 | Clock constraint (create_clock 10 ns) added to constraints; bitstream regenerated; screenshot `bitstream_generation_completed.png` added; refreshed timing report still pending | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 04:00 | Logisim simulation screenshot added (`02_FSM_Logisim/sim_score13_high.png`, SCORE = 13 gives HIGH LED); other scores, ACK and RESET pending | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 04:30 | Constrained timing run: WNS 7.665 ns, WHS 0.540 ns, 0 failing endpoints, all constraints met; `timing_summary.png` replaced | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 05:00 | Siddharth (Siddharthqzz29), Deven (DevenBhadane) and Ojas (OjasKadam07) added as collaborators on the group repository and accepted | Samruddhi Samant | Repository settings |
@@ -135,6 +135,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 06:30 | Logo image files (`06_Presentation/assets/`) removed from the repo; the logos remain embedded in the presentation title slide | Samruddhi Samant | Repository |
 | 2026-11-20, 07:00 | Noted in README section 7 and presentation slide 3 that the Logisim circuit uses gates and comparators (no multiplexers) while Vivado infers multiplexers from the Verilog if/else chain and maps them to LUTs | Samruddhi Samant | Repository |
 | 2026-11-20, 11:00 | Hardware demonstration on the RealDigital Boolean Board: LOW (LD0), MEDIUM (LD1) and HIGH (LD2) LEDs each lit; three photos added to `04_FPGA_Hardware/` | Samruddhi Samant | Repository |
+| 2026-11-20, 11:30 | Removed the screenshot `constraints_with_clock.png` (it still showed the old unconstrained timing report); the clock constraint is in `constraints.xdc` and the constrained timing result is in `timing_summary.png` | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 

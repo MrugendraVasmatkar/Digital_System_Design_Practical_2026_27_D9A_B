@@ -46,7 +46,7 @@ Hardware demonstration done on the RealDigital Boolean Board (DONE LED lit): eac
 | Bonded IOBs | 11 of 210 | `utilization_report.png` |
 | BUFGCTRL | 1 of 32 | `utilization_report.png` |
 | Estimated power | 3.43 W total (3.348 W dynamic, mostly I/O; 0.082 W static); junction 41.9 °C | `04_FPGA_Hardware/power_report.png` |
-| Timing (10 ns clock, `create_clock -period 10.000`) | Met: WNS 7.665 ns, WHS 0.540 ns, WPWS 4.500 ns; 0 failing endpoints; "All user specified timing constraints are met". The first run, before the constraint, showed inf slack | `04_FPGA_Hardware/timing_summary.png`, `constraints_with_clock.png` |
+| Timing (10 ns clock, `create_clock -period 10.000`) | Met: WNS 7.665 ns, WHS 0.540 ns, WPWS 4.500 ns; 0 failing endpoints; "All user specified timing constraints are met". The first run, before the constraint, showed inf slack | `04_FPGA_Hardware/timing_summary.png` |
 
 Timing was first reported as unconstrained (inf); after adding the clock constraint, the constrained run above meets timing.
 
