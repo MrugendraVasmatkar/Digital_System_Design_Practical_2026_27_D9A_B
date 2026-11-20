@@ -19,7 +19,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 7 | Testbench and simulation completed | Completed | |Group_Submissions/D9A-Group13/03_Verilog_Implementation/simulation/Waveform.png |
 | 8 | FPGA synthesis and implementation completed | Completed | Group_Submissions/D9A-Group13/03_Verilog_Implementation/simulation/Waveform.png | [ ] |
 | 9 | Hardware demonstration completed | In Progress | [ ] | [ ] |
-| 10 | Results, presentation and report uploaded | Completed | [ ] | [ ] |
+| 10 | Results, presentation and report uploaded | Completed | Group_Submissions/D9A-Group13/06_Presentation/GRAY CODE TRANSITION DETECTOR FIN.pptx | [ ] |
 | 11 | Final Pull Request created | Not Started | [ ] | [ ] |
 
 ## 2. Time-wise progress log
