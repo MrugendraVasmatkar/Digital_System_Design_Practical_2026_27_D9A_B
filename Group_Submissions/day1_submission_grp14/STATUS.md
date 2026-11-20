@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-B-Group14 |
-| Last Updated | 2026-11-20, 18:30 |
+| Last Updated | 2026-11-20, 19:00 |
 
 ## 2. Problem Statement
 
@@ -145,6 +145,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 17:00 | `game_tb_full.v` removed from the repository; only the original `game_tb.v` remains (covers scores 2, 7 and 13) | Samruddhi Samant | Repository |
 | 2026-11-20, 18:00 | README section 6 "Issues and corrections" filled: comparator built from internal gates at first, later replaced by the built-in comparator block | Samruddhi Samant | Repository |
 | 2026-11-20, 18:30 | README section 14 (team reflection) written | Samruddhi Samant | Repository |
+| 2026-11-20, 19:00 | RTL `mealy_simple.v` restored to the earlier version (LED outputs not gated by reset), so the Verilog matches the Vivado project, reports, bitstream and board photos; the reset difference from the Logisim circuit is documented in README section 7 | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 
@@ -179,7 +180,6 @@ All members must understand the complete design and be prepared to explain the F
 | Testbench covers only scores 2, 7 and 13 (handout Q3 asks for all 16 scores, all four states, reset and START/ACK, self-checking) | Extend `game_tb.v` if time permits, or keep this as a documented limitation | Ojas Nitin Kadam / Samruddhi Samant | [Date] |
 | Logisim must be verified for all 16 inputs (Q1 of the statement) | Follow `02_FSM_Logisim/logisim_test_plan.md`: simulate scores 0-15, ACK and RESET in the v2 circuit and capture screenshots | Siddharth Sanjeev Tiwari / Deven Shailendra Bhadane | [Date] |
 | Statement lists a 4-bit input register loaded by START; the design has none | Check with faculty whether it is required, or document why the design samples the score directly | Samruddhi Samant | [Date] |
-| Re-run with the updated RTL (LED outputs gated by reset) | Update the Vivado source, run `game_tb`, re-run synthesis, implementation and the bitstream, re-check timing and utilization, and reprogram the board | Samruddhi Samant | [Date] |
 
 ## 11. Current Overall Status
 

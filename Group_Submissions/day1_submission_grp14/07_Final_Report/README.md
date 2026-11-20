@@ -7,4 +7,4 @@
 
 Contents: abstract; problem statement 3H2 and objectives; architecture; FSM design with state table and diagram; Logisim implementation and simulation; Verilog implementation and testbenches; FPGA implementation (pins, constraints, utilization, timing, hardware demo); results and mapping to the handout; challenges; team contributions; conclusion and future work.
 
-Note: the Verilog was changed after the Vivado reports and board photos were produced (LED outputs gated with NOT reset, to match the Logisim circuit). The report states this; re-running simulation, implementation and the bitstream on the updated RTL is pending.
+Note: the Verilog LED outputs are not gated by reset, whereas the Logisim circuit ANDs its LED outputs with NOT reset; this difference is documented in the report. The Vivado reports, bitstream and board photos come from the Verilog version in this repository.
