@@ -9,13 +9,13 @@
 Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
-| 1 | Problem requirements and assumptions documented |Completed  | [https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/01_Problem_Analysis ] | [9/11/2026 20:15] |
-| 2 | Architecture and block diagram prepared | completed | [https://drive.google.com/file/d/1RCaHuwNJK5PxD2dgCUktbVrcIsHgE7IY/view?usp=drivesdk] | [19/11/2026 22:51]
+| 1 | Problem requirements and assumptions documented | Completed  | [problem analysis] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/01_Problem_Analysis ) | [9/11/2026 20:15] |
+| 2 | Architecture and block diagram prepared | completed | [Architecture and block diagram document] -(https://drive.google.com/file/d/1RCaHuwNJK5PxD2dgCUktbVrcIsHgE7IY/view?usp=drivesdk) | [19/11/2026 22:51]
 | 3 | FSM diagram/table completed, if applicable | completed | [Group_Submissions/D9AB_GROUP11/02_FSM_Logisim] | [19/11/2026 22:55] |
 | 4 | Logisim circuit implemented | Not Started | [ ] | [ ] |
 | 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
-| 6 | Verilog RTL completed | Completed | [Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation/RTL/game_rtl.v] | [19/11/2026 20:40] |
-| 7 | Testbench and simulation completed | Completed | [Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation ] | [19/11/2026 21:56] |
+| 6 | Verilog RTL completed | Completed | [Verilog code] - (Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation/RTL/game_rtl.v) | [19/11/2026 20:40] |
+| 7 | Testbench and simulation completed | Completed | [Testbench code] - (Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation ) | [19/11/2026 21:56] |
 | 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
 | 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
@@ -26,35 +26,34 @@ Update at least once every two hours and at each major milestone. Record actual 
 
 | Date | Actual time | Work completed | Evidence path | Blocker | Next action | Updated by |
 |---|---|---|---|---|---|---|
-| 19/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 19/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 19/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| 19/11/2026 | 22:51 | Architecture and block diagram | blockdiagram.jpeg | none | none | 22:51 |
+| 19/11/2026 | 22:55 | FSM diagram and state table  | 02_FSM_Logisim/ | none | none | 22:55 |
+| 19/11/2026 | 22:40 | Verilog RTL completed | 03_Verilog_Implementation/RTL/game_rtl.v | none | none | 22:40 |
+| 20/11/2026 | 09:28 | Made changes in simulation | 03_Verilog_Implementation/Simulation_Results | none | none | 09:28 |
+| 20/11/2026 | 10:00 | Presentation ppt ready | 06_Presentation | none | none | 10:00 |
 
-Add rows as needed.
 
 ## 3. Current blockers and support required
 | Blocker | Impact | Action being taken | Faculty support required |
 |---|---|---|---|
-| [ ] | [ ] | [ ] | [ ] |
+| Logisim & Implementation | major time taken causing time crunch and work distribution | made the logisim from scratch with the help of AI | - |
 
 ## 4. End-of-day summary
 ### 19 October 2026
-- Completed:
-- In progress:
-- Pending:
-- Evidence uploaded:
-- Plan for 20 October:
+- Completed: architecture, block diagram, FSM diagram, Verilog RTL 
+- In progress: logisim
+- Pending: logisim
+- Evidence uploaded: yes
+- Plan for 20 October: presentation ppt and verilog implementation
 
 ### 20 October 2026
-- Completed:
-- Pending:
-- Evidence uploaded:
-- Final submission status:
+- Completed: presentation ppt and verilog implementation
+- Pending: none
+- Evidence uploaded: yes
+- Final submission status: pending
 
 ## 5. Group leader confirmation
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
 
-**Group leader:** [Name]  
-**Date/time:** [Actual date and time]
+**Group leader:** Hardik Patil  
+**Date/time:** 20/11/2026, 10:00 a.m.
