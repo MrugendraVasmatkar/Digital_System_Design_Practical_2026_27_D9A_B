@@ -57,5 +57,5 @@ Add rows as needed.
 ## 5. Group leader confirmation
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
 
-**Group leader:** [Name]  
-**Date/time:** [Actual date and time]
+**Group leader:** Snehal Gharmude  
+**Date/time:** 20/11/2026
