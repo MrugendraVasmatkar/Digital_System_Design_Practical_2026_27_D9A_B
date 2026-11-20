@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-B-Group14 |
-| Last Updated | 2026-11-20, 16:00 |
+| Last Updated | 2026-11-20, 17:00 |
 
 ## 2. Problem Statement
 
@@ -142,6 +142,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 15:00 | Final report added (`07_Final_Report/Group14_Final_Report.docx` and `.pdf`, 12 pages) | Samruddhi Samant | Repository |
 | 2026-11-20, 15:30 | FPGA implementation link (Google Drive) added to README section 9 and the 04_FPGA_Hardware README: https://drive.google.com/file/d/1PTbTQEMCe9i1WaIGIoaBvH1JUCAgzeba/view?usp=drive_link | Samruddhi Samant | Repository |
 | 2026-11-20, 16:00 | GitHub fork renamed from `DSD-2026-D9A-Group14` to `DSD-2026-D9A-B-Group14` (a "/" is not allowed in repository names); repository links updated; PR #33 unaffected | Samruddhi Samant | Repository settings |
+| 2026-11-20, 17:00 | `game_tb_full.v` removed from the repository; only the original `game_tb.v` remains (covers scores 2, 7 and 13) | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 
@@ -173,10 +174,10 @@ All members must understand the complete design and be prepared to explain the F
 
 | Issue / Pending Work | Planned Corrective Action | Responsible Member | Target Completion |
 |---|---|---|---|
-| Testbench must cover all 16 scores, all four FSM states, reset and START/ACK, and be self-checking with PASS/FAIL messages (Q3 of the statement) | `Testbench/game_tb_full.v` is written; run it in Vivado (top `game_tb_full`) and save the log and waveform in `Simulation_Results/` | Ojas Nitin Kadam / Samruddhi Samant | [Date] |
+| Testbench covers only scores 2, 7 and 13 (handout Q3 asks for all 16 scores, all four states, reset and START/ACK, self-checking) | Extend `game_tb.v` if time permits, or keep this as a documented limitation | Ojas Nitin Kadam / Samruddhi Samant | [Date] |
 | Logisim must be verified for all 16 inputs (Q1 of the statement) | Follow `02_FSM_Logisim/logisim_test_plan.md`: simulate scores 0-15, ACK and RESET in the v2 circuit and capture screenshots | Siddharth Sanjeev Tiwari / Deven Shailendra Bhadane | [Date] |
 | Statement lists a 4-bit input register loaded by START; the design has none | Check with faculty whether it is required, or document why the design samples the score directly | Samruddhi Samant | [Date] |
-| Re-run with the updated RTL (LED outputs gated by reset) | Update the Vivado source, run `game_tb` and `game_tb_full` (run all), re-run synthesis, implementation and the bitstream, re-check timing and utilization, and reprogram the board | Samruddhi Samant | [Date] |
+| Re-run with the updated RTL (LED outputs gated by reset) | Update the Vivado source, run `game_tb`, re-run synthesis, implementation and the bitstream, re-check timing and utilization, and reprogram the board | Samruddhi Samant | [Date] |
 
 ## 11. Current Overall Status
 

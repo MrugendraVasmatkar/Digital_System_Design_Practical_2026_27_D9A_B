@@ -96,10 +96,10 @@ File: `02_FSM_Logisim/fsm_state_diagram.png`
 - Logisim vs Verilog structure: the Logisim circuit (v2) is built from comparators, AND/OR/NOT gates and two D flip-flops, with no multiplexers. In the Verilog design, Vivado's elaborated (RTL) schematic above shows multiplexers (`RTL_MUX`), because the next-state `if / else if` chain is a priority selection. Synthesis then maps the logic to LUTs, flip-flops and I/O buffers, so the implemented design contains no multiplexers either. The behaviour is the same (see the state table); only the structure differs.
 - Reset and LED outputs: on 2026-11-20 the RTL was changed so each LED output is gated with NOT reset (all LEDs off whenever reset = 1), matching the Logisim circuit (the `nRST` AND gates). The Vivado reports, bitstream and board photos in this repository were produced from the earlier version without this gating (LED outputs not gated by reset); re-running simulation, implementation and the bitstream with the updated RTL is pending.
 - RTL: `03_Verilog_Implementation/RTL/mealy_simple.v`
-- Testbench: `03_Verilog_Implementation/Testbench/game_tb.v` (basic, 3 scores) and `game_tb_full.v` (self-checking: all 16 scores, all four states, reset, START/ACK, 400 random cycles against a reference model, PASS/FAIL messages; written, not yet simulated)
+- Testbench: `03_Verilog_Implementation/Testbench/game_tb.v` (scores 2, 7 and 13, each followed by ACK; simulated in Vivado, see section 8)
 
 ## 8. Verification and Simulation Results
-**Full testbench (`game_tb_full.v`):** written to meet the handout (Q3) and **not yet simulated**. It must be run in Vivado (top `game_tb_full`, `mealy_simple.v` as the design) and the console log with the final line "RESULT: ALL ... CHECKS PASSED" saved in `Simulation_Results/`. Until then, the results below are for the basic testbench only.
+**Limitation:** the handout (Q3) asks for a testbench that covers all 16 scores, all four states, reset and START/ACK with self-checking and pass/fail messages. Our testbench `game_tb.v` covers scores 2, 7 and 13 only.
 
 Testbench `game_tb.v` has 3 test cases, simulated in the Vivado Simulator (Behavioral Simulation, top `game_tb`). The observed values below are read from the waveform; the Tcl console `$display` log is not yet uploaded.
 
