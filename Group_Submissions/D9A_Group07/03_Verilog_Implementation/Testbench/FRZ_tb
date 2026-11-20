@@ -1,0 +1,43 @@
+`timescale 1ns / 1ps
+
+module FRZ_tb;
+
+    reg  X3, X2, X1, CLK, ACK;
+    wire Y, Y_bar;
+
+    FRZ dut (.X3(X3), .X2(X2), .X1(X1), .CLK(CLK), .ACK(ACK),
+             .Y(Y), .Y_bar(Y_bar));
+
+    // 10 ns clock
+    initial CLK = 0;
+    always #5 CLK = ~CLK;
+
+    initial begin
+        // Clear the flip-flop (Q = 0)
+        {X3, X2, X1} = 3'b000;
+        ACK = 1;  #12;  ACK = 0;
+
+        // Q = 0: Y = 0 only for 011 and 100 (no clock edge, so Q stays 0)
+        {X3, X2, X1} = 3'b000;  #2;
+        {X3, X2, X1} = 3'b001;  #2;
+        {X3, X2, X1} = 3'b010;  #2;
+        {X3, X2, X1} = 3'b011;  #2;     // Y drops immediately
+        {X3, X2, X1} = 3'b100;  #2;     // Y drops immediately
+        {X3, X2, X1} = 3'b101;  #2;
+        {X3, X2, X1} = 3'b110;  #2;
+        {X3, X2, X1} = 3'b111;  #2;
+
+        // Latch REJECT: forbidden value at a clock edge sets Q = 1
+        {X3, X2, X1} = 3'b011;
+        @(posedge CLK);  #1;
+        {X3, X2, X1} = 3'b000;  #4;     // Q = 1, so Y stays 0
+        {X3, X2, X1} = 3'b101;  #4;     // still 0
+
+        // ACK clears REJECT
+        ACK = 1;  #4;                   // Y returns to 1
+        ACK = 0;  #6;
+
+        $finish;
+    end
+
+endmodule
