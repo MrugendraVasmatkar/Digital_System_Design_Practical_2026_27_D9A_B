@@ -40,7 +40,7 @@
   5. The configurable limits must satisfy 0 ≤ L ≤ H ≤ 2^N − 1.
 
 ## 3. Problem Analysis and Proposed Solution
-The base problem requires a 4-bit circuit that outputs 0 (reject) for inputs 6–9 and 1 (accept) for all other values, using a fixed Boolean expression FZ = X̄₃X₂X₁ + X₃X̄₂X̄₁, Y = FZ̄.
+The base problem requires a 4-bit circuit that outputs 0 (reject) for inputs 6–9 and 1 (accept) for all other values, using a fixed Boolean expression FZ = X'₃X₂X₁ + X₃X'₂X'₁, Y = FZ'.
 
 For H1 (Parameterized Forbidden Zone), this fixed expression doesn't generalize hence, a new SOP equation would need to be re-derived by hand for every new range [L, H]. The requirement is to make the forbidden range itself a design parameter rather than a baked-in constant, and to verify correctness across multiple ranges (e.g., [4,7], [8,11]) without touching the gate-level logic each time.
 
