@@ -15,12 +15,12 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 3 | FSM diagram/table completed, if applicable | Completed | Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/FSM_Diagram.png.png | 19/11/26 |
 | 4 | Logisim circuit implemented | Completed | Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Water_Temp.circ | 19/11/26 |
 | 5 | Logisim simulation verified | completed | Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Simulation_Evidence.jpeg | 19/11/26 |
-| 6 | Verilog RTL completed | In Progress | [ ] | 19/11/26 |
-| 7 | Testbench and simulation completed | In Progress | [ ] | 19/11/26 |
-| 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
-| 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
-| 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
-| 11 | Final Pull Request created | Not Started | [ ] | [ ] |
+| 6 | Verilog RTL completed | Completed | Group_Submissions/D9A_Group16/03_Verilog_Implementation | 20/11/26 |
+| 7 | Testbench and simulation completed | Completed | Group_Submissions/D9A_Group16/03_Verilog_Implementation/03_Verilog_Implementation | 20/11/26 |
+| 8 | FPGA synthesis and implementation completed | Completed | Group_Submissions/D9A_Group16/04_FPGA_Hardware| 20/11/26 |
+| 9 | Hardware demonstration completed | Completed | Group_Submissions/D9A_Group16/04_FPGA_Hardware/04_FPGA_Hardware | 20/11/26 |
+| 10 | Results, presentation and report uploaded | Completed | Group_Submissions/D9A_Group16/06_Presentation | 20/11/26 |
+| 11 | Final Pull Request created | Not Started | In Progress | 20/11/26 |
 
 ## 2. Time-wise progress log
 Update at least once every two hours and at each major milestone. Record actual work and actual times; do not pre-fill future updates.
@@ -30,9 +30,9 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/10/2026 | 11:30 am| documentation and analysis of problem statement | Group_Submissions/D9A_Group16/01_Problem_Analysis/Problem_analysis.md | [ ] | [ ] | [ ] |
 | 19/10/2026 | 2:30 am | FSM state and transition table | [ ]Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/FSM_State_Transition_table.md  | [ ] | [ ] | [ ] |
 | 19/10/2026 | 3:30 pm | Logisim Designing and Implementation | Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Simulation_Evidence.jpeg| [ ] | [ ] | [ ] |
-| 19/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| 20/10/2026 | 9:30 am | Verilog Completed | Group_Submissions/D9A_Group16/03_Verilog_Implementation | [ ] | [ ] | [ ] |
+| 20/10/2026 | 10:30 am | FPGA Implemented | Group_Submissions/D9A_Group16/04_FPGA_Hardware | [ ] | [ ] | [ ] |
+| 20/10/2026 | 11:00 am | Presentation, Result and Report | Group_Submissions/D9A_Group16/06_Presentation | [ ] | [ ] | [ ] |
 
 Add rows as needed.
 
@@ -50,10 +50,10 @@ Add rows as needed.
 - Plan for 20 October: Verilog, Generation of Bitstream, FPGA Board/hardware Implementation. creation of presentation and report.
 
 ### 20 October 2026
-- Completed:
-- Pending:
-- Evidence uploaded:
-- Final submission status:
+- Completed: Everything is updated including Presentation, Final Report and Result.
+- Pending: NA
+- Evidence uploaded: Uploaded all evidences
+- Final submission status: Completed
 
 ## 5. Group leader confirmation
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
