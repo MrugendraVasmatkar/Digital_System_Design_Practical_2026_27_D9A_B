@@ -19,8 +19,8 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 6 | Verilog RTL completed | Completed | https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing | [ ] |
 | 7 | Testbench and simulation completed | Completed | https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing | [ ] |
 | 8 | FPGA synthesis and implementation completed | Completed | https://drive.google.com/drive/u/4/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz | [ ] |
-| 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
-| 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
+| 9 | Hardware demonstration completed | Completed | https://drive.google.com/drive/u/4/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz | [ ] |
+| 10 | Results, presentation and report uploaded | Completed | https://drive.google.com/drive/u/4/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz | [ ] |
 | 11 | Final Pull Request created | Not Started | [ ] | [ ] |
 
 ## 2. Time-wise progress log
@@ -50,10 +50,10 @@ Add rows as needed.
 - Plan for 20 October: Complete Verilog Implementation and move forward with FPGA
 
 ### 20 October 2026
-- Completed: Verilog Verification with Testbench
+- Completed: Hardware Demo and Implementation
 - Pending: FPGA Implementation on Hardware
 - Evidence uploaded: https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing
-- Final submission status: Incomplete
+- Final submission status: Complete
 
 ## 5. Group leader confirmation
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
