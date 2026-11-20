@@ -191,6 +191,6 @@ What did the team learn? What would you improve?
 - [ ] Simulation results and test cases documented.
 - [x] FPGA implementation and hardware evidence uploaded.
 - [ ] Results, challenges and conclusion documented.
-- [ ] Presentation and final report uploaded.
+- [x] Presentation and final report uploaded.
 - [x] STATUS.md is up to date.
 - [x] Final Pull Request created and URL recorded (PR #33; the PR stays open for updates).

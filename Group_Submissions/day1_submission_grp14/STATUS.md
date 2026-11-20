@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 14:00 |
+| Last Updated | 2026-11-20, 15:00 |
 
 ## 2. Problem Statement
 
@@ -79,7 +79,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 3 — FPGA | Demonstrate the design on FPGA hardware | Completed | `04_FPGA_Hardware/hardware_low_led.jpg`, `hardware_medium_led.jpg`, `hardware_high_led.jpg` (LOW, MEDIUM, HIGH LEDs lit on the Boolean board) |
 | 3 — Results | Record observations and verify expected behaviour | In Progress | `05_Results/README.md` (simulation results recorded; hardware results pending) |
 | 3 — Presentation | Prepare slides and demonstration | Completed | `06_Presentation/Group14_DSD_Presentation.pptx` (3 slides: title; Logisim simulation, implementation, timing and FPGA demo; results, challenges and contributions) |
-| 3 — Submission | Complete final report and checklist | Not Started | `07_Final_Report/` |
+| 3 — Submission | Complete final report and checklist | In Progress | `07_Final_Report/Group14_Final_Report.docx` and `.pdf` (report uploaded; checklist items for simulation and results still open) |
 
 ## 6. Functional Test Plan
 
@@ -139,6 +139,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 12:00 | Presentation reduced to 3 slides (title; Logisim simulation, implementation, timing and FPGA demo; results, challenges, contributions); team contribution lists updated in README section 11 and STATUS section 8 | Samruddhi Samant | Repository |
 | 2026-11-20, 12:30 | Presentation updated: problem statement added to the title slide, Verilog simulation waveform on slide 2 (implementation numbers moved under the timing summary), expanded conclusion and results summary on slide 3 | Samruddhi Samant | Repository |
 | 2026-11-20, 14:00 | RTL `mealy_simple.v` changed to gate the LED outputs with NOT reset (matches the Logisim circuit); `game_tb_full.v` updated to expect it. Earlier simulation, implementation, timing, bitstream and board results were produced before this change | Samruddhi Samant | Repository |
+| 2026-11-20, 15:00 | Final report added (`07_Final_Report/Group14_Final_Report.docx` and `.pdf`, 12 pages) | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 
