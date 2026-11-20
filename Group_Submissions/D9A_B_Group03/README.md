@@ -142,7 +142,7 @@ Tool/version: Xilinx Vivado Simulator, version [add version]
 Number passed/failed: 51 passed / 0 failed (3 ranges x (1 reset check + 16 input checks), N = 4)  
 Ranges simulated: [6, 9] (default), [4, 7], [8, 11]. Changed by editing `` `L `` and `` `H `` in the testbench.  
 Waveform/log path: [waveform](./03_Verilog_Implementation/Testbench/tb_fz_rejector_behav.wcfg)  
-Detailed results: see `Results_and_Analysis.md`
+Detailed results: see [Result](./05_Results)
 
 ## 9. FPGA Hardware Implementation
 - FPGA board/device: AMD Spartan-7 FPGA xc7s50csga324-1
@@ -197,6 +197,6 @@ Maintain time-wise updates in `STATUS.md`.
 - [x] Simulation results and test cases documented.
 - [x] FPGA implementation and hardware evidence uploaded.
 - [x] Results, challenges and conclusion documented.
-- [ ] Presentation and final report uploaded.
+- [x] Presentation and final report uploaded.
 - [x] STATUS.md is up to date.
 - [x] Final Pull Request created and URL recorded.
