@@ -16,7 +16,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 4 | Logisim circuit implemented | Completed | Group_Submissions/D9A-Group13/02_FSM_Logisim/GRAY_CODE_TRANSITION_DETECTOR.circ | [ ] |
 | 5 | Logisim simulation verified | Completed | Group_Submissions/D9A-Group13/02_FSM_Logisim/logism.pdf | [ ] |
 | 6 | Verilog RTL completed | Completed | Group_Submissions/D9A-Group13/03_Verilog_Implementation/simulation/RTL_Schematic.png | [ ] |
-| 7 | Testbench and simulation completed | Completed | | Group_Submissions/D9A-Group13/03_Verilog_Implementation/simulation/Waveform.png |
+| 7 | Testbench and simulation completed | Completed | |Group_Submissions/D9A-Group13/03_Verilog_Implementation/simulation/Waveform.png |
 | 8 | FPGA synthesis and implementation completed | Completed | Group_Submissions/D9A-Group13/03_Verilog_Implementation/simulation/Waveform.png | [ ] |
 | 9 | Hardware demonstration completed | In Progress | [ ] | [ ] |
 | 10 | Results, presentation and report uploaded | Completed | [ ] | [ ] |
@@ -57,5 +57,5 @@ Add rows as needed.
 ## 5. Group leader confirmation
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
 
-**Group leader:** [Name]  
-**Date/time:** [Actual date and time]
+**Group leader:** Mehul Gautam  
+**Date/time:** 20 November 2026 11:00 am
