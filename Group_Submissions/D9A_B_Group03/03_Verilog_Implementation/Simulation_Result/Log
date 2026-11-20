@@ -1,33 +1,24 @@
-X =  0 (00000) | ACCEPT = 1 | REJECT = 0 | PASS
-X =  1 (00001) | ACCEPT = 1 | REJECT = 0 | PASS
-X =  2 (00010) | ACCEPT = 1 | REJECT = 0 | PASS
-X =  3 (00011) | ACCEPT = 1 | REJECT = 0 | PASS
-X =  4 (00100) | ACCEPT = 1 | REJECT = 0 | PASS
-X =  5 (00101) | ACCEPT = 1 | REJECT = 0 | PASS
-X =  6 (00110) | ACCEPT = 1 | REJECT = 0 | PASS
-X =  7 (00111) | ACCEPT = 1 | REJECT = 0 | PASS
-X =  8 (01000) | ACCEPT = 1 | REJECT = 0 | PASS
-X =  9 (01001) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 10 (01010) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 11 (01011) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 12 (01100) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 13 (01101) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 14 (01110) | ACCEPT = 0 | REJECT = 1 | PASS
-X = 15 (01111) | ACCEPT = 0 | REJECT = 1 | PASS
-X = 16 (10000) | ACCEPT = 0 | REJECT = 1 | PASS
-X = 17 (10001) | ACCEPT = 0 | REJECT = 1 | PASS
-X = 18 (10010) | ACCEPT = 0 | REJECT = 1 | PASS
-X = 19 (10011) | ACCEPT = 0 | REJECT = 1 | PASS
-X = 20 (10100) | ACCEPT = 0 | REJECT = 1 | PASS
-X = 21 (10101) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 22 (10110) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 23 (10111) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 24 (11000) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 25 (11001) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 26 (11010) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 27 (11011) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 28 (11100) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 29 (11101) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 30 (11110) | ACCEPT = 1 | REJECT = 0 | PASS
-X = 31 (11111) | ACCEPT = 1 | REJECT = 0 | PASS
-$finish called at time : 410 ns
+# run 1000ns
+[PASS] Initial RESET
+X= 0 (0000) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X= 1 (0001) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X= 2 (0010) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X= 3 (0011) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X= 4 (0100) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X= 5 (0101) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X= 6 (0110) | State=01 | ACCEPT=0 | REJECT=1 | PASS
+X= 7 (0111) | State=01 | ACCEPT=0 | REJECT=1 | PASS
+X= 8 (1000) | State=01 | ACCEPT=0 | REJECT=1 | PASS
+X= 9 (1001) | State=01 | ACCEPT=0 | REJECT=1 | PASS
+X=10 (1010) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X=11 (1011) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X=12 (1100) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X=13 (1101) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X=14 (1110) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X=15 (1111) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+
+ALL TESTS PASSED for N=4, Range=[6, 9]!
+$finish called at time : 500 ns : File "C:/VIVADO_PROJECTS_DSD/FSM_ZONE/TB/tb_fz_rejector.v" Line 107
+xsim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1189.582 ; gain = 19.094
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_fz_rejector_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
