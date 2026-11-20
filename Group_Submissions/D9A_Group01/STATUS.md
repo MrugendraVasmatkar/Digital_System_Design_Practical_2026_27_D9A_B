@@ -63,7 +63,7 @@ Sequence: `START` → X, P registers load → next clock V is evaluated → `IDL
 | 2 — Verilog | Write synthesizable FSM controller and datapath RTL | In Progress | `03_Verilog_Implementation/RTL/gray_code_nbit.v` (compiled, simulated and implemented in Vivado 2018.3) |
 | 2 — Verilog | Top module for FPGA | Completed | `gray_code_nbit` (N = 4) is the top module |
 | 2 — Verilog | Create testbench and run functional simulation | In Progress | `03_Verilog_Implementation/Testbench/gray_code_nbit_tb.v` (run in Vivado 2018.3: 11 of 12 steps pass; one wrong expected value to fix) |
-| 2 — Verilog | Save waveforms and simulation results | In Progress | `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_waveform.png` (Tcl console log still to be added) |
+| 2 — Verilog | Save waveforms and simulation results | In Progress | `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_waveform.png` (Tcl console log: `gray_code_nbit_tb_tcl_log.png`) |
 | 3 — FPGA | Assign FPGA pins and configure constraints | Completed | `04_FPGA_Hardware/gray_code_nbit.xdc` (pins to be checked against the board) |
 | 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/` (schematic, implemented-design, utilisation and timing-summary screenshots; timing is unconstrained – no clock constraint yet) |
 | 3 — FPGA | Demonstrate the design on FPGA hardware | Not Started | `04_FPGA_Hardware/` |
@@ -118,6 +118,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 20:15 | Ran behavioural simulation in Vivado 2018.3 (11 of 12 steps pass; the single fail is a wrong expected value for 1100 -> 1111 in the testbench), ran synthesis, implementation and bitstream generation for xc7s50csga324-1; uploaded waveform, schematic and implemented-design screenshots | `03_Verilog_Implementation/Simulation_Results/`, `04_FPGA_Hardware/` | Testbench expected value to fix; hardware demo not done | Fix testbench and re-run; add Tcl log and utilisation/timing numbers; program the board and record the demo | Ojas Karmarkar |
 | 19/11/2026 | 20:30 | Uploaded Vivado utilisation and timing-summary screenshots: 8 LUTs, 7 registers, 3 slices, 10 IOBs of xc7s50csga324-1; timing summary is NA because no clock constraint is defined | `04_FPGA_Hardware/vivado_utilization.png`, `04_FPGA_Hardware/vivado_timing_summary.png` | No `create_clock` in the XDC | Add the clock constraint, re-run implementation, record slack | Ojas Karmarkar |
 | 19/11/2026 | 23:34 | Added the architecture / block diagram image and linked it in the group README and problem analysis | `01_Problem_Analysis/block_diagram.png` | None | Fix testbench expected value and re-run; add Logisim step table; hardware demo | Ojas Karmarkar |
+| 20/11/2026 | 09:26 | Uploaded the Vivado Tcl console log screenshot (PASS lines and the one FAIL for 1100 -> 1111) | `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_tcl_log.png` | Testbench expected value to fix | Correct the expected value, re-run, replace waveform and log | Ojas Karmarkar |
 
 Add rows as needed.
 
@@ -143,7 +144,7 @@ All members must understand the complete design and be prepared to explain the F
 | Blocker | Impact | Action being taken | Faculty support required |
 |---|---|---|---|
 | Teammates not yet added as GitHub collaborators (usernames needed) | Teammates cannot push with their own accounts | Collecting GitHub usernames from the three members | None at present |
-| Testbench has one wrong expected value (1100 -> 1111) | Result shows 11 pass, 1 fail although the DUT is correct | Correct the expected value, re-run and save the Tcl log | None at present |
+| Testbench has one wrong expected value (1100 -> 1111) | Result shows 11 pass, 1 fail although the DUT is correct | Correct the expected value, re-run and replace the Tcl log | None at present |
 
 ## 12. Current Issues and Action Plan
 
@@ -159,7 +160,7 @@ All members must understand the complete design and be prepared to explain the F
 
 - **Current stage:** Stage 3 — FPGA implementation done (bitstream generated); hardware demonstration pending
 - **Completed:** Problem analysis, Logisim circuit, Verilog RTL, Vivado simulation (11 of 12 steps pass), synthesis, implementation and bitstream generation
-- **In progress:** Testbench fix and re-run, Tcl log, utilisation and timing numbers, diagrams
+- **In progress:** Testbench fix and re-run, clock constraint and timing numbers, FSM diagram
 - **Pending:** Hardware demonstration, results, presentation, report, final Pull Request
 - **Main risk:** Hardware behaviour not yet verified on the board (clock pin, buttons without debouncing)
 - **Next immediate task:** Run the testbench in Vivado and save the log and waveforms

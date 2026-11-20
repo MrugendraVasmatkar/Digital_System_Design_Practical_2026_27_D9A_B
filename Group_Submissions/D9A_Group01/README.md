@@ -95,7 +95,7 @@ The self-checking testbench `gray_code_nbit_tb.v` drives an N = 4 and an N = 5 i
 
 Tool/version: Vivado 2018.3 (behavioural simulation)  
 Number passed/failed: 11 passed, 1 failed (the failure is the wrong expected value for `1100 -> 1111` in the testbench; the DUT output matches the sheet)  
-Waveform/log path: `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_waveform.png` (Tcl console log still to be added)
+Waveform/log path: `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_waveform.png` (Tcl console log: `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_tcl_log.png`)
 
 ## 9. FPGA Hardware Implementation
 - FPGA board/device: Spartan-7 `XC7S50-CSGA324-1` (board to be confirmed)
@@ -140,7 +140,7 @@ Maintain time-wise updates in `STATUS.md`.
 - [ ] FSM diagram/table or justified alternative included (state table added; diagram image pending).
 - [ ] Logisim source and simulation evidence uploaded (N = 5 circuit uploaded; screenshots pending).
 - [x] Verilog RTL and testbench uploaded.
-- [ ] Simulation results and test cases documented (waveform and 11/12 result uploaded; testbench fix and Tcl log pending).
+- [ ] Simulation results and test cases documented (waveform and 11/12 result uploaded; testbench fix pending).
 - [ ] FPGA implementation and hardware evidence uploaded (constraints, schematic and implemented-design screenshots uploaded; reports and hardware photos pending).
 - [ ] Results, challenges and conclusion documented.
 - [ ] Presentation and final report uploaded.

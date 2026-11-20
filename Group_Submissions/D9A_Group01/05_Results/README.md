@@ -30,7 +30,8 @@
 
 Testbench totals (waveform counters): **11 passed, 1 failed**. Test 7 is the only failure; the design output for it matches the problem sheet's example table (`1100 -> 1111`, V = 0). After correcting the expected value in `run_step_4bit(4'b1111, 1'b1)` to `1'b0`, all 12 steps are expected to pass; re-run and replace this table's last column and the waveform to confirm.
 
-Waveform: `../03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_waveform.png`
+Waveform: `../03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_waveform.png`  
+Tcl console log: `../03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_tcl_log.png` (shows PASS for 8 steps and `FAIL [N=4]: x=1111 -> got valid=0, invalid=1 (expected valid=1)` for test 7)
 
 ## 3. Logisim results
 - **N = 5 circuit:** 31/31 steps of `H1_N5_test_vector.txt` passed in the headless run (5 required tests, reset and sample gating).

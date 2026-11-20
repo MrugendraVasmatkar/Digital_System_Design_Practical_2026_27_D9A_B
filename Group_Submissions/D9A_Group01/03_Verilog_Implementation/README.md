@@ -8,6 +8,7 @@ Place synthesizable RTL in `RTL/`, testbenches/test vectors in `Testbench/`, and
 | `RTL/gray_code_nbit.v` | Design: parameter `N` (default 4), previous-input register, general one-bit-change detector and Moore FSM; also the FPGA top module |
 | `Testbench/gray_code_nbit_tb.v` | Self-checking testbench with a 4-bit (N = 4) and a 5-bit (N = 5, H1 check) instance |
 | `Simulation_Results/gray_code_nbit_tb_waveform.png` | Vivado waveform of the behavioural simulation of `gray_code_nbit_tb` |
+| `Simulation_Results/gray_code_nbit_tb_tcl_log.png` | Vivado Tcl console log of the same run (PASS/FAIL lines) |
 
 ## Design summary (`gray_code_nbit`)
 | Port | Dir. | Width | Description |
@@ -55,6 +56,11 @@ Behavioural simulation was run in Vivado 2018.3 (project `ojasgraycode`, simulat
 | N=5, 1 – 2 | `00010, 10010` | VALID | Pass |
 | N=5, 3 | `10010 -> 10111` | INVALID | Pass |
 
-The single failure comes from the testbench line `run_step_4bit(4'b1111, 1'b1)`, which labels `1100 -> 1111` as a one-bit change; the design output matches the sheet. Correct the expected value to `1'b0` and re-run to obtain 12/12 passes, then replace the waveform and record the Tcl console log here.
+The single failure comes from the testbench line `run_step_4bit(4'b1111, 1'b1)`, which labels `1100 -> 1111` as a one-bit change; the design output matches the sheet. Correct the expected value to `1'b0` and re-run to obtain 12/12 passes, then replace the waveform and the Tcl log screenshot.
+
+### Tcl console log
+![Tcl console log](Simulation_Results/gray_code_nbit_tb_tcl_log.png)
+
+The log (Vivado Simulator 2018.3, `run 1000ns`) prints `PASS [N=4]` for `0001, 0011, 0111, 0101, 1101, 1100`, then `FAIL [N=4]: x=1111 -> got valid=0, invalid=1 (expected valid=1)` for `1100 -> 1111`, then `PASS` for `1111` and `1001` and for the N=5 steps. It confirms the single failure is the wrong expected value in the testbench, not the design. After correcting it, re-run and replace this log.
 
 Note: the same `start` pulse is applied to both instances, so the N=5 instance also receives (invalid) samples with `x5 = 0` during the N=4 steps; these are not checked by the testbench.
