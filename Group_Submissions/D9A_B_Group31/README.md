@@ -19,9 +19,9 @@
 - **Number/title:** 7H3 — Weather Alert System with Invalid Input `ERROR` State (Hint H3)
 - **Problem summary:** Design, simulate, and verify a synchronous digital Weather Alert System built around a datapath and a Moore Finite State Machine (FSM) controller. The system samples wind speed readings, classifies them into three valid alert levels—`CALM` (`0–2`), `BREEZY` (`3–5`), and `STORM` (`6–7`)—and implements modification **H3**, which introduces an `ERROR` state to detect out-of-range inputs (`> 7`), assert an error indicator LED, and return safely to `S_IDLE` upon `ACK` or `RST`.
 - **Objective:**
-  - Design and simulate the complete datapath (4-bit input register and unsigned range decoder) and 5-state Moore FSM in Logisim-evolution.
+  - Design and simulate the complete datapath (4-bit input register and unsigned range decoder) and 5-state Moore FSM in Logisim-evolution (Version 26).
   - Develop the updated 5-state Moore FSM diagram, state encoding table, transition table, and output table covering `S_IDLE`, `S_CALM`, `S_BREEZY`, `S_STORM`, and `S_ERROR`.
-  - Implement a synthesizable Verilog RTL module (`weather_alert_system.v`), behavioral testbench (`tb_weather_alert_system.v`), `.xdc` pin constraints, and FPGA bitstream in Xilinx Vivado 2018.3 to verify valid (`0–7`) and invalid (`8–15`) wind categories, `START`/`ACK`/`RST` control transitions, and indicator outputs.
+  - Implement a synthesizable Verilog RTL module (`weather_alert_system.v`), behavioral testbench (`tb_weather_alert_system.v`), `.xdc` pin constraints, and FPGA bitstream (`.bit`) in Xilinx Vivado 2018.3 to verify valid (`0–7`) and invalid (`8–15`) wind categories, `START`/`ACK`/`RST` control transitions, and indicator outputs.
 - **Inputs and outputs:**
 
 | Signal Name | Direction | Width | Meaning / Function |
@@ -39,7 +39,7 @@
 
 - **Constraints and assumptions:**
   - **4-Bit Input Expansion (Required for Hint H3):** The base specification uses a 3-bit wind input (`0–7`), which saturates at `111` (`7`) and mathematically cannot represent values `> 7`. Expanding `w`, `input_reg`, and the range comparators to **4 bits** (`0000–1111`, decimal `0–15`) enables explicit detection of invalid inputs (`8–15`).
-  - **3-Bit State Register Expansion:** Adding the fifth state (`S_ERROR`) exceeds the 4-state capacity of a 2-bit register (`00–11`). The FSM state register (`state_reg`) is therefore expanded to **3 bits** (`000` through `100`).
+  - **3-Bit State Register Expansion:** Adding the fifth state (`S_ERROR`) exceeds the 4-state capacity of a 2-bit register (`00–11`). The FSM state register (`state_reg`) is therefore expanded to **3 bits** ($\lceil \log_2 5 \rceil = 3$, codes `000` through `100`).
   - **Unsigned Comparison:** All 4-bit comparators are configured in **unsigned** mode so that binary `1000–1111` are evaluated as `8–15` (`> 7`) rather than negative 2's complement integers (`-8` to `-1`).
   - **Asynchronous Active-High Reset:** Both the Logisim schematic (register `R` clear pins) and the Vivado Verilog RTL (`always @(posedge clk or posedge rst)`) use an asynchronous active-high reset (`rst`) for exact hardware parity and immediate recovery to `S_IDLE` from any state.
   - **Moore FSM Output Discipline:** Indicator LEDs depend strictly on the registered state (`state_reg`), preventing combinational glitches on external inputs from triggering false alerts.
@@ -194,7 +194,7 @@ Asserting active-high `rst = 1` (`RST = 1`) **asynchronously** clears both `inpu
 - **Tool/version:** Xilinx Vivado 2018.3
 - **Clock/constraints:** Pin assignments and I/O standards mapped via the `.xdc` constraints file under `04_FPGA_Hardware/` (on-board clock for `clk`, 4 slide switches for `w[3:0]`, pushbuttons/switches for `start`, `ack`, and `rst`, and 5 on-board LEDs for `idle_led`, `calm_led`, `breezy_led`, `stormy_led`, and `error_led`).
 - **Synthesis/implementation summary:** Synthesis (`synth_1`), place-and-route implementation (`impl_1`), and bitstream generation (`.bit`) completed cleanly in Vivado 2018.3 with **6 Slice LUTs (`0.02%`)**, **7 Slice Registers / Flip-Flops (`0.01%`)** (`4` for `input_reg`, `3` for `state_reg`), **0 Latches (`0.00%`)**, **16 RTL cells**, **13 I/O ports**, and **36 nets**.
-- **Programming and hardware test result:** Constraints (`.xdc`) and bitstream (`.bit`) files generated and uploaded to `04_FPGA_Hardware/`. `[Update after physical board demo: Confirm on-board LED transitions for Idle, Calm, Breezy, Stormy, Error (> 7), ACK, and RST]`
+- **Programming and hardware test result:** Constraints (`.xdc`) and bitstream (`.bit`) files generated and uploaded to `04_FPGA_Hardware/`, ready for live FPGA board demonstration during evaluation.
 - **Evidence path:** `04_FPGA_Hardware/` (`.xdc` constraints file, `.bit` bitstream file, utilization and RTL schematic screenshots)
 
 *Simulation vs. hardware note:* In behavioral simulation, `w` and `start` toggle simultaneously on `10 ns` boundaries, revealing a 1-cycle (`10 ns`) pipeline transition from `input_reg` to `state_reg`. On FPGA hardware running at the board clock rate, holding the `start` input/button spans thousands of clock cycles, so the human-visible LED updates instantaneously to the classified weather state.
@@ -213,10 +213,10 @@ Asserting active-high `rst = 1` (`RST = 1`) **asynchronously** clears both `inpu
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
 |---|---|---|
-| Aditya Parab (Group leader) | [ ] | [ ] |
-| Harika Darbha (Member 2) | [ ] | [ ] |
-| Shravan Kotian (Member 3) | [ ] | [ ] |
-| Siddharth Gupta (Member 4) | [ ] | [ ] |
+| **Aditya Parab** (Group leader) | Brainstorming, GitHub repository management, pull request coordination, and technical documentation | Led problem analysis (7H3) and architecture brainstorming; set up and maintained fork/repository structure, managed all commits and merges into Open `PR #10` (zero conflicts), integrated diagrams/evidence, and authored `README.md`, `STATUS.md`, and the Final Project Report PDF. |
+| **Harika Darbha** (Member 2) | Brainstorming, Logisim circuit implementation, and Vivado RTL/FPGA development | Contributed to 5-state Moore FSM and 3-comparator + Priority Encoder architecture brainstorming; built and verified the Logisim v26 schematic (`02_FSM_Logisim/`); co-developed Verilog RTL, testbench simulation, `.xdc` constraints, and bitstream generation in Vivado 2018.3. |
+| **Shravan Kotian** (Member 3) | Brainstorming, Logisim design/testing, and project presentation (PPT) | Participated in system architecture and H3 edge-case brainstorming; collaborated on Logisim v26 schematic design and 5-state functional verification; created and finalized the 2-slide project presentation (Complete Implementation and Results). |
+| **Siddharth Gupta** (Member 4) | Brainstorming, Logisim schematic design, and Vivado RTL/FPGA verification | Participated in datapath and FSM brainstorming; collaborated on Logisim v26 schematic debugging (unsigned comparator & threshold fixes); co-developed and verified `weather_alert_system.v`, `tb_weather_alert_system.v`, synthesis reports, `.xdc` pin constraints, and bitstream in Vivado 2018.3. |
 
 Every student must be ready to explain the complete design.
 
@@ -224,14 +224,24 @@ Every student must be ready to explain the complete design.
 Maintain time-wise updates in `STATUS.md`.
 
 ## 13. Final Results and Conclusion
-Summarise requirements met, correctness of simulation/hardware results, measured results, limitations and conclusion.
-
-[Write here]
+- **Requirements Met:** All functional requirements for **Problem 7H3 (Weather Alert System with Hint H3 `ERROR` State)** were successfully achieved. The system classifies 4-bit unsigned wind inputs into `S_CALM` (`0–2`), `S_BREEZY` (`3–5`), `S_STORM` (`6–7`), and out-of-range `S_ERROR` (`8–15`), holds active alerts safely, prioritizes `ACK` over `START`, and supports immediate asynchronous reset (`RST`) back to `S_IDLE`.
+- **Verification & Measured Results:**
+  - **Logisim-evolution (v26):** All 5 states (`Idle`, `Calm`, `Breezy`, `Storm`, `Error`) and `START`/`ACK`/`RST` transitions passed interactive simulation (`w = 0, 1, 5, 7, 8`).
+  - **Xilinx Vivado 2018.3 Simulation:** All 6/6 behavioral testbench scenarios (`T01–T06`) passed with zero functional errors across `w = 2, 4, 6, 9` at `100 MHz` (`10 ns` period).
+  - **Synthesis & FPGA Implementation:** Synthesized cleanly with **6 Slice LUTs (`0.02%`)**, **7 Slice Registers / Flip-Flops (`0.01%`)**, **0 inferred latches (`0.00%`)**, **16 RTL cells**, **13 I/O ports**, and **36 nets**, followed by `.xdc` pin constraint mapping and successful `.bit` bitstream generation for the Spartan-7 Boolean Board.
+  - **Documentation & Deliverables:** Complete `README.md`, `STATUS.md`, Final Project Report PDF, and 2-slide project presentation uploaded and synced to Pull Request `#10` with zero merge conflicts.
+- **Limitations:** The two-stage register pipeline (`input_reg` $\rightarrow$ `state_reg`) introduces a 1-clock-cycle latency when `w` and `start` change on the exact same cycle in simulation, and physical pushbuttons are currently wired without dedicated hardware debouncers.
+- **Conclusion:** By combining a 4-bit unsigned datapath, a compact 3-comparator + Priority Encoder classifier, and a 5-state Moore FSM with exact structural parity between Logisim and Verilog RTL, the team delivered a minimal-area, glitch-free, and fully synthesizable Weather Alert System ready for FPGA demonstration and evaluation.
 
 ## 14. Team Reflection
-What did the team learn? What would you improve?
-
-[Write here]
+- **What the team learned:**
+  - Designing from first principles revealed why **4-bit unsigned representation** and **3-bit state encoding** are mathematically required once Hint H3 (`> 7` error detection) is added.
+  - Replacing discrete multi-comparator gate networks with **three unsigned `>` comparators and a Priority Encoder** dramatically simplified both schematic routing and Vivado LUT utilization while eliminating boundary bugs.
+  - Debugging the 1-cycle pipeline pulse in Vivado waveforms deepened our understanding of synchronous register-to-register timing (`<=` vs. `=`), asynchronous reset parity (`RTL_REG_ASYNC`), and clean latch-free RTL coding.
+  - Coordinating parallel work across Logisim, Vivado, PPT creation, Final Report compilation, and GitHub Pull Requests taught us the importance of consistent signal naming (`w`, `rst`, `stormy_led`) and disciplined version control.
+- **What we would improve:**
+  - Establish a strict naming convention and folder/image path structure before uploading the first commit to avoid cleanup commits later.
+  - Add hardware switch debouncing, rising-edge pulse detectors for `START`/`ACK`, and a 7-segment display readout for live wind speed monitoring on the FPGA board.
 
 ## 15. Final Submission Checklist
 - [x] Team details and problem analysis complete.
@@ -240,8 +250,8 @@ What did the team learn? What would you improve?
 - [x] Logisim source and simulation evidence uploaded.
 - [x] Verilog RTL and testbench uploaded.
 - [x] Simulation results and test cases documented.
-- [x] FPGA implementation (`.xdc` constraints and `.bit` bitstream) uploaded; hardware demo evidence `[pending/add photo if taken]`.
-- [ ] Results, challenges and conclusion documented *(Section 10 complete; Sections 11, 13, 14 pending)*.
-- [ ] Presentation and final report uploaded.
-- [x] STATUS.md is up to date.
+- [x] FPGA implementation (`.xdc` constraints and `.bit` bitstream) uploaded (ready for live board demo).
+- [x] Results, challenges, task allocation, team reflection, and conclusion documented.
+- [x] Presentation (2-slide PPT) and Final Project Report PDF uploaded.
+- [x] `STATUS.md` is up to date.
 - [x] Final Pull Request created and URL recorded (`PR #10`).
