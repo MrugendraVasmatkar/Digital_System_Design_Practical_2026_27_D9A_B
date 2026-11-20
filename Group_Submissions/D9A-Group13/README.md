@@ -25,7 +25,9 @@
 ## 3. Problem Analysis and Proposed Solution
 Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
 
-[Write here]
+In digital systems like rotary encoders and asynchronous data buses, consecutive 4-bit values must follow Gray code rules—changing only one bit at a time—to avoid switching glitches and false readings. The baseline Moore FSM design detects single-bit changes using D = X ^ P, but because Moore outputs depend solely on the current state, it requires three states (IDLE, VALID, INVALID), uses 10 D flip-flops, and introduces a one-clock-cycle delay before signaling an error.
+
+solution is eliminated this delay and reduce hardware overhead, I redesigned the controller as a 2-state Mealy FSM (IDLE and ACTIVE) that routes the combinational One-Bit Change Detector (V_comb) directly into the output LED logic. By removing the separate VALID/INVALID states and the input synchronization register, the circuit cuts sequential memory by 50% (down to 5 D flip-flops) and turns ON the Green (VALID) or Red (INVALID) LED immediately as soon as X[3:0] changes, while keeping both indicators OFF when idle.
 
 ## 4. Architecture
 Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
@@ -102,7 +104,7 @@ The 4-Bit Gray Code Transition Detector was successfully redesigned and verified
 ## 14. Team Reflection
 What did the team learn? What would you improve?
 
-[Write here]
+To eliminate this delay and reduce hardware overhead, I redesigned the controller as a 2-state Mealy FSM (IDLE and ACTIVE) that routes the combinational One-Bit Change Detector (V_comb) directly into the output LED logic. By removing the separate VALID and INVALID states along with the extra 4-bit input synchronization register, the circuit cuts sequential memory by 50% (from 10 D flip-flops down to 5). As a result, the Green (VALID) or Red (INVALID) LED responds immediately as soon as the 4-bit input X[3:0] changes, while both indicators stay safely turned OFF whenever the system is in the IDLE state.
 
 ## 15. Final Submission Checklist
 - [ ] Team details and problem analysis complete.
