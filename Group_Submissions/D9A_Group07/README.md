@@ -143,10 +143,10 @@ The testbench `FRZ_tb` generates a 10 ns clock, clears Q using ACK, steps X3X2X1
 
 | Test ID | Inputs/conditions | Expected output | Observed output | Pass/Fail |
 |---|---|---|---|---|
-| T01 | ACK = 1 for 12 ns, X = 000 | Q cleared to IDLE | [ ] | [ ] |
-| T02 | X3X2X1 stepped 000 to 111, Q = 0 | Y = 0 only for 011 and 100, else Y = 1; Y changes immediately | [ ] | [ ] |
-| T03 | X = 011 at a clock edge, then X = 000 and 101 | Q = 1; Y stays 0 (rejection latched) | [ ] | [ ] |
-| T04 | ACK = 1 at the next clock edge | Q returns to 0; Y returns to 1 | [ ] | [ ] |
+| T01 | ACK = 1 for 12 ns, X = 000 | Q cleared to IDLE | Q cleared to IDLE | Pass |
+| T02 | X3X2X1 stepped 000 to 111, Q = 0 | Y = 0 only for 011 and 100, else Y = 1; Y changes immediately | Y = 0 only for 011 and 100, else Y = 1; Y changes immediately | Pass |
+| T03 | X = 011 at a clock edge, then X = 000 and 101 | Q = 1; Y stays 0 (rejection latched) | Q = 1; Y stays 0 (rejection latched) | Pass |
+| T04 | ACK = 1 at the next clock edge | Q returns to 0; Y returns to 1 | Q returns to 0; Y returns to 1 | Pass |
 
 Tool/version: Vivado v2018.3, XSim  
 Number passed/failed:4/0
@@ -157,7 +157,7 @@ Waveform/log path: `03_Verilog_Implementation/Simulation_Results/[FRZ_waveform.p
 - Tool/version: Vivado v2018.3 (win64)
 - Clock/constraints: onboard 100 MHz oscillator on pin F14, `create_clock -period 10.00`. Constraints file `FRZ.xdc` (LVCMOS33): X3 = SW2 (U1), X2 = SW1 (U2), X1 = SW0 (V2), ACK = BTN0 (J2), Y = LD0 (G1), Y_bar = LD1 (G2). Check these against your final XDC.
 - Synthesis/implementation summary: 1 slice LUT, 1 flip-flop, 2 slices, 0 latches, 0 CARRY4, 0 Block RAM, 7 bonded IOs (3.33%). Post-route timing: setup slack (WNS) 6.982 ns, hold slack (WHS) 1.028 ns, pulse-width slack 4.500 ns, 0 failing endpoints. All user specified timing constraints are met.
-- Programming and hardware test result: programmed through Vivado Hardware Manager (Open Target, Auto Connect, Program Device with the .bit file); the DONE LED lit. Board test results: [Fill after testing: 000 gives LD0 on; 011 or 100 gives LD1 on; LD1 stays on after returning to 000; BTN0 clears it.]
+- Programming and hardware test result: programmed through Vivado Hardware Manager (Open Target, Auto Connect, Program Device with the .bit file); the DONE LED lit. Board test results: Group_Submissions/D9A_Group07/04_FPGA_Hardware
 - Evidence path: `04_FPGA_Hardware/`
 
 Hardware and Software simulation matched .
