@@ -1,0 +1,309 @@
+// VERILOG CODE //
+
+module final_verilog_grp10(
+    input        CLK,
+    input        reset,          // synchronous, active-high, clears everything
+    input        START,
+    input        ACK,
+    input  [3:0] X,              // X[3] = MSB ... X[0] = LSB (switches)
+    output       FIB_LED,        // green
+    output       NONFIB_LED,     // red
+    output reg [3:0] Fib_Count,
+    output reg [3:0] NonFib_Count
+);
+
+    // ------------------------------------------------------------------
+    // 4-bit input register (synchronous reset, loads X when START = 1)
+    // ------------------------------------------------------------------
+    reg [3:0] Q;
+    always @(posedge CLK) begin
+        if (reset)      Q <= 4'b0000;
+        else if (START) Q <= X;
+    end
+
+    // ------------------------------------------------------------------
+    // Comparators: Q == constant
+    // ------------------------------------------------------------------
+    wire fib0  = (Q == 4'd0);
+    wire fib1  = (Q == 4'd1);
+    wire fib2  = (Q == 4'd2);
+    wire fib3  = (Q == 4'd3);
+    wire fib5  = (Q == 4'd5);
+    wire fib8  = (Q == 4'd8);
+    wire fib13 = (Q == 4'd13);
+
+    wire nf4  = (Q == 4'd4);
+    wire nf6  = (Q == 4'd6);
+    wire nf7  = (Q == 4'd7);
+    wire nf9  = (Q == 4'd9);
+    wire nf10 = (Q == 4'd10);
+    wire nf11 = (Q == 4'd11);
+    wire nf12 = (Q == 4'd12);
+    wire nf14 = (Q == 4'd14);
+    wire nf15 = (Q == 4'd15);
+
+    wire F  = fib0 | fib1 | fib2 | fib3 | fib5 | fib8 | fib13;
+    wire NF = nf4 | nf6 | nf7 | nf9 | nf10 | nf11 | nf12 | nf14 | nf15;
+
+    // ------------------------------------------------------------------
+    // START pulse: rising edge of START, accepted only in IDLE, delayed one
+    // clock so that Q has been loaded when 'go' is high
+    // ------------------------------------------------------------------
+    localparam [1:0] IDLE    = 2'b00,
+                     FIB     = 2'b01,
+                     NON_FIB = 2'b10;
+
+    reg [1:0] state, next_state;
+    reg       start_prev, go;
+
+    always @(posedge CLK) begin
+        start_prev <= START;
+        if (reset) go <= 1'b0;
+        else       go <= (START & ~start_prev) & (state == IDLE);
+    end
+
+    // ------------------------------------------------------------------
+    // Counters: enable = detector output AND go, wrap 15 -> 0
+    // ------------------------------------------------------------------
+    wire fib_en    = F  & go;
+    wire nonfib_en = NF & go;
+
+    always @(posedge CLK) begin
+        if (reset) begin
+            Fib_Count    <= 4'd0;
+            NonFib_Count <= 4'd0;
+        end else begin
+            if (fib_en)    Fib_Count    <= Fib_Count    + 4'd1;
+            if (nonfib_en) NonFib_Count <= NonFib_Count + 4'd1;
+        end
+    end
+
+    // ------------------------------------------------------------------
+    // Moore FSM: IDLE(00), FIB(01), NON_FIB(10)
+    // ------------------------------------------------------------------
+    always @(posedge CLK) begin
+        if (reset) state <= IDLE;
+        else       state <= next_state;
+    end
+
+    always @(*) begin
+        case (state)
+            IDLE:    begin
+                         if (go) next_state = F ? FIB : NON_FIB;
+                         else    next_state = IDLE;
+                     end
+            FIB:     next_state = ACK ? IDLE : FIB;
+            NON_FIB: next_state = ACK ? IDLE : NON_FIB;
+            default: next_state = IDLE;
+        endcase
+    end
+
+    // Moore outputs (depend on state only)
+    assign FIB_LED    = (state == FIB);
+    assign NONFIB_LED = (state == NON_FIB);
+
+endmodule
+
+
+
+// TESTBENCH //
+
+module tb_verilog;
+     reg        CLK   = 1'b0;
+    reg        reset = 1'b1;
+    reg        START = 1'b0;
+    reg        ACK   = 1'b0;
+    reg  [3:0] X     = 4'd0;
+
+    wire       FIB_LED, NONFIB_LED;
+    wire [3:0] Fib_Count, NonFib_Count;
+
+    final_verilog_grp10 dut (
+        .CLK(CLK), .reset(reset), .START(START), .ACK(ACK), .X(X),
+        .FIB_LED(FIB_LED), .NONFIB_LED(NONFIB_LED),
+        .Fib_Count(Fib_Count), .NonFib_Count(NonFib_Count)
+    );
+
+    // 10 ns clock
+    always #5 CLK = ~CLK;
+
+    // Expected values (reference model)
+    integer    errors = 0;
+    integer    checks = 0;
+    reg  [4:0] i = 5'd0, k = 5'd0;   // loop counters (plain regs, no bit-selects)
+    reg  [3:0] cur = 4'd0;             // current input value in the T2 loop
+    reg  [3:0] exp_fib    = 4'd0;
+    reg  [3:0] exp_nonfib = 4'd0;
+
+    function is_fib;
+        input [3:0] v;
+        begin
+            case (v)
+                4'd0, 4'd1, 4'd2, 4'd3, 4'd5, 4'd8, 4'd13: is_fib = 1'b1;
+                default:                                    is_fib = 1'b0;
+            endcase
+        end
+    endfunction
+
+    task check;
+        input       cond;
+        input [8*40-1:0] msg;
+        begin
+            checks = checks + 1;
+            if (!cond) begin
+                errors = errors + 1;
+                $display("FAIL @%0t ns: %0s | FIB_LED=%b NONFIB_LED=%b Fib=%0d NonFib=%0d (exp %0d / %0d)",
+                         $time, msg, FIB_LED, NONFIB_LED, Fib_Count, NonFib_Count, exp_fib, exp_nonfib);
+            end
+        end
+    endtask
+
+    // Check LEDs and both counters against the expected values
+    task check_all;
+        input       exp_fled;
+        input       exp_nfled;
+        input [8*40-1:0] msg;
+        begin
+            check(FIB_LED      === exp_fled,  msg);
+            check(NONFIB_LED   === exp_nfled, msg);
+            check(Fib_Count    === exp_fib,   msg);
+            check(NonFib_Count === exp_nonfib, msg);
+        end
+    endtask
+
+    // START high for exactly one clock edge, then wait for the result
+    task press_start;
+        input [3:0] val;
+        begin
+            @(negedge CLK); X = val; START = 1'b1;
+            @(negedge CLK); START = 1'b0;
+            @(negedge CLK);                    // state and counters have updated
+        end
+    endtask
+
+    // ACK high for exactly one clock edge
+    task press_ack;
+        begin
+            @(negedge CLK); ACK = 1'b1;
+            @(negedge CLK); ACK = 1'b0;
+        end
+    endtask
+
+    task do_reset;
+        begin
+            @(negedge CLK); reset = 1'b1;
+            @(negedge CLK);
+            @(negedge CLK); reset = 1'b0;
+            @(negedge CLK);
+            exp_fib = 4'd0; exp_nonfib = 4'd0;
+        end
+    endtask
+
+    // Watchdog
+    initial begin
+        #200000;
+        $display("TIMEOUT: testbench did not finish");
+        $finish;
+    end
+
+    initial begin
+        $dumpfile("tb_fibonacci_detector.vcd");
+        $dumpvars(0, final_verilog_grp10);
+
+        // ---------------- T1: reset state ----------------
+        repeat (3) @(negedge CLK);
+        reset = 1'b0;
+        @(negedge CLK);
+        check_all(1'b0, 1'b0, "T1 state after reset");
+        check(dut.Q === 4'd0, "T1 register cleared");
+
+        // ---------------- T2: all 16 inputs ----------------
+        for (i = 0; i < 16; i = i + 1) begin
+            cur = i;
+            press_start(cur);
+            if (is_fib(cur)) exp_fib    = exp_fib + 1'b1;
+            else                exp_nonfib = exp_nonfib + 1'b1;
+            check_all(is_fib(cur), ~is_fib(cur), "T2 LEDs/counters after START");
+
+            // Changing X without START must not change anything
+            X = ~cur;
+            repeat (2) @(negedge CLK);
+            check_all(is_fib(cur), ~is_fib(cur), "T2 X change ignored");
+
+            press_ack;
+            check_all(1'b0, 1'b0, "T2 back to IDLE after ACK");
+        end
+        check(Fib_Count    === 4'd7, "T2 Fib_Count total = 7");
+        check(NonFib_Count === 4'd9, "T2 NonFib_Count total = 9");
+
+        // ---------------- T3: START ignored outside IDLE ----------------
+        press_start(4'd1);                 // Fibonacci
+        exp_fib = exp_fib + 1'b1;
+        check_all(1'b1, 1'b0, "T3 FIB entered");
+        press_start(4'd4);                 // would be non-Fibonacci, must be ignored
+        check_all(1'b1, 1'b0, "T3 START ignored in FIB");
+        press_ack;
+        check_all(1'b0, 1'b0, "T3 IDLE after ACK");
+
+        press_start(4'd4);                 // non-Fibonacci
+        exp_nonfib = exp_nonfib + 1'b1;
+        check_all(1'b0, 1'b1, "T3 NON_FIB entered");
+        press_start(4'd2);                 // would be Fibonacci, must be ignored
+        check_all(1'b0, 1'b1, "T3 START ignored in NON_FIB");
+        press_ack;
+        check_all(1'b0, 1'b0, "T3 IDLE after ACK");
+
+        // ---------------- T4: START held high ----------------
+        @(negedge CLK); X = 4'd5; START = 1'b1;   // held high
+        repeat (6) @(negedge CLK);
+        exp_fib = exp_fib + 1'b1;
+        check_all(1'b1, 1'b0, "T4 one count while START held");
+        press_ack;                                // START still high
+        repeat (3) @(negedge CLK);
+        check_all(1'b0, 1'b0, "T4 no re-trigger after ACK");
+        @(negedge CLK); START = 1'b0;
+        repeat (2) @(negedge CLK);
+        check_all(1'b0, 1'b0, "T4 still IDLE after release");
+
+        // ---------------- T5: ACK in IDLE ----------------
+        press_ack;
+        repeat (2) @(negedge CLK);
+        check_all(1'b0, 1'b0, "T5 ACK in IDLE ignored");
+
+        // ---------------- T6: reset in the middle of operation ----------------
+        press_start(4'd13);
+        exp_fib = exp_fib + 1'b1;
+        check_all(1'b1, 1'b0, "T6 FIB before reset");
+        do_reset;
+        check_all(1'b0, 1'b0, "T6 everything cleared by reset");
+        check(dut.Q === 4'd0, "T6 register cleared by reset");
+
+        // ---------------- T7: counter wrap 15 -> 0 ----------------
+        for (k = 0; k < 16; k = k + 1) begin
+            press_start(4'd0);             // Fibonacci
+            exp_fib = exp_fib + 1'b1;      // 4-bit, wraps like the DUT
+            check_all(1'b1, 1'b0, "T7 Fib_Count counting");
+            press_ack;
+        end
+        check(Fib_Count === 4'd0, "T7 Fib_Count wrapped to 0");
+
+        for (k = 0; k < 16; k = k + 1) begin
+            press_start(4'd15);            // non-Fibonacci
+            exp_nonfib = exp_nonfib + 1'b1;
+            check_all(1'b0, 1'b1, "T7 NonFib_Count counting");
+            press_ack;
+        end
+        check(NonFib_Count === 4'd0, "T7 NonFib_Count wrapped to 0");
+
+        // ---------------- Summary ----------------
+        $display("------------------------------------------------");
+        $display("Checks run: %0d   Errors: %0d", checks, errors);
+        if (errors == 0) $display("RESULT: PASS - all tests passed");
+        else             $display("RESULT: FAIL - %0d check(s) failed", errors);
+        $display("------------------------------------------------");
+        $finish;
+    end
+
+endmodule
+
+
