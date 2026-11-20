@@ -18,11 +18,11 @@ Evidence: `03_Verilog_Implementation/Simulation_Results/behavioral_simulation_wa
 
 | Test | Inputs | Expected | Observed | Result |
 |---|---|---|---|---|
-| H01 | score = 2, START, ACK | LOW LED on, then off | [not yet tested] | [ ] |
-| H02 | score = 7, START, ACK | MEDIUM LED on, then off | [not yet tested] | [ ] |
-| H03 | score = 13, START, ACK | HIGH LED on, then off | [not yet tested] | [ ] |
+| H01 | LOW-range score (0-4), START | LOW LED on | LOW LED (LD0, G1) lit, `04_FPGA_Hardware/hardware_low_led.jpg` | Pass |
+| H02 | MEDIUM-range score (5-10), START | MEDIUM LED on | MEDIUM LED (LD1, G2) lit, `04_FPGA_Hardware/hardware_medium_led.jpg` | Pass |
+| H03 | HIGH-range score (11-15), START | HIGH LED on | HIGH LED (LD2, F1) lit, `04_FPGA_Hardware/hardware_high_led.jpg` | Pass |
 
-Hardware demonstration is pending. Fill this table from the board, and add photos or video to `04_FPGA_Hardware/`.
+Hardware demonstration done on the RealDigital Boolean Board (DONE LED lit): each category LED lit correctly. The photos show the LED but not the exact score switch values, and they do not show ACK turning the LED off.
 
 ## 2. Requirements checklist
 
@@ -53,7 +53,7 @@ Timing was first reported as unconstrained (inf); after adding the clock constra
 ## 4. Limitations
 
 - Simulation covers only three scores; boundary scores and reset mid-round are not tested.
-- Hardware demonstration is pending.
+- The hardware photos do not record the exact score values, or ACK and reset behaviour on the board.
 - Timing is verified only at a 10 ns (100 MHz) clock constraint; the board clock frequency should be confirmed.
 - START and ACK are not debounced or synchronised, so a bouncing button could misfire on hardware.
 - The score is not displayed; only the category LED is shown.

@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 07:00 |
+| Last Updated | 2026-11-20, 11:00 |
 
 ## 2. Problem Statement
 
@@ -76,7 +76,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 2 — Verilog | Save waveforms and simulation results | In Progress | `03_Verilog_Implementation/Simulation_Results/behavioral_simulation_waveform.png` (console log pending) |
 | 3 — FPGA | Assign FPGA pins and configure constraints | Completed | `04_FPGA_Hardware/constraints.xdc` |
 | 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/implemented_design.png`, `04_FPGA_Hardware/utilization_report.png` (timing met with a 10 ns clock constraint) |
-| 3 — FPGA | Demonstrate the design on FPGA hardware | Not Started | `04_FPGA_Hardware/` |
+| 3 — FPGA | Demonstrate the design on FPGA hardware | Completed | `04_FPGA_Hardware/hardware_low_led.jpg`, `hardware_medium_led.jpg`, `hardware_high_led.jpg` (LOW, MEDIUM, HIGH LEDs lit on the Boolean board) |
 | 3 — Results | Record observations and verify expected behaviour | In Progress | `05_Results/README.md` (simulation results recorded; hardware results pending) |
 | 3 — Presentation | Prepare slides (title + 4 content slides per guidelines) and demonstration | In Progress | `06_Presentation/Group14_DSD_Presentation.pptx` (draft; hardware demo and real challenges still to fill) |
 | 3 — Submission | Complete final report and checklist | Not Started | `07_Final_Report/` |
@@ -134,6 +134,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 06:00 | Siddharth (Siddharthqzz29) and Deven (DevenBhadane) committed Logisim simulation screenshots (low, medium, high, idle) from their own accounts; duplicate root-level .circ upload removed (identical to the v2 file in 02_FSM_Logisim) | Siddharth Sanjeev Tiwari, Deven Shailendra Bhadane | commits 84c8655, fcfda1c |
 | 2026-11-20, 06:30 | Logo image files (`06_Presentation/assets/`) removed from the repo; the logos remain embedded in the presentation title slide | Samruddhi Samant | Repository |
 | 2026-11-20, 07:00 | Noted in README section 7 and presentation slide 3 that the Logisim circuit uses gates and comparators (no multiplexers) while Vivado infers multiplexers from the Verilog if/else chain and maps them to LUTs | Samruddhi Samant | Repository |
+| 2026-11-20, 11:00 | Hardware demonstration on the RealDigital Boolean Board: LOW (LD0), MEDIUM (LD1) and HIGH (LD2) LEDs each lit; three photos added to `04_FPGA_Hardware/` | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 
