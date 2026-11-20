@@ -2,7 +2,7 @@ Problem Statement: To Design a Password Attempt Monitor (3-Bit) with a modificat
 
 Requirements: Three switches, A 3-bit input register, A Range Decoder, FSM Mealy Machine, Three D Flip-flops, Three LEDs
 
-Inputs/Output: 1. Three inputs A0in, A1in and A2in to the 3-bit input register. 
+Inputs/Output: 1. Three inputs A0, A1 and A2 to the 3-bit input register. 
                2. 3-bit input to the Decoder which gives output according to the range
                3. 8 states assigned to the FSM Mealy machine 
                4. Output through one green, one yellow, and one red LED and one acknowledgement output.
