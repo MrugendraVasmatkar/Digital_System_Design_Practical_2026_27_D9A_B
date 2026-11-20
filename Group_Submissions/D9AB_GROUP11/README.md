@@ -191,15 +191,20 @@ The FSM uses a synchronous, active-high RESET signal. When RESET is asserted, th
 - Testbench: `03_Verilog_Implementation/Testbench/`
 
 ## 8. Verification and Simulation Results
-| Test ID | Inputs/conditions | Expected output | Observed output | Pass/Fail |
-|---|---|---|---|---|
-| T01 | [ ] | [ ] | [ ] | [ ] |
-| T02 | [ ] | [ ] | [ ] | [ ] |
-| T03 | [ ] | [ ] | [ ] | [ ] |
 
-Tool/version: [Details]  
-Number passed/failed: [Details]  
-Waveform/log path: [Path]
+| Test ID | Inputs/conditions | Expected output | Observed output | Pass/Fail |
+|---------|-------------------|-----------------|-----------------|-----------|
+| T01 | Apply RESET (rst = 1 for one clock) | State = IDLE (000), `score_reg` = 0, all LEDs off | State = IDLE (000), `score_reg` = 0, all LEDs off | PASS |
+| T02 | All 16 scores 0-15: set score, pulse START, then change the score input and pulse START again (must be ignored), then pulse ACK | Scores 0-4: LOW (001), green LED. Scores 5-10: MEDIUM (010), yellow LED. Scores 11-15: HIGH (011), red LED. Score latched in `score_reg`. State holds on a second START. ACK returns to IDLE with all LEDs off | Matches expected for all 16 scores (16 x 6 = 96 checks) | PASS |
+| T03 | Score = 12 with no START for 3 clocks, then ACK while in IDLE | FSM stays in IDLE, all LEDs off | FSM stays in IDLE, all LEDs off | PASS |
+| T04 | RESET applied while in LOW (score 3), MEDIUM (8), HIGH (14) and ERROR (20). Also RESET and START asserted together (score 9) | State returns to IDLE, `score_reg` cleared to 0, all LEDs off. RESET wins over START | State returns to IDLE, `score_reg` = 0, all LEDs off. RESET wins over START | PASS |
+| T05 | Hint H3: invalid scores 16-31 (SW4 = 1), pulse START, then ACK | ERROR state (100), error LED on, no other LED on. ACK returns to IDLE | ERROR state (100), error LED on. ACK returns to IDLE (16 scores x 2 = 32 checks) | PASS |
+
+Tool/version: Xilinx Vivado 2018.3, Vivado Simulator (xsim), Behavioral Simulation (Functional), testbench `tb_game_score`, target part xc7s50csga324-1.
+
+Number passed/failed: 145 checks run, 145 passed, 0 failed. The testbench prints `OVERALL RESULT: PASS`.
+
+Waveform/log path: 
 
 ## 9. FPGA Hardware Implementation
 - FPGA board/device: [Details]
