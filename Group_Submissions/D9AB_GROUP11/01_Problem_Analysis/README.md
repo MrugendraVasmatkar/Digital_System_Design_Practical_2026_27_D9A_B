@@ -84,6 +84,6 @@ State transition flow.
 
 Verification strategy.
 
-- Logisim simulation: Step through all 16 valid switch combinations (`0000` to `1111`), verify single-tick `START` latching, confirm switch immunity while latched, and verify `ACK` and `RESET` transitions.
+- Logisim simulation: Step through all switch combinations (`00000` to `11111`), verify single-tick `START` latching, confirm switch immunity while latched, and verify `ACK` and `RESET` transitions.
 - Verilog testbench: Automates exhaustive testing across all 32 input combinations (`0–31`, covering both valid scores and the `H3` out-of-range `ERROR` condition), checks expected LED outputs against actual outputs, and logs pass/fail status per test case.
 
