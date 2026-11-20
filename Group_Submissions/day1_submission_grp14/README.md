@@ -179,7 +179,22 @@ Summarise requirements met, correctness of simulation/hardware results, measured
 ## 14. Team Reflection
 What did the team learn? What would you improve?
 
-[Write here]
+**What did the team learn?**
+
+- **Mealy FSM.** We learned the difference between Mealy and Moore machines. In a Mealy machine the output depends on the state and the inputs, so the LED lights as soon as START is pressed, without waiting for the next clock.
+- **The full flow.** We went from a Logisim circuit, to Verilog, to a simulation in Vivado, to a bitstream on a real FPGA board. The same design can be described in different ways: Logisim uses gates and comparators, and Vivado turns the Verilog into multiplexers and then into LUTs.
+- **Constraints matter.** Vivado does not check timing unless the clock is defined. Our first timing report showed no constraints. After adding a 10 ns clock constraint, timing was met.
+- **Hardware is different from simulation.** On the board we had to find which switch or button each pin is. We saw that an LED can stay lit during reset if START is also pressed, because the Verilog and the Logisim circuit treated reset differently on the outputs.
+- **Teamwork with GitHub.** We worked in one repository with collaborators, a pull request and a status file. We learned to pull before pushing, so we don't overwrite each other.
+
+**What would we improve?**
+
+- Define the clock constraint at the start, before running implementation.
+- Keep the Logisim circuit and the Verilog code identical in behaviour from the beginning, including reset.
+- Write a testbench that covers all 16 scores, reset and START/ACK and checks the results itself. Ours covers only scores 2, 7 and 13.
+- Add debouncing for the START and ACK buttons.
+- Take board photos that also show the switch positions, and record ACK and reset.
+- Make sure every member commits their own work to the repository from the start.
 
 ## 15. Final Submission Checklist
 - [x] Team details and problem analysis complete.

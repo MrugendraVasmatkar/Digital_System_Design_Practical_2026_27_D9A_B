@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-B-Group14 |
-| Last Updated | 2026-11-20, 18:00 |
+| Last Updated | 2026-11-20, 18:30 |
 
 ## 2. Problem Statement
 
@@ -144,6 +144,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 16:00 | GitHub fork renamed from `DSD-2026-D9A-Group14` to `DSD-2026-D9A-B-Group14` (a "/" is not allowed in repository names); repository links updated; PR #33 unaffected | Samruddhi Samant | Repository settings |
 | 2026-11-20, 17:00 | `game_tb_full.v` removed from the repository; only the original `game_tb.v` remains (covers scores 2, 7 and 13) | Samruddhi Samant | Repository |
 | 2026-11-20, 18:00 | README section 6 "Issues and corrections" filled: comparator built from internal gates at first, later replaced by the built-in comparator block | Samruddhi Samant | Repository |
+| 2026-11-20, 18:30 | README section 14 (team reflection) written | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 
