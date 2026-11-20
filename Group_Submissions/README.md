@@ -18,10 +18,10 @@
 ## 2. Assigned Problem Statement
 - **Number/title:** 1H4 – Add Category Counters to Water Temperature Classifier
 - **Problem summary:**
-- The Water Temperature Classifier is a 3-bit digital system that classifies temperature inputs into three categories: Cold (0–2), Neutral (3–5) and Hot (6–7) using a Moore Finite State Machine (FSM).The existing system controls three corresponding valve outputs based on the detected temperature category. However, it does not maintain a record of how many times each category is detected.
-- The H4 modification adds three independent 4-bit counters: Cold_Count, Neutral_Count, and Hot_Count. Each counter increments on every active clock edge while the FSM remains in its corresponding category state. This modification allows the system to maintain and display the total count for each temperature category.
+  The Water Temperature Classifier is a 3-bit digital system that classifies temperature inputs into three categories: Cold (0–2), Neutral (3–5) and Hot (6–7) using a Moore Finite State Machine (FSM).The existing system controls three corresponding valve outputs based on the detected temperature category. However, it does not maintain a record of how many times each category is detected.
+  The H4 modification adds three independent 4-bit counters: Cold_Count, Neutral_Count, and Hot_Count. Each counter increments on every active clock edge while the FSM remains in its corresponding category state. This modification allows the system to maintain and display the total count for each temperature category.
 - **Objective:**
-- The system must:
+ The system must:
 1. Accept a 3-bit binary temperature input.
 2. Classify the temperature into Cold, Neutral, or Hot categories.
 3. Control the corresponding valve output using a Moore FSM.
@@ -31,30 +31,30 @@
 7. Reset all three counters to zero when RESET is activated.
 8. Display the current count values of all three counters.
 - **Inputs and outputs:**
-- Inputs
-- | Signals | Width | Meaning |
-- |---|---|---|
-- | T2,T1,T0 | 1 bit each | Temperature input |
-- | START | 1 bit | Starts classification |
-- | ACK | 1 bit | Acknowledgement |
-- | CLK | 1 bit | Clock Signal |
-- | RESET | 1 bit | Synchronous active-high reset |
+ Inputs
+  | Signals | Width | Meaning |
+  |---|---|---|
+  | T2,T1,T0 | 1 bit each | Temperature input |
+  | START | 1 bit | Starts classification |
+  | ACK | 1 bit | Acknowledgement |
+  | CLK | 1 bit | Clock Signal |
+  | RESET | 1 bit | Synchronous active-high reset |
 
-- Outputs
-- | Signals | Width | Meaning |
-- |---|---|---|
-- | Cold_Valve | 1 bit | Cold valve control |
-- | Neutral_Valve | 1 bit | Neutral valve control |
-- | Hot_Valve | 1 bit | Hot valve control |
-- | Cold_Count | 4 bits | Cold Counter |
-- | Neutral_Count | 4 bits | Neutral Counter |
-- | Hot_Count | 4 bits | Hot Counter |
+ Outputs
+| Signals | Width | Meaning |
+|---|---|---|
+| Cold_Valve | 1 bit | Cold valve control |
+| Neutral_Valve | 1 bit | Neutral valve control |
+| Hot_Valve | 1 bit | Hot valve control |
+| Cold_Count | 4 bits | Cold Counter |
+| Neutral_Count | 4 bits | Neutral Counter |
+| Hot_Count | 4 bits | Hot Counter |
 - **Constraints and assumptions:**
 1. Temperature Input Range: The temperature input is a 3-bit binary value, so only values from 0 to 7 are considered valid.
 2. Temperature Classification: The input is classified into three fixed ranges:
-- COLD: 0–2
-- NEUTRAL: 3–5
-- HOT: 6–7
+COLD: 0–2
+NEUTRAL: 3–5
+HOT: 6–7
 4. FSM Model: The original system uses a Moore FSM with four states: IDLE (00), COLD (01), NEUTRAL (10), and HOT (11).
 5. Clock Operation: All counters operate using the same rising-edge clock signal.
 6. Counter Width: Each counter is 4 bits wide and can represent values from 0 to 15.
@@ -66,8 +66,32 @@
 
 ## 3. Problem Analysis and Proposed Solution
 Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
+- Problem Analysis
 
-[Write here]
+The Water Temperature Classifier takes a 3-bit binary input and classifies it into three categories: COLD (0–2), NEUTRAL (3–5) and HOT (6–7). The original system uses a Moore FSM to control the corresponding valve outputs.
+
+In this H4 modification, three separate counters are added to keep track of the clock cycles spent in each temperature category.
+
+- Requirements
+
+1. Classify the 3-bit temperature input into three categories.
+2. Control the corresponding valve using the FSM.
+3. Add three independent 4-bit counters.
+4. Increment the respective counter whenever its FSM state is active at a rising clock edge.
+5. Display the count values.
+6. Reset all counters to zero when RESET is activated.
+
+- Edge Cases
+
+1. Minimum and maximum temperature inputs (0 and 7).
+- Boundary values between temperature categories.
+- FSM remaining in the same state for multiple clock cycles.
+- RESET and ACK operations.
+- Counter reaching its maximum value (15).
+
+Proposed Solution
+
+Three independent 4-bit counters are connected to the existing Moore FSM. Each counter is enabled by its corresponding FSM state. A common clock and reset are used for all counters.
 
 ## 4. Architecture
 Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
