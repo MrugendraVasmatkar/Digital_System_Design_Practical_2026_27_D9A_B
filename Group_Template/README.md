@@ -126,12 +126,13 @@ RESET is asynchronous and active-high. Testbench code is only for simulation and
 ## 8. Verification and Simulation Results
 | Test ID | Inputs/conditions | Expected output | Observed output | Pass/Fail |
 |---|---|---|---|---|
-| T01 | [ ] | [ ] | [ ] | [ ] |
-| T02 | [ ] | [ ] | [ ] | [ ] |
-| T03 | [ ] | [ ] | [ ] | [ ] |
+| T01 | [Input = 000, START = 1 ] | [NOW_COUNT = 1 ] | [NOW_COUNT = 1 ] | [Pass] |
+| T02 | [Input = 010, START = 1 ] | [ WARN_COUNT = 1] | [WARN_COUNT = 1 ] | [Pass ] |
+| T03 | [	Input = 101, START = 1 ] | [LOCK_COUNT = 1 ] | [	LOCK_COUNT = 1 ] | [ Pass] |
 
-Tool/version: [Details]  
-Number passed/failed: [Details]  
+Tool/version: [Xilinx Vivado]  
+Number passed/failed: [Passed: 8
+Failed: 0]  
 Waveform/log path: [Path]
 
 ## 9. FPGA Hardware Implementation
