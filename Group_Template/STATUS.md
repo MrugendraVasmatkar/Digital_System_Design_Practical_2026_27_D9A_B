@@ -1,25 +1,25 @@
 # Group Progress Status
 
 **Class:** [D9A/D9B]  
-**Group ID:** [D9A_Group01]  
-**Project title:** [Title]  
-**Group leader:** [Name]
+**Group ID:** [D9A/B_Group23]  
+**Project title:** [Password attempt Monitor]  
+**Group leader:** [Shlok Kesarkar]
 
 ## 1. Current milestone status
 Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
-| 1 | Problem requirements and assumptions documented | Not Started | [ ] | [ ] |
-| 2 | Architecture and block diagram prepared | Not Started | [ ] | [ ] |
+| 1 | Problem requirements and assumptions documented | Completed | [ ] | [ ] |
+| 2 | Architecture and block diagram prepared | Completed | [https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B/blob/e1b1394f22d00cdab46ab716e14d479cd3286863/Group_Template/README.md ] | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
-| 4 | Logisim circuit implemented | Not Started | [ ] | [ ] |
-| 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
-| 6 | Verilog RTL completed | Not Started | [ ] | [ ] |
-| 7 | Testbench and simulation completed | Not Started | [ ] | [ ] |
+| 4 | Logisim circuit implemented | Completed | [ https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B/tree/bb188e9ad75c3067253becb99d7b4ddf5b44a10d/Group_Template/02_FSM_Logisim] | [ ] |
+| 5 | Logisim simulation verified | Completed | [ https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B/tree/bb188e9ad75c3067253becb99d7b4ddf5b44a10d/Group_Template/02_FSM_Logisim] | [ ] |
+| 6 | Verilog RTL completed | Completed | [https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B/blob/839c1c8bcd5967ab639841677b97142a98431ef0/Group_Template/03_Verilog_Implementation/README.md] | [ ] |
+| 7 | Testbench and simulation completed |Completed | [https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B/blob/839c1c8bcd5967ab639841677b97142a98431ef0/Group_Template/03_Verilog_Implementation/README.md ] | [ ] |
 | 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
-| 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
+| 10 | Results, presentation and report uploaded | Completed | [ https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B/tree/cc56e021bdef989d80dba08c10116ab4ca11f8dc/Group_Template/06_Presentation] | [ ] |
 | 11 | Final Pull Request created | Not Started | [ ] | [ ] |
 
 ## 2. Time-wise progress log
