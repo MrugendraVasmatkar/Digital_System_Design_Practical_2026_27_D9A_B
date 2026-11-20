@@ -13,7 +13,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 1 | Problem requirements and assumptions documented | Completed |Group_Submissions/D9A-Group13/01_Problem_Analysis/H2_Mealy_FSM_Problem_Analysis.pdf | [ ] |
 | 2 | Architecture and block diagram prepared | Completed | [ ] | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Completed | [ ] | [ ] |
-| 4 | Logisim circuit implemented | Completed | [ ] | [ ] |
+| 4 | Logisim circuit implemented | Completed | Group_Submissions/D9A-Group13/02_FSM_Logisim/GRAY_CODE_TRANSITION_DETECTOR.circ | [ ] |
 | 5 | Logisim simulation verified | Completed | [ ] | [ ] |
 | 6 | Verilog RTL completed | Completed | [ ] | [ ] |
 | 7 | Testbench and simulation completed | Completed | [ ] | [ ] |
