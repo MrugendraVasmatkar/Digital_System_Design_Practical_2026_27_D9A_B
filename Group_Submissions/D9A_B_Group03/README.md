@@ -13,7 +13,7 @@
 **Class:** D9A/D9B  
 **Group ID:** D9_Group03  
 **Repository URL:** [Fork URL](https://github.com/ankyaaa18/DSD_2026_D9A_B_Group3.git)  
-**Final Pull Request URL:** [URL]
+**Final Pull Request URL:** [Pull URL](https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/6#issue-6487612856)
 
 ## 2. Assigned Problem Statement
 - **Number/title:** 6H1 / Forbidden Zone Rejector
@@ -141,7 +141,7 @@ Comparators generalize cleanly to any range/width (meeting the H1 parameterizati
 Tool/version: Xilinx Vivado Simulator, version [add version]  
 Number passed/failed: 51 passed / 0 failed (3 ranges x (1 reset check + 16 input checks), N = 4)  
 Ranges simulated: [6, 9] (default), [4, 7], [8, 11]. Changed by editing `` `L `` and `` `H `` in the testbench.  
-Waveform/log path: `03_Verilog_Implementation/Testbench/tb_fz_rejector_behav.wcfg`  
+Waveform/log path: [waveform](./03_Verilog_Implementation/Testbench/tb_fz_rejector_behav.wcfg)  
 Detailed results: see `Results_and_Analysis.md`
 
 ## 9. FPGA Hardware Implementation
@@ -199,4 +199,4 @@ Maintain time-wise updates in `STATUS.md`.
 - [x] Results, challenges and conclusion documented.
 - [ ] Presentation and final report uploaded.
 - [x] STATUS.md is up to date.
-- [ ] Final Pull Request created and URL recorded.
+- [x] Final Pull Request created and URL recorded.
