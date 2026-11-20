@@ -81,8 +81,9 @@ Three independent 4-bit counters are used to maintain the number of attempts in 
 Finally, the counter values are available through three separate 4-bit outputs.
 ## 4. Architecture
 Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
+<img width="1536" height="1024" alt="Password Attempt Monitor Block Diagram" src="https://github.com/user-attachments/assets/9b8ae466-ce02-4351-8a97-65048b7381b8" />
 
-![Block diagram](path/to/block_diagram.png)
+
 
 ## 5. FSM Design
 State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encoding, state diagram, state table, transition conditions and reset behaviour. If not, justify the alternative.
