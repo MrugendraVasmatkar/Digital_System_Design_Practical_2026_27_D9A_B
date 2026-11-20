@@ -99,7 +99,7 @@ Comparators generalize cleanly to any range/width (meeting the H1 parameterizati
 | REJECT | otherwise | REJECT |
 
 **Diagram:** [FSM Diagram](./02_FSM_Logisim/FSM_Diagram.jpeg)  
-**State table:** [FSM Diagram](./02_FSM_Logisim/State_Table/)  
+**State table:** [State Table](./02_FSM_Logisim/State_Table/)  
 
 ## 6. Logisim Implementation
 - Logisim version: Logisim-evolution v3.9.0
