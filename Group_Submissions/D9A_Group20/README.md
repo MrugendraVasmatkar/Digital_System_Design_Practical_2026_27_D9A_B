@@ -73,11 +73,11 @@ Yes, the design is a **Moore FSM** with five states (IDLE, BEG, INT, EXP, ERR), 
 - Circuit file: `02_FSM_Logisim/Gaming_XP_Decoder_H3_simple.circ`
 - Test cases and expected/observed behaviour: 7 tests (reset/IDLE, BEGINNER XP=2, hold with XP changed, INTERMEDIATE XP=7, EXPERT XP=13, ERROR XP=20, ACK→IDLE), all passed; table in `02_FSM_Logisim/FSM_Design.md`
 - Issues and corrections: the 4-input OR gate that makes ACTIVE had two unconnected inputs, so ACTIVE showed an error value and the level would not reliably hold; the gate was replaced and rewired, and the hold was re-verified (see Section 10)
-- Screenshot/evidence: `02_FSM_Logisim/logisim_1_idle.png` … `logisim_7_ack_idle.png`, plus before/after images of the fix
+- Screenshot/evidence: `02_FSM_Logisim/logisim_1_idle.png` … `logisim_7_ack_idle.png`, full-circuit views by block (`logisim_blocks_A-C_expert.png`, `logisim_blocks_D-E_expert.png`, `logisim_block_F_expert.png`, EXPERT state with XP = 14), plus before/after images of the fix
 
 ## 7. Verilog HDL Implementation
 - Tool/version: Vivado v2018.3 (64-bit), XSim for behavioural simulation
-- Top module and submodules: FSM `gaming_xp_decoder` (simulation DUT); board top `gaming_xp_top` (synchronizers + `gaming_xp_decoder`); testbench `tb_gaming_xp_decoder`
+- Top module and submodules: FSM `gaming_xp_decoder` (simulation DUT); board top `gaming_xp_top` (synchronizers + `gaming_xp_decoder` + debug LED for XP bit 4); testbench `tb_gaming_xp_decoder`
 - Architecture/coding decisions: direct block-for-block translation of the Logisim circuit (blocks B–F); Moore outputs are continuous assignments from the state decoder; one clocked process for `xp_reg` and one for `state`.
 - Synthesizability considerations: only synthesizable constructs in the RTL (no delays, no initial blocks except register power-up values `state = IDLE`, `xp_reg = 0`, which Xilinx FPGAs support); comparators against constants map to LUTs/carry logic.
 - RTL: `03_Verilog_Implementation/RTL/`
@@ -165,8 +165,8 @@ Maintain time-wise updates in `STATUS.md`.
 - [x] Logisim source and simulation evidence uploaded.
 - [x] Verilog RTL and testbench uploaded.
 - [x] Simulation results and test cases documented (Vivado XSim and Icarus, 81/81 pass).
-- [ ] FPGA implementation and hardware evidence uploaded (implementation reports and bitstream uploaded; board demo pending).
-- [ ] Results, challenges and conclusion documented (hardware part pending).
+- [x] FPGA implementation and hardware evidence uploaded (constraints, reports, bitstream; board demo video in the presentation).
+- [x] Results, challenges and conclusion documented.
 - [ ] Presentation and final report uploaded (presentation uploaded; report pending).
 - [x] STATUS.md is up to date.
 - [x] Final Pull Request created and URL recorded.

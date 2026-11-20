@@ -4,7 +4,7 @@
 | File | Purpose |
 |---|---|
 | `03_Verilog_Implementation/RTL/gaming_xp_decoder.v` | The FSM (unchanged, verified 81/81) |
-| `03_Verilog_Implementation/RTL/gaming_xp_top.v` | Board top level: 2-FF synchronizers on switches and buttons, then the FSM |
+| `03_Verilog_Implementation/RTL/gaming_xp_top.v` | Board top level: 2-FF synchronizers on switches and buttons, then the FSM; debug output `led[4]` (LD5) shows XP bit 4 |
 | `04_FPGA_Hardware/boolean_gaming_xp.xdc` | Pin and clock constraints |
 
 ## Board mapping
@@ -32,7 +32,7 @@
    - Report Utilization: LUT, FF, IO, BUFG. Actual result: 8 LUTs, 25 FFs, 14 IOs, 1 BUFG, no BRAM/DSP.
    - Report Timing Summary: WNS must be positive. Actual result: WNS +7.172 ns, 0 failing endpoints.
 
-**Status (19 Nov 2026):** steps 1–7 done; reports in `reports/`, bitstream `gaming_xp_top.bit` in this folder. Steps 8–10 wait for a board.
+**Status (20 Nov 2026):** all steps done. Reports in `reports/`, bitstream `gaming_xp_top.bit` in this folder. The board was programmed and the demo recorded; the video is embedded in `06_Presentation/Gaming_XP_Level_Decoder_H3_ERROR_State.pptx` (slide 4). During the board test SW4 turned out to be faulty, so XP bit 4 was moved to SW5 (see the table above).
 7. **Generate Bitstream.**
 8. **Program the board.** Plug in the Boolean Board by USB, power it on → Open Hardware Manager → Open Target → Auto Connect → Program Device → select `gaming_xp_top.bit`.
 9. **Hardware test** (record a video):
@@ -47,6 +47,7 @@
 ## If something goes wrong
 | Symptom | Likely cause |
 |---|---|
+| XP 0–15 shows ERROR on the board | A faulty switch on the XP[4] input (happened with SW4 on our board): check LD5, and move XP[4] to another switch in the XDC |
 | LEDs on when nothing is pressed, or buttons act inverted | Board buttons are active-low on your board revision: invert `btn` in `gaming_xp_top.v` |
 | Bitstream error "unconstrained ports" | Top module not set to `gaming_xp_top`, or a port name mismatch |
 | Programming fails / no device found | USB cable, board power switch, or cable drivers not installed |

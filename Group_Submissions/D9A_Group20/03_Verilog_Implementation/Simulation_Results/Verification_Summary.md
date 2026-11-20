@@ -23,6 +23,7 @@
 | One-clock delay demonstration | 2 |
 
 ## Fault-injection check (is the testbench able to fail?)
+Re-checked on 20 Nov 2026 with testbench v3 (current file): same results as below.
 Each change was made to a copy of the RTL and the testbench was re-run:
 
 | Change to RTL | Testbench result |

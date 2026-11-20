@@ -39,6 +39,7 @@ Add rows as needed.
 ## 3. Current blockers and support required
 | Blocker | Impact | Action being taken | Faculty support required |
 |---|---|---|---|
+| None currently | – | Final report in progress | None |
 
 ## 4. End-of-day summary
 ### 19 November 2026
@@ -47,6 +48,11 @@ Add rows as needed.
 - Pending: hardware demonstration (board not available); final Pull Request.
 - Evidence uploaded: `02_FSM_Logisim/`, `03_Verilog_Implementation/`, `04_FPGA_Hardware/`, `05_Results/`.
 - Plan: program the board and record the demo when a board is available; upload presentation and report; open the Pull Request.
+### 20 November 2026
+- Completed: board demonstration on the Boolean Board (SW4 found faulty, XP bit 4 moved to SW5, debug LED on LD5); rebuilt bitstream and reports; presentation uploaded; testbench v3 and waveform configuration uploaded.
+- Pending: final report.
+- Evidence uploaded: `04_FPGA_Hardware/`, `03_Verilog_Implementation/`, `06_Presentation/`, `02_FSM_Logisim/`.
+- Final submission status: Pull Request #12 open and up to date; final report still to upload.
 
 ## 5. Group leader confirmation
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.

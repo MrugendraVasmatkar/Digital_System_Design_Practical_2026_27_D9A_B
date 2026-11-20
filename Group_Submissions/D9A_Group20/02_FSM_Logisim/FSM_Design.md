@@ -85,3 +85,6 @@ Note on shot 7: XP_REG still shows 14 just after ACK. It reloads from the XP pin
 | ACTIVE wire shown red (error) in a level state; KEEP not reliably 1, so the level would not hold until ACK | Two inputs (S_INT, S_EXP) of the 4-input OR gate that makes ACTIVE were not connected to the gate pins (blue, floating) | Deleted the gate, placed a new 4-input OR gate and reconnected all four inputs and the output | ACTIVE and KEEP correct (bright green in a level state); hold verified (`logisim_3_hold.png`) |
 
 Evidence: `logisim_fix_before_or_gate.png` (red ACTIVE, blue inputs) and `logisim_fix_after_or_gate.png` (all four inputs connected).
+
+## Full circuit (fixed version)
+Shown in the EXPERT state with XP = 14: `logisim_blocks_A-C_expert.png` (inputs, input register, range decoder), `logisim_blocks_D-E_expert.png` (next-state logic, state register), `logisim_block_F_expert.png` (state decoder, LEDs).
