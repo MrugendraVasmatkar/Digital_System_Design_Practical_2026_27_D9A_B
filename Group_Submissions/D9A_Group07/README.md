@@ -114,7 +114,20 @@ X means don't care.
 ## 6. Logisim Implementation
 - Logisim version: 5.0.0
 - Circuit file: `02_FSM_Logisim/logisim.circ`
-- Test cases and expected/observed behaviour: 
+- Test cases and expected/observed behaviour:
+- Switches are written SW2 SW1 SW0 (1 = up). LD0 = ACCEPT (Y), LD1 = REJECT (Y_bar). Exactly one of the two LEDs is on at any time. Fill the Observed column from the real board.
+
+| # | Action | Expected | Observed |
+|---|---|---|---|
+| 1 | Switches 000, press and release BTN0 | LD0 on, LD1 off | LD0 on, LD1 off |
+| 2 | 001, 010, 101, 110, 111 | LD0 on, LD1 off | LD0 on, LD1 off |
+| 3 | 011 (values 6, 7) | LD0 off, LD1 on, immediately | LD0 off, LD1 on, immediately |
+| 4 | Back to 000 | LD1 stays on (latched) | LD1 stays on (latched) |
+| 5 | Press BTN0 | LD0 on, LD1 off | LD0 on, LD1 off  |
+| 6 | 100 (values 8, 9) | LD0 off, LD1 on, immediately | LD0 off, LD1 on, immediately |
+| 7 | Back to 000 | LD1 stays on (latched) | LD1 stays on (latched) |
+| 8 | Press BTN0 | LD0 on, LD1 off | LD0 on, LD1 off |
+ 
 - Screenshot/evidence: `02_FSM_Logisim/[screenshot file names]`
 
 ## 7. Verilog HDL Implementation
