@@ -119,6 +119,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 20:30 | Uploaded Vivado utilisation and timing-summary screenshots: 8 LUTs, 7 registers, 3 slices, 10 IOBs of xc7s50csga324-1; timing summary is NA because no clock constraint is defined | `04_FPGA_Hardware/vivado_utilization.png`, `04_FPGA_Hardware/vivado_timing_summary.png` | No `create_clock` in the XDC | Add the clock constraint, re-run implementation, record slack | Ojas Karmarkar |
 | 19/11/2026 | 23:34 | Added the architecture / block diagram image and linked it in the group README and problem analysis | `01_Problem_Analysis/block_diagram.png` | None | Fix testbench expected value and re-run; add Logisim step table; hardware demo | Ojas Karmarkar |
 | 20/11/2026 | 09:26 | Uploaded the Vivado Tcl console log screenshot (PASS lines and the one FAIL for 1100 -> 1111) | `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_tcl_log.png` | Testbench expected value to fix | Correct the expected value, re-run, replace waveform and log | Ojas Karmarkar |
+| 20/11/2026 | 10:00 | Recorded the GitHub usernames of all members in the group README (adityasuhanda-beep, vedantcrazy81, 2025.sohamkundargi-afk) | `Group_Submissions/D9A_Group01/README.md` | Collaborator invitations not yet sent | Group leader adds the three as collaborators on the fork | Ojas Karmarkar |
 
 Add rows as needed.
 
@@ -143,7 +144,7 @@ All members must understand the complete design and be prepared to explain the F
 ## 11. Current Blockers and Support Required
 | Blocker | Impact | Action being taken | Faculty support required |
 |---|---|---|---|
-| Teammates not yet added as GitHub collaborators (usernames needed) | Teammates cannot push with their own accounts | Collecting GitHub usernames from the three members | None at present |
+| Teammates not yet added as GitHub collaborators on the fork | Teammates cannot push with their own accounts | Usernames collected (adityasuhanda-beep, vedantcrazy81, 2025.sohamkundargi-afk); group leader to send the collaborator invitations | None at present |
 | Testbench has one wrong expected value (1100 -> 1111) | Result shows 11 pass, 1 fail although the DUT is correct | Correct the expected value, re-run and replace the Tcl log | None at present |
 
 ## 12. Current Issues and Action Plan

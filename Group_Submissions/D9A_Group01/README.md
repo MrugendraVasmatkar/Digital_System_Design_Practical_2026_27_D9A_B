@@ -6,9 +6,9 @@
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
 | Group leader | Ojas Karmarkar (D9A) | 27 | ojaskarmarkar15 |
-| Member 2 | Aaditya Suhanda (D9A) | 55 | [Username to be added] |
-| Member 3 | Vedant Sujit Gaikwad (D9B) | 10 | [Username to be added] |
-| Member 4 | Soham Sandeep Kundargi (D9B) | 28 | [Username to be added] |
+| Member 2 | Aaditya Suhanda (D9A) | 55 | adityasuhanda-beep |
+| Member 3 | Vedant Sujit Gaikwad (D9B) | 10 | vedantcrazy81 |
+| Member 4 | Soham Sandeep Kundargi (D9B) | 28 | 2025.sohamkundargi-afk |
 
 **Class:** D9A (group leader's class; group includes D9A and D9B students)  
 **Group ID:** D9A_Group01  
@@ -135,7 +135,7 @@ Maintain time-wise updates in `STATUS.md`.
 [To be written.]
 
 ## 15. Final Submission Checklist
-- [x] Team details and problem analysis complete (GitHub usernames of three members still missing).
+- [x] Team details and problem analysis complete (all four GitHub usernames recorded).
 - [x] Architecture/block diagram included (`01_Problem_Analysis/block_diagram.png`).
 - [ ] FSM diagram/table or justified alternative included (state table added; diagram image pending).
 - [ ] Logisim source and simulation evidence uploaded (N = 5 circuit uploaded; screenshots pending).
