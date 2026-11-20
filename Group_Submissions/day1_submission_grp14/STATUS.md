@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-B-Group14 |
-| Last Updated | 2026-11-20, 17:00 |
+| Last Updated | 2026-11-20, 18:00 |
 
 ## 2. Problem Statement
 
@@ -143,6 +143,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 15:30 | FPGA implementation link (Google Drive) added to README section 9 and the 04_FPGA_Hardware README: https://drive.google.com/file/d/1PTbTQEMCe9i1WaIGIoaBvH1JUCAgzeba/view?usp=drive_link | Samruddhi Samant | Repository |
 | 2026-11-20, 16:00 | GitHub fork renamed from `DSD-2026-D9A-Group14` to `DSD-2026-D9A-B-Group14` (a "/" is not allowed in repository names); repository links updated; PR #33 unaffected | Samruddhi Samant | Repository settings |
 | 2026-11-20, 17:00 | `game_tb_full.v` removed from the repository; only the original `game_tb.v` remains (covers scores 2, 7 and 13) | Samruddhi Samant | Repository |
+| 2026-11-20, 18:00 | README section 6 "Issues and corrections" filled: comparator built from internal gates at first, later replaced by the built-in comparator block | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 

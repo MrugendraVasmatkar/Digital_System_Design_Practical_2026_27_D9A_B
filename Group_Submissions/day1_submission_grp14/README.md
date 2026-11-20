@@ -82,7 +82,7 @@ File: `02_FSM_Logisim/fsm_state_diagram.png`
 
 ![Logisim simulation, IDLE all LEDs off](02_FSM_Logisim/idle.png)
 
-- Issues and corrections: [Details]
+- Issues and corrections: the Logisim design was complex at first, because we built the comparator from its internal gate circuit. We later used Logisim's built-in comparator block, which made the circuit simpler.
 - Screenshot/evidence: `02_FSM_Logisim/circuit_overview_v2_comparators.png` (circuit only; simulation screenshots pending)
 
 ## 7. Verilog HDL Implementation
