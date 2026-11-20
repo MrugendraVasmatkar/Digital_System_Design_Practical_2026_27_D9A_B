@@ -13,7 +13,7 @@
 **Class:** D9A  
 **Group ID:** D9A_Group07  
 **Repository URL:** https://github.com/lumora-droid/DSD-2026-D9A_B-Group07  
-**Final Pull Request URL:** [Paste URL after creating the PR]
+**Final Pull Request URL:** https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/24
 
 ## 2. Assigned Problem Statement
 - **Number/title:** 6-H2 – Forbidden Zone Rejector (4-bit), modification H2: Mealy FSM with immediate output
