@@ -226,10 +226,10 @@ Explain differences between simulation and hardware results, if any.
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
 |---|---|---|
-| Group leader | [ ] | [ ] |
-| Member 2 | [ ] | [ ] |
-| Member 3 | [ ] | [ ] |
-| Member 4 | [ ] | [ ] |
+| Group leader | [ LOGISIM] | [LOGISIM ] |
+| Member 2 | [LOGISIM,GITHUB ] | [GITHUB ] |
+| Member 3 | [TESTING ] | [TESTING,GITHUB ] |
+| Member 4 | [RTL,TESTSBENCH ] | [RTL,TESTBENCH ] |
 
 Every student must be ready to explain the complete design.
 
