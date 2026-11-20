@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 12:00 |
+| Last Updated | 2026-11-20, 12:30 |
 
 ## 2. Problem Statement
 
@@ -137,6 +137,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 11:00 | Hardware demonstration on the RealDigital Boolean Board: LOW (LD0), MEDIUM (LD1) and HIGH (LD2) LEDs each lit; three photos added to `04_FPGA_Hardware/` | Samruddhi Samant | Repository |
 | 2026-11-20, 11:30 | Removed the screenshot `constraints_with_clock.png` (it still showed the old unconstrained timing report); the clock constraint is in `constraints.xdc` and the constrained timing result is in `timing_summary.png` | Samruddhi Samant | Repository |
 | 2026-11-20, 12:00 | Presentation reduced to 3 slides (title; Logisim simulation, implementation, timing and FPGA demo; results, challenges, contributions); team contribution lists updated in README section 11 and STATUS section 8 | Samruddhi Samant | Repository |
+| 2026-11-20, 12:30 | Presentation updated: problem statement added to the title slide, Verilog simulation waveform on slide 2 (implementation numbers moved under the timing summary), expanded conclusion and results summary on slide 3 | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 
