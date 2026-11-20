@@ -82,21 +82,21 @@ Waveform/log path: [Path]
 
 
 ## 9. FPGA Hardware Implementation
-- FPGA board/device: [Details]
-- Tool/version: [Details]
-- Clock/constraints: [Details]
-- Synthesis/implementation summary: [Details]
-- Programming and hardware test result: [Details]
+- FPGA board/device: [Boolean Board (used for hardware implementation and testing).]
+- Tool/version: [Logisim Evolution (for circuit design and simulation), Verilog HDL (for RTL implementation), and the Boolean Board development environment (for hardware implementation).]
+- Clock/constraints: [The design uses the Boolean Board's onboard clock as the clock input. Reset is used to initialise the FSM to the IDLE state. Start triggers age classification, and ACK returns the FSM to IDLE.]
+- Synthesis/implementation summary: [The age group detector was implemented using a Moore Finite State Machine (FSM), two age comparators, and a 2-bit gated-clock counter placed after the FSM and before the LED output stage. The design was implemented on the Boolean Board. The FSM identifies the age category (Child, Teen, or Adult), while the counter controls the corresponding LED indication. Reset returns the system to the IDLE state, and ACK allows the system to return to IDLE after classification.]
+- Programming and hardware test result: [The Verilog design was prepared and tested through simulation. The circuit was also implemented on the Boolean Board for hardware testing. The system was designed to identify the correct age category and activate the corresponding LED. During debugging, the team checked the FSM transitions, comparator outputs, gated-clock counter, and LED connections. The faculty confirmed that the gated-clock counter logic was correct and well implemented. Final hardware test results should be documented according to the actual observations on the Boolean Board.]
 - Evidence path: `04_FPGA_Hardware/`
-
+video was uploaded
 Explain differences between simulation and hardware results, if any.
 
 ## 10. Challenges, Debugging and Improvements
 | Issue | Root cause | Correction | Outcome |
 |---|---|---|---|
-| [ ] | [ ] | [ ] | [ ] |
+| Integrating the FSM with the counter [ Connecting the 2-bit counter after the FSM and before the LED output stage required careful coordination of control and clock signals. ] | [The team followed the intended architecture, placing the counter after the FSM and using its output in the LED indication stage. ] | [The faculty reviewed the approach and confirmed that the gated-clock counter logic was logically correct and implemented well. ] | [ ] |
 
-Future improvements: [Details]
+Future improvements: [**Future Improvements:** The design can be improved by making the gated-clock operation more reliable, testing all age boundaries and FSM transitions, adding a seven-segment display for category indication, simplifying the circuit, and performing more extensive hardware testing on the Boolean Board.]
 
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
@@ -119,7 +119,9 @@ Summarise requirements met, correctness of simulation/hardware results, measured
 ## 14. Team Reflection
 What did the team learn? What would you improve?
 
-[Write here]
+[**What Did the Team Learn? What Would We Improve?**
+
+The team learned about FSM design, age comparison, gated-clock counters, Verilog implementation, circuit debugging, and hardware testing. The project improved our understanding of how individual digital components work together. In the future, we would improve clock handling, simplify the circuit connections, perform more extensive testing, and make the design more reliable.]
 
 ## 15. Final Submission Checklist
 - [ ] Team details and problem analysis complete.
