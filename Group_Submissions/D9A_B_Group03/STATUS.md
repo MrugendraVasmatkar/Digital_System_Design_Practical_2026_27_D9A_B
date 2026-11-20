@@ -52,7 +52,7 @@ Add rows as needed.
 ### 20 November 2026
 - Completed: Verilog RTL (COUNTER, COMPARATOR, fz_rejector), testbench for 3 ranges (all passed), FPGA implementation and hardware test, README and Results_and_Analysis.md
 - Pending: Presentation and report, final Pull Request
-- Evidence uploaded: 03_Verilog_Implementation/RTL/, 03_Verilog_Implementation/Testbench/, 04_FPGA_Hardware/, Results_and_Analysis.md
+- Evidence uploaded: [Presentation](./08Presentation) [Report](./07_Final_Report)
 - Final submission status: Completed
 
 ## 5. Group leader confirmation
