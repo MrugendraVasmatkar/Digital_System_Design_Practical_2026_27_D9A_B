@@ -94,7 +94,19 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 ## 6. Logisim Implementation
 - Logisim version: [V4.1.0]
 - Circuit file: [[Path to `.circ`](https://drive.google.com/file/d/1WSg3NNwyJPyqjPxU57mcQFRjLxi01r3_/view?usp=drive_link)]
-- Test cases and expected/observed behaviour: [Details]
+- Test cases and expected/observed behaviour: 
+Input	Expected Behaviour	Observed Behaviour
+000, 001	NOW counter increases	Working
+010, 011, 100	WARN counter increases	Working
+101, 110, 111	LOCK counter increases	Working
+START = 0	No counter changes	Working
+RESET = 1	All counters become 0	Working
+Final Counter Values (after all 8 inputs):
+- NOW_COUNT = 2
+- WARN_COUNT = 3
+- LOCK_COUNT = 3
+Result: The circuit works according to the expected classification and counting logic.]
+
 - Issues and corrections: [Details]
 - Screenshot/evidence: [Path/link]
 
