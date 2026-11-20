@@ -45,5 +45,17 @@ Our base project was a 4-bit Gaming XP Level Decoder with three levels (Beginner
 We broke the circuit down into four simple blocks:
 1. **Input Register:** Stores the 4-bit XP switch value while the FSM is in `IDLE`. Once `START` is pressed and the FSM moves on, the value stays locked so flipping switches later won't change the output.
 2. **Range Decoder (Two Stages):** First, Range Decoder 1 checks if the XP is Beginner (`0–3`), Intermediate (`4–7`), or greater than `7`. If it's greater than `7`, Range Decoder 2 uses that signal along with the 4-bit XP value to check whether it's Expert (`8–11`) or Master (`12–15`).
-3. **Moore FSM Controller:** Starts in `IDLE (000)`. When `START = 1`, it moves to `BEGINNER (001)`, `INTERMEDIATE (010)`, `EXPERT (011)`, or `MASTER (100)` based on the decoder output. It stays in that state until `ACK = 1` brings it back to `IDLE`.
+3. **Moore FSM Controller:** Starts in `IDLE (000)`. When `START = 1`, it moves to `BEGINNER (001)`, `INTERMEDIATE (010)`, `EXPERT (011)`, or `MASTER (100)` based on the decoder output. It stays in that state until `ACK = 1` brings it back to `IDLE`
 4. **Output Logic:** Simply checks which state the FSM is in and turns on the matching LED (all LEDs stay off in `IDLE`).
+
+## Architecture
+1. **4-Bit Input Register (`xp_reg`):** Captures `xp_in[3:0]` on the rising edge of `clk` while the FSM is in `IDLE`, and clears to `0` on synchronous `reset`. Once the FSM leaves `IDLE`, `xp_reg` holds its value so changing the input switches later does not corrupt the active output.
+2. **Two-Stage Range Decoder (Combinational):**
+   * **Range Decoder 1** evaluates `is_beg` (`xp_reg <= 3`), `is_int` (`4 <= xp_reg <= 7`), and asserts a `greater` flag when `xp_reg > 7`.
+   * **Range Decoder 2** uses `greater` along with `xp_reg[3:0]` to assert `is_exp` (`8 <= xp_reg <= 11`) or `is_mas` (`xp_reg > 11`).
+3. **5-State Moore FSM Controller:** Uses a 3-bit state register (`IDLE = 000`, `BEG = 001`, `INT = 010`, `EXP = 011`, `MAS = 100`). When `start = 1` in `IDLE`, it transitions to the decoded level state and holds it until `ack = 1` or `reset = 1` returns it to `IDLE`.
+4. **Moore Output Logic:** Four combinational comparators drive `led_beginner`, `led_intermediate`, `led_expert`, and `led_master` strictly from `state`, ensuring all LEDs remain OFF in `IDLE`.
+
+### Data & Control Flow
+* **Data path:** `xp_in[3:0]` → `xp_reg[3:0]` → Range Decoders 1 & 2 → FSM next-state decision.
+* **Control path:** `clk`, `reset`, `start`, and `ack` synchronize input capture and state transitions; `state[2:0]` drives the four output LEDs.
