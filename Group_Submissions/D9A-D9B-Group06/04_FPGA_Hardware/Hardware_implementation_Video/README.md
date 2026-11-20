@@ -1,0 +1,2 @@
+HARDWARE IMPLEMENTATION VIDEO
+https://youtu.be/Oasawc2ixQA?si=vRmn2YVNo_HqKB91
