@@ -1,20 +1,21 @@
 # 05 – Results
 
-Upload test-case tables, expected-versus-observed comparisons, accuracy/correctness analysis, known limitations and conclusions here.
-## 1. Simulation Summary
-* **Simulator:** Xilinx Vivado XSim (`tb_gaming_xp_decoder_behav`)
-* **Time Resolution:** `1 ps`
-* **Total Simulation Time:** `490 ns` (`$finish` called at `490 ns`)
-* **CPU / Elapsed Time:** `5 s` CPU / `10 s` elapsed
-* **Overall Result:** **16 / 16 XP Test Cases PASSED (100%)**
+# 05 – Results and Analysis
+
+## 1. Simulation Overview
+* **Simulator:** Xilinx Vivado v2018.3 XSim (`tb_gaming_xp_decoder_behav`)
+* **Time Precision:** `1 ps`
+* **Total Run Time:** `490 ns` (`$finish` reached at `490 ns`)
+* **Execution Time:** `5 s` CPU / `10 s` elapsed
+* **Final Verdict:** **16 / 16 XP combinations PASSED (100% pass rate, 0 failures)**
 
 ---
 
-## 2. Test-Case Table (Expected vs. Observed)
+## 2. Expected vs. Observed Test-Case Table
 
-**LED Bus Mapping:** `leds[3:0] = {led_m, led_e, led_i, led_b}`
+**Output Bus Order:** `leds[3:0] = {led_m, led_e, led_i, led_b}`
 
-| Test Case | Control Signal | XP Input (Dec) | XP Input (Hex) | Expected State | Expected `exp[3:0]` (Bin / Hex) | Observed `leds[3:0]` (Bin / Hex) | Status |
+| Test ID | Control Condition | XP Input (Dec) | XP Input (Hex) | Expected State | Expected `exp[3:0]` (Bin / Hex) | Observed `leds[3:0]` (Bin / Hex) | Result |
 | :--- | :--- | :---: | :---: | :--- | :---: | :---: | :---: |
 | Reset | `reset = 1` (`0–10 ns`) | `0` | `0` | `IDLE (000)` | `0000` (`0`) | `0000` (`0`) | **PASS** |
 | TC01 | `start = 1` | `0` | `0` | `BEGINNER (001)` | `0001` (`1`) | `0001` (`1`) | **PASS** |
@@ -33,26 +34,37 @@ Upload test-case tables, expected-versus-observed comparisons, accuracy/correctn
 | TC14 | `start = 1` | `13` | `d` | `MASTER (100)` | `1000` (`8`) | `1000` (`8`) | **PASS** |
 | TC15 | `start = 1` | `14` | `e` | `MASTER (100)` | `1000` (`8`) | `1000` (`8`) | **PASS** |
 | TC16 | `start = 1` | `15` | `f` | `MASTER (100)` | `1000` (`8`) | `1000` (`8`) | **PASS** |
-| Acknowledge | `ack = 1` (after each XP) | `0–15` | `0–f` | `IDLE (000)` | `0000` (`0`) | `0000` (`0`) | **PASS** |
+| Ack | `ack = 1` (after each XP) | `0–15` | `0–f` | `IDLE (000)` | `0000` (`0`) | `0000` (`0`) | **PASS** |
 
 ---
 
 ## 3. Simulation Evidence
 
 ### Vivado Tcl Console Output
-![Tcl Console Output](Group_Submissions/D9A_Group02/05_Results/tcl console result.png)
+![Tcl Console Output](<tcl console result.png>)
 
 ### Behavioral Simulation Waveform
-![Behavioral Simulation Waveform](Group_Submissions/D9A_Group02/05_Results/waveform screenshot.png)
+![Behavioral Simulation Waveform](<waveform screenshot.png>)
 
 ---
 
-## 4. Accuracy & Correctness Analysis
-* **100% Verification Coverage:** Every 4-bit input from `0` to `f` (`0–15`) produced the exact expected one-hot LED output (`1`, `2`, `4`, `8`) in both the waveform and the self-checking Tcl Console log.
-* **Clean Range Boundaries:** Transitions between levels occurred accurately at `3 → 4` (`led_b` to `led_i`), `7 → 8` (`led_i` to `led_e`), and `b → c` (`led_e` to `led_m`) with no overlapping LEDs.
-* **Control Signal Verification:**
-  * `reset = 1` during `0–10 ns` initialized the FSM to `IDLE` with `leds[3:0] = 0`.
-  * Pulsing `start` latched the decoded level and activated the corresponding LED.
-  * Pulsing `ack` after each test cleanly returned `leds[3:0]` to `0` (`IDLE`) before the next XP value was evaluated.
+## 4. Accuracy and Correctness Analysis
+* **Full Input Coverage:** All 16 possible 4-bit inputs (`0` through `15`) were tested automatically by the self-checking testbench. Every single case matched its expected one-hot LED pattern (`0001`, `0010`, `0100`, or `1000`) with zero mismatches.
+* **Exact Boundary Switching:** Level transitions happened cleanly at all three boundary points—`3 → 4` (`Beginner` to `Intermediate`), `7 → 8` (`Intermediate` to `Expert`), and `11 → 12` (`Expert` to `Master`). At no point did two LEDs turn on together or leave a gap between ranges.
+* **Synchronous Control Behaviour:**
+  * Holding `reset = 1` from `0–10 ns` forced the FSM into `IDLE` with all LEDs off (`0000`).
+  * Asserting `start = 1` latched the XP value and switched on only the corresponding level LED.
+  * Asserting `ack = 1` after each check cleared the active LED and returned the FSM to `IDLE` cleanly before the next input cycle.
+* **Cross-Stage Consistency:** The Verilog simulation results matched our Logisim v2.7.1 circuit tests and synthesized cleanly for the RealDigital Boolean Board (Spartan-7 `xc7s50csga324-1`) with 0 errors and a compact footprint of 24 cells (6 LUTs and 7 flip-flops).
 
 ---
+
+## 5. Known Limitations
+* **Fixed 4-Bit Input Width:** The decoder is built around a 4-bit unsigned bus (`xp_in[3:0]`), so it only supports XP values from `0` to `15`. Handling larger XP scores would require widening the input register and comparators.
+* **Fixed Level Thresholds:** The four level boundaries (`0–3`, `4–7`, `8–11`, `12–15`) are hardcoded into the combinational logic and cannot be changed dynamically at runtime.
+* **No Hardware Pushbutton Debouncing:** Behavioral simulation uses clean, ideal pulses for `reset`, `start`, and `ack`. For reliable manual button presses on a physical FPGA board, simple debouncer circuits should be added (or continuous switch-tracking mode used for live demos).
+
+---
+
+## 6. Conclusion
+The 4-level Gaming XP Decoder (Modification H1) met all functional and verification goals. Exhaustive simulation in Vivado XSim confirmed 100% accuracy across all 16 XP values, boundary transitions, and synchronous control signals (`reset`, `start`, and `ack`). Together with the Logisim gate-level verification and error-free Spartan-7 FPGA synthesis and implementation, the results confirm that the design is reliable, lightweight, and ready for hardware demonstration.
