@@ -122,7 +122,7 @@ stateDiagram-v2
 
 **Tool/version:** AMD Xilinx Vivado 2022.2 (XSim Behavioral Simulation, `100 MHz` clock)  
 **Number passed/failed:** All `16` input values + `RESET` + `4` `ACK` checks passed; **`0` failed** (`errors = 00000000`, completed at `860 ns`).  
-**Waveform/log path:** `03_Verilog_Implementation/Simulation_Results/`
+**Waveform/log path:** https://drive.google.com/drive/u/4/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz (Waveform Image In Drive Link)
 
 ## 9. FPGA Hardware Implementation
 - **FPGA board/device:** RealDigital Boolean Board – Xilinx Spartan-7 `xc7s50csga324-1` (Speed Grade `-1`, CSGA324)
@@ -150,9 +150,9 @@ stateDiagram-v2
 | Student | Assigned responsibility | Actual contribution/evidence |
 |---|---|---|
 | Tanav Patil (Group leader) | Coordinated Across all Workflows | https://drive.google.com/drive/u/4/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz |
-| Chinmay Keskar (Member 2) |  |  |
+| Chinmay Keskar (Member 2) | - | - |
 | Vedant Patil (Member 3) | PPT and Report Drafting | https://drive.google.com/drive/u/4/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz  |
-| Aditya Yadav (Member 4) |  |  |
+| Aditya Yadav (Member 4) | - | - |
 
 Every student must be ready to explain the complete design.
 
