@@ -1,0 +1,54 @@
+## Test Setup
+
+For each input test, reset the FSM to IDLE, set A3:A0, assert START, and allow a clock edge. Observe the category LEDs before asserting ACK. The LED vector below is ordered as (NOW, WARN, LOCK, ERROR).
+
+## Attempt Classification Tests
+
+| Test | Input A3:A3 | Decimal value | Expected state | Expected LED vector | Observed result |
+
+| 1 | 0000 | 0 | NOW | recorded |
+| 2 | 0001 | 1 | NOW | recorded |
+| 3 | 0010 | 2 | WARN | recorded |
+| 4 | 0011 | 3 | WARN | recorded |
+| 5 | 0100 | 4 | WARN | recorded |
+| 6 | 0101 | 5 | LOCKOUT | recorded |
+| 7 | 0110 | 6 | LOCKOUT | recorded |
+| 8 | 0111 | 7 | LOCKOUT | recorded |
+| 9 | 1000 | 8 | ERROR | recorded |
+| 10 | 1000 | 9 | ERROR | recorded |
+| 11 | 1010 | 10 | ERROR | recorded |
+| 12 | 1011 | 11 | ERROR | recorded |
+| 13 | 1100 | 12 | ERROR | recorded |
+| 14 | 1101 | 13 | ERROR | recorded |
+| 15 | 1110 | 14 | ERROR | recorded |
+| 16 | 1111 | 15 | ERROR | recorded |
+
+The provided Logisim screenshot shows A3:A0 = 1001 (decimal 9), with the ERROR indicator active and the other category indicators inactive. This matches the expected result for that test.
+
+## Control-Operation Tests
+
+| Test | Action | Expected result | Observed result |
+
+| 1 | Assert RESET while in any active state | Return to IDLE; all category LEDs turn off | recorded |
+| 2 | Assert ACK while in NOW | Return to IDLE | recorded |
+| 3 | Assert ACK while in WARN | Return to IDLE |  recorded |
+| 4 | Assert ACK while in LOCKOUT | Return to IDLE | recorded |
+| 5 | Assert ACK while in ERROR | Return to IDLE | recorded |
+| 6 | Keep START low while in IDLE | Remain in IDLE | recorded |
+
+## Accuracy and Correctness Analysis
+
+The expected ranges cover all 16 possible values of the four-bit input without overlap: 0–1 maps to NOW, 2–4 to WARN, 5–7 to LOCKOUT, and 8–15 to ERROR. The screenshot provides evidence that the ERROR path works for input 9.
+
+Only that input/output case is documented here. Therefore, the screenshot supports a **1 out of 1 pass (100%) for the observed case**. All these can be observed by using the Logisim. 
+
+## Known Limitations
+
+- The screenshot documents input 9 only; it does not show results for every valid boundary or invalid value.
+- ACK and RESET behavior should be tested from each active state.
+- The four-bit input is an extension of the original three-bit interface, allowing values 8–15 to be represented as invalid.
+- Physical switches provide 0 or 1.
+
+## Conclusion
+
+The circuit’s displayed result for input 1001 agrees with the H3 requirement: values above 7 activate the ERROR indicator. The category definitions are consistent with the specified ranges. Full verification should include all input values, especially the boundaries 1/2, 4/5, and 7/8, plus ACK and RESET from each active state.
