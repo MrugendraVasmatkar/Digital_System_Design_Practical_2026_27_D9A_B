@@ -1,3 +1,3 @@
 # 06 – Presentation
 
-Upload the final presentation (PDF or PPTX) here.
+[Forbidden Zone Rejector (H4) PPT.pdf](https://github.com/user-attachments/files/35160362/Forbidden.Zone.Rejector.H4.PPT.pdf)
