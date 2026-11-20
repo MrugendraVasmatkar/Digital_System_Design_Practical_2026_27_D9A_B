@@ -175,10 +175,10 @@ Yes, the design uses a **5-state Moore FSM** with a 3-bit binary state encoding 
 
 | Student | Assigned responsibility | Actual contribution/evidence |
 | :--- | :--- | :--- |
-| Vasudha Saxena (Group leader) | Problem Analysis, Architecture & GitHub Management | `01_Problem_Analysis/README.md`, `STATUS.md`, repo organization |
-| Tanisha Dembla (Member 2) | FSM Design & Logisim Circuit Implementation | 5-state Moore FSM diagram/table, `xplvlfinal_fixed_v2.circ` |
-| Prakhar Srivastava (Member 3) | Verilog RTL & Self-Checking Testbench | `gaming_xp_decoder.v`, `tb_gaming_xp_decoder.v` |
-| Hadi Ansari (Member 4) | Vivado Simulation, FPGA Synthesis & Results | `04_FPGA_Hardware/`, `05_Results/`, waveform & Tcl logs |
+| Vasudha Saxena (Group leader) | Problem Analysis, Architecture & GitHub Management, Verilog RTL | Group_Submissions/D9A_Group02/01_Problem_Analysis, Group_Submissions/D9A_Group02/STATUS.md, repo organization |
+| Tanisha Dembla (Member 2) | FSM Design & Logisim Circuit Implementation | 5-state Moore FSM diagram/table, Group_Submissions/D9A_Group02/02_FSM_Logisim/xplvlfinal_fixed.circ |
+| Prakhar Srivastava (Member 3) | Verilog RTL & Self-Checking Testbench | Group_Submissions/D9A_Group02/03_Verilog_Implementation/RTL/gaming_xp_decoder.v, Group_Submissions/D9A_Group02/03_Verilog_Implementation/Testbench/tb_gaming_xp_decoder.v |
+| Hadi Ansari (Member 4) | Vivado Simulation, FPGA Synthesis & Results | Group_Submissions/D9A_Group02/04_FPGA_Hardware, Group_Submissions/D9A_Group02/05_Results, waveform & Tcl logs |
 
 *(Adjust the row responsibilities above if your team split the work differently.)* Every student is ready to explain the complete design.
 
@@ -206,8 +206,8 @@ Working through the full flow showed us how a small specification change—addin
 - [x] Logisim source and simulation evidence uploaded.
 - [x] Verilog RTL and testbench uploaded.
 - [x] Simulation results and test cases documented.
-- [ ] FPGA implementation and hardware evidence uploaded.
+- [x] FPGA implementation and hardware evidence uploaded.
 - [x] Results, challenges and conclusion documented.
-- [ ] Presentation and final report uploaded.
-- [ ] STATUS.md is up to date.
-- [ ] Final Pull Request created and URL recorded.
+- [x] Presentation and final report uploaded.
+- [x] STATUS.md is up to date.
+- [x] Final Pull Request created and URL recorded.
