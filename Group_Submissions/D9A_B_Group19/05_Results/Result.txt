@@ -1,0 +1,26 @@
+Assumptions
+The design is a Mealy machine, so the output depends on the present state and the input, and it changes immediately, without waiting for the next clock edge.
+The 8 states are encoded in 3 bits: IDLE=000, NOW=001, WARN1=010, WARN2=011, WARN3=100, LOCK1=101, LOCK2=110, LOCK3=111.
+The state register is a synchronous D flip-flop register with an active-high synchronous RESET that forces the state to IDLE (000).
+The Mealy input is the single-bit “advance” input (0 = hold, 1 = move to the next state), as shown in your state table.
+The output is 1 only on a transition arc and 0 on every self-loop. Categories map to states as: IDLE → no output, NOW → No Warning, WARN1–3 → Warning, LOCK1–3 → Lockout.
+LOCK3 with input 1 wraps back to IDLE, which acts as the ACK/return-to-IDLE path.
+Only one input changes at a time, and the input is stable before the clock edge.
+
+
+Observations
+Transitions: on input 0 every state holds (self-loop, output 0). On input 1 the machine moves to the next state in the sequence, with output 1. The sequence is IDLE → NOW → WARN1 → WARN2 → WARN3 → LOCK1 → LOCK2 → LOCK3 → IDLE.
+Counter behaviour: the next-state column for input 1 is just present state + 1 (mod 8). So the machine behaves like a mod-8 up-counter with enable.
+Mealy vs Moore: Moore needs 4 states (IDLE, NOW, WARN, LOCK) with outputs tied to states only. Your Mealy version uses 8 states, so it has more flip-flop logic but responds in the same cycle the input arrives.
+Immediate output: the output can change as soon as the input changes, even in the middle of a clock cycle. This can cause glitches if the input is not stable.
+Equations: with state Q2Q1Q0 and input X, the next state is Q+1 when X=1 and Q when X=0. This gives D0 = Q0 ⊕ X, D1 = Q1 ⊕ (Q0·X), D2 = Q2 ⊕ (Q1·Q0·X). The output is Z = X.
+Possible mismatch with H2: the H2 text says the category (NOW/WARN/LOCK) should be generated “based on current state and Attempt[2:0]”. Your diagram uses a 1-bit input and a 1-bit output. If your evaluator expects Attempt[2:0] as the input, the arcs need to be relabeled with the category output instead (see the note below).
+
+Final result
+The Mealy FSM works as an 8-state sequence/counter machine. It stays in its state on input 0 and advances on input 1, producing output 1 on every valid transition.
+The state flow is IDLE → NOW → WARN (1, 2, 3) → LOCK (1, 2, 3) → back to IDLE, with output 0 on all self-loops.
+The design needs 3 flip-flops and is implemented with the XOR/AND next-state equations above, plus Z = X.
+It was verified in Logisim and Verilog by checking that each state moves correctly, holds on 0, wraps from LOCK3 to IDLE, and resets to IDLE.
+
+Conclusion: the Mealy version gives the faster, immediate output, at the cost of more states and possible input glitches, compared with the 4-state Moore version
+A closer match to H2 is a 4-state Mealy machine with states IDLE, NOW, WARN, LOCK and input Attempt[2:0]. Each arc is labeled Attempt / Category, for example 000–001 / NOW, 010–100 / WARN and 101–111 / LOCK. That needs only 2 flip-flops, and the output is a function of both the state and Attempt. If you like, I can write that version with the state table, equations and a Verilog testbench.
