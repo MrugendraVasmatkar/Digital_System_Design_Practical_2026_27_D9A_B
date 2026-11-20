@@ -24,7 +24,7 @@
 | 8 | 1000 |
 | 9 | 1001 |
 
-Summary: values 0 to 5 and 10 to 15 are accepted (12 values). Values 6 to 9 are rejected (4 values).
+Summary: values 0 to 5 and 10 to 15 are accepted (12 values). Values 6 to 9 are rejected (4 values).X0 is put as don't care , simplifying the hardware.
 
 ## FSM States
 
