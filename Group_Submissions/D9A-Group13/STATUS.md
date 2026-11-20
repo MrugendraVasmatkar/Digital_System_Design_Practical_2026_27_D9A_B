@@ -10,16 +10,16 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
-| 1 | Problem requirements and assumptions documented | Not Started | link| [ ] |
-| 2 | Architecture and block diagram prepared | Not Started | [ ] | [ ] |
-| 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
-| 4 | Logisim circuit implemented | Not Started | [ ] | [ ] |
-| 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
-| 6 | Verilog RTL completed | Not Started | [ ] | [ ] |
-| 7 | Testbench and simulation completed | Not Started | [ ] | [ ] |
-| 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
-| 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
-| 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
+| 1 | Problem requirements and assumptions documented | Completed | | [ ] |
+| 2 | Architecture and block diagram prepared | Completed | [ ] | [ ] |
+| 3 | FSM diagram/table completed, if applicable | Completed | [ ] | [ ] |
+| 4 | Logisim circuit implemented | Completed | [ ] | [ ] |
+| 5 | Logisim simulation verified | Completed | [ ] | [ ] |
+| 6 | Verilog RTL completed | Completed | [ ] | [ ] |
+| 7 | Testbench and simulation completed | Completed | [ ] | [ ] |
+| 8 | FPGA synthesis and implementation completed | Completed | [ ] | [ ] |
+| 9 | Hardware demonstration completed | In Progress | [ ] | [ ] |
+| 10 | Results, presentation and report uploaded | Completed | [ ] | [ ] |
 | 11 | Final Pull Request created | Not Started | [ ] | [ ] |
 
 ## 2. Time-wise progress log
@@ -42,17 +42,17 @@ Add rows as needed.
 
 ## 4. End-of-day summary
 ### 19 October 2026
-- Completed:
-- In progress:
-- Pending:
-- Evidence uploaded:
-- Plan for 20 October:
+- Completed:Logisim
+- In progress: Verilog Testbench
+- Pending: Hardware Implementation, Report, PPT
+- Evidence uploaded: Yes
+- Plan for 20 October: 
 
 ### 20 October 2026
-- Completed:
-- Pending:
-- Evidence uploaded:
-- Final submission status:
+- Completed: Bitstream Generation
+- Pending: Hardware Implementation 
+- Evidence uploaded: Yes
+- Final submission status: Pending
 
 ## 5. Group leader confirmation
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
