@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/DSD_Practical/RTL/Gray_Code.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module gray_code_mealy
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/DSD_Practical/TB/Testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module gray_code_mealy_tb
