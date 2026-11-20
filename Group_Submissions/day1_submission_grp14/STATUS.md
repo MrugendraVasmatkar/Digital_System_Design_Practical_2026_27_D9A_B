@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-B-Group14 |
-| Last Updated | 2026-11-20, 19:30 |
+| Last Updated | 2026-11-20, 20:00 |
 
 ## 2. Problem Statement
 
@@ -147,6 +147,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 18:30 | README section 14 (team reflection) written | Samruddhi Samant | Repository |
 | 2026-11-20, 19:00 | RTL `mealy_simple.v` restored to the earlier version (LED outputs not gated by reset), so the Verilog matches the Vivado project, reports, bitstream and board photos; the reset difference from the Logisim circuit is documented in README section 7 | Samruddhi Samant | Repository |
 | 2026-11-20, 19:30 | Samruddhi Samant contributions updated in README section 11 and STATUS section 8: added FPGA constraints, final report (alongside bitstream) | Samruddhi Samant | Repository |
+| 2026-11-20, 20:00 | Dated progress-log summary added to README section 12 | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 

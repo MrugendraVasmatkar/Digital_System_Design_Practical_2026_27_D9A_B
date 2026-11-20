@@ -163,6 +163,27 @@ Every student must be ready to explain the complete design.
 ## 12. Progress Log
 Maintain time-wise updates in `STATUS.md`.
 
+Key milestones (the full, detailed log is in `STATUS.md`, section 7):
+
+| Date and time | Milestone |
+|---|---|
+| 2026-11-19, 15:53 | Group repository set up; group folder and team details added |
+| 2026-11-19, 16:10 | Verilog RTL, testbench and FPGA constraints added |
+| 2026-11-19, 16:30 | Logisim circuit added |
+| 2026-11-19, 16:45 | Problem analysis and I/O specification added |
+| 2026-11-19, 17:15 | README sections filled; FSM state table and diagram added |
+| 2026-11-19, 21:30 | Vivado behavioral simulation waveform added |
+| 2026-11-19, 22:00 | Vivado implemented design, utilization and power reports added |
+| 2026-11-20, 02:30 | Final Logisim circuit (comparator version) uploaded |
+| 2026-11-20, 03:30 | Clock constraint added; bitstream regenerated |
+| 2026-11-20, 04:30 | Constrained timing run: timing met (WNS 7.665 ns) |
+| 2026-11-20, 06:00 | Teammates' Logisim simulation screenshots (LOW, MEDIUM, HIGH, idle) committed |
+| 2026-11-20, 11:00 | Hardware demonstration on the Boolean board: LOW, MEDIUM and HIGH LEDs lit |
+| 2026-11-20, 12:00 | Presentation reduced to 3 slides; team contributions updated |
+| 2026-11-20, 15:00 | Final report added (docx and pdf) |
+| 2026-11-20, 18:30 | Logisim issues and team reflection written |
+| 2026-11-20, 19:00 | Verilog restored to the version used for the Vivado reports and board demo |
+
 ## 13. Final Results and Conclusion
 Summarise requirements met, correctness of simulation/hardware results, measured results, limitations and conclusion.
 
