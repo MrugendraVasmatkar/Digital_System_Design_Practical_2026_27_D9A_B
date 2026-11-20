@@ -46,3 +46,8 @@ The verified core module `forbidden_zone_rejector_h4.v` is wrapped inside `boole
 1. Connect micro-USB to **`PROG UART`**, verify `EXTP` jumper is on **`USB`**, and turn the top-left power switch **ON**.
 2. Open Vivado **Hardware Manager** → **Open Target** → **Auto Connect** → right-click **`xc7s50_0`** → **Program Device** → select `boolean_top_h4.bit` → **Program**.
 3. Verify live: `BTN2` (`RESET`) → `BTN0` (`START`) on allowed (`0–5`, `10–15`) and forbidden (`6–9`) inputs → `BTN1` (`ACK`) to clear `REJECT`.
+
+## 5. Hardware Live Demo
+Uploaded on the following Drive link labelled "Group08_FPGA_Hardware_Demo.mp4"
+
+ Drive Link: https://drive.google.com/drive/u/4/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz
