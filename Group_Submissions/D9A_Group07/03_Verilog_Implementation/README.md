@@ -55,6 +55,5 @@ The testbench `FRZ_tb.v` instantiates the design (`FRZ dut`), generates a 10 ns 
 Note: X0 is not driven because it is a don't care and is not used in the logic.
 
 - Tool: Vivado Simulator (XSim)
-- Tests passed / failed: [fill in after you run it and check the waveform]
 - Waveform: `Simulation_Results/Waveform`
 
