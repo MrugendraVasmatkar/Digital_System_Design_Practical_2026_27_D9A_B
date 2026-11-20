@@ -114,7 +114,7 @@ To eliminate this delay and reduce hardware overhead, I redesigned the controlle
 - [complete ] Verilog RTL and testbench uploaded.
 - [complete] Simulation results and test cases documented.
 - [ ] FPGA implementation and hardware evidence uploaded.
-- [ ] Results, challenges and conclusion documented.
+- [complete ] Results, challenges and conclusion documented.
 - [complete ] Presentation and final report uploaded.
 - [ ] STATUS.md is up to date.
 - [ ] Final Pull Request created and URL recorded.
