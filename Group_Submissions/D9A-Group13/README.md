@@ -77,7 +77,6 @@ Waveform/log path: Group_Submissions/D9A-Group13/02_FSM_Logisim/logism.pdf
 Explain differences between simulation and hardware results, if any.
 
 ## 10. Challenges, Debugging and Improvements
-## 10. Challenges, Debugging and Improvements
 
 | Issue | Root cause | Correction | Outcome |
 |---|---|---|---|
