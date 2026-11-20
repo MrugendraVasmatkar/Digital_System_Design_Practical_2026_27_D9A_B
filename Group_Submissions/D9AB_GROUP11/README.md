@@ -238,13 +238,76 @@ Maintain time-wise updates in `STATUS.md`.
 
 ## 13. Final Results and Conclusion
 Summarise requirements met, correctness of simulation/hardware results, measured results, limitations and conclusion.
+## Requirements Met
 
-[Write here]
+| Requirement (from assignment sheet) | Status | Evidence |
+|---|---|---|
+| Logisim design: 5-bit input register, range decoder, Moore FSM, indicator outputs | Met | Logisim circuit with input register, comparators, state register and LED decode |
+| Moore FSM diagram, state encoding and outputs | Met | Section 5, `docs/fsm_diagram.md`, `docs/fsm_state_table.md` |
+| Complete system block diagram | Met | Vivado elaborated schematic (`docs/block_diagram.png`) |
+| Verilog-only self-checking testbench (reset, START/ACK, expected-result comparison, pass/fail) | Met | `tb_game_score` with `pass_cnt` / `fail_cnt` |
+| All four FSM states exercised | Partly met | IDLE, LOW, MED, HIGH seen in the waveform. ERR needs a 16–31 test. |
+| Suggested modification (select any 1) | Met (H3) | `S_ERR` state and `led_err` for scores > 15 |
+| FPGA implementation (Artix-7 `xc7s50csga324-1`) | Synthesis complete | Vivado reports "Synthesis Complete" |
+
+## Correctness of Simulation Results
+
+| Check | Observed result | Verdict |
+|---|---|---|
+| Reset | `rst` high at start, `state = 0`, all LEDs off | Correct |
+| Score 0–4 | `state = 1`, `led_low` pulses | Correct |
+| Score 5–10 | `state = 2`, `led_med` pulses | Correct |
+| Score 11–15 | `state = 3`, `led_high` pulses | Correct |
+| START/ACK handshake | `state` goes `0 → category → 0` on each START/ACK pair | Correct |
+| Input latching | `score_reg` updates only on START, not when `score_in` changes | Correct |
+| Self-check counters | `pass_cnt = 0x56` (86), `fail_cnt = 0` | All checks passed |
+| `i[31:0]`, `k[31:0]` = X | Testbench-only loop variables | No effect on the design |
+
+## Measured Results
+
+| Metric | Value |
+|---|---|
+| Simulation length | 1,000 ns (1 µs) |
+| Checks passed / failed | 86 / 0 |
+| Distinct states observed | 4 of 5 (IDLE, LOW, MED, HIGH) |
+| Synthesis (RTL elaboration) | 31 cells, 25 I/O ports, 58 nets |
+| Target device | `xc7s50csga324-1` |
+| Tool | Vivado 2018.3 |
+| Timing and utilisation reports | Not yet recorded |
+
+## Limitations
+
+- The waveform covers scores 0–13 (`0x0D`) in the visible window, so scores 14 and 15 and the ERROR path (16–31) are not shown.
+- The Logisim design uses 5 inputs and 3-bit encoding. This differs from the 4-bit, 2-bit-encoded base spec, which was needed for H3.
+- Timing, power and resource-utilisation reports have not been recorded.
+- Hardware testing on the board has not been confirmed.
+- The Moore structure adds one clock of output latency.
+- Tests are directed, not exhaustive random or corner-case tests.
+
+## Conclusion
+
+The Game Score Categorizer classifies a latched score into LOW, MEDIUM, HIGH or ERROR using a Moore FSM. The simulation shows correct state sequencing, correct LED outputs and input latching, with 86 checks passed and none failed. Button conditioning gives clean one-clock START and ACK events, and the added ERROR state makes the design robust to invalid input. The design meets the assignment requirements. The main follow-up is to extend the testbench to scores 14–31, record timing and utilisation, and test on the board.
 
 ## 14. Team Reflection
 What did the team learn? What would you improve?
 
-[Write here]
+## What We Learned
+
+- **Moore FSM design:** Separating next-state logic, the state register and output logic makes the design easy to reason about. Outputs that depend only on the state are glitch-free.
+- **Input handling matters:** Raw push buttons are asynchronous and bounce. A synchronizer plus edge detector (`btn_cond`) is needed to get one clean START or ACK event per press.
+- **Latching inputs:** Storing the score in a register on START means later switch changes cannot corrupt the result.
+- **Handling invalid input:** Adding the `S_ERR` state (H3) showed that a design should define behaviour for out-of-range values, not just the expected ones. It also forced a move from 2-bit to 3-bit state encoding.
+- **Tool flow:** We moved one design through Logisim (schematic), Verilog (RTL), Vivado simulation, elaboration and synthesis, and saw how each view shows the same logic differently.
+- **Self-checking verification:** A testbench with expected-result comparison and `pass_cnt` / `fail_cnt` is faster and more reliable than inspecting waveforms by eye.
+- **Reading waveforms:** Testbench-only signals such as `i` and `k` can show `X` without affecting the design, so we learned to separate DUT behaviour from testbench artefacts.
+
+## What We Would Improve
+
+| Area | Improvement | Benefit |
+|---|---|---|
+| Verification | Extend the testbench to all values 0–31 and add `$error` assertions | Shows the ERROR state and covers every corner case |
+| Verification | Add randomised and back-to-back START/ACK tests | Catches priority and timing bugs |
+| FPGA | Run on the board and record timing and utilisation reports | Confirms real
 
 ## 15. Final Submission Checklist
 - [ ] Team details and problem analysis complete.
