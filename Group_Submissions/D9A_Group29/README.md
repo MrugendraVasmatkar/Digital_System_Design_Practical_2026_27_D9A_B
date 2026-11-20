@@ -1,6 +1,6 @@
 # Digital System Design – Group Project Submission
 
-> Updated project submission draft for D9A_Group29. This document follows the faculty template headings. Keep these headings, update pending items as work progresses, and claim completion only when supported by evidence. This revision describes the latest six-bit H3 comparator/FSM design.
+> Updated project submission for D9A_Group29. This revision records the six-bit H3 comparator/FSM design, the uploaded presentation PDF, and the latest simulation and FPGA demonstration evidence. Verification claims are separated from evidence-file presence.
 
 ## 1. Team Details
 
@@ -154,7 +154,7 @@ The testbench instantiates the board top module and drives the actual top-level 
 **Waveform setup:** `03_Verilog_Implementation/Simulation_Results/XSim/wave_setup.tcl` (copy the current `wave_setup.tcl` here if required)  
 **Simulation artefacts:** `03_Verilog_Implementation/Simulation_Results/XSim/`
 
-**Verification status:** The six-bit RTL and testbench files have been prepared. A fresh Vivado 2018.3 XSim run of this exact six-bit pair has not yet been evidenced in this submission. Run Behavioral Simulation, save the console log and waveform, and record the actual PASS/FAIL result. Do not claim “ALL TESTS PASSED” until the fresh run confirms it.
+**Verification status (20 November 2026):** The group has confirmed that the simulation has been rerun/updated for the current six-bit project. The six-bit RTL and matching six-bit testbench are present in the repository. The repository copy of the evidence still needs one consistency update before final sign-off: the currently stored `Simulation_Results/XSim/image.png` visibly shows an earlier five-bit waveform (`age_in[4:0]` and `force_no_match`), while `simulate.log` is empty and the retained compile/elaboration logs reference an older source snapshot. Replace these retained artefacts with the latest six-bit waveform and non-empty XSim run log. Until those matching artefacts are committed, record the simulation as team-confirmed but not yet fully evidenced in the repository.
 
 ## 9. FPGA Hardware Implementation
 
@@ -162,7 +162,7 @@ The testbench instantiates the board top module and drives the actual top-level 
 - **FPGA part:** `xc7s50csga324-1`.
 - **Board:** RealDigital Boolean Board.
 - **Synthesis top:** `age_group_detector_core`.
-- **Constraints:** `04_FPGA_Hardware/age_group_detector_boolean_6bit.xdc` (replace the earlier five-bit XDC at the project constraints set).
+- **Constraints:** `04_FPGA_Hardware/age_group_detector_boolean.xdc` (the committed file contains the six switch assignments, including SW5 on R2).
 - **Implementation reports:** `04_FPGA_Hardware/Implementation_Reports/`.
 - **Bitstream:** `04_FPGA_Hardware/Bitstream/age_group_detector_core.bit` (regenerate from the current six-bit source before treating it as final).
 - **Vivado project archive:** `04_FPGA_Hardware/Vivado_Project/age_group_fsm/`.
@@ -186,9 +186,14 @@ The testbench instantiates the board top module and drives the actual top-level 
 | LD2 | F1 | `led[2]`, ADULT |
 | LD3 | F2 | `led[3]`, ERROR |
 
-The six-bit XDC maps `sw[0]` through `sw[5]` and the three button/four LED ports. Its external port names must match the selected synthesis top module. The clock constraint is 10 ns (100 MHz). The board uses the `PROG UART` connector for USB programming data; `EXTPWR` is a power input, not the direct JTAG programming-data connection. For direct programming, use the board's JTAG configuration selection and the documented USB-power jumper setting.
+The committed `age_group_detector_boolean.xdc` maps `sw[0]` through `sw[5]` and the three button/four LED ports. Its external port names must match the selected synthesis top module. The clock constraint is 10 ns (100 MHz). The board uses the `PROG UART` connector for USB programming data; `EXTPWR` is a power input, not the direct JTAG programming-data connection. For direct programming, use the board's JTAG configuration selection and the documented USB-power jumper setting.
 
-**Hardware status:** The board photograph identifies the RealDigital Boolean Board and the six switch positions include SW5. The updated pin mapping is prepared for that board, but successful programming and a physical demonstration of the current six-bit bitstream have not yet been evidenced. The previous five-bit/five-or-six-bit project reports and bitstream must not be treated as proof of the latest six-bit build. Re-run synthesis and implementation, generate a fresh bitstream, program the board through Hardware Manager, and save photographs/video or a test observation sheet.
+**Hardware status (20 November 2026):** Updated hardware evidence has been uploaded under `05_Results/`:
+
+- [Boolean Board demonstration photograph](05_Results/WhatsApp%20Image%202026-11-20%20at%2010.44.46%20AM.jpeg)
+- [Boolean Board demonstration video](05_Results/WhatsApp%20Video%202026-11-20%20at%2010.45.07%20AM.mp4)
+
+The group confirms that these are the current-project hardware evidence. The photograph shows the Boolean Board powered with LED activity; use the accompanying video as the demonstration record. The bitstream and implementation reports are also present in the repository, but their provenance should be checked against the final six-bit source and XDC before they are described as a fresh final build. Add a short observed-results table (input age, expected state/LED, observed state/LED) if the faculty requires case-by-case hardware verification.
 
 ## 10. Challenges, Debugging and Improvements
 
@@ -218,21 +223,34 @@ Future improvements should be added only after the final simulation and hardware
 
 | Date | Update | Evidence / next action |
 |---|---|---|
-| 2026-11-20 | Updated the H3 design from a five-bit age input to a six-bit age input so values 32–63 can be selected and classified as ERROR. Updated the decoder, FSM integration, testbench and Boolean Board XDC. | Add the current six-bit RTL, testbench and XDC to the repository; run fresh XSim; rebuild Vivado project; demonstrate hardware. |
+| 2026-11-20 | Updated the H3 design from a five-bit age input to a six-bit age input so values 32–63 can be selected and classified as ERROR. Updated the decoder, FSM integration, testbench and Boolean Board XDC. | Six-bit sources and XDC are now present in the repository. |
+| 2026-11-20 | Uploaded the group presentation PDF to `06_Presentation/PPT.GROUP29.pdf`. | Presentation file is present in the repository. |
+| 2026-11-20 | Uploaded the current-project Boolean Board photograph and demonstration video to `05_Results/`. | Hardware evidence files are present; use them as the current demonstration record. |
+| 2026-11-20 | Group confirmed the simulation was rerun/updated for the current six-bit project. | Replace the repository's older five-bit waveform screenshot and empty `simulate.log` with the matching six-bit simulation evidence. |
 
 Continue maintaining timestamped updates, evidence paths, blockers and next actions in `STATUS.md`. Update it at each major milestone and use the actual update time when committing.
 
-## 13. Final Results and Conclusion
+## 13. Presentation and Updated Demonstration Evidence
+
+- **Presentation uploaded:** [`06_Presentation/PPT.GROUP29.pdf`](06_Presentation/PPT.GROUP29.pdf). The repository stores the presentation as a PDF file named `PPT.GROUP29.pdf`.
+- **Hardware photograph:** [`05_Results/WhatsApp Image 2026-11-20 at 10.44.46 AM.jpeg`](05_Results/WhatsApp%20Image%202026-11-20%20at%2010.44.46%20AM.jpeg).
+- **Hardware demonstration video:** [`05_Results/WhatsApp Video 2026-11-20 at 10.45.07 AM.mp4`](05_Results/WhatsApp%20Video%202026-11-20%20at%2010.45.07%20AM.mp4).
+- **Simulation source pair:** `03_Verilog_Implementation/RTL/age_group_detector_core.v` and `03_Verilog_Implementation/Testbench/tb_age_group_detector.v` are the six-bit files on the repository's `main` branch.
+- **Simulation evidence folder:** `03_Verilog_Implementation/Simulation_Results/XSim/`. The group reports that the simulation is updated for the current project. The screenshot and log currently stored in this folder must be synchronized with that latest run: the existing screenshot shows a five-bit/forced-no-match setup and `simulate.log` is empty.
+
+The presentation and hardware evidence are now present in the required submission folders. Keep the final simulation waveform/log consistency check open until the six-bit run artefacts replace the older screenshot/log.
+
+## 14. Final Results and Conclusion
 
 The current design specification is a six-bit comparator-based Moore FSM with four LED outputs. The intended classification is CHILD (0–12), TEEN (13–19), ADULT (20–31) and ERROR (32–63). The ERROR condition is generated naturally when all three valid-category comparator outputs are zero.
 
-**Final result status:** Pending a fresh XSim run of the six-bit RTL/testbench, successful synthesis and implementation using the six-bit XDC, generation of a new bitstream, and physical FPGA demonstration. Complete this section with the actual simulation result and observed board behaviour after those steps are performed.
+**Final result status:** The six-bit design sources and XDC are present; the group confirms the simulation has been rerun for the current project; and the presentation PDF plus current-project board photograph/video have been uploaded. The retained XSim screenshot/log in the repository still needs to be replaced with the matching six-bit run. Before final sign-off, verify that the archived implementation reports and bitstream correspond to the final six-bit RTL/XDC, attach the six-bit XSim waveform and run log, and complete the final report and pull request.
 
-## 14. Team Reflection
+## 15. Team Reflection
 
 Complete after the team has reviewed the final six-bit design, simulation, Logisim implementation and physical FPGA demonstration. Include what worked, the issues encountered, how the five-bit-to-six-bit change resolved invalid-age representation, and what the team would improve.
 
-## 15. Final Submission Checklist
+## 16. Final Submission Checklist
 
 ### Completed and present in the repository
 
@@ -250,15 +268,17 @@ Complete after the team has reviewed the final six-bit design, simulation, Logis
 - [ ] Upload the final architecture/block diagram matching the six-bit RTL.
 - [ ] Upload a separate FSM diagram matching the final five-state RTL.
 - [ ] Open and verify the Logisim circuit against the six-bit design; add fresh Logisim simulation screenshots/evidence.
-- [ ] Replace the repository's previous Verilog source with the current six-bit `age_group_detector_core.v`.
-- [ ] Replace the repository's previous testbench with the current six-bit `tb_age_group_detector.v`.
-- [ ] Replace the previous five-bit XDC with `age_group_detector_boolean_6bit.xdc`, including the SW5/R2 assignment.
-- [ ] Run the current six-bit RTL and testbench in Vivado 2018.3; save fresh simulation logs, waveform and PASS/FAIL verification summary.
+- [x] Current six-bit `age_group_detector_core.v` is present in the repository.
+- [x] Current six-bit `tb_age_group_detector.v` is present in the repository.
+- [x] The committed `age_group_detector_boolean.xdc` contains the six switch assignments, including SW5/R2.
+- [x] The group confirms that the six-bit simulation has been rerun/updated for the current project.
+- [ ] Replace the retained five-bit `image.png` and empty `simulate.log` in the repository with the matching six-bit waveform and fresh run log.
 - [ ] Confirm the synthesis top is `age_group_detector_core` and the simulation top is `tb_age_group_detector`.
 - [ ] Regenerate synthesis/implementation reports and the bitstream from the current six-bit design.
-- [ ] Program the RealDigital Boolean Board and verify CHILD, TEEN, ADULT, ERROR, ACK and RESET physically; add demonstration evidence.
+- [x] Upload current-project RealDigital Boolean Board photograph and demonstration video under `05_Results/`.
+- [ ] Add a concise observed-results table confirming the tested ages and LED responses (CHILD, TEEN, ADULT, ERROR, ACK and RESET) from the demonstration record.
 - [ ] Add expected-versus-observed test results and the verified conclusion in `05_Results/`.
-- [ ] Upload the final presentation in `06_Presentation/`.
+- [x] Upload the presentation PDF `PPT.GROUP29.pdf` in `06_Presentation/`.
 - [ ] Upload the final report in `07_Final_Report/`.
-- [ ] Copy/commit this revised README and update `STATUS.md` with the actual commit time and evidence.
+- [ ] Copy/commit this revised README and the updated `STATUS.md`; record the actual commit time and evidence.
 - [ ] Create the final Pull Request targeting the faculty master repository and faculty-specified base branch.
