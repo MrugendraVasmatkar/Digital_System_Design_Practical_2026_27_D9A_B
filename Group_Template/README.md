@@ -114,8 +114,8 @@ ACK input was not being used	Added acknowledgement logic using LOCKOUT and ACK.]
 - Screenshot/evidence: [Path/link]
 
 ## 7. Verilog HDL Implementation
-- Tool/version: [Details]
-- Top module and submodules: [Names]
+- Tool/version: [Xilinx Vivado]
+- Top module and submodules: [password_monitor and password_monitor_tb]
 - Architecture/coding decisions: [Details]
 - Synthesizability considerations: [Details]
 - RTL: `03_Verilog_Implementation/RTL/`
