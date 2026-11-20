@@ -10,12 +10,12 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
-| 1 | Problem requirements and assumptions documented | Not Started | [ ] | [ ] |
-| 2 | Architecture and block diagram prepared | Not Started | [ ] | [ ] |
-| 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
-| 4 | Logisim circuit implemented | Not Started | [ ] | [ ] |
-| 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
-| 6 | Verilog RTL completed | Not Started | [ ] | [ ] |
+| 1 | Problem requirements and assumptions documented | Completed | [ ] | [ ] |
+| 2 | Architecture and block diagram prepared | Completed | [ ] | [ ] |
+| 3 | FSM diagram/table completed, if applicable | Completed | [ ] | [ ] |
+| 4 | Logisim circuit implemented | Completed | [ ] | [ ] |
+| 5 | Logisim simulation verified | Completed | [ ] | [ ] |
+| 6 | Verilog RTL completed |Started | [ ] | [ ] |
 | 7 | Testbench and simulation completed | Not Started | [ ] | [ ] |
 | 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
