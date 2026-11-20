@@ -13,9 +13,9 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 1 | Problem requirements and assumptions documented | Completed | [ ] | [ ] |
 | 2 | Architecture and block diagram prepared | Completed | [ ] | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
-| 4 | Logisim circuit implemented | Completed | [Group_Template/02_FSM_Logisim/README.md ] | [ ] |
-| 5 | Logisim simulation verified | Completed | [ ] | [ ] |
-| 6 | Verilog RTL completed | Completed | [https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B/tree/bb188e9ad75c3067253becb99d7b4ddf5b44a10d/Group_Template/02_FSM_Logisim] | [ ] |
+| 4 | Logisim circuit implemented | Completed | [ https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B/tree/bb188e9ad75c3067253becb99d7b4ddf5b44a10d/Group_Template/02_FSM_Logisim] | [ ] |
+| 5 | Logisim simulation verified | Completed | [ https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B/tree/bb188e9ad75c3067253becb99d7b4ddf5b44a10d/Group_Template/02_FSM_Logisim] | [ ] |
+| 6 | Verilog RTL completed | Completed | [] | [ ] |
 | 7 | Testbench and simulation completed |Completed | [Group_Template/03_Verilog_Implementation/README.md ] | [ ] |
 | 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
