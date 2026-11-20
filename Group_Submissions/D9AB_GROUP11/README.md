@@ -176,19 +176,50 @@ The FSM uses a synchronous, active-high RESET signal. When RESET is asserted, th
 - **State Table:** [View FSM State Table](02_FSM_Logisim/state_table.png)
 
 ## 6. Logisim Implementation
-- Logisim version: [Version v4.1.0]
-- Circuit file: [Path to `https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/blob/main/Group_Submissions/D9AB_GROUP11/02_FSM_Logisim/Logism_circuit/D9AB_3H3Group11_Logisim.circ`]
-- Test cases and expected/observed behaviour: [Details]
-- Issues and corrections: [Details]
-- Screenshot/evidence: (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/02_FSM_Logisim/Logisim_evidence)
+
+- **Logisim version:** Logisim-evolution v4.1.0
+- **Circuit file:** `https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/02_FSM_Logisim/Logism_circuit`
+- **Test cases and expected/observed behaviour:**
+
+| Input (SW4..SW0) | Score | Expected output | Observed output |
+|------------------|-------|-----------------|-----------------|
+| 00000 | 0  | LOW (Green LED)    | TODO |
+| 00100 | 4  | LOW (Green LED)    | TODO |
+| 00101 | 5  | MEDIUM (Yellow LED)| TODO |
+| 01010 | 10 | MEDIUM (Yellow LED)| TODO |
+| 01011 | 11 | HIGH (Red LED)     | TODO |
+| 01111 | 15 | HIGH (Red LED)     | TODO |
+| 10000 | 16 | ERROR (Error LED)  | TODO |
+
+  Circuit structure: 5-bit input register, range decoder (comparators for 4, 10 and 15), Moore FSM with 3-bit state register, and LED outputs. START latches the score, ACK returns to IDLE, and RESET clears the state.
+
+- **Issues and corrections:** TODO (for example, a wrong comparator range or a clock/reset wiring fix you made)
+- **Screenshot/evidence:** `https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/02_FSM_Logisim/Logisim_evidence`
 
 ## 7. Verilog HDL Implementation
-- Tool/version: [Details]
-- Top module and submodules: [Names]
-- Architecture/coding decisions: [Details]
-- Synthesizability considerations: [Details]
-- RTL: `03_Verilog_Implementation/RTL/`
-- Testbench: `03_Verilog_Implementation/Testbench/`
+
+- **Tool/version:** Xilinx Vivado 2018.3 (Vivado Simulator, xsim), Verilog-2001, target part xc7s50csga324-1
+- **Top module and submodules:**
+  - Top module: `game_score_top`
+  - Submodules: `range_decoder`, `game_score_fsm`, `btn_cond` (instantiated 3 times for START, ACK and RESET), `seg7_driver`
+  - Testbench module: `tb_game_score` (tests `game_score_fsm`)
+- **Architecture/coding decisions:**
+  - **Moore FSM** with 5 states in 3-bit binary encoding: IDLE (000), LOW (001), MEDIUM (010), HIGH (011), ERROR (100). Outputs depend only on the current state.
+  - **Three-block FSM style:** a combinational next-state block, a sequential state register, and continuous assignments for the Moore outputs.
+  - **Range decoder** is a separate combinational module: score 0-4 gives LOW, 5-10 gives MEDIUM, 11-15 gives HIGH, and above 15 gives ERROR.
+  - **Hint H3 (ERROR state):** the score input is 5 bits wide (SW4..SW0). SW4 is the out-of-range bit, so scores 16-31 are invalid and take the FSM to ERROR. A 4-bit input could never exceed 15.
+  - **Input register** `score_reg` latches the score only on START while in IDLE. START is ignored in the other states.
+  - **Synchronous, active-high reset** has the highest priority. It returns the FSM to IDLE and clears `score_reg`.
+  - **Button conditioning:** each button goes through a 2-flop synchroniser, a 10 ms debounce counter and a rising-edge detector, so one press gives exactly one clock pulse.
+  - **7-segment driver** multiplexes four digits at about 760 Hz total. Digit 0 shows the category letter (`L`, `M`, `H`, `E`, or `-` when idle) and the other two digits show the latched score. Display polarity can be set with switches SW14 and SW15 without rebuilding.
+- **Synthesizability considerations:**
+  - Only synthesizable constructs are used (`always @(*)`, `always @(posedge clk)`, `case`, `assign`). No delays or `initial` blocks are used in the design, apart from register initial values that Vivado maps to power-up values.
+  - Illegal state codes (101-111) go to IDLE through the `default` case, so the FSM recovers from an unexpected state.
+  - All inputs are synchronised or debounced, so asynchronous button presses cannot cause metastability or false triggers.
+  - The design uses a single 100 MHz clock domain.
+  - The testbench (delays, `$display`, `$finish`) is for simulation only and is not synthesised.
+- **RTL:** `https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation/RTL`
+- **Testbench:** `https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation/Testbench`
 
 ## 8. Verification and Simulation Results
 
@@ -207,14 +238,40 @@ Number passed/failed: 145 checks run, 145 passed, 0 failed. The testbench prints
 Waveform/log path: 
 
 ## 9. FPGA Hardware Implementation
-- FPGA board/device: [Details]
-- Tool/version: [Details]
-- Clock/constraints: [Details]
-- Synthesis/implementation summary: [Details]
-- Programming and hardware test result: [Details]
-- Evidence path: `04_FPGA_Hardware/`
 
-Explain differences between simulation and hardware results, if any.
+- **FPGA board/device:** Real Digital Boolean Board, AMD (Xilinx) Spartan-7 `xc7s50csga324-1`
+- **Tool/version:** Xilinx Vivado 2018.3 (synthesis, implementation, bitstream generation and Hardware Manager)
+- **Clock/constraints:**
+  - 100 MHz on-board oscillator on pin F14 (`create_clock -period 10.000`).
+  - Constraints file: `game_categorizer.xdc` with pin assignments from the official Boolean Board constraints file, all LVCMOS33.
+  - Score switches SW0-SW4: V2, U2, U1, T2, T1.
+  - Polarity switches SW14 and SW15: K2 and K1.
+  - Buttons BTN0 (START), BTN1 (ACK), BTN2 (RESET): J2, J5, H2.
+  - LEDs LD0-LD3 (LOW, MEDIUM, HIGH, ERROR): G1, G2, F1, F2.
+  - 7-segment display 0: segments D7, C5, A5, B7, A7, D6, B5 and decimal point A6. Digit selects D5, C4, C7, A8.
+  - Bank 0: `CFGBVS VCCO`, `CONFIG_VOLTAGE 3.3`.
+- **Synthesis/implementation summary:** TODO. Fill from Vivado reports: LUTs used: TODO, Flip-flops used: TODO, Worst negative slack (WNS): TODO ns, Timing met: TODO. (Open Synthesized/Implemented Design, then Report Utilization and Report Timing Summary.)
+- **Programming and hardware test result:**
+
+| Test | Switch/button action | Expected on board | Observed |
+|------|----------------------|-------------------|----------|
+| Reset | Press BTN2 | All LEDs off, display shows `-` | TODO |
+| Score 3 | SW = 00011, press BTN0 | LD0 (green), `L`, `03` | TODO |
+| Score 7 | SW = 00111, press BTN0 | LD1 (yellow), `M`, `07` | TODO |
+| Score 13 | SW = 01101, press BTN0 | LD2 (red), `H`, `13` | TODO |
+| Invalid score | SW4 up (score 16+), press BTN0 | LD3 (error), `E` | TODO |
+| ACK | Press BTN1 | Returns to IDLE, LEDs off | TODO |
+
+  Device programmed over JTAG (USB) with `game_score_top.bit`. The DONE LED turned on after programming.
+- **Evidence path:** `https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/blob/main/Group_Submissions/D9AB_GROUP11/04_FPGA_Hardware/Hardware_implementation_group_11.mp4`
+
+**Differences between simulation and hardware:**
+
+- **Scope of simulation:** the testbench drives the FSM directly with clean one-clock START, ACK and RESET pulses. It does not include the button debouncer or the 7-segment display, because a 10 ms debounce would make the simulation very slow.
+- **Button timing:** on the board, a button press goes through the synchroniser and debounce, so it takes about 10 ms to register. In simulation the pulses are instant.
+- **Display polarity:** the 7-segment display polarity could not be fixed from simulation or from the pin file. On the board we set it with the polarity switches SW14 and SW15 (TODO: write the setting that worked). This behaviour exists only on hardware.
+- **Switch behaviour:** the score is read only at the START pulse, as in simulation. Moving the switches afterwards does not change the result.
+- **Logic results:** the FSM states and LED outputs match between simulation and hardware (TODO: confirm after your hardware test).
 
 ## 10. Challenges, Debugging and Improvements
 ## 10. Challenges, Debugging and Improvements
@@ -294,7 +351,26 @@ Summarise requirements met, correctness of simulation/hardware results, measured
 The Game Score Categorizer classifies a latched score into LOW, MEDIUM, HIGH or ERROR using a Moore FSM. The simulation shows correct state sequencing, correct LED outputs and input latching, with 86 checks passed and none failed. Button conditioning gives clean one-clock START and ACK events, and the added ERROR state makes the design robust to invalid input. The design meets the assignment requirements. The main follow-up is to extend the testbench to scores 14–31, record timing and utilisation, and test on the board.
 
 ## 14. Team Reflection
-What did the team learn? What would you improve?
+
+### What the team learned
+
+- **FSM design:** we learned how to design a Moore FSM from a problem statement, choose a state encoding, and write the state table and state diagram. We saw why Moore outputs depend only on the state, which makes them glitch-free.
+- **Hint H3:** adding the ERROR state taught us that a design has to make invalid input possible to test. A 4-bit score can never exceed 15, so we widened the input to 5 bits and used SW4 as the out-of-range bit.
+- **Self-checking verification:** we learned to write a testbench with a reference model that compares expected and actual results and prints PASS or FAIL, instead of reading waveforms by eye. We also learned to cover reset from every state, ignored inputs, and invalid values.
+- **Real hardware needs more than working logic:** the FSM worked in simulation, but the 7-segment display was wrong on the board at first (all segments lit). We learned that segment and digit-select polarity cannot be taken for granted, and that the board's official constraints file must be used instead of remembered pin numbers. Comparing our constraints with the official file showed that some of our pins were wrong.
+- **Tool flow in Vivado:** we learned to set the correct simulation top module, to keep design, simulation and constraint files in the right folders, and to re-run synthesis, implementation and bitstream generation after every change.
+- **Input conditioning:** button presses must be synchronised, debounced and turned into a single clock pulse before they reach the FSM.
+- **Teamwork:** we learned to divide the work (RTL, testbench, constraints, documentation) and to check each other's files against the problem statement.
+
+### What we would improve
+
+- **Test the whole top module in simulation:** our testbench checks only the FSM. We would add a second testbench for the full design, with a shortened debounce time, so that the buttons and the 7-segment driver are also verified before programming the board.
+- **Verify the display before building the full design:** we would first write a small test design that lights each digit and segment, to confirm polarity, digit order and segment order, instead of discovering them during the final test.
+- **Check pins earlier:** we would start from the manufacturer's constraints file from the beginning.
+- **Better display output:** the letter for MEDIUM (`M`) is only an approximation on a 7-segment digit. We would use a clearer symbol or show the full category name across the four digits.
+- **Add more of the suggested hints:** we implemented H3 only. With more time we would add category counters (H4) or the previous-category CHANGE signal (H5).
+- **Use version control from day one:** we had several versions of the same files. We would commit every working version to GitHub with clear messages.
+- **Document as we go:** we would record test results, screenshots and resource and timing reports while working, instead of collecting them at the end.
 
 ## What We Learned
 
@@ -320,9 +396,9 @@ What did the team learn? What would you improve?
 - [Completed ] FSM diagram/table or justified alternative included.
 - [Completed ] Logisim source and simulation evidence uploaded.
 - [Completed ] Verilog RTL and testbench uploaded.
-- [ Completed] Simulation results and test cases documented.
-- [ ] FPGA implementation and hardware evidence uploaded.
-- [ ] Results, challenges and conclusion documented.
+- [Completed ] Simulation results and test cases documented.
+- [Completed ] FPGA implementation and hardware evidence uploaded.
+- [Completed ]Results, challenges and conclusion documented.
 - [Completed ] Presentation and final report uploaded.
 - [Completed ] STATUS.md is up to date.
 - [Completed ] Final Pull Request created and URL recorded.
