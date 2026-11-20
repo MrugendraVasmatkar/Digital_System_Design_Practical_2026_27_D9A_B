@@ -19,7 +19,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 8 | FPGA synthesis and implementation completed | Completed | [Implementation](./03_Verilog_Implementation/Simulation_Result) [Constraint](Group_Submissions/D9A_B_Group03/03_Verilog_Implementation/xdc_constraint_file) | 20/11/2026 |
 | 9 | Hardware demonstration completed | Completed | [Hardware Implementation Video](./04_FPGA_Hardware) | 20/11/2026 |
 | 10 | Results, presentation and report uploaded | Completed | [Results](./D9A_B_Group03/05_Results) | 20/11/2026 |
-| 11 | Final Pull Request created | Not Started | [ ] | [ ] |
+| 11 | Final Pull Request created | Completed | [Pull Request](https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/6#issue-6487612856) | [20/11/2026] |
 
 ## 2. Time-wise progress log
 Update at least once every two hours and at each major milestone. Record actual work and actual times; do not pre-fill future updates.
@@ -51,7 +51,7 @@ Add rows as needed.
 
 ### 20 November 2026
 - Completed: Verilog RTL (COUNTER, COMPARATOR, fz_rejector), testbench for 3 ranges (all passed), FPGA implementation and hardware test, README and Results_and_Analysis.md
-- Pending: Presentation and report, final Pull Request
+- Pending: All Completed
 - Evidence uploaded: [Presentation](./06_Presentation) [Report](./07_Final_Report)
 - Final submission status: Completed
 
