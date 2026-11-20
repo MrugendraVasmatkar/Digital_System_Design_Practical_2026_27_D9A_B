@@ -1,9 +1,9 @@
 # Group Progress Status
 
-**Class:** [D9A/D9B]  
-**Group ID:** [D9A_Group02]  
-**Project title:** [Gaming XP Level Decoder(4-bit)]  
-**Group leader:** [Vasudha Saxena]
+**Class:** D9A/D9B
+**Group ID:** D9A_Group02
+**Project title:** Gaming XP Level Decoder(4-bit)
+**Group leader:** Vasudha Saxena
 
 ## 1. Current milestone status
 Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
@@ -17,7 +17,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 5 | Logisim simulation verified | Completed | Group_Submissions/D9A_Group02/02_FSM_Logisim/logisim idle state .png, Group_Submissions/D9A_Group02/02_FSM_Logisim/logisim beginner state.png, Group_Submissions/D9A_Group02/02_FSM_Logisim/logisim intermediate state.png, Group_Submissions/D9A_Group02/02_FSM_Logisim/logisim expert state.png, Group_Submissions/D9A_Group02/02_FSM_Logisim/logisim master state.png | 20-11-2026, 10:18 |
 | 6 | Verilog RTL completed | Completed | Group_Submissions/D9A_Group02/03_Verilog_Implementation/RTL/gaming_xp_decoder.v | 19-11-2026, 3:05 |
 | 7 | Testbench and simulation completed | Completed | Group_Submissions/D9A_Group02/05_Results/tcl console result.png, Group_Submissions/D9A_Group02/05_Results/waveform screenshot.png, Group_Submissions/D9A_Group02/03_Verilog_Implementation/Testbench/tb_gaming_xp_decoder.v | 19-11-2026, 3:00 |
-| 8 | FPGA synthesis and implementation completed | Completed | [ ] | [ ] |
+| 8 | FPGA synthesis and implementation completed | Completed | Group_Submissions/D9A_Group02/04_FPGA_Hardware/Vivado_Simulation_Report.vds, Group_Submissions/D9A_Group02/04_FPGA_Hardware/bitstream generated success ss.png, Group_Submissions/D9A_Group02/04_FPGA_Hardware/device updated ss.png, Group_Submissions/D9A_Group02/04_FPGA_Hardware/package updated ss.png, Group_Submissions/D9A_Group02/04_FPGA_Hardware/Vivado_Implementation_Log.vdi | 20-11-2026, 11:42 |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
 | 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
 | 11 | Final Pull Request created | Not Started | [ ] | [ ] |
@@ -28,7 +28,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | Date | Actual time | Work completed | Evidence path | Blocker | Next action | Updated by |
 |---|---|---|---|---|---|---|
 | 19/10/2026 | 3:01 | RTL and Testbench Simulation | Group_Submissions/D9A_Group02/05_Results/waveform screenshot.png, Group_Submissions/D9A_Group02/05_Results/tcl console result.png, Group_Submissions/D9A_Group02/03_Verilog_Implementation/RTL/gaming_xp_decoder.v, Group_Submissions/D9A_Group02/03_Verilog_Implementation/Testbench/tb_gaming_xp_decoder.v | [ ] | Create Logisim | Vasudha Saxena |
-| 20/10/2026 | 10:31 | Verilog Implementation and BitStream Generation | [ ] | [ ] | FPGA Implementation | Vasudha Saxena |
+| 20/10/2026 | 10:31 | Verilog Implementation and BitStream Generation | Group_Submissions/D9A_Group02/04_FPGA_Hardware/Vivado_Simulation_Report.vds, Group_Submissions/D9A_Group02/04_FPGA_Hardware/bitstream generated success ss.png, Group_Submissions/D9A_Group02/04_FPGA_Hardware/device updated ss.png, Group_Submissions/D9A_Group02/04_FPGA_Hardware/package updated ss.png, Group_Submissions/D9A_Group02/04_FPGA_Hardware/Vivado_Implementation_Log.vdi | [ ] | FPGA Implementation | Vasudha Saxena |
 | 20/10/2026 | 10:31 | PPT Creation | [ ] | [ ] | Presentation | Vasudha Saxena |
 | 20/10/2026 | 10:33 | Logisim Creation and Verification | Group_Submissions/D9A_Group02/02_FSM_Logisim/xplvlfinal_fixed.circ, Group_Submissions/D9A_Group02/02_FSM_Logisim/logisim idle state .png, Group_Submissions/D9A_Group02/02_FSM_Logisim/logisim beginner state.png, Group_Submissions/D9A_Group02/02_FSM_Logisim/logisim intermediate state.png, Group_Submissions/D9A_Group02/02_FSM_Logisim/logisim expert state.png, Group_Submissions/D9A_Group02/02_FSM_Logisim/logisim master state.png | [ ] | Presentation | Vasudha Saxena |
 | 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
