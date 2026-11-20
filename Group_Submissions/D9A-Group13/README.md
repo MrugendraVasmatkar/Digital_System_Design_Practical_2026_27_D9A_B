@@ -46,10 +46,10 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 - Screenshot/evidence: Group_Submissions/D9A-Group13/02_FSM_Logisim/logism.pdf
 
 ## 7. Verilog HDL Implementation
-- Tool/version: [Details]
-- Top module and submodules: [Names]
-- Architecture/coding decisions: [Details]
-- Synthesizability considerations: [Details]
+- Tool/version: Vivado 2018.3
+- Top module and submodules: RTL TB Simulation
+- Architecture/coding decisions: For the Verilog and Logisim design, I kept the architecture simple by splitting the sequential clock registers from the combinational Mealy output logic so the LEDs respond immediately without latches. I encoded only two states (IDLE = 0 and ACTIVE = 1) using one flip-flop to cut the total flip-flop count in half, and wrote the 1-bit change detector with basic assign statements (XOR, AND, OR) so the code directly matches my Logisim gate schematic.
+- Synthesizability considerations: To make sure the Verilog code can be synthesized cleanly onto real hardware like an FPGA, I avoided non-synthesizable delays (#) in the main module and separated the clocked registers from the combinational logic using standard always @(posedge clk) and always @(*) blocks. I also assigned default values (next_state = state; and V = 1'b0;) at the top of the combinational block and covered all case branches so the synthesis tool does not infer unwanted latches. Finally, I built the 1-bit change detector using basic bitwise XOR, AND, and OR operators instead of loops or division, ensuring it maps directly to standard logic gates with minimal hardware delay.
 - RTL: `03_Verilog_Implementation/RTL/`
 - Testbench: `03_Verilog_Implementation/Testbench/`
 
