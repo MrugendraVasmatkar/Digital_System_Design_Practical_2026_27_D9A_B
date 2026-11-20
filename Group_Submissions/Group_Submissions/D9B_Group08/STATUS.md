@@ -11,13 +11,13 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
-| 1 | Problem requirements and assumptions documented | Completed | https://docs.google.com/document/d/1Y3f19ccyAWOuHTmcKxUKXCJ4mraLcUXDPXZT47sXAvA/edit?tab=t.0| [ ] |
-| 2 | Architecture and block diagram prepared | Completed | https://docs.google.com/document/d/1EbxZ4pvZt-DQTi53vrYNyFnS8w5s_qI3FKJPH9AKmxM/edit?tab=t.0 | [ ] |
+| 1 | Problem requirements and assumptions documented | Completed | README provides details| [ ] |
+| 2 | Architecture and block diagram prepared | Completed | README provides details | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Completed | Provided in solution document 1 - https://docs.google.com/document/d/1Y3f19ccyAWOuHTmcKxUKXCJ4mraLcUXDPXZT47sXAvA/edit?tab=t.0 | [ ] |
-| 4 | Logisim circuit implemented | In Progress | https://drive.google.com/file/d/1_Pz3cSd8n4PJyweCEZ0f0fe_3s31HFap/view?usp=sharing | [ ] |
-| 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
-| 6 | Verilog RTL completed | Not Started | [ ] | [ ] |
-| 7 | Testbench and simulation completed | Not Started | [ ] | [ ] |
+| 4 | Logisim circuit implemented | Completed | https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing| [ ] |
+| 5 | Logisim simulation verified | Completed | https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing| [ ] |
+| 6 | Verilog RTL completed | Completed | https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing | [ ] |
+| 7 | Testbench and simulation completed | Completed | https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing | [ ] |
 | 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
 | 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
@@ -39,24 +39,24 @@ Add rows as needed.
 ## 3. Current blockers and support required
 | Blocker | Impact | Action being taken | Faculty support required |
 |---|---|---|---|
-| Differentiating input change | Fails proper incrementation of Accept and Reject | Brainstorming other possibilities, one being change in FSM integration by increasing states to simplify | Feedback on existing logic of datapath only approach or change in FSM |
+| |  |  |  |
 
 ## 4. End-of-day summary
 ### 19 October 2026
-- Completed:
-- In progress:
-- Pending:
-- Evidence uploaded:
-- Plan for 20 October:
+- Completed: Logisim Implementation
+- In progress: Verilog Implementation and Verification with Testbench
+- Pending: Verilog Implementation and Verification with Testbench
+- Evidence uploaded: https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing
+- Plan for 20 October: Complete Verilog Implementation and move forward with FPGA
 
 ### 20 October 2026
-- Completed:
-- Pending:
-- Evidence uploaded:
-- Final submission status:
+- Completed: Verilog Verification with Testbench
+- Pending: FPGA Implementation
+- Evidence uploaded: https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing
+- Final submission status: Incomplete
 
 ## 5. Group leader confirmation
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
 
 **Group leader:** Tanav Patil  
-**Date/time:** 19-11-26 / 16:14
+**Date/time:** 20-11-26 / 10:06
