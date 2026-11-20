@@ -212,11 +212,16 @@ Waveform/log path: [Path]
 Explain differences between simulation and hardware results, if any.
 
 ## 10. Challenges, Debugging and Improvements
-| Issue | Root cause | Correction | Outcome |
-|FSM fired multiple times per button press|Button bounce and long press width|Added btn_cond (synchronizer + edge detect) |One clean pulse per press|
-| [Random state after button press ] | [Asynchronous inputs (metastability) ] | [2-flop synchronizer on all buttons ] | [Stable state transitions ] |
+## 10. Challenges, Debugging and Improvements
 
-Future improvements: Future improvements: To enhance functionality and efficiency, the design can be upgraded to a Mealy FSM (H2) to reduce state count and improve response speed. Additional features include adding category counters (H4) to track classification totals, a CHANGE signal (H5) to alert when inputs are modified, and a new "Excellent" classification tier (H1). Finally, generating FPGA board timing and resource utilisation reports will verify hardware performance and logic efficiency.
+| Issue | Root cause | Correction | Outcome |
+| :--- | :--- | :--- | :--- |
+| FSM fired multiple times per button press | Button bounce and long press width | Added `btn_cond` (synchronizer + edge detect) | One clean pulse per press |
+| Random state after button press | Asynchronous inputs (metastability) | 2-flop synchronizer on all buttons | Stable state transitions |
+| Scores 16–31 misclassified | 5-bit switch input exceeds 0–15 range | Added `S_ERR` state and `led_err` | Invalid input flagged |
+| Reset missed in result states | Reset treated as a pulse | `c_rst` outputs a level, reset has top priority | Reset works from any state |
+
+**Future improvements:** To enhance functionality and efficiency, the design can be upgraded to a Mealy FSM (H2) to reduce state count and improve response speed. Additional features include adding category counters (H4) to track classification totals, a `CHANGE` signal (H5) to alert when inputs are modified, and a new "Excellent" classification tier (H1). Finally, generating FPGA board timing and resource utilisation reports will verify hardware performance and logic efficiency.
 
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
