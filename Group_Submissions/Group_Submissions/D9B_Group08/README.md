@@ -5,18 +5,18 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Tanav Patil | 50 | code-voyager17 |
+| Member 2 | Chinmay Keskar | [Roll no.] | keskarchinmay7-hub |
+| Member 3 | Vedant Patil | 42 | vedantpatil1705 |
+| Member 4 | Aditya Yadav | 61 | 2025adityadyadav-byte |
 
-**Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
+**Class:** D9A/D9B  
+**Group ID:** D9B-Group08  
 **Repository URL:** [Fork URL]  
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
+- **Number/title:** 
 - **Problem summary:** [In your own words]
 - **Objective:** [What must the system achieve?]
 - **Inputs and outputs:** [List signals, widths and meaning]
@@ -39,15 +39,18 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 **State table:** [Path/link]
 
 ## 6. Logisim Implementation
-- Logisim version: [Version]
-- Circuit file: [Path to `.circ`]
+- Logisim version: Logisim-evolution v4.1.0
+- Circuit file: https://drive.google.com/drive/u/4/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz (.circ file available in drive folder)
 - Test cases and expected/observed behaviour: [Details]
 - Issues and corrections: [Details]
-- Screenshot/evidence: [Path/link]
+- Screenshot/evidence: https://drive.google.com/drive/u/4/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz
 
 ## 7. Verilog HDL Implementation
-- Tool/version: [Details]
-- Top module and submodules: [Names]
+- Tool/version: AMD Xilinx Vivado 2022.2
+- Top module and submodules:  Top module :- module forbidden_zone_rejector_h4 (Design)
+                                            module tb_forbidden_zone_rejector_h4 (Simulation)
+                              Submodules :- module start_pulse_gen, module fz_detector_y, module h4_counters
+                              
 - Architecture/coding decisions: [Details]
 - Synthesizability considerations: [Details]
 - RTL: `03_Verilog_Implementation/RTL/`
