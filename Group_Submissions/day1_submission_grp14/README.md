@@ -93,6 +93,7 @@ File: `02_FSM_Logisim/fsm_state_diagram.png`
 - RTL schematic: Vivado 2018.3 elaborated design for `xc7s50csga324-1` (23 cells, 11 I/O ports, 39 nets). It shows the 2-bit state register, comparators on `score`, multiplexers for the next state, and AND/OR logic for the three LED outputs.
 
 ![Vivado elaborated RTL schematic](03_Verilog_Implementation/rtl_elaborated_schematic.png)
+- Logisim vs Verilog structure: the Logisim circuit (v2) is built from comparators, AND/OR/NOT gates and two D flip-flops, with no multiplexers. In the Verilog design, Vivado's elaborated (RTL) schematic above shows multiplexers (`RTL_MUX`), because the next-state `if / else if` chain is a priority selection. Synthesis then maps the logic to LUTs, flip-flops and I/O buffers, so the implemented design contains no multiplexers either. The behaviour is the same (see the state table); only the structure differs.
 - RTL: `03_Verilog_Implementation/RTL/mealy_simple.v`
 - Testbench: `03_Verilog_Implementation/Testbench/game_tb.v` (basic, 3 scores) and `game_tb_full.v` (self-checking: all 16 scores, all four states, reset, START/ACK, 400 random cycles against a reference model, PASS/FAIL messages; written, not yet simulated)
 
