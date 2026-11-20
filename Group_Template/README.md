@@ -116,8 +116,10 @@ ACK input was not being used	Added acknowledgement logic using LOCKOUT and ACK.]
 ## 7. Verilog HDL Implementation
 - Tool/version: [Xilinx Vivado]
 - Top module and submodules: [password_monitor and password_monitor_tb]
-- Architecture/coding decisions: [Details]
-- Synthesizability considerations: [Details]
+- Architecture/coding decisions: [-bit input is used for category classification. Combinational logic identifies NOW, WARN and LOCK.
+  Three independent 4-bit counters count each category.START enables counting. RESET clears all counters. All counters use a common clock.]
+- Synthesizability considerations: [The main Verilog module uses synthesizable Verilog constructs. Counters use positive-edge clock triggering.
+RESET is asynchronous and active-high. Testbench code is only for simulation and is not synthesizable.]
 - RTL: `03_Verilog_Implementation/RTL/`
 - Testbench: `03_Verilog_Implementation/Testbench/`
 
