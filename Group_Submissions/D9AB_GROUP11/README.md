@@ -180,7 +180,7 @@ The FSM uses a synchronous, active-high RESET signal. When RESET is asserted, th
 - Circuit file: [Path to `https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/blob/main/Group_Submissions/D9AB_GROUP11/02_FSM_Logisim/Logism_circuit/D9AB_3H3Group11_Logisim.circ`]
 - Test cases and expected/observed behaviour: [Details]
 - Issues and corrections: [Details]
-- Screenshot/evidence: [Path/link]
+- Screenshot/evidence: (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/02_FSM_Logisim/Logisim_evidence)
 
 ## 7. Verilog HDL Implementation
 - Tool/version: [Details]
