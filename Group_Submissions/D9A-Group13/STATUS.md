@@ -1,9 +1,9 @@
 # Group Progress Status
 
-**Class:** [D9A/D9B]  
-**Group ID:** [D9A_Group01]  
-**Project title:** [Title]  
-**Group leader:** [Name]
+**Class:** D9A  
+**Group ID:** D9A_Group_13
+**Project title:** GRAY CODE TRANSITION DETECTOR  
+**Group leader:** MEHUL GAUTAM
 
 ## 1. Current milestone status
 Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
