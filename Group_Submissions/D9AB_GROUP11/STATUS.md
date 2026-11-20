@@ -17,7 +17,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 6 | Verilog RTL completed | Completed | [Verilog code] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/blob/main/Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation/RTL/game_rtl.v) | [19/11/2026 20:40] |
 | 7 | Testbench and simulation completed | Completed | [Testbench code] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/blob/main/Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation/Testbench/tb_game.v) | [19/11/2026 21:56] |
 | 8 | FPGA synthesis and implementation completed | Completed | [simulation results] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation/Simulation_Results) | [20/11/2026 10:21] |
-| 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
+| 9 | Hardware demonstration completed | Completed | [Implementation_evidence] (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/04_FPGA_Hardware) | [20/11/2026 13:54] |
 | 10 | Results, presentation and report uploaded | Completed | [Presentation] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/06_Presentation) | [ 20/11/2026 10:29 ] |
 | 11 | Final Pull Request created | Not Started | [ ] | [ ] |
 
@@ -47,7 +47,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 - Plan for 20 October: presentation ppt and verilog implementation
 
 ### 20 October 2026
-- Completed: presentation ppt and verilog implementation
+- Completed: presentation ppt, verilog and hardware implementation
 - Pending: none
 - Evidence uploaded: yes
 - Final submission status: pending
