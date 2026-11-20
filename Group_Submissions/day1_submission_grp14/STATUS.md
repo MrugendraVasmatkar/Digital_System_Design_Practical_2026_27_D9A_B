@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 11:30 |
+| Last Updated | 2026-11-20, 12:00 |
 
 ## 2. Problem Statement
 
@@ -78,7 +78,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/implemented_design.png`, `04_FPGA_Hardware/utilization_report.png` (timing met with a 10 ns clock constraint) |
 | 3 — FPGA | Demonstrate the design on FPGA hardware | Completed | `04_FPGA_Hardware/hardware_low_led.jpg`, `hardware_medium_led.jpg`, `hardware_high_led.jpg` (LOW, MEDIUM, HIGH LEDs lit on the Boolean board) |
 | 3 — Results | Record observations and verify expected behaviour | In Progress | `05_Results/README.md` (simulation results recorded; hardware results pending) |
-| 3 — Presentation | Prepare slides (title + 4 content slides per guidelines) and demonstration | In Progress | `06_Presentation/Group14_DSD_Presentation.pptx` (draft; hardware demo and real challenges still to fill) |
+| 3 — Presentation | Prepare slides and demonstration | Completed | `06_Presentation/Group14_DSD_Presentation.pptx` (3 slides: title; Logisim simulation, implementation, timing and FPGA demo; results, challenges and contributions) |
 | 3 — Submission | Complete final report and checklist | Not Started | `07_Final_Report/` |
 
 ## 6. Functional Test Plan
@@ -136,15 +136,16 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 07:00 | Noted in README section 7 and presentation slide 3 that the Logisim circuit uses gates and comparators (no multiplexers) while Vivado infers multiplexers from the Verilog if/else chain and maps them to LUTs | Samruddhi Samant | Repository |
 | 2026-11-20, 11:00 | Hardware demonstration on the RealDigital Boolean Board: LOW (LD0), MEDIUM (LD1) and HIGH (LD2) LEDs each lit; three photos added to `04_FPGA_Hardware/` | Samruddhi Samant | Repository |
 | 2026-11-20, 11:30 | Removed the screenshot `constraints_with_clock.png` (it still showed the old unconstrained timing report); the clock constraint is in `constraints.xdc` and the constrained timing result is in `timing_summary.png` | Samruddhi Samant | Repository |
+| 2026-11-20, 12:00 | Presentation reduced to 3 slides (title; Logisim simulation, implementation, timing and FPGA demo; results, challenges, contributions); team contribution lists updated in README section 11 and STATUS section 8 | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 
 | Member | Assigned Responsibility | Work Actually Completed | Evidence / Commit Link |
 |---|---|---|---|
-| Samruddhi Samant | Verilog source code, testbench, FPGA constraints, bitstream, presentation, FSM state diagram | Done (see README section 11) | `03_Verilog_Implementation/`, `04_FPGA_Hardware/`, `06_Presentation/`, `02_FSM_Logisim/fsm_state_diagram.png` |
-| Siddharth Sanjeev Tiwari | Logisim design and simulation | Done | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` |
-| Deven Shailendra Bhadane | Logisim design and simulation | Done | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` |
-| Ojas Nitin Kadam | Verilog source code and testbench | Done | `03_Verilog_Implementation/RTL/`, `03_Verilog_Implementation/Testbench/` |
+| Samruddhi Samant | Source code, testbench, bitstream, FPGA implementation, documentation, state diagram | Done (see README section 11) | `03_Verilog_Implementation/`, `04_FPGA_Hardware/`, `02_FSM_Logisim/fsm_state_diagram.png`, `06_Presentation/` |
+| Siddharth Sanjeev Tiwari | Logisim circuit design and simulation | Done | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ`, simulation screenshots in `02_FSM_Logisim/` |
+| Deven Shailendra Bhadane | Logisim circuit design and simulation, FPGA implementation | Done | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ`, `04_FPGA_Hardware/` |
+| Ojas Nitin Kadam | Source code, testbench, state diagram | Done | `03_Verilog_Implementation/RTL/`, `03_Verilog_Implementation/Testbench/`, `02_FSM_Logisim/fsm_state_diagram.png` |
 
 All members must understand the complete design and be prepared to explain the FSM, datapath, Verilog code, simulation, and hardware demonstration during the oral examination. Assigned roles do not limit individual responsibility for understanding the project.
 

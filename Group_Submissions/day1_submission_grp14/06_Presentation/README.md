@@ -2,8 +2,8 @@
 
 | File | Contents |
 |---|---|
-| `Group14_DSD_Presentation.pptx` | Title slide plus 4 content slides, following `Submission_Template/Presentation_Guidelines.md` |
+| `Group14_DSD_Presentation.pptx` | 3 slides |
 
-Slides: (1) title, team, class; (2) problem statement, objectives, requirements, architecture; (3) FSM, Logisim and Verilog RTL; (4) testbench, simulation, utilization, FPGA flow; (5) expected vs observed, challenges, conclusion, individual contributions.
+Slides: (1) title, college and university logos, team, class, problem 3H2; (2) Logisim simulation (scores 3, 5, 13), Vivado implementation, timing summary (10 ns clock, timing met) and FPGA demo photos on the RealDigital Boolean Board; (3) expected versus observed results (Logisim, Verilog simulation, FPGA), challenges, conclusion and individual contributions.
 
-**Still to fill before the final version:** the hardware demonstration results. The college and university logos are embedded in the title slide of the presentation.
+The college and university logos are embedded in the title slide.
