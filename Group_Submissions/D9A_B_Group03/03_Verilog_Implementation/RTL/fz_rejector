@@ -1,32 +1,59 @@
 module fz_rejector #(
-    parameter N = 7,
-    parameter L = 62,
-    parameter H = 89
+    parameter integer N = 4,          // Parameterizable input width (N >= 4)
+    parameter [N-1:0] L = 6,          // Lower bound of forbidden zone (inclusive)
+    parameter [N-1:0] H = 9           // Upper bound of forbidden zone (inclusive)
 )(
     input  wire         clk,
-    input  wire         reset,
-    input  wire         start,
-    input  wire         ack,
-    input  wire [N-1:0] x,
-    output reg  [N-1:0] x_reg,
-    output wire         accept_led,
-    output wire         reject_led
+    input  wire         reset,        // Synchronous, active-high
+    input  wire         start,        // Load sample X and evaluate
+    input  wire         ack,          // Return from REJECT to IDLE
+    input  wire [N-1:0] x,            // N-bit switch input
+    output reg  [N-1:0] x_reg,        // Registered input sample
+    output wire         accept_led,   // Y = 1 (Allowed / IDLE)
+    output wire         reject_led    // Y = 0 (Forbidden / REJECT)
 );
 
-    localparam IDLE   = 2'b00;
-    localparam REJECT = 2'b01;
+    localparam [1:0] IDLE   = 2'b00;
+    localparam [1:0] REJECT = 2'b01;
 
     reg [1:0] state, next_state;
+    reg       start_d;
 
-    wire fz = (x >= L) && (x <= H);
+    wire gt_L, lt_L, eq_L;
+    wire gt_H, lt_H, eq_H;
 
+    // 1. N-bit Input Register
     always @(posedge clk) begin
-        if (reset)
-            x_reg <= {N{1'b0}};
-        else if (start)
-            x_reg <= x;
+        if (reset) begin
+            x_reg   <= {N{1'b0}};
+            start_d <= 1'b0;
+        end else begin
+            start_d <= start;
+            if (start)
+                x_reg <= x;
+        end
     end
 
+    // 2. Parameterized Forbidden Zone Check [L, H] using 2 Comparators
+    COMPARATOR #(.width(N)) u_cmp_low (
+        .a  (x_reg),
+        .b  (L),
+        .GT (gt_L),
+        .LT (lt_L),
+        .EQ (eq_L)
+    );
+
+    COMPARATOR #(.width(N)) u_cmp_high (
+        .a  (x_reg),
+        .b  (H),
+        .GT (gt_H),
+        .LT (lt_H),
+        .EQ (eq_H)
+    );
+
+    wire fz = (gt_L || eq_L) && (lt_H || eq_H);
+
+    // 3. Moore FSM Controller
     always @(posedge clk) begin
         if (reset)
             state <= IDLE;
@@ -37,12 +64,13 @@ module fz_rejector #(
     always @(*) begin
         next_state = state;
         case (state)
-            IDLE:    if (start && fz) next_state = REJECT;
-            REJECT:  if (ack)         next_state = IDLE;
-            default:                  next_state = IDLE;
+            IDLE:    if (start_d && fz)          next_state = REJECT;
+            REJECT:  if (ack || (start_d && ~fz)) next_state = IDLE;
+            default:                             next_state = IDLE;
         endcase
     end
 
+    // 4. Moore Indicator Outputs
     assign accept_led = (state == IDLE);
     assign reject_led = (state == REJECT);
 
