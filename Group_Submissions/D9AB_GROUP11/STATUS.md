@@ -13,7 +13,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 2 | Architecture and block diagram prepared | completed | [Architecture and block diagram document] -(https://drive.google.com/file/d/1RCaHuwNJK5PxD2dgCUktbVrcIsHgE7IY/view?usp=drivesdk) | [19/11/2026 22:51]
 | 3 | FSM diagram/table completed, if applicable | completed | [Group_Submissions/D9AB_GROUP11/02_FSM_Logisim] | [19/11/2026 22:55] |
 | 4 | Logisim circuit implemented | Not Started | [ ] | [ ] |
-| 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
+| 5 | Logisim simulation verified | Not Started | [ ] | [Group_Submissions/D9AB_GROUP11/02_FSM_Logisim/Logisim_evidence ] |
 | 6 | Verilog RTL completed | Completed | [Verilog code] - (Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation/RTL/game_rtl.v) | [19/11/2026 20:40] |
 | 7 | Testbench and simulation completed | Completed | [Testbench code] - (Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation ) | [19/11/2026 21:56] |
 | 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
