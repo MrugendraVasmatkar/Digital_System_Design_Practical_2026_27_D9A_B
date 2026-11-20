@@ -10,4 +10,6 @@
 | `bitstream_generation_completed.png` | Vivado 2018.3: "Bitstream Generation successfully completed" after the clock constraint was added |
 | `hardware_low_led.jpg`, `hardware_medium_led.jpg`, `hardware_high_led.jpg` | Photos of the RealDigital Boolean Board running the design: LD0 (LOW), LD1 (MEDIUM) and LD2 (HIGH) lit, DONE LED on |
 
+**FPGA implementation link (Google Drive):** https://drive.google.com/file/d/1PTbTQEMCe9i1WaIGIoaBvH1JUCAgzeba/view?usp=drive_link
+
 **Still to add (optional):** a video or photos that show the score switches, ACK turning the LED off, and the reset behaviour; the `.bit` file if allowed.

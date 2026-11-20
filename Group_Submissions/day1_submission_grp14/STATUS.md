@@ -14,8 +14,8 @@
 | Member 2 | Siddharth Sanjeev Tiwari — D9A Roll No. 58 |
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
-| Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 15:00 |
+| Repository | https://github.com/planetsamzz77/DSD-2026-D9A-B-Group14 |
+| Last Updated | 2026-11-20, 16:00 |
 
 ## 2. Problem Statement
 
@@ -140,6 +140,8 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 12:30 | Presentation updated: problem statement added to the title slide, Verilog simulation waveform on slide 2 (implementation numbers moved under the timing summary), expanded conclusion and results summary on slide 3 | Samruddhi Samant | Repository |
 | 2026-11-20, 14:00 | RTL `mealy_simple.v` changed to gate the LED outputs with NOT reset (matches the Logisim circuit); `game_tb_full.v` updated to expect it. Earlier simulation, implementation, timing, bitstream and board results were produced before this change | Samruddhi Samant | Repository |
 | 2026-11-20, 15:00 | Final report added (`07_Final_Report/Group14_Final_Report.docx` and `.pdf`, 12 pages) | Samruddhi Samant | Repository |
+| 2026-11-20, 15:30 | FPGA implementation link (Google Drive) added to README section 9 and the 04_FPGA_Hardware README: https://drive.google.com/file/d/1PTbTQEMCe9i1WaIGIoaBvH1JUCAgzeba/view?usp=drive_link | Samruddhi Samant | Repository |
+| 2026-11-20, 16:00 | GitHub fork renamed from `DSD-2026-D9A-Group14` to `DSD-2026-D9A-B-Group14` (a "/" is not allowed in repository names); repository links updated; PR #33 unaffected | Samruddhi Samant | Repository settings |
 
 ## 8. Individual Contributions
 
