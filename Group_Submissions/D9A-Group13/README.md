@@ -32,12 +32,12 @@ solution is eliminated this delay and reduce hardware overhead, I redesigned the
 ## 4. Architecture
 Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
 
-![Block diagram](path/to/block_diagram.png)
+Group_Submissions/D9A-Group13/02_FSM_Logisim/block_diagram.png
 
 ## 5. FSM Design
 State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encoding, state diagram, state table, transition conditions and reset behaviour. If not, justify the alternative.
 
-**Diagram:** [Path/link]  
+**Diagram:** Group_Submissions/D9A-Group13/02_FSM_Logisim/block_diagram.png
 **State table:** Group_Submissions/D9A-Group13/02_FSM_Logisim/State Table.png
 
 ## 6. Logisim Implementation
@@ -107,14 +107,14 @@ What did the team learn? What would you improve?
 To eliminate this delay and reduce hardware overhead, I redesigned the controller as a 2-state Mealy FSM (IDLE and ACTIVE) that routes the combinational One-Bit Change Detector (V_comb) directly into the output LED logic. By removing the separate VALID and INVALID states along with the extra 4-bit input synchronization register, the circuit cuts sequential memory by 50% (from 10 D flip-flops down to 5). As a result, the Green (VALID) or Red (INVALID) LED responds immediately as soon as the 4-bit input X[3:0] changes, while both indicators stay safely turned OFF whenever the system is in the IDLE state.
 
 ## 15. Final Submission Checklist
-- [ ] Team details and problem analysis complete.
-- [ ] Architecture/block diagram included.
-- [ ] FSM diagram/table or justified alternative included.
-- [ ] Logisim source and simulation evidence uploaded.
-- [ ] Verilog RTL and testbench uploaded.
-- [ ] Simulation results and test cases documented.
+- [complete] Team details and problem analysis complete.
+- [complete ] Architecture/block diagram included.
+- [complete ] FSM diagram/table or justified alternative included.
+- [complete ] Logisim source and simulation evidence uploaded.
+- [complete ] Verilog RTL and testbench uploaded.
+- [complete] Simulation results and test cases documented.
 - [ ] FPGA implementation and hardware evidence uploaded.
 - [ ] Results, challenges and conclusion documented.
-- [ ] Presentation and final report uploaded.
+- [complete ] Presentation and final report uploaded.
 - [ ] STATUS.md is up to date.
 - [ ] Final Pull Request created and URL recorded.
