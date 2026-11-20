@@ -6,7 +6,7 @@
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
 | Group leader | SHEKHAR EPILI|  12 | Tarnished008 |
-| Member 2 |SRUSHTI fHANSE | 13 | SRFhanse |
+| Member 2 |SRUSHTI FHANSE | 13 | SRFhanse |
 | Member 3 | TANVI KAGINKAR | 21 | tanvikaginkar |
 | Member 4 | LAQSH KOUL| 27 | 2025koullaqsh |
 
