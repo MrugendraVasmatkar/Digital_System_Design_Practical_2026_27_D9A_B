@@ -176,7 +176,7 @@ The FSM uses a synchronous, active-high RESET signal. When RESET is asserted, th
 - **State Table:** [View FSM State Table](02_FSM_Logisim/state_table.png)
 
 ## 6. Logisim Implementation
-- Logisim version: [Version]
+- Logisim version: [Version v4.1.0]
 - Circuit file: [Path to `.circ`]
 - Test cases and expected/observed behaviour: [Details]
 - Issues and corrections: [Details]
