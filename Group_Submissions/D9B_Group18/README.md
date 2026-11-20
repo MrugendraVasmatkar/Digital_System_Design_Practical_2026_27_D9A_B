@@ -183,8 +183,8 @@ The Water Temperature Classifier uses a 3-bit input register, comparator-based r
 ## 5. FSM Design
 State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encoding, state diagram, state table, transition conditions and reset behaviour. If not, justify the alternative.
 
-**Diagram:** [Path/link]  
-**State table:** [Path/link]
+**Diagram:** Group_Submissions/D9B_Group18/02_FSM_Logisim/fsm_diagrams/State diagram.png  
+**State table:** Group_Submissions/D9B_Group18/02_FSM_Logisim/fsm_diagrams/State table.png
 
 ## 6. Logisim Implementation
 - Logisim version: Logisim v2.7.2
