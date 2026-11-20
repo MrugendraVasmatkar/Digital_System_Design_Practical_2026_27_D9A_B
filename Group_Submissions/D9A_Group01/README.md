@@ -98,11 +98,11 @@ Number passed/failed: 11 passed, 1 failed (the failure is the wrong expected val
 Waveform/log path: `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_waveform.png` (Tcl console log: `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_tcl_log.png`)
 
 ## 9. FPGA Hardware Implementation
-- FPGA board/device: Spartan-7 `XC7S50-CSGA324-1` (board to be confirmed)
+- FPGA board/device: Spartan-7 `XC7S50-CSGA324-1` on the RealDigital Boolean Board
 - Tool/version: Vivado 2018.3
 - Clock/constraints: `04_FPGA_Hardware/gray_code_nbit.xdc` (clock F14, `rst` J2, `start` J5, `ack` H2, `x[3:0]` on V2, U2, U1, T2, `valid_led` G1, `invalid_led` G2; all LVCMOS33); N = 4
 - Synthesis/implementation summary: synthesis, implementation and bitstream generation completed for `xc7s50csga324-1` (screenshots in `04_FPGA_Hardware/`); utilisation: 8 LUTs, 7 registers, 3 slices, 10 IOBs (`04_FPGA_Hardware/`); timing summary shows NA because no clock constraint is defined
-- Programming and hardware test result: [Pending]
+- Programming and hardware test result: bitstream programmed on the Boolean board (DONE LED lit); photos in `04_FPGA_Hardware/boolean_board_demo_1.jpg` and `boolean_board_demo_2.jpg`; per-input LED results still to be recorded
 - Evidence path: `04_FPGA_Hardware/`
 
 Explain differences between simulation and hardware results, if any.
@@ -141,7 +141,7 @@ Maintain time-wise updates in `STATUS.md`.
 - [ ] Logisim source and simulation evidence uploaded (N = 5 circuit uploaded; screenshots pending).
 - [x] Verilog RTL and testbench uploaded.
 - [ ] Simulation results and test cases documented (waveform and 11/12 result uploaded; testbench fix pending).
-- [ ] FPGA implementation and hardware evidence uploaded (constraints, schematic and implemented-design screenshots uploaded; reports and hardware photos pending).
+- [ ] FPGA implementation and hardware evidence uploaded (constraints, schematic and implemented-design screenshots uploaded; hardware photos uploaded; per-input results pending).
 - [ ] Results, challenges and conclusion documented.
 - [ ] Presentation and final report uploaded.
 - [ ] STATUS.md is up to date.

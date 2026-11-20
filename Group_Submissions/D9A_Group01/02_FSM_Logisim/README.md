@@ -11,6 +11,7 @@ Contains the Moore FSM description (state encoding, state table), the Logisim `.
 | `generate_circ.ps1` | Script used to generate the N = 5 circuit |
 | `FSM_Moore_state_diagram.png` | Moore FSM state diagram (IDLE, VALID, INVALID) |
 | `FSM_state_table.png` | State encoding / Moore outputs table and state transition table |
+| `Logisim_block_diagram.png` | Block diagram of the N-bit Logisim circuit (inputs, registers, XOR, H1 detector, next-state logic, state registers, LEDs) |
 | `screenshots/H1_logisim_circuit.png` | Circuit diagram of `Gray_Code_Transition_Detector_H1.circ` |
 | `screenshots/H1_logisim_evolution_window.png` | The same circuit open in Logisim-evolution v5.0.0 |
 
@@ -57,6 +58,9 @@ State 11 never occurs. `ACK` or `RESET` returns the FSM to `IDLE`. Outputs depen
 5. `ACK` or `RESET` returns to `IDLE`.
 
 Suggested sequence from the problem sheet: `0000 → 0001 → 0011 → 0111 → 0101 → 1101 → 1100 → 1111` (VALID for the first six samples, INVALID for the last).
+
+## Block diagram of the Logisim circuit
+![Logisim block diagram](Logisim_block_diagram.png)
 
 ## Simulation evidence
 ### Circuit diagram

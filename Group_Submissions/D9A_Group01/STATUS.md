@@ -66,7 +66,7 @@ Sequence: `START` → X, P registers load → next clock V is evaluated → `IDL
 | 2 — Verilog | Save waveforms and simulation results | In Progress | `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_waveform.png` (Tcl console log: `gray_code_nbit_tb_tcl_log.png`) |
 | 3 — FPGA | Assign FPGA pins and configure constraints | Completed | `04_FPGA_Hardware/gray_code_nbit.xdc` (pins to be checked against the board) |
 | 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/` (schematic, implemented-design, utilisation and timing-summary screenshots; timing is unconstrained – no clock constraint yet) |
-| 3 — FPGA | Demonstrate the design on FPGA hardware | Not Started | `04_FPGA_Hardware/` |
+| 3 — FPGA | Demonstrate the design on FPGA hardware | In Progress | `04_FPGA_Hardware/boolean_board_demo_1.jpg`, `boolean_board_demo_2.jpg` (board programmed; per-input results still to be recorded) |
 | 3 — Results | Record observations and verify expected behaviour | Not Started | `05_Results/` |
 | 3 — Presentation | Prepare slides and final demonstration | Not Started | `06_Presentation/` |
 | 3 — Submission | Complete final report and checklist | Not Started | `07_Final_Report/` |
@@ -101,7 +101,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 6 | Verilog RTL completed | Completed | `03_Verilog_Implementation/RTL/` (compiled, simulated and implemented in Vivado 2018.3) | 19/11/2026 20:15 |
 | 7 | Testbench and simulation completed | In Progress | `03_Verilog_Implementation/Testbench/` (simulated: 11 of 12 steps pass; fix one expected value and re-run) | 19/11/2026 20:15 |
 | 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/` (bitstream generated; screenshots) | 19/11/2026 20:15 |
-| 9 | Hardware demonstration completed | Not Started | - | - |
+| 9 | Hardware demonstration completed | In Progress | `04_FPGA_Hardware/boolean_board_demo_*.jpg` (photos; per-input results pending) | 20/11/2026 11:03 |
 | 10 | Results, presentation and report uploaded | Not Started | - | - |
 | 11 | Final Pull Request created | Not Started | - | - |
 
@@ -120,6 +120,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 23:34 | Added the architecture / block diagram image and linked it in the group README and problem analysis | `01_Problem_Analysis/block_diagram.png` | None | Fix testbench expected value and re-run; add Logisim step table; hardware demo | Ojas Karmarkar |
 | 20/11/2026 | 09:26 | Uploaded the Vivado Tcl console log screenshot (PASS lines and the one FAIL for 1100 -> 1111) | `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_tb_tcl_log.png` | Testbench expected value to fix | Correct the expected value, re-run, replace waveform and log | Ojas Karmarkar |
 | 20/11/2026 | 10:00 | Recorded the GitHub usernames of all members in the group README (adityasuhanda-beep, vedantcrazy81, 2025.sohamkundargi-afk) | `Group_Submissions/D9A_Group01/README.md` | Collaborator invitations not yet sent | Group leader adds the three as collaborators on the fork | Ojas Karmarkar |
+| 20/11/2026 | 11:03 | Uploaded photos of the RealDigital Boolean Board programmed with the bitstream (DONE LED lit, user LEDs lit) | `04_FPGA_Hardware/boolean_board_demo_1.jpg`, `boolean_board_demo_2.jpg` | Observed LED states per input not yet listed | Record a table of inputs vs VALID/INVALID LED on the board | Ojas Karmarkar |
 
 Add rows as needed.
 
@@ -159,11 +160,11 @@ All members must understand the complete design and be prepared to explain the F
 
 ## 13. Current Overall Status
 
-- **Current stage:** Stage 3 — FPGA implementation done (bitstream generated); hardware demonstration pending
+- **Current stage:** Stage 3 — bitstream programmed on the Boolean board (photos uploaded); per-input hardware results pending
 - **Completed:** Problem analysis, Logisim circuit, Verilog RTL, Vivado simulation (11 of 12 steps pass), synthesis, implementation and bitstream generation
 - **In progress:** Testbench fix and re-run, clock constraint and timing numbers, FSM diagram
 - **Pending:** Hardware demonstration, results, presentation, report, final Pull Request
-- **Main risk:** Hardware behaviour not yet verified on the board (clock pin, buttons without debouncing)
+- **Main risk:** Per-input hardware behaviour not yet recorded (buttons are not debounced; no clock constraint)
 - **Next immediate task:** Run the testbench in Vivado and save the log and waveforms
 
 ## 14. End-of-day Summary
