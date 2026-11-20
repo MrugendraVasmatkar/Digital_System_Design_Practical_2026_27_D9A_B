@@ -102,12 +102,15 @@ Input	Expected Behaviour	Observed Behaviour
 START = 0	No counter changes	Working
 RESET = 1	All counters become 0	Working
 Final Counter Values (after all 8 inputs):
-- NOW_COUNT = 2
-- WARN_COUNT = 3
-- LOCK_COUNT = 3
+NOW_COUNT = 2 WARN_COUNT = 3 LOCK_COUNT = 3
 Result: The circuit works according to the expected classification and counting logic.]
 
-- Issues and corrections: [Details]
+- Issues and corrections: [
+Incorrect category classification	Corrected the Boolean logic expressions.
+Counters were not incrementing correctly	Checked START and clock connections.
+All counters were not resetting	Connected RESET to all three counters.
+Verilog simulation errors	Corrected module and testbench connections.
+ACK input was not being used	Added acknowledgement logic using LOCKOUT and ACK.]
 - Screenshot/evidence: [Path/link]
 
 ## 7. Verilog HDL Implementation
