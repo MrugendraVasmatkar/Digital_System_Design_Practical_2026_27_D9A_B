@@ -18,7 +18,7 @@
 ## 2. Assigned Problem Statement
 - **Number/title:** GRAY CODE TRANSITION DETECTOR
 - **Problem summary:** [In your own words]
-- **Objective:** [What must the system achieve?]
+- **Objective:** Design a sequential circuit that verifies whether consecutive 4-bit inputs follow valid Gray code transitions (where only 1 bit changes at a time).
 - **Inputs and outputs:** [List signals, widths and meaning]
 - **Constraints and assumptions:** [List and justify]
 
