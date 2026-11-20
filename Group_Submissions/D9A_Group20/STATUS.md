@@ -19,7 +19,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 7 | Testbench and simulation completed | Completed | `03_Verilog_Implementation/Simulation_Results/` (Vivado XSim 81/81 pass: Tcl and waveform screenshots; Icarus log) | 19/11/2026 |
 | 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/reports/` (8 LUT, 24 FF, timing met WNS +7.656 ns, 0 DRC), `gaming_xp_top.bit` | 19/11/2026 |
 | 9 | Hardware demonstration completed | Blocked | Board not available; bitstream ready, test steps in `04_FPGA_Hardware/FPGA_Steps.md` | 19/11/2026 |
-| 10 | Results, presentation and report uploaded | In Progress | `05_Results/Results_and_Conclusion.md` drafted; presentation and report not uploaded | 19/11/2026 |
+| 10 | Results, presentation and report uploaded | In Progress | `05_Results/Results_and_Conclusion.md`; presentation `06_Presentation/Gaming_XP_Level_Decoder_H3_ERROR_State.pptx`; final report not yet uploaded | 20/11/2026 |
 | 11 | Final Pull Request created | Completed | [PR #12](https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/12) (open; updates with each push) | 19/11/2026 |
 
 ## 2. Time-wise progress log
@@ -31,6 +31,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 21:47 IST | Re-ran Vivado 2018.3 behavioural simulation: ALL TESTS PASSED (81 checks); saved Tcl console and waveform screenshots | `03_Verilog_Implementation/Simulation_Results/` | None | Constraints file, synthesis, implementation, board demo | Parth Joshi |
 | 19/11/2026 | 22:00 IST | Added board top `gaming_xp_top` and Boolean Board constraints; synthesis, implementation and bitstream completed (timing met, 0 DRC violations) | `04_FPGA_Hardware/` | Boolean Board not available for the demo | Program the board and record the demo when available | Parth Joshi |
 | 19/11/2026 | 22:58 IST | Found and fixed unconnected inputs on the ACTIVE OR gate in Logisim; ran 7 Logisim tests (IDLE, BEG, hold, INT, EXP, ERR, ACK), all passed; screenshots uploaded | `02_FSM_Logisim/` | None | Upload fixed `.circ`; presentation and report | Parth Joshi |
+| 20/11/2026 | 14:20 IST | Uploaded the presentation (title + 4 content slides) | `06_Presentation/` | None | Upload final report; board demonstration when a board is available | Parth Joshi |
 
 Add rows as needed.
 

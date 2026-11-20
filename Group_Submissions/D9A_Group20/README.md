@@ -166,6 +166,6 @@ Maintain time-wise updates in `STATUS.md`.
 - [x] Simulation results and test cases documented (Vivado XSim and Icarus, 81/81 pass).
 - [ ] FPGA implementation and hardware evidence uploaded (implementation reports and bitstream uploaded; board demo pending).
 - [ ] Results, challenges and conclusion documented (hardware part pending).
-- [ ] Presentation and final report uploaded.
+- [ ] Presentation and final report uploaded (presentation uploaded; report pending).
 - [x] STATUS.md is up to date.
 - [x] Final Pull Request created and URL recorded.
