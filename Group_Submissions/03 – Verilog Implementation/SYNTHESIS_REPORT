@@ -1,0 +1,432 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Nov 20 09:32:31 2026
+# Process ID: 10760
+# Current directory: C:/Users/DSD_prac/DSD_prac.runs/synth_1
+# Command line: vivado.exe -log top_module.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_module.tcl
+# Log file: C:/Users/DSD_prac/DSD_prac.runs/synth_1/top_module.vds
+# Journal file: C:/Users/DSD_prac/DSD_prac.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top_module.tcl -notrace
+Command: synth_design -top top_module -part xc7s50csga324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 15136 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 340.551 ; gain = 97.562
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_module' [C:/Users/ADMIN/Downloads/top_module.v:30]
+	Parameter CLK_FREQ_HZ bound to: 100000000 - type: integer 
+	Parameter DEBOUNCE_MS bound to: 20 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/ADMIN/Downloads/debounce.v:27]
+	Parameter CLK_FREQ_HZ bound to: 100000000 - type: integer 
+	Parameter DEBOUNCE_MS bound to: 20 - type: integer 
+	Parameter COUNT_MAX bound to: 2000000 - type: integer 
+	Parameter COUNT_WIDTH bound to: 21 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (1#1) [C:/Users/ADMIN/Downloads/debounce.v:27]
+INFO: [Synth 8-6157] synthesizing module 'temperature_register' [C:/Users/ADMIN/Downloads/temperature_register.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'temperature_register' (2#1) [C:/Users/ADMIN/Downloads/temperature_register.v:24]
+INFO: [Synth 8-6157] synthesizing module 'temperature_comparator' [C:/Users/ADMIN/Downloads/temperature_comparator.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'temperature_comparator' (3#1) [C:/Users/ADMIN/Downloads/temperature_comparator.v:24]
+INFO: [Synth 8-6157] synthesizing module 'moore_fsm' [C:/Users/ADMIN/Downloads/moore_fsm.v:24]
+	Parameter IDLE bound to: 2'b00 
+	Parameter COLD bound to: 2'b01 
+	Parameter NEUTRAL bound to: 2'b10 
+	Parameter HOT bound to: 2'b11 
+INFO: [Synth 8-226] default block is never used [C:/Users/ADMIN/Downloads/moore_fsm.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'moore_fsm' (4#1) [C:/Users/ADMIN/Downloads/moore_fsm.v:24]
+INFO: [Synth 8-6157] synthesizing module 'category_counters' [C:/Users/ADMIN/Downloads/category_counters.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'category_counters' (5#1) [C:/Users/ADMIN/Downloads/category_counters.v:24]
+INFO: [Synth 8-6157] synthesizing module 'seven_segment' [C:/Users/ADMIN/Downloads/seven_segment.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'seven_segment' (6#1) [C:/Users/ADMIN/Downloads/seven_segment.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'top_module' (7#1) [C:/Users/ADMIN/Downloads/top_module.v:30]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 397.133 ; gain = 154.145
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 397.133 ; gain = 154.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 397.133 ; gain = 154.145
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc]
+CRITICAL WARNING: [Designutils 20-1307] Command '------------------------------------------------------' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:7]
+CRITICAL WARNING: [Designutils 20-1307] Command '1.' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:8]
+CRITICAL WARNING: [Designutils 20-1307] Command '------------------------------------------------------' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:9]
+CRITICAL WARNING: [Designutils 20-1307] Command '------------------------------------------------------' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:13]
+CRITICAL WARNING: [Designutils 20-1307] Command '2.' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:14]
+CRITICAL WARNING: [Designutils 20-1307] Command '------------------------------------------------------' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:15]
+CRITICAL WARNING: [Designutils 20-1307] Command '------------------------------------------------------' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:18]
+CRITICAL WARNING: [Designutils 20-1307] Command '3.' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:19]
+CRITICAL WARNING: [Designutils 20-1307] Command '------------------------------------------------------' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:20]
+CRITICAL WARNING: [Designutils 20-1307] Command 'SW0' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:21]
+CRITICAL WARNING: [Designutils 20-1307] Command 'SW1' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:23]
+CRITICAL WARNING: [Designutils 20-1307] Command 'SW2' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:25]
+CRITICAL WARNING: [Designutils 20-1307] Command 'SW3' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:27]
+CRITICAL WARNING: [Designutils 20-1307] Command 'SW4' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:29]
+CRITICAL WARNING: [Designutils 20-1307] Command 'SW5' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:31]
+CRITICAL WARNING: [Designutils 20-1307] Command '------------------------------------------------------' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:33]
+CRITICAL WARNING: [Designutils 20-1307] Command '4.' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:34]
+CRITICAL WARNING: [Designutils 20-1307] Command '------------------------------------------------------' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:35]
+CRITICAL WARNING: [Designutils 20-1307] Command 'BTN0' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:36]
+CRITICAL WARNING: [Designutils 20-1307] Command 'BTN1' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:38]
+CRITICAL WARNING: [Designutils 20-1307] Command 'BTN2' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:40]
+CRITICAL WARNING: [Designutils 20-1307] Command '------------------------------------------------------' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:42]
+CRITICAL WARNING: [Designutils 20-1307] Command '5.' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:43]
+CRITICAL WARNING: [Designutils 20-1307] Command '------------------------------------------------------' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:44]
+CRITICAL WARNING: [Designutils 20-1307] Command 'LED0' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:45]
+CRITICAL WARNING: [Designutils 20-1307] Command 'LED1' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:47]
+CRITICAL WARNING: [Designutils 20-1307] Command 'LED2' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:49]
+CRITICAL WARNING: [Designutils 20-1307] Command 'LED3' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:51]
+CRITICAL WARNING: [Designutils 20-1307] Command '------------------------------------------------------' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:53]
+CRITICAL WARNING: [Designutils 20-1307] Command '6.' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:54]
+CRITICAL WARNING: [Designutils 20-1307] Command '------------------------------------------------------' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:55]
+CRITICAL WARNING: [Designutils 20-1307] Command 'Digit' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:56]
+CRITICAL WARNING: [Designutils 20-1307] Command 'Segment' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:61]
+CRITICAL WARNING: [Designutils 20-1307] Command '------------------------------------------------------' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:70]
+CRITICAL WARNING: [Designutils 20-1307] Command '7.' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:71]
+CRITICAL WARNING: [Designutils 20-1307] Command '------------------------------------------------------' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:72]
+CRITICAL WARNING: [Designutils 20-1307] Command 'Digit' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:73]
+CRITICAL WARNING: [Designutils 20-1307] Command 'Segment' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:78]
+CRITICAL WARNING: [Designutils 20-1307] Command 'END' is not supported in the xdc constraint file. [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc:89]
+Finished Parsing XDC File [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/DSD_prac/DSD_prac.srcs/constrs_1/new/boolean.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_module_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_module_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 721.914 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 721.984 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 721.984 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 721.984 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 721.984 ; gain = 478.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s50csga324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 721.984 ; gain = 478.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 721.984 ; gain = 478.996
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "cold" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "neutral" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "hot" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'moore_fsm'
+INFO: [Synth 8-5544] ROM "hot_valve" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "neutral_valve" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cold_valve" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+                    COLD |                               01 |                               01
+                 NEUTRAL |                               10 |                               10
+                     HOT |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'moore_fsm'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 721.984 ; gain = 478.996
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 4     
++---Registers : 
+	               17 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 16    
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 1     
+	  22 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 5     
+	   2 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 16    
+	   3 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module top_module 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module debounce 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module temperature_register 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 1     
+Module temperature_comparator 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 3     
+Module moore_fsm 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 3     
+Module category_counters 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 3     
++---Registers : 
+	                4 Bit    Registers := 3     
+Module seven_segment 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 1     
+	  22 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3917] design top_module has port D0_AN[3] driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port D0_AN[2] driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port D0_SEG[7] driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port D1_AN[3] driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port D1_AN[2] driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port D1_AN[1] driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port D1_AN[0] driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port D1_SEG[7] driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port D1_SEG[6] driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port D1_SEG[5] driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port D1_SEG[4] driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port D1_SEG[3] driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port D1_SEG[2] driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port D1_SEG[1] driven by constant 1
+WARNING: [Synth 8-3917] design top_module has port D1_SEG[0] driven by constant 1
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 721.984 ; gain = 478.996
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 721.984 ; gain = 478.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 735.988 ; gain = 493.000
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 735.988 ; gain = 493.000
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 735.988 ; gain = 493.000
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 735.988 ; gain = 493.000
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 735.988 ; gain = 493.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 735.988 ; gain = 493.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 735.988 ; gain = 493.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 735.988 ; gain = 493.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    22|
+|3     |LUT1   |     7|
+|4     |LUT2   |     7|
+|5     |LUT3   |     3|
+|6     |LUT4   |    16|
+|7     |LUT5   |    35|
+|8     |LUT6   |    16|
+|9     |FDRE   |   113|
+|10    |IBUF   |    10|
+|11    |OBUF   |    28|
++------+-------+------+
+
+Report Instance Areas: 
++------+------------------+-----------------------+------+
+|      |Instance          |Module                 |Cells |
++------+------------------+-----------------------+------+
+|1     |top               |                       |   258|
+|2     |  ACK_BUTTON      |debounce               |    40|
+|3     |  COUNTERS        |category_counters      |    38|
+|4     |  DISPLAY         |seven_segment          |    43|
+|5     |  FSM             |moore_fsm              |     6|
+|6     |  RESET_BUTTON    |debounce_0             |    40|
+|7     |  START_BUTTON    |debounce_1             |    40|
+|8     |  TEMP_COMPARATOR |temperature_comparator |     5|
+|9     |  TEMP_REGISTER   |temperature_register   |     6|
++------+------------------+-----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 735.988 ; gain = 493.000
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 735.988 ; gain = 168.148
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 735.988 ; gain = 493.000
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 22 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 736.816 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+35 Infos, 15 Warnings, 39 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 736.816 ; gain = 493.828
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 736.816 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/DSD_prac/DSD_prac.runs/synth_1/top_module.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_module_utilization_synth.rpt -pb top_module_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 20 09:32:55 2026...
+
