@@ -17,10 +17,10 @@
 
 ## 2. Assigned Problem Statement
 - **Number/title:** GRAY CODE TRANSITION DETECTOR
-- **Problem summary:** [In your own words]
+- **Problem summary:**Through this project, we learned how a Mealy FSM trades output glitch immunity for zero-cycle response speed and a 50% reduction in flip-flop hardware when detecting single-bit Gray code transitions
 - **Objective:** Design a sequential circuit that verifies whether consecutive 4-bit inputs follow valid Gray code transitions (where only 1 bit changes at a time).
-- **Inputs and outputs:** [List signals, widths and meaning]
-- **Constraints and assumptions:** [List and justify]
+- **Inputs and outputs:**The 4-Bit Gray Code Transition Detector (Mealy FSM) uses five inputs: a 4-bit data input (X[3:0]) from switches to enter the current code, START (1-bit) to latch the initial reference value and begin monitoring, ACK (1-bit) to stop comparison and return to idle, RESET (1-bit) to clear all registers back to zero, and CLK (1-bit) to synchronize state updates on the rising edge. It produces two immediate indicator outputs: VALID (Green LED), which turns ON (V = 1) as soon as X differs from the previous input P by exactly one bit, and INVALID (Red LED), which turns ON (V = 0) when zero or multiple bits change while the system is active
+- **Constraints and assumptions:** The design is constrained to a fixed 4-bit input width (X[3:0]) using positive rising-edge-triggered D flip-flops (5 flip-flops total) and purely combinational logic (XOR, AND, OR) for zero-cycle Mealy output generation. It assumes that all 4 bits of a new input X settle simultaneously before the next rising clock edge (ignoring mechanical switch bounce), that START and ACK are mutually exclusive control pulses, and that valid Gray code transitions require strictly a single-bit change (Hamming distance = 1), treating zero-bit changes (X == P) or multi-bit changes as invalid.
 
 ## 3. Problem Analysis and Proposed Solution
 Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
@@ -97,7 +97,7 @@ Maintain time-wise updates in `STATUS.md`.
 ## 13. Final Results and Conclusion
 Summarise requirements met, correctness of simulation/hardware results, measured results, limitations and conclusion.
 
-[Write here]
+The 4-Bit Gray Code Transition Detector was successfully redesigned and verified in both Logisim and Verilog using a 2-state Mealy FSM (IDLE and ACTIVE), achieving immediate, zero-cycle output detection whenever consecutive 4-bit inputs differ by exactly one bit (V = 1, Green LED ON) and flagging 0-bit or multi-bit changes (V = 0, Red LED ON). Compared to the original 3-state Moore implementation, the Mealy modification reduced the sequential hardware from 10 D flip-flops down to 5 D flip-flops (a 50% memory reduction) and eliminated the one-clock-cycle output latency, demonstrating a faster, more area-efficient hardware architecture for real-time Gray code error detection in rotary encoders and digital communication buses.
 
 ## 14. Team Reflection
 What did the team learn? What would you improve?
