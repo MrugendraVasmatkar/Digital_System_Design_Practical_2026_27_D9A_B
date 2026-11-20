@@ -101,9 +101,9 @@ Future improvements: [**Future Improvements:** The design can be improved by mak
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
 |---|---|---|
-| Group leader | [ ] | [ ] |
-| Member 2 | [ ] | [ ] |
-| Member 3 | [ ] | [ ] |
+|  Aarish Das| [ Coordinated the project, worked on FSM design and Verilog implementation, and contributed to overall integration and debugging.] | [ ] |
+| Aryan Bhumkar | [Worked on Logisim circuit design, comparator logic, and testing of age classification. ] | [ ] |
+|  Kanishk Vikram Singh | [Contributed to the 2-bit gated-clock counter, LED output logic, hardware implementation, and debugging. ] | [ ] |
 | Member 4 | [ ] | [ ] |
 
 Every student must be ready to explain the complete design.
@@ -114,8 +114,7 @@ Maintain time-wise updates in `STATUS.md`.
 ## 13. Final Results and Conclusion
 Summarise requirements met, correctness of simulation/hardware results, measured results, limitations and conclusion.
 
-[Write here]
-
+The project successfully developed an age group detector using two comparators, a Moore FSM, and a 2-bit gated-clock counter to classify ages into Child (0–12), Teen (13–19), and Adult (20–31). The design was implemented using Verilog and tested on the Boolean Board. The faculty confirmed that the gated-clock counter logic was correct and well implemented. However, complete measured results and final simulation-to-hardware comparisons are not available. The main limitations include the restricted 5-bit age range and LED-only output. Overall, the project helped the team understand FSM design, counter implementation, digital logic integration, and hardware debugging.
 ## 14. Team Reflection
 What did the team learn? What would you improve?
 
@@ -124,14 +123,14 @@ What did the team learn? What would you improve?
 The team learned about FSM design, age comparison, gated-clock counters, Verilog implementation, circuit debugging, and hardware testing. The project improved our understanding of how individual digital components work together. In the future, we would improve clock handling, simplify the circuit connections, perform more extensive testing, and make the design more reliable.]
 
 ## 15. Final Submission Checklist
-- [ ] Team details and problem analysis complete.
-- [ ] Architecture/block diagram included.
-- [ ] FSM diagram/table or justified alternative included.
-- [ ] Logisim source and simulation evidence uploaded.
-- [ ] Verilog RTL and testbench uploaded.
-- [ ] Simulation results and test cases documented.
-- [ ] FPGA implementation and hardware evidence uploaded.
-- [ ] Results, challenges and conclusion documented.
-- [ ] Presentation and final report uploaded.
+- [y ] Team details and problem analysis complete.
+- [ y] Architecture/block diagram included.
+- [ y] FSM diagram/table or justified alternative included.
+- [ y] Logisim source and simulation evidence uploaded.
+- [ y] Verilog RTL and testbench uploaded.
+- [ y] Simulation results and test cases documented.
+- [ y] FPGA implementation and hardware evidence uploaded.
+- [ y] Results, challenges and conclusion documented.
+- [ y] Presentation and final report uploaded.
 - [ ] STATUS.md is up to date.
 - [ ] Final Pull Request created and URL recorded.
