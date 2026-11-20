@@ -6,21 +6,60 @@
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
 | Group leader | SHEKHAR EPILI|  12 | Tarnished008 |
-| Member 2 |SRUSHTI fHANSE | 13 | [Username] |
-| Member 3 | TANVI KAGINKAR | 21 | [Username] |
-| Member 4 | LAQSH KOUL| 27 | [Username] |
+| Member 2 |SRUSHTI fHANSE | 13 | SRFhanse |
+| Member 3 | TANVI KAGINKAR | 21 | tanvikaginkar |
+| Member 4 | LAQSH KOUL| 27 | 2025koullaqsh |
 
-**Class:** [D9A/D9B]  
+**Class:** D9A/D9B 
 **Group ID:** [e.g. D9A_Group01]  
 **Repository URL:** [Fork URL]  
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
-- **Problem summary:** [In your own words]
-- **Objective:** [What must the system achieve?]
-- **Inputs and outputs:** [List signals, widths and meaning]
-- **Constraints and assumptions:** [List and justify]
+- **Number/title:** 1H4 – Add Category Counters to Water Temperature Classifier
+- **Problem summary:** The Water Temperature Classifier is a 3-bit digital system that classifies temperature inputs into three categories: Cold (0–2), Neutral (3–5) and Hot (6–7) using a Moore Finite State Machine (FSM).The existing system controls three corresponding valve outputs based on the detected temperature category. However, it does not maintain a record of how many times each category is detected.
+The H4 modification adds three independent 4-bit counters: Cold_Count, Neutral_Count, and Hot_Count. Each counter increments on every active clock edge while the FSM remains in its corresponding category state. This modification allows the system to maintain and display the total count for each temperature category.
+- **Objective:** The system must:
+1. Accept a 3-bit binary temperature input.
+2. Classify the temperature into Cold, Neutral, or Hot categories.
+3. Control the corresponding valve output using a Moore FSM.
+4. Maintain three independent 4-bit counters for Cold, Neutral and Hot categories.
+5. Increment the respective counter on every rising clock edge while the FSM is in the corresponding category state.
+6. Keep the other two counters unchanged when a particular category is active.
+7. Reset all three counters to zero when RESET is activated.
+8. Display the current count values of all three counters.
+- **Inputs and outputs:**
+- Inputs
+| Signals | Width | Meaning |
+|---|---|---|
+| T2,T1,T0 | 1 bit each | Temperature input |
+| START | 1 bit | Starts classification |
+| ACK | 1 bit | Acknowledgement |
+| CLK | 1 bit | Clock Signal |
+| RESET | 1 bit | Synchronous active-high reset |
+- Outputs
+| Signals | Width | Meaning |
+|---|---|---|
+| Cold_Valve | 1 bit | Cold valve control |
+| Neutral_Valve | 1 bit | Neutral valve control |
+| Hot_Valve | 1 bit | Hot valve control |
+| Cold_Count | 4 bits | Cold Counter |
+| Neutral_Count | 4 bits | Neutral Counter |
+| Hot_Count | 4 bits | Hot Counter |
+- **Constraints and assumptions:**
+1. Temperature Input Range: The temperature input is a 3-bit binary value, so only values from 0 to 7 are considered valid.
+2. Temperature Classification: The input is classified into three fixed ranges:
+COLD: 0–2
+NEUTRAL: 3–5
+HOT: 6–7
+3. FSM Model: The original system uses a Moore FSM with four states: IDLE (00), COLD (01), NEUTRAL (10), and HOT (11).
+4. Clock Operation: All counters operate using the same rising-edge clock signal.
+5. Counter Width: Each counter is 4 bits wide and can represent values from 0 to 15.
+6. Independent Counting: Each counter increments only when its corresponding FSM category state is active. The other counters retain their previous values.
+7. Reset Operation: RESET is synchronous and active-high. When activated, the FSM and all three counters return to their initial states or values as applicable.
+8. Acknowledgement: ACK is used to return the FSM from a category state to IDLE.
+9. Counter Overflow: Since each counter is 4 bits wide, it wraps around to zero after reaching 15 and receiving another increment, assuming standard binary counter operation.
+10. Simulation Environment: The design is implemented and verified using Logisim Evolution with different temperature inputs and control signals applied to check the FSM operation and counter outputs.
 
 ## 3. Problem Analysis and Proposed Solution
 Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
