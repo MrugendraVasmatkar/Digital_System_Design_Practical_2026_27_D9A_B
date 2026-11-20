@@ -18,7 +18,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 5 | Logisim simulation verified | Completed | https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing| [ ] |
 | 6 | Verilog RTL completed | Completed | https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing | [ ] |
 | 7 | Testbench and simulation completed | Completed | https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing | [ ] |
-| 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
+| 8 | FPGA synthesis and implementation completed | Completed | https://drive.google.com/drive/u/4/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz | [ ] |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
 | 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
 | 11 | Final Pull Request created | Not Started | [ ] | [ ] |
@@ -45,13 +45,13 @@ Add rows as needed.
 ### 19 October 2026
 - Completed: Logisim Implementation
 - In progress: Verilog Implementation and Verification with Testbench
-- Pending: Verilog Implementation and Verification with Testbench
+- Pending: Verilog FPGA Implementation and Hardware Verification
 - Evidence uploaded: https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing
 - Plan for 20 October: Complete Verilog Implementation and move forward with FPGA
 
 ### 20 October 2026
 - Completed: Verilog Verification with Testbench
-- Pending: FPGA Implementation
+- Pending: FPGA Implementation on Hardware
 - Evidence uploaded: https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing
 - Final submission status: Incomplete
 
@@ -59,4 +59,4 @@ Add rows as needed.
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
 
 **Group leader:** Tanav Patil  
-**Date/time:** 20-11-26 / 10:09
+**Date/time:** 20-11-26 / 12:49
