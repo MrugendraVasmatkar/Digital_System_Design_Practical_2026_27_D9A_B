@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-B-Group14 |
-| Last Updated | 2026-11-20, 20:00 |
+| Last Updated | 2026-11-20, 21:15 |
 
 ## 2. Problem Statement
 
@@ -148,6 +148,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 19:00 | RTL `mealy_simple.v` restored to the earlier version (LED outputs not gated by reset), so the Verilog matches the Vivado project, reports, bitstream and board photos; the reset difference from the Logisim circuit is documented in README section 7 | Samruddhi Samant | Repository |
 | 2026-11-20, 19:30 | Samruddhi Samant contributions updated in README section 11 and STATUS section 8: added FPGA constraints, final report (alongside bitstream) | Samruddhi Samant | Repository |
 | 2026-11-20, 20:00 | Dated progress-log summary added to README section 12 | Samruddhi Samant | Repository |
+| 2026-11-20, 21:15 | Review checkpoint dates set to 19 November 2026 (Day 1) and 20 November 2026 (Day 2); target completion dates filled in the issues table | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 
@@ -164,8 +165,8 @@ All members must understand the complete design and be prepared to explain the F
 
 | Review | Planned Time | Items to Demonstrate | Faculty Remarks / Action Items |
 |---|---|---|---|
-| Review 1 | 19 October 2026 — Afternoon | Problem understanding, FSM architecture, datapath, Logisim progress, GitHub updates | To be filled by faculty |
-| Review 2 | 20 October 2026 — Morning | Verilog implementation, simulation evidence, FPGA progress, individual understanding | To be filled by faculty |
+| Review 1 | 19 November 2026 (Day 1) — Afternoon | Problem understanding, FSM architecture, datapath, Logisim progress, GitHub updates | To be filled by faculty |
+| Review 2 | 20 November 2026 (Day 2) — Morning | Verilog implementation, simulation evidence, FPGA progress, individual understanding | To be filled by faculty |
 
 **At each review, the group should:**
 
@@ -179,9 +180,9 @@ All members must understand the complete design and be prepared to explain the F
 
 | Issue / Pending Work | Planned Corrective Action | Responsible Member | Target Completion |
 |---|---|---|---|
-| Testbench covers only scores 2, 7 and 13 (handout Q3 asks for all 16 scores, all four states, reset and START/ACK, self-checking) | Extend `game_tb.v` if time permits, or keep this as a documented limitation | Ojas Nitin Kadam / Samruddhi Samant | [Date] |
-| Logisim must be verified for all 16 inputs (Q1 of the statement) | Follow `02_FSM_Logisim/logisim_test_plan.md`: simulate scores 0-15, ACK and RESET in the v2 circuit and capture screenshots | Siddharth Sanjeev Tiwari / Deven Shailendra Bhadane | [Date] |
-| Statement lists a 4-bit input register loaded by START; the design has none | Check with faculty whether it is required, or document why the design samples the score directly | Samruddhi Samant | [Date] |
+| Testbench covers only scores 2, 7 and 13 (handout Q3 asks for all 16 scores, all four states, reset and START/ACK, self-checking) | Extend `game_tb.v` if time permits, or keep this as a documented limitation | Ojas Nitin Kadam / Samruddhi Samant | 2026-11-20 |
+| Logisim must be verified for all 16 inputs (Q1 of the statement) | Follow `02_FSM_Logisim/logisim_test_plan.md`: simulate scores 0-15, ACK and RESET in the v2 circuit and capture screenshots | Siddharth Sanjeev Tiwari / Deven Shailendra Bhadane | 2026-11-20 |
+| Statement lists a 4-bit input register loaded by START; the design has none | Check with faculty whether it is required, or document why the design samples the score directly | Samruddhi Samant | 2026-11-20 |
 
 ## 11. Current Overall Status
 
