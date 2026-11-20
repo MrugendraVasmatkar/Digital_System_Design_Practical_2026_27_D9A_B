@@ -120,7 +120,7 @@ ACK input was not being used	Added acknowledgement logic using LOCKOUT and ACK.]
   Three independent 4-bit counters count each category.START enables counting. RESET clears all counters. All counters use a common clock.]
 - Synthesizability considerations: [The main Verilog module uses synthesizable Verilog constructs. Counters use positive-edge clock triggering.
 RESET is asynchronous and active-high. Testbench code is only for simulation and is not synthesizable.]
-- RTL: D:/pro/vivado projects/project_3/project_3.srcs/sources_1/new/project_3.v
+- RTL: 
 - Testbench: `03_Verilog_Implementation/Testbench/`
 
 ## 8. Verification and Simulation Results
