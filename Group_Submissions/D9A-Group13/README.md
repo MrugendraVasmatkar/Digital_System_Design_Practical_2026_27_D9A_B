@@ -58,12 +58,12 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 ## 8. Verification and Simulation Results
 | Test ID | Inputs/conditions | Expected output | Observed output | Pass/Fail |
 |---|---|---|---|---|
-| T01 | [ ] | [ ] | [ ] | [ ] |
-| T02 | [ ] | [ ] | [ ] | [ ] |
-| T03 | [ ] | [ ] | [ ] | [ ] |
+| T01 | RESET = 1, START = 0, ACK = 0, X = 0000 | State resets to IDLE (0), P = 0000, V = 0, Both LEDs OFF| State cleared to IDLE (0), V = 0, Green and Red LEDs stayed OFF | pass |
+| T02 | 	RESET = 0, START = 1 + CLK ↑, X = 0000 | State moves to ACTIVE (1), P latches 0000, V = 0, Red LED ON (0-bit change) | State changed to ACTIVE (1), P saved 0000, V = 0, Red LED turned ON | pass |
+| T03 | 	ACTIVE (START = 0, ACK = 0), P = 0000, X changes 0000 → 0001 (1-bit change) | V = 1, Green LED ON immediately (before CLK ↑), Red LED OFF | V = 1, Green LED turned ON immediately when X changed, Red LED OFF | pass |
 
-Tool/version: [Details]  
-Number passed/failed: [Details]  
+Tool/version: logisim-win-2.7.1
+Number passed/failed: 5  
 Waveform/log path: [Path]
 
 ## 9. FPGA Hardware Implementation
