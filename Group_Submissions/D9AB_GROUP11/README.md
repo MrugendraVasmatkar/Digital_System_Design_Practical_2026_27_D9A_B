@@ -232,7 +232,7 @@ Explain differences between simulation and hardware results, if any.
 | Student | Assigned responsibility | Actual contribution/evidence |
 |---|---|---|
 | Hardik Patil | [ LOGISIM] | [LOGISIM ] |
-| Kanishka Puthran | [LOGISIM,GITHUB ] | [LOGSIM,GITHUB ] |
+| Kanishka Puthran | [LOGISIM,GITHUB ] | [LOGISIM,GITHUB ] |
 | Aran Mishra | [TESTING ] | [TESTING,RTL ] |
 | Harikesh Menon | [RTL,TESTSBENCH ] | [RTL,TESTBENCH ] |
 
