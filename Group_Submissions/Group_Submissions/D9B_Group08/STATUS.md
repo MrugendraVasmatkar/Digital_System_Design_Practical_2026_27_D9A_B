@@ -13,7 +13,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 |---:|---|---|---|---|
 | 1 | Problem requirements and assumptions documented | Completed | README provides details| [ ] |
 | 2 | Architecture and block diagram prepared | Completed | README provides details | [ ] |
-| 3 | FSM diagram/table completed, if applicable | Completed | https://docs.google.com/document/d/1Y3f19ccyAWOuHTmcKxUKXCJ4mraLcUXDPXZT47sXAvA/edit?tab=t.0 | [ ] |
+| 3 | FSM diagram/table completed, if applicable | Completed | README provides details | [ ] |
 | 4 | Logisim circuit implemented | Completed | https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing| [ ] |
 | 5 | Logisim simulation verified | Completed | https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing| [ ] |
 | 6 | Verilog RTL completed | Completed | https://drive.google.com/drive/folders/11ZAlYLtZIfZqkP7gjBKkoZjrsTbID2Iz?usp=sharing | [ ] |
@@ -59,4 +59,4 @@ Add rows as needed.
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
 
 **Group leader:** Tanav Patil  
-**Date/time:** 20-11-26 / 10:06
+**Date/time:** 20-11-26 / 10:09
