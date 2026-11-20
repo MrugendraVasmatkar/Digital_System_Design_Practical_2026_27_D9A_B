@@ -28,7 +28,7 @@ Record FPGA board/device, tool/version, constraints, synthesis/implementation re
 | `IBUF` | 6 | Input buffers |
 | `OBUF` | 4 | Output buffers (`led_beginner` to `led_master`) |
 | **Total Cells** | **24** | — |
-
+Group_Submissions/D9A_Group02/03_Verilog_Implementation/LUT ss.png
 ---
 
 ## 3. Implementation Summary (`impl_1`)
