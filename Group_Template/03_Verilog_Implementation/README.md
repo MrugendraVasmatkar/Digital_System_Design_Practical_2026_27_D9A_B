@@ -7,4 +7,5 @@ Place synthesizable RTL in `RTL/`, testbenches/test vectors in `Testbench/`, and
 
 <img width="1920" height="991" alt="image" src="https://github.com/user-attachments/assets/8431da47-fc4f-4e5d-9cc4-9357ba5f40c0" />
 
-<img width="1920" height="991" alt="image" src="https://github.com/user-attachments/assets/749f436a-ef5f-449e-b7b7-a8ac3526a29b" />
+<img width="1556" height="797" alt="WhatsApp Image 2026-11-20 at 10 36 05 AM" src="https://github.com/user-attachments/assets/70a72b65-582c-473b-8e65-fcf047c19e8e" />
+
