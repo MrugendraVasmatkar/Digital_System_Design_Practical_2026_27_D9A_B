@@ -1,0 +1,59 @@
+==== Gaming XP Decoder testbench ====
+[20000] PASS  after RESET  state=000 LEDs(B,I,X,E)=0000
+[40000] PASS   applied, no START -> still IDLE  state=000 LEDs(B,I,X,E)=0000
+XP=0 : [50000] PASS  after START  state=001 LEDs(B,I,X,E)=1000
+[80000] PASS   ACK, XP changed, START ignored)  state=001 LEDs(B,I,X,E)=1000
+[90000] PASS  after ACK -> IDLE  state=000 LEDs(B,I,X,E)=0000
+[110000] PASS   applied, no START -> still IDLE  state=000 LEDs(B,I,X,E)=0000
+XP=3 : [120000] PASS  after START  state=001 LEDs(B,I,X,E)=1000
+[150000] PASS   ACK, XP changed, START ignored)  state=001 LEDs(B,I,X,E)=1000
+[160000] PASS  after ACK -> IDLE  state=000 LEDs(B,I,X,E)=0000
+[180000] PASS   applied, no START -> still IDLE  state=000 LEDs(B,I,X,E)=0000
+XP=4 : [190000] PASS  after START  state=010 LEDs(B,I,X,E)=0100
+[220000] PASS   ACK, XP changed, START ignored)  state=010 LEDs(B,I,X,E)=0100
+[230000] PASS  after ACK -> IDLE  state=000 LEDs(B,I,X,E)=0000
+[250000] PASS   applied, no START -> still IDLE  state=000 LEDs(B,I,X,E)=0000
+XP=7 : [260000] PASS  after START  state=010 LEDs(B,I,X,E)=0100
+[290000] PASS   ACK, XP changed, START ignored)  state=010 LEDs(B,I,X,E)=0100
+[300000] PASS  after ACK -> IDLE  state=000 LEDs(B,I,X,E)=0000
+[320000] PASS   applied, no START -> still IDLE  state=000 LEDs(B,I,X,E)=0000
+XP=10 : [330000] PASS  after START  state=010 LEDs(B,I,X,E)=0100
+[360000] PASS   ACK, XP changed, START ignored)  state=010 LEDs(B,I,X,E)=0100
+[370000] PASS  after ACK -> IDLE  state=000 LEDs(B,I,X,E)=0000
+[390000] PASS   applied, no START -> still IDLE  state=000 LEDs(B,I,X,E)=0000
+XP=11 : [400000] PASS  after START  state=011 LEDs(B,I,X,E)=0010
+[430000] PASS   ACK, XP changed, START ignored)  state=011 LEDs(B,I,X,E)=0010
+[440000] PASS  after ACK -> IDLE  state=000 LEDs(B,I,X,E)=0000
+[460000] PASS   applied, no START -> still IDLE  state=000 LEDs(B,I,X,E)=0000
+XP=15 : [470000] PASS  after START  state=011 LEDs(B,I,X,E)=0010
+[500000] PASS   ACK, XP changed, START ignored)  state=011 LEDs(B,I,X,E)=0010
+[510000] PASS  after ACK -> IDLE  state=000 LEDs(B,I,X,E)=0000
+[530000] PASS   applied, no START -> still IDLE  state=000 LEDs(B,I,X,E)=0000
+XP=16 : [540000] PASS  after START  state=100 LEDs(B,I,X,E)=0001
+[570000] PASS   ACK, XP changed, START ignored)  state=100 LEDs(B,I,X,E)=0001
+[580000] PASS  after ACK -> IDLE  state=000 LEDs(B,I,X,E)=0000
+[600000] PASS   applied, no START -> still IDLE  state=000 LEDs(B,I,X,E)=0000
+XP=31 : [610000] PASS  after START  state=100 LEDs(B,I,X,E)=0001
+[640000] PASS   ACK, XP changed, START ignored)  state=100 LEDs(B,I,X,E)=0001
+[650000] PASS  after ACK -> IDLE  state=000 LEDs(B,I,X,E)=0000
+---- sweep XP = 0..31 ----
+sweep done
+---- IDLE behaviour ----
+[1960000] PASS  ays IDLE (no START, ACK ignored)  state=000 LEDs(B,I,X,E)=0000
+---- RESET priority ----
+[1980000] PASS  RESET + START together -> IDLE  state=000 LEDs(B,I,X,E)=0000
+[2000000] PASS  reached EXPERT  state=011 LEDs(B,I,X,E)=0010
+[2010000] PASS  RESET in EXPERT -> IDLE  state=000 LEDs(B,I,X,E)=0000
+---- unused states ----
+[2021000] PASS  illegal state 101: all LEDs off
+[2030000] PASS  illegal state recovers to IDLE  state=000 LEDs(B,I,X,E)=0000
+[2041000] PASS  illegal state 110: all LEDs off
+[2050000] PASS  illegal state recovers to IDLE  state=000 LEDs(B,I,X,E)=0000
+[2061000] PASS  illegal state 111: all LEDs off
+[2070000] PASS  illegal state recovers to IDLE  state=000 LEDs(B,I,X,E)=0000
+---- one-clock delay demo ----
+[2100000] PASS  me clock: OLD XP (5) used -> INT  state=010 LEDs(B,I,X,E)=0100
+[2110000] PASS  ACK -> IDLE  state=000 LEDs(B,I,X,E)=0000
+=====================================
+ALL TESTS PASSED (81 checks)
+=====================================

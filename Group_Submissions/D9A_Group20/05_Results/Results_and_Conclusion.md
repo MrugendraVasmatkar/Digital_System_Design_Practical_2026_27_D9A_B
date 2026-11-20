@@ -1,0 +1,63 @@
+# Results and Conclusion – Gaming XP Level Decoder (H3)
+
+## 1. Test cases: expected vs observed (simulation)
+Observed values are from the Vivado 2018.3 XSim run (screenshots in `03_Verilog_Implementation/Simulation_Results/`), with the same 81/81 result in Icarus Verilog (`sim_log_iverilog.txt`).
+Logisim column: from the Logisim run in `02_FSM_Logisim/` ("not run" = case not tested in Logisim; XP = 2, 13 and 20 were tested there instead, all passed). FPGA column: the board was programmed and demonstrated (video in `06_Presentation/Gaming_XP_Level_Decoder_H3_ERROR_State.pptx`, slide 4); individual cases were not logged one by one, so they are marked "not logged".
+
+| ID | Condition | Expected | Observed (sim) | Logisim | FPGA board |
+|---|---|---|---|---|---|
+| T01 | Power-up RESET | IDLE, all LEDs off | IDLE, 0000 – Pass | Pass | not logged |
+| T02 | XP=0, START | BEG, BEGINNER LED | Pass | not run | not logged |
+| T03 | XP=3, START | BEG | Pass | not run | not logged |
+| T04 | XP=4, START | INT, INTERMEDIATE LED | Pass | not run | not logged |
+| T05 | XP=7, START | INT | Pass | Pass | not logged |
+| T06 | XP=10, START | INT | Pass | not run | not logged |
+| T07 | XP=11, START | EXP, EXPERT LED | Pass | not run | not logged |
+| T08 | XP=15, START | EXP | Pass | not run | not logged |
+| T09 | XP=16, START | ERR, ERROR LED | Pass | not run | not logged |
+| T10 | XP=31, START | ERR | Pass | not run | not logged |
+| T11 | Level held, XP changed, START pulsed again | State unchanged | Pass | Pass | not logged |
+| T12 | ACK in a level state | IDLE | Pass | Pass | not logged |
+| T13 | ACK in IDLE, no START | Stays IDLE | Pass | not run | not logged |
+| T14 | RESET and START together | IDLE | Pass | not run | not logged |
+| T15 | RESET in EXPERT | IDLE | Pass | not run | not logged |
+| T16 | Forced states 101/110/111 | All LEDs off, then IDLE | Pass | n/a | n/a |
+| T17 | Exhaustive sweep XP = 0..31 | Correct level for all 32 | 32/32 Pass | not run | not logged |
+
+**Totals (simulation):** 81 checks, 81 passed, 0 failed.
+
+## 2. Correctness analysis
+- All four range boundaries (3/4, 10/11, 15/16) and every one of the 32 XP values give the expected level.
+- Outputs change only with the state (Moore), checked after every transition.
+- RESET has priority over START; illegal state codes recover to IDLE.
+- The Verilog follows the Logisim circuit block for block (same comparators, same CODE equations, same three-multiplexer next-state logic). Their behaviour was compared by reading both; the Logisim circuit has not been run automatically.
+
+## 3. FPGA utilization and hardware results
+Target: Boolean Board, Spartan-7 xc7s50csga324-1, Vivado 2018.3, top `gaming_xp_top`. Reports in `04_FPGA_Hardware/reports/`.
+
+| Resource | Used | Available | Util % |
+|---|---:|---:|---:|
+| Slice LUTs | 8 | 32,600 | 0.02 |
+| Flip-flops | 25 | 65,200 | 0.04 |
+| Bonded IOB | 14 | 210 | 6.67 |
+| BUFG | 1 | 32 | 3.13 |
+| CARRY4, Block RAM, DSP | 0 | – | 0 |
+
+The FSM itself uses 8 flip-flops (3 STATE + 5 XP_REG); the rest are the 2-FF synchronizers on the switches and buttons and the debug-LED path (LD5). The comparators against constants are absorbed into LUTs, so no CARRY4 is used.
+
+Timing at 100 MHz: WNS +7.172 ns, WHS +0.178 ns, 0 failing endpoints. DRC and methodology checks: 0 violations. Power estimate: 0.074 W total.
+
+**Hardware demonstration:** done on the Boolean Board on 20 Nov 2026 (demo video embedded in `06_Presentation/Gaming_XP_Level_Decoder_H3_ERROR_State.pptx` (slide 4)). Slide switch SW4 on the board was faulty, so XP bit 4 was moved to SW5 and a debug LED (LD5) was added.
+
+## 4. Limitations
+- **One-clock input delay.** The level is decided from XP sampled on the previous clock. If START arrives in the first IDLE cycle after ACK (before XP_REG has reloaded), the level can be decided from a stale XP. Keeping XP stable for one clock before START avoids it.
+- The FSM module itself has no input synchronizer; the board top `gaming_xp_top` adds 2-FF synchronizers. There is no debouncer, which is safe for this FSM because START and ACK are each ignored in the state they lead to.
+- XP values 16–31 are treated as invalid; there is no separate "overflow" handling beyond the ERROR state.
+
+## 5. Conclusion
+The design meets requirements R1–R9 in simulation: five Moore states with 3-bit encoding, correct level classification for all 32 XP values, a held level until ACK, a synchronous reset with top priority, and safe recovery from unused state codes.
+On the FPGA the design synthesizes and implements cleanly on the Spartan-7 (8 LUTs, 25 FFs, timing met at 100 MHz with 7.172 ns slack). The design was then demonstrated on the Boolean Board (video in the presentation, slide 4).
+
+## 6. Future improvements
+- Load XP_REG every clock (or add a one-cycle guard after ACK) to remove the stale-XP case.
+- Add a test for START in the first IDLE cycle after ACK.
