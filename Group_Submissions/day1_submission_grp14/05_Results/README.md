@@ -12,7 +12,7 @@ Problem 3H2: Game Score Categorizer using a Mealy FSM (`mealy_simple`), Spartan-
 | T02 | score = 7, START, then ACK | 0 1 0 while shown; 0 0 0 after ACK | `med_led` high, others low; `med_led` low after ACK | Pass |
 | T03 | score = 13, START, then ACK | 0 0 1 while shown; 0 0 0 after ACK | `high_led` high, others low; `high_led` low after ACK | Pass |
 
-Evidence: `03_Verilog_Implementation/Simulation_Results/behavioral_simulation_waveform.png`. Result: 3 of 3 cases pass. The results were read from the waveform; the Tcl console log is not uploaded.
+Evidence: `03_Verilog_Implementation/Simulation_Results/behavioral_simulation_waveform.png`. Result: 3 of 3 cases pass. The results were read from the waveform and confirmed by the Tcl console log (`simulation_log.txt`, `tcl_console_log.png`): all 9 printed lines match their expected values.
 
 ### Hardware (FPGA board)
 

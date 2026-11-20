@@ -101,7 +101,7 @@ File: `02_FSM_Logisim/fsm_state_diagram.png`
 ## 8. Verification and Simulation Results
 **Limitation:** the handout (Q3) asks for a testbench that covers all 16 scores, all four states, reset and START/ACK with self-checking and pass/fail messages. Our testbench `game_tb.v` covers scores 2, 7 and 13 only.
 
-Testbench `game_tb.v` has 3 test cases, simulated in the Vivado Simulator (Behavioral Simulation, top `game_tb`). The observed values below are read from the waveform; the Tcl console `$display` log is not yet uploaded.
+Testbench `game_tb.v` has 3 test cases, simulated in the Vivado Simulator (Behavioral Simulation, top `game_tb`). The observed values below are read from the waveform; they are confirmed by the Tcl console log (`simulation_log.txt`, `tcl_console_log.png`): all 9 printed lines match the expected values.
 
 | Test ID | Inputs/conditions | Expected output | Observed output | Pass/Fail |
 |---|---|---|---|---|
@@ -111,9 +111,10 @@ Testbench `game_tb.v` has 3 test cases, simulated in the Vivado Simulator (Behav
 
 Tool/version: Vivado 2018.3 Simulator (behavioral, functional)  
 Number passed/failed: 3 passed, 0 failed (by waveform inspection)  
-Waveform/log path: `03_Verilog_Implementation/Simulation_Results/behavioral_simulation_waveform.png` (console log pending)
+Waveform/log path: `03_Verilog_Implementation/Simulation_Results/behavioral_simulation_waveform.png`, `tcl_console_log.png` and `simulation_log.txt`
 
 ![Behavioral simulation waveform](03_Verilog_Implementation/Simulation_Results/behavioral_simulation_waveform.png)
+![Tcl console log of the simulation](03_Verilog_Implementation/Simulation_Results/tcl_console_log.png)
 
 ## 9. FPGA Hardware Implementation
 - FPGA board/device: RealDigital Boolean Board, Xilinx Spartan-7 XC7S50-CSGA324-1 (part `xc7s50csga324-1`)
@@ -225,7 +226,7 @@ What did the team learn? What would you improve?
   - [x] Logisim source uploaded (`02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ`).
   - [ ] Simulation evidence: LOW (score 3), MEDIUM (score 5), HIGH (score 13) and IDLE uploaded; ACK, RESET and the remaining scores pending (see `02_FSM_Logisim/logisim_test_plan.md`).
 - [x] Verilog RTL and testbench uploaded.
-- [ ] Simulation results and test cases documented.
+- [x] Simulation results and test cases documented.
 - [x] FPGA implementation and hardware evidence uploaded.
 - [ ] Results, challenges and conclusion documented.
 - [x] Presentation and final report uploaded.

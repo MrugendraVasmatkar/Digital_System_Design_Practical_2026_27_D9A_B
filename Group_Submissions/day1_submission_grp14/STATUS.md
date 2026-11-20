@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-B-Group14 |
-| Last Updated | 2026-11-20, 21:15 |
+| Last Updated | 2026-11-20, 21:30 |
 
 ## 2. Problem Statement
 
@@ -73,7 +73,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 2 — Verilog | Write synthesizable RTL (controller and datapath) | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` |
 | 2 — Verilog | Integrate modules at top level | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` (single module) |
 | 2 — Verilog | Create testbench and run functional simulation | Completed | `03_Verilog_Implementation/Testbench/game_tb.v`; waveform in `Simulation_Results/` |
-| 2 — Verilog | Save waveforms and simulation results | In Progress | `03_Verilog_Implementation/Simulation_Results/behavioral_simulation_waveform.png` (console log pending) |
+| 2 — Verilog | Save waveforms and simulation results | Completed | `03_Verilog_Implementation/Simulation_Results/behavioral_simulation_waveform.png`, `tcl_console_log.png`, `simulation_log.txt` |
 | 3 — FPGA | Assign FPGA pins and configure constraints | Completed | `04_FPGA_Hardware/constraints.xdc` |
 | 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/implemented_design.png`, `04_FPGA_Hardware/utilization_report.png` (timing met with a 10 ns clock constraint) |
 | 3 — FPGA | Demonstrate the design on FPGA hardware | Completed | `04_FPGA_Hardware/hardware_low_led.jpg`, `hardware_medium_led.jpg`, `hardware_high_led.jpg` (LOW, MEDIUM, HIGH LEDs lit on the Boolean board) |
@@ -149,6 +149,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 19:30 | Samruddhi Samant contributions updated in README section 11 and STATUS section 8: added FPGA constraints, final report (alongside bitstream) | Samruddhi Samant | Repository |
 | 2026-11-20, 20:00 | Dated progress-log summary added to README section 12 | Samruddhi Samant | Repository |
 | 2026-11-20, 21:15 | Review checkpoint dates set to 19 November 2026 (Day 1) and 20 November 2026 (Day 2); target completion dates filled in the issues table | Samruddhi Samant | Repository |
+| 2026-11-20, 21:30 | Tcl console log of the game_tb simulation added (`Simulation_Results/tcl_console_log.png`, `simulation_log.txt`): 9 of 9 printed lines match the expected values | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 

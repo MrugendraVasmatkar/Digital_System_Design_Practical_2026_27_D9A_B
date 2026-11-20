@@ -1,0 +1,17 @@
+Vivado 2018.3 - Behavioral Simulation (Functional), sim_1, top = game_tb
+Tcl console output (transcribed from tcl_console_log.png):
+
+score=2  START      : L=1 M=0 H=0  (expect 1 0 0)
+score=2  after clock: L=1 M=0 H=0  (expect 1 0 0)
+score=2  ACK        : L=0 M=0 H=0  (expect 0 0 0)
+score=7  START      : L=0 M=1 H=0  (expect 0 1 0)
+score=7  after clock: L=0 M=1 H=0  (expect 0 1 0)
+score=7  ACK        : L=0 M=0 H=0  (expect 0 0 0)
+score=13 START      : L=0 M=0 H=1  (expect 0 0 1)
+score=13 after clock: L=0 M=0 H=1  (expect 0 0 1)
+score=13 ACK        : L=0 M=0 H=0  (expect 0 0 0)
+$finish called at time : 76 ns : File ".../sim_1/new/game_tb.v" Line 65
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'game_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+
+Result: all 9 printed lines match their expected values (3 of 3 test cases pass).
