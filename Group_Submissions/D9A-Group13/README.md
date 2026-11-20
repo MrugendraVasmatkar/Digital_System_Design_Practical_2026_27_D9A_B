@@ -5,18 +5,18 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Mehul Gautum | 14 | mehulgautum47579-maker |
+| Member 2 | Shaila Ranjan | 56 | shailaranjan |
+| Member 3 | Jiya Patekar | 67 | jiyapatekar221-maker |
+| Member 4 | Ishwari Sonar | 65 | 33ishwarisonar-maker |
 
-**Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
+**Class:** [D9A]  
+**Group ID:** [e.g. D9A_Group13]  
 **Repository URL:** [Fork URL]  
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
+- **Number/title:** GRAY CODE TRANSITION DETECTOR
 - **Problem summary:** [In your own words]
 - **Objective:** [What must the system achieve?]
 - **Inputs and outputs:** [List signals, widths and meaning]
