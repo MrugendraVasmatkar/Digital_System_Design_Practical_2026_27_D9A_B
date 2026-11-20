@@ -1,30 +1,25 @@
-## Allowed and Rejected Inputs
-
-**ACCEPT (Y = 1, green LED), when the FSM is in IDLE:**
-| Decimal | Binary (X3 X2 X1 X0) |
-|---|---|
-| 0 | 0000 |
-| 1 | 0001 |
-| 2 | 0010 |
-| 3 | 0011 |
-| 4 | 0100 |
-| 5 | 0101 |
-| 10 | 1010 |
-| 11 | 1011 |
-| 12 | 1100 |
-| 13 | 1101 |
-| 14 | 1110 |
-| 15 | 1111 |
+## Allowed and Rejected Inputs (X0 = don't care)
 
 **REJECT (Y = 0, red LED), forbidden zone:**
-| Decimal | Binary (X3 X2 X1 X0) |
+| X3 X2 X1 X0 | Decimal values covered |
 |---|---|
-| 6 | 0110 |
-| 7 | 0111 |
-| 8 | 1000 |
-| 9 | 1001 |
+| 0 1 1 X | 6, 7 |
+| 1 0 0 X | 8, 9 |
 
-Summary: values 0 to 5 and 10 to 15 are accepted (12 values). Values 6 to 9 are rejected (4 values).X0 is put as don't care , simplifying the hardware.
+These two patterns match the two terms of the equation:
+FZ = X3'·X2·X1 + X3·X2'·X1'
+
+**ACCEPT (Y = 1, green LED), when the FSM is in IDLE:**
+| X3 X2 X1 X0 | Decimal values covered |
+|---|---|
+| 0 0 0 X | 0, 1 |
+| 0 0 1 X | 2, 3 |
+| 0 1 0 X | 4, 5 |
+| 1 0 1 X | 10, 11 |
+| 1 1 X X | 12, 13, 14, 15 |
+
+Summary: X0 never affects the result. Values 6 to 9 are rejected (2 patterns, 4 values). Values 0 to 5 and 10 to 15 are accepted (12 values).
+
 
 ## FSM States
 
