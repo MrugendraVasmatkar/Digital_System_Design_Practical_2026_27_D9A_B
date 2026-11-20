@@ -14,12 +14,12 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 2 | Architecture and block diagram prepared | Completed| [ ] | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Completed | [ ] | [ ] |
 | 4 | Logisim circuit implemented | Completed | [ ] | [ ] |
-| 5 | Logisim simulation verified | Not Started | [ ] | [ ] |
+| 5 | Logisim simulation verified | Completed | [ ] | [ ] |
 | 6 | Verilog RTL completed | Completed | [ ] | [ ] |
 | 7 | Testbench and simulation completed | Completed | [ ] | [ ] |
-| 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
-| 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
-| 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
+| 8 | FPGA synthesis and implementation completed | Completed | [ ] | [ ] |
+| 9 | Hardware demonstration completed | Completed | [ ] | [ ] |
+| 10 | Results, presentation and report uploaded | Completed | [ ] | [ ] |
 | 11 | Final Pull Request created | Not Started | [ ] | [ ] |
 
 ## 2. Time-wise progress log
@@ -31,7 +31,8 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/10/2026 | [10:00] | [ Logism ] | [ ] | [ ] | [ ] | [Shruthi Vimalnath Nair ] |
 | 19/10/2026 | [3:50] | [ Verilog code] | [ ] | [ ] | [ ] | [Aryan Jadhav ] |
 | 19/10/2026 | [3:54] | [ Testbench] | [ ] | [ ] | [ ] | [Krishna Pandey ] |
-| 20/10/2026 | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| 20/10/2026 | [10:30] | [Constaint File ] | [ ] | [ ] | [ ] | [Aryan Jadhav] |
+| 20/10/2026 | [12:30] | [FPGA Implementation ] | [ ] | [ ] | [ ] | [Shruthi Vimalnath Nair] |
 
 Add rows as needed.
 
@@ -45,13 +46,13 @@ Add rows as needed.
 - Completed: Problem requirements and solution, Block Diagram and state diagram, Logisim developement of the ps, Verilog and Testbench coding and simulation.
 - In progress:
 - Pending:FPGA implementation and synthesis, results, presentation and project demonstration
-- Evidence uploaded: 
+- Evidence uploaded: on Github
 - Plan for 20 October: FPGA Hardware implementation and presentation.
 
 ### 20 October 2026
-- Completed:
-- Pending:
-- Evidence uploaded:
+- Completed: Contraint File and bitstream generation, implementation on FPGA Spartan 7 board.
+- Pending: Report and final submission
+- Evidence uploaded: on Github
 - Final submission status:
 
 ## 5. Group leader confirmation
