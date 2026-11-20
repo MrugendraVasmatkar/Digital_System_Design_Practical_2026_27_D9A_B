@@ -9,13 +9,13 @@
 |---|---|
 | Class | D9A / D9B |
 | Group Number | Group __ |
-| Project Title | Soda Dispenser Machine using FSM and Datapath |
-| Group Leader | Name — Roll No. |
-| Member 2 | Name — Roll No. |
-| Member 3 | Name — Roll No. |
-| Member 4 | Name — Roll No. |
+| Project Title | Water Temperature Classifier (H3) |
+| Group Leader | Name — Abhishek Potekar Roll No.53(D9B) |
+| Member 2 | Name — Malishka Naik Roll No.38(D9B) |
+| Member 3 | Name — Vedant Soni Roll No.54(D9A) |
+| Member 4 | Name — Bhupesh Patil Roll No.40(D9A) |
 | Repository | Paste your group repository URL here |
-| Last Updated | YYYY-MM-DD, HH:MM |
+| Last Updated | 19/11/2026, HH:MM |
 
 ## 2. Problem Statement
 
