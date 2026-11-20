@@ -70,19 +70,19 @@ Switches are written SW2 SW1 SW0 (1 = up). LD0 = ACCEPT (Y), LD1 = REJECT (Y_bar
 
 | # | Action | Expected | Observed |
 |---|---|---|---|
-| 1 | Switches 000, press and release BTN0 | LD0 on, LD1 off | [ ] |
-| 2 | 001, 010, 101, 110, 111 | LD0 on, LD1 off | [ ] |
-| 3 | 011 (values 6, 7) | LD0 off, LD1 on, immediately | [ ] |
-| 4 | Back to 000 | LD1 stays on (latched) | [ ] |
-| 5 | Press BTN0 | LD0 on, LD1 off | [ ] |
-| 6 | 100 (values 8, 9) | LD0 off, LD1 on, immediately | [ ] |
-| 7 | Back to 000 | LD1 stays on (latched) | [ ] |
-| 8 | Press BTN0 | LD0 on, LD1 off | [ ] |
+| 1 | Switches 000, press and release BTN0 | LD0 on, LD1 off | LD0 on, LD1 off |
+| 2 | 001, 010, 101, 110, 111 | LD0 on, LD1 off | LD0 on, LD1 off |
+| 3 | 011 (values 6, 7) | LD0 off, LD1 on, immediately | LD0 off, LD1 on, immediately |
+| 4 | Back to 000 | LD1 stays on (latched) | LD1 stays on (latched) |
+| 5 | Press BTN0 | LD0 on, LD1 off | LD0 on, LD1 off  |
+| 6 | 100 (values 8, 9) | LD0 off, LD1 on, immediately | LD0 off, LD1 on, immediately |
+| 7 | Back to 000 | LD1 stays on (latched) | LD1 stays on (latched) |
+| 8 | Press BTN0 | LD0 on, LD1 off | LD0 on, LD1 off |
 
 Tests 4 and 7 show that the REJECT state is remembered until ACK. The CLK is the 100 MHz oscillator, so the state updates automatically; no manual clock is needed.
 
 ## Evidence
-- Photos / video of the board tests: `Hardware Implementation `
+- Photos / video of the board tests: `Hardware implementation.mp4 `
 
 ## Simulation vs Hardware
 Simulation matched with the Hardware implemented.
