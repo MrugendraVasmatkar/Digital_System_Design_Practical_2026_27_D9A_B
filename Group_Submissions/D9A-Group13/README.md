@@ -77,22 +77,71 @@ Waveform/log path: Group_Submissions/D9A-Group13/02_FSM_Logisim/logism.pdf
 Explain differences between simulation and hardware results, if any.
 
 ## 10. Challenges, Debugging and Improvements
+## 10. Challenges, Debugging and Improvements
+
 | Issue | Root cause | Correction | Outcome |
 |---|---|---|---|
-| [ ] | [ ] | [ ] | [ ] |
+| Incorrect VALID/INVALID detection | Difficulty in correctly identifying the number of changed bits between two 4-bit inputs. | Used XOR operation (D = X XOR P) and checked whether exactly one bit was set. | Correct detection of valid and invalid transitions. |
+| Incorrect comparison with previous input | Previous input register was not updated at the correct clock edge. | Corrected the register update operation to store the current input after each comparison. | Consecutive input comparisons became accurate. |
+| Incorrect FSM output behaviour | Improper coordination between FSM state, START and ACK signals. | Verified and corrected the Mealy output logic and state transition conditions. | VALID and INVALID outputs operated according to the expected conditions. |
 
-Future improvements: [Details]
+**Future Improvements:**
+
+The design can be improved by adding input synchronization to avoid glitches caused by mechanical switch changes. More test cases can be added to verify different input combinations and control-signal conditions. The design can also be extended to support different input widths, such as 5-bit or 8-bit Gray Code transition detection. Additionally, output stability can be improved by using suitable synchronization or registered output techniques.
+
 
 ## 11. Task Allocation and Individual Contribution
-| Student | Assigned responsibility | Actual contribution/evidence |
+
+The project was completed collaboratively by four team members. Each member was assigned specific responsibilities related to the design, implementation, verification, and documentation of the 4-Bit Gray Code Transition Detector using a Mealy FSM.
+
+### Task Allocation
+
+| Team Member | Assigned Task | Individual Contribution |
 |---|---|---|
-| Group leader | [ ] | [ ] |
-| Member 2 | [ ] | [ ] |
-| Member 3 | [ ] | [ ] |
-| Member 4 | [ ] | [ ] |
+| **Ishwari Sonar** | Problem Analysis and Logic Design | Studied the problem statement, understood Gray Code transitions, and worked on the XOR-based comparison logic to detect one-bit changes between consecutive inputs. |
+| **Mehul Gautam** | Mealy FSM Design and Control Logic | Worked on modifying the original Moore FSM into a Mealy FSM, designing the IDLE and ACTIVE states, and developing the state transition and output logic for immediate VALID/INVALID detection. |
+| **Shaila Ranjan** | Circuit Implementation and Integration | Worked on implementing the input register, previous input register, XOR comparison circuit, FSM controller, and output indicators in Logisim. |
+| **Jiya Patekar** | Testing, Verification and Documentation | Worked on preparing functional test cases, checking XOR results, comparing expected and recorded outputs, analysing correctness, and preparing project documentation. |
 
-Every student must be ready to explain the complete design.
+### Individual Contributions
 
+**1. Ishwari Sonar – Problem Analysis and Logic Design**
+
+- Analysed the assigned problem statement and project requirements.
+- Studied the concept of 4-bit Gray Code transitions.
+- Worked on the XOR-based comparison method.
+- Understood how to identify valid transitions when exactly one bit changes.
+- Helped in developing the logical approach for the detector.
+
+**2. Mehul Gautam – Mealy FSM Design and Control Logic**
+
+- Worked on the H2 modification of the original Moore FSM.
+- Designed the Mealy FSM with IDLE and ACTIVE states.
+- Worked on state transition conditions involving START and ACK.
+- Developed the VALID and INVALID output logic.
+- Analysed how the Mealy FSM generates outputs immediately based on the current comparison.
+
+**3. Shaila Ranjan – Circuit Implementation and Integration**
+
+- Worked on implementing the complete circuit in Logisim.
+- Integrated the 4-bit input register and previous input register.
+- Connected the XOR-based one-bit change detector with the FSM controller.
+- Implemented the VALID and INVALID LED indicators.
+- Checked the connections and overall circuit operation.
+
+**4. Jiya Patekar – Testing, Verification and Documentation**
+
+- Prepared different input sequences for functional verification.
+- Checked XOR difference values and the number of changed bits.
+- Verified the expected VALID and INVALID output conditions.
+- Helped prepare the state transition and functional verification tables.
+- Worked on documenting the results, limitations, and conclusion.
+
+### Team Collaboration
+
+Although specific tasks were divided among the four members, the project was completed through collective discussion and cooperation. All team members gained an understanding of the complete circuit, including XOR comparison logic, register operation, Mealy FSM state transitions, output generation, and functional verification.
+
+Every member is prepared to explain the overall design, working principle, and verification results during the project evaluation.
 ## 12. Progress Log
 Maintain time-wise updates in `STATUS.md`.
 
