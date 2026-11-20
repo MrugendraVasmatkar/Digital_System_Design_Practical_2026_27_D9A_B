@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 06:00 |
+| Last Updated | 2026-11-20, 06:30 |
 
 ## 2. Problem Statement
 
@@ -132,6 +132,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 05:00 | Siddharth (Siddharthqzz29), Deven (DevenBhadane) and Ojas (OjasKadam07) added as collaborators on the group repository and accepted | Samruddhi Samant | Repository settings |
 | 2026-11-20, 05:30 | Self-checking testbench `game_tb_full.v` written (not yet simulated) and Logisim test plan `logisim_test_plan.md` added | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 06:00 | Siddharth (Siddharthqzz29) and Deven (DevenBhadane) committed Logisim simulation screenshots (low, medium, high, idle) from their own accounts; duplicate root-level .circ upload removed (identical to the v2 file in 02_FSM_Logisim) | Siddharth Sanjeev Tiwari, Deven Shailendra Bhadane | commits 84c8655, fcfda1c |
+| 2026-11-20, 06:30 | Logo image files (`06_Presentation/assets/`) removed from the repo; the logos remain embedded in the presentation title slide | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 
