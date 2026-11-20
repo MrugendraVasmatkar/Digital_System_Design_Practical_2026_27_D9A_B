@@ -152,10 +152,10 @@ Future improvements: [Details]
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
 |---|---|---|
-| Group leader | [ ] | [ ] |
-| Member 2 | [ ] | [ ] |
-| Member 3 | [ ] | [ ] |
-| Member 4 | [ ] | [ ] |
+| Group leader | [Logisim Design,Github updatetion] | [ ] |
+| Member 2 | [Logisim Design] | [ ] |
+| Member 3 | [Verilog Code Implementation ] | [ ] |
+| Member 4 | [Verilog Code Implementation ] | [ ] |
 
 Every student must be ready to explain the complete design.
 
