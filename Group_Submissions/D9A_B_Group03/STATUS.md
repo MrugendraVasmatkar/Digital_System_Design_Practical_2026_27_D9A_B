@@ -14,7 +14,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 3 | FSM diagram/table completed, if applicable | Completed | [FSM](./Group_Submissions/D9A_B_Group03/02_FSM_Logisim/FSM.jpg) | 19/11/2026 |
 | 4 | Logisim circuit implemented | Completed | [Evidence](./Group_Submissions/D9A_B_Group03/02_FSM_Logisim/logisim_circ_Forbidden_Zone_Rejector_updated.circ) | 19/10/2026 |
 | 5 | Logisim simulation verified | Completed | [Evidence](./Group_Submissions/D9A_B_Group03/02_FSM_Logisim/Logisim_circuit.png) | 19/10/2026 |
-| 6 | Verilog RTL completed | Completed | [RTL](./Group_Submissions/D9A_B_Group03/03_Verilog_Implementation/RTL) | 20/11/2026 |
+| 6 | Verilog RTL completed | Completed | [RTL](./03_Verilog_Implementation/RTL/) | 20/11/2026 |
 | 7 | Testbench and simulation completed | Completed | [Testbench](./Group_Submissions/D9A_B_Group03/03_Verilog_Implementation/Testbench) | 20/11/2026 |
 | 8 | FPGA synthesis and implementation completed | Completed | [Implementation](./Group_Submissions/D9A_B_Group03/03_Verilog_Implementation/Simulation_Result) [Constraint](Group_Submissions/D9A_B_Group03/03_Verilog_Implementation/xdc_constraint_file) | 20/11/2026 |
 | 9 | Hardware demonstration completed | Completed | [Hardware Implementation Video](./Group_Submissions/D9A_B_Group03/04_FPGA_Hardware) | 20/11/2026 |
