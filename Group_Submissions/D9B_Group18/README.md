@@ -195,26 +195,24 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 
 ## 7. Verilog HDL Implementation
 - Tool/version: Vivado 2018.3
-- Top module and submodules:Group_Submissions/D9B_Group18/03_Verilog_Implementation/RTL/top_boolean.v,Group_Submissions/D9B_Group18/03_Verilog_Implementation/RTL/water_temp_mealy.v
-- Architecture/coding decisions:The design uses a 3-bit temperature input and a Mealy Finite State Machine.
-
+- Top module and submodules: Group_Submissions/D9B_Group18/03_Verilog_Implementation/RTL/top_boolean.v,
+                          Group_Submissions/D9B_Group18/03_Verilog_Implementation/RTL/water_temp_mealy.v
+- Architecture/coding decisions:
+The design uses a 3-bit temperature input and a Mealy Finite State Machine.
 The temperature is classified into three ranges:
 COLD (0–2), NEUTRAL (3–5) and HOT (6–7).
-
 The FSM uses four states:
 IDLE (00), COLD (01), NEUTRAL (10) and HOT (11).
-
 The design uses registers for storing input and state information.
 START controls temperature capture, while ACK and RESET control the return to IDLE.
-
 Three output signals represent the COLD, NEUTRAL and HOT valve conditions.
-- Synthesizability considerations:The Verilog design uses synthesizable RTL constructs.
 
-Sequential logic is implemented using clock-triggered registers, while combinational logic is implemented using Boolean expressions and conditional logic.
-
-The design avoids simulation-only delays and unsupported constructs in the synthesizable RTL.
-
-Vivado synthesis converts the RTL into FPGA logic resources such as LUTs and flip-flops.
+- Synthesizability considerations:
+  The Verilog design uses synthesizable RTL constructs.
+  Sequential logic is implemented using clock-triggered registers, while combinational logic is implemented using Boolean expressions and conditional logic.
+  The design avoids simulation-only delays and unsupported constructs in the synthesizable RTL.
+  Vivado synthesis converts the RTL into FPGA logic resources such as LUTs and flip-flops.
+ 
 - RTL: `Group_Submissions/D9B_Group18/03_Verilog_Implementation/RTL`
 - Testbench: `Group_Submissions/D9B_Group18/03_Verilog_Implementation/Testbench`
 
