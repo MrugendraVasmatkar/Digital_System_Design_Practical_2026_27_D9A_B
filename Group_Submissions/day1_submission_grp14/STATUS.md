@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-B-Group14 |
-| Last Updated | 2026-11-20, 22:00 |
+| Last Updated | 2026-11-20, 22:40 |
 
 ## 2. Problem Statement
 
@@ -151,6 +151,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 21:15 | Review checkpoint dates set to 19 November 2026 (Day 1) and 20 November 2026 (Day 2); target completion dates filled in the issues table | Samruddhi Samant | Repository |
 | 2026-11-20, 21:30 | Tcl console log of the game_tb simulation added (`Simulation_Results/tcl_console_log.png`, `simulation_log.txt`): 9 of 9 printed lines match the expected values | Samruddhi Samant | Repository |
 | 2026-11-20, 22:00 | Results, challenges and conclusion documented: README section 10 now lists three challenges (timing constraint, Logisim comparator, reset difference); checklist item ticked; Results stage marked Completed | Samruddhi Samant | Repository |
+| 2026-11-20, 22:40 | Logisim checklist items ticked (source uploaded; simulation evidence for LOW, MEDIUM, HIGH and IDLE; ACK, RESET and remaining scores not simulated in Logisim) | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 
