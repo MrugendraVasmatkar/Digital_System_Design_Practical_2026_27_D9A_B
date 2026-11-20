@@ -11,12 +11,12 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 |---:|---|---|---|---|
 | 1 | Problem requirements and assumptions documented | Completed  | [problem analysis] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/01_Problem_Analysis ) | [9/11/2026 20:15] |
 | 2 | Architecture and block diagram prepared | completed | [Architecture and block diagram document] -(https://drive.google.com/file/d/1RCaHuwNJK5PxD2dgCUktbVrcIsHgE7IY/view?usp=drivesdk) | [19/11/2026 22:51]
-| 3 | FSM diagram/table completed, if applicable | completed | [Group_Submissions/D9AB_GROUP11/02_FSM_Logisim] | [19/11/2026 22:55] |
-| 4 | Logisim circuit implemented | Completed | [Group_Submissions/D9AB_GROUP11/02_FSM_Logisim/Logism_circuit/D9AB_3H3Group11_Logisim.circ] | [ ] |
-| 5 | Logisim simulation verified | Completed | [Group_Submissions/D9AB_GROUP11/02_FSM_Logisim/Logisim_evidence ] | [ ] |
-| 6 | Verilog RTL completed | Completed | [Verilog code] - (Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation/RTL/game_rtl.v) | [19/11/2026 20:40] |
-| 7 | Testbench and simulation completed | Completed | [Testbench code] - (Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation ) | [19/11/2026 21:56] |
-| 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
+| 3 | FSM diagram/table completed, if applicable | completed | [FSM Diagram/table] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/02_FSM_Logisim) | [19/11/2026 22:55] |
+| 4 | Logisim circuit implemented | Completed | [Logism File] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/blob/main/Group_Submissions/D9AB_GROUP11/02_FSM_Logisim/Logism_circuit/D9AB_3H3Group11_Logisim.circ) | [20/11/2026 10:11] |
+| 5 | Logisim simulation verified | Completed | [Screenshots] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/02_FSM_Logisim/Logisim_evidence) | [20/11/2026 10:13] |
+| 6 | Verilog RTL completed | Completed | [Verilog code] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/blob/main/Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation/RTL/game_rtl.v) | [19/11/2026 20:40] |
+| 7 | Testbench and simulation completed | Completed | [Testbench code] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/blob/main/Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation/Testbench/tb_game.v) | [19/11/2026 21:56] |
+| 8 | FPGA synthesis and implementation completed | Completed | [simulation results] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation/Simulation_Results) | [20/11/2026 10:21] |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
 | 10 | Results, presentation and report uploaded | Not Started | [ ] | [ ] |
 | 11 | Final Pull Request created | Not Started | [ ] | [ ] |
