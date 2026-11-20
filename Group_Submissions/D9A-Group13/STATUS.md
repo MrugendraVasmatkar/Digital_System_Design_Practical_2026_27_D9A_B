@@ -10,7 +10,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
-| 1 | Problem requirements and assumptions documented | Completed | | [ ] |
+| 1 | Problem requirements and assumptions documented | Completed |Group_Submissions/D9A-Group13/01_Problem_Analysis/H2_Mealy_FSM_Problem_Analysis.pdf | [ ] |
 | 2 | Architecture and block diagram prepared | Completed | [ ] | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Completed | [ ] | [ ] |
 | 4 | Logisim circuit implemented | Completed | [ ] | [ ] |
