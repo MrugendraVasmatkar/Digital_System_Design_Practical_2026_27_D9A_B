@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 05:30 |
+| Last Updated | 2026-11-20, 06:00 |
 
 ## 2. Problem Statement
 
@@ -69,7 +69,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 1 — Design | Identify inputs, outputs, and operating conditions | Completed | `01_Problem_Analysis/io_specification.md` |
 | 1 — Design | Draw FSM state diagram and state table | Completed | `02_FSM_Logisim/fsm_state_diagram.png`; state table in `README.md` section 5 |
 | 1 — Design | Draw block diagram and define control signals | Completed | `02_FSM_Logisim/block_diagram.png` |
-| 1 — Design | Build and test the architecture in Logisim | In Progress | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` (final circuit built; overview screenshot added; Logisim simulation screenshot for score 13 (HIGH) added in `sim_score13_high.png`; other scores, ACK and RESET still pending) |
+| 1 — Design | Build and test the architecture in Logisim | In Progress | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` (final circuit built; overview screenshot added; Logisim simulation screenshots for scores 3 (LOW), 5 (MEDIUM), 13 (HIGH) and IDLE added (`low.png`, `medium.png`, `high.png`, `idle.png`); ACK, RESET and other scores still pending) |
 | 2 — Verilog | Write synthesizable RTL (controller and datapath) | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` |
 | 2 — Verilog | Integrate modules at top level | Completed | `03_Verilog_Implementation/RTL/mealy_simple.v` (single module) |
 | 2 — Verilog | Create testbench and run functional simulation | Completed | `03_Verilog_Implementation/Testbench/game_tb.v`; waveform in `Simulation_Results/` |
@@ -131,6 +131,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 04:30 | Constrained timing run: WNS 7.665 ns, WHS 0.540 ns, 0 failing endpoints, all constraints met; `timing_summary.png` replaced | Samruddhi Samant | Commit link to be added |
 | 2026-11-20, 05:00 | Siddharth (Siddharthqzz29), Deven (DevenBhadane) and Ojas (OjasKadam07) added as collaborators on the group repository and accepted | Samruddhi Samant | Repository settings |
 | 2026-11-20, 05:30 | Self-checking testbench `game_tb_full.v` written (not yet simulated) and Logisim test plan `logisim_test_plan.md` added | Samruddhi Samant | Commit link to be added |
+| 2026-11-20, 06:00 | Siddharth (Siddharthqzz29) and Deven (DevenBhadane) committed Logisim simulation screenshots (low, medium, high, idle) from their own accounts; duplicate root-level .circ upload removed (identical to the v2 file in 02_FSM_Logisim) | Siddharth Sanjeev Tiwari, Deven Shailendra Bhadane | commits 84c8655, fcfda1c |
 
 ## 8. Individual Contributions
 

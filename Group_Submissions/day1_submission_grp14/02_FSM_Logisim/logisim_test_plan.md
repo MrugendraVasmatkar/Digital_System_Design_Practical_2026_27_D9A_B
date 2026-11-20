@@ -18,9 +18,9 @@ Screenshot with Windows + Shift + S on the Logisim window (not File > Export ima
 | 0 | 0000 | LOW | | |
 | 1 | 0001 | LOW | | |
 | 2 | 0010 | LOW | | |
-| 3 | 0011 | LOW | | |
+| 3 | 0011 | LOW | LOW lit | `low.png` |
 | 4 | 0100 | LOW | | |
-| 5 | 0101 | MEDIUM | | |
+| 5 | 0101 | MEDIUM | MEDIUM lit | `medium.png` |
 | 6 | 0110 | MEDIUM | | |
 | 7 | 0111 | MEDIUM | | |
 | 8 | 1000 | MEDIUM | | |
@@ -28,7 +28,7 @@ Screenshot with Windows + Shift + S on the Logisim window (not File > Export ima
 | 10 | 1010 | MEDIUM | | |
 | 11 | 1011 | HIGH | | |
 | 12 | 1100 | HIGH | | |
-| 13 | 1101 | HIGH | `sim_score13_high.png` shows HIGH lit | `02_FSM_Logisim/sim_score13_high.png` |
+| 13 | 1101 | HIGH | `sim_score13_high.png` shows HIGH lit | `high.png`, `sim_score13_high.png` |
 | 14 | 1110 | HIGH | | |
 | 15 | 1111 | HIGH | | |
 

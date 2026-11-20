@@ -72,9 +72,15 @@ File: `02_FSM_Logisim/fsm_state_diagram.png`
 ## 6. Logisim Implementation
 - Logisim version: file saved in the Logisim 2.7.1 format (`project source="2.7.1"`)
 - Circuit file: `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ` (final version; earlier version `Game_Score_Categorizer_H2_Mealy_Machine.circ` kept for reference)
-- Test cases and expected/observed behaviour: score 13 (SCORE = 1101): expected HIGH LED on, observed HIGH LED lit (red) with LOW and MEDIUM unlit and the `HIGHc` probe active, see `sim_score13_high.png`. Other scores (0-15), ACK and RESET are still to be simulated and documented.
+- Test cases and expected/observed behaviour (screenshots by Siddharth and Deven, taken with the Poke tool): SCORE = 3 (0011): expected LOW LED, observed LOW LED lit (`low.png`); SCORE = 5 (0101): expected MEDIUM LED, observed MEDIUM LED lit (`medium.png`); SCORE = 13 (1101): expected HIGH LED, observed HIGH LED lit (`high.png`, also `sim_score13_high.png`); IDLE with START = 0: all LEDs off (`idle.png`). Still to simulate and document: the other scores (0-15), ACK and RESET.
 
-![Logisim simulation, score 13 gives HIGH](02_FSM_Logisim/sim_score13_high.png)
+![Logisim simulation, score 3 gives LOW](02_FSM_Logisim/low.png)
+
+![Logisim simulation, score 5 gives MEDIUM](02_FSM_Logisim/medium.png)
+
+![Logisim simulation, score 13 gives HIGH](02_FSM_Logisim/high.png)
+
+![Logisim simulation, IDLE all LEDs off](02_FSM_Logisim/idle.png)
 
 - Issues and corrections: [Details]
 - Screenshot/evidence: `02_FSM_Logisim/circuit_overview_v2_comparators.png` (circuit only; simulation screenshots pending)
@@ -173,7 +179,7 @@ What did the team learn? What would you improve?
 - [x] FSM diagram/table or justified alternative included.
 - [ ] Logisim source and simulation evidence uploaded.
   - [x] Logisim source uploaded (`02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ`).
-  - [ ] Simulation evidence: score 13 (HIGH) uploaded; LOW, MEDIUM, ACK, RESET and the remaining scores pending (see `02_FSM_Logisim/logisim_test_plan.md`).
+  - [ ] Simulation evidence: LOW (score 3), MEDIUM (score 5), HIGH (score 13) and IDLE uploaded; ACK, RESET and the remaining scores pending (see `02_FSM_Logisim/logisim_test_plan.md`).
 - [x] Verilog RTL and testbench uploaded.
 - [ ] Simulation results and test cases documented.
 - [ ] FPGA implementation and hardware evidence uploaded.
