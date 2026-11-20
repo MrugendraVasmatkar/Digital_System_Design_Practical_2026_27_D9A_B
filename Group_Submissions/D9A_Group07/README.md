@@ -181,8 +181,8 @@ Future improvements:
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
 |---|---|---|
-| Group leader (Snehal Gharmude) | VERILOG/ FPGA Implementation | Group_Submissions/D9A_Group07/03_Verilog_Implementation  |
-| Member 2 (Sachin Mane) |  |  |
+| Group leader (Snehal Gharmude) | VERILOG/ FPGA Implementation | Group_Submissions/D9A_Group07/03_Verilog_Implementation , Group_Submissions/D9A_Group07/04_FPGA_Hardware |
+| Member 2 (Sachin Mane) | Verilog | Group_Submissions/D9A_Group07/03_Verilog_Implementation |
 | Member 3 (Sheetal Panda) | Logisim/State diagram | [ ] |
 | Member 4 (Vidisha Bagwe) | Logisim | [ ] |
 
