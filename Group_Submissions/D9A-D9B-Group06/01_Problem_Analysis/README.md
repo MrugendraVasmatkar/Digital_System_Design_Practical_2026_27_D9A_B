@@ -17,7 +17,7 @@ A 3-bit wind value (W2 W1 W0, 0–7) is set on switches. A Moore FSM lights one 
 | 0 – 1 | 000 – 001 | CALM | Green LED |
 | 2 – 4 | 010 – 100 | BREEZY | Yellow LED |
 | 5 | 101 | **WARNING** (new in H1) | Orange LED |
-| 6 – 7 | 110 – 111 | STORM | Red LED + Buzzer |
+| 6 – 7 | 110 – 111 | STORM | Red LED / Buzzer |
 
 ## Inputs and outputs
 | Signal | Dir | Width | Meaning |
