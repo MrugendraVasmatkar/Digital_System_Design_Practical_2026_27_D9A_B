@@ -43,11 +43,13 @@ module mealy_simple (
             state <= IDLE;
     end
 
-    // 2) Mealy outputs: depend on state AND inputs (start, score, ack)
-    assign low_led  = (state == IDLE && start && score <= 4)
-                   || (state == LOW  && !ack);
-    assign med_led  = (state == IDLE && start && score >= 5 && score <= 10)
-                   || (state == MED  && !ack);
-    assign high_led = (state == IDLE && start && score >= 11)
-                   || (state == HIGH && !ack);
+    // 2) Mealy outputs: depend on state AND inputs (start, score, ack).
+    //    As in the Logisim circuit, every LED output is also gated with NOT reset,
+    //    so all LEDs are off whenever reset = 1.
+    assign low_led  = !reset && ((state == IDLE && start && score <= 4)
+                              || (state == LOW  && !ack));
+    assign med_led  = !reset && ((state == IDLE && start && score >= 5 && score <= 10)
+                              || (state == MED  && !ack));
+    assign high_led = !reset && ((state == IDLE && start && score >= 11)
+                              || (state == HIGH && !ack));
 endmodule

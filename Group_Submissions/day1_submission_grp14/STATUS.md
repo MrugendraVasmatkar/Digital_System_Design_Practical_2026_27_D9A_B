@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-Group14 |
-| Last Updated | 2026-11-20, 12:30 |
+| Last Updated | 2026-11-20, 14:00 |
 
 ## 2. Problem Statement
 
@@ -138,6 +138,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 11:30 | Removed the screenshot `constraints_with_clock.png` (it still showed the old unconstrained timing report); the clock constraint is in `constraints.xdc` and the constrained timing result is in `timing_summary.png` | Samruddhi Samant | Repository |
 | 2026-11-20, 12:00 | Presentation reduced to 3 slides (title; Logisim simulation, implementation, timing and FPGA demo; results, challenges, contributions); team contribution lists updated in README section 11 and STATUS section 8 | Samruddhi Samant | Repository |
 | 2026-11-20, 12:30 | Presentation updated: problem statement added to the title slide, Verilog simulation waveform on slide 2 (implementation numbers moved under the timing summary), expanded conclusion and results summary on slide 3 | Samruddhi Samant | Repository |
+| 2026-11-20, 14:00 | RTL `mealy_simple.v` changed to gate the LED outputs with NOT reset (matches the Logisim circuit); `game_tb_full.v` updated to expect it. Earlier simulation, implementation, timing, bitstream and board results were produced before this change | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 
@@ -172,6 +173,7 @@ All members must understand the complete design and be prepared to explain the F
 | Testbench must cover all 16 scores, all four FSM states, reset and START/ACK, and be self-checking with PASS/FAIL messages (Q3 of the statement) | `Testbench/game_tb_full.v` is written; run it in Vivado (top `game_tb_full`) and save the log and waveform in `Simulation_Results/` | Ojas Nitin Kadam / Samruddhi Samant | [Date] |
 | Logisim must be verified for all 16 inputs (Q1 of the statement) | Follow `02_FSM_Logisim/logisim_test_plan.md`: simulate scores 0-15, ACK and RESET in the v2 circuit and capture screenshots | Siddharth Sanjeev Tiwari / Deven Shailendra Bhadane | [Date] |
 | Statement lists a 4-bit input register loaded by START; the design has none | Check with faculty whether it is required, or document why the design samples the score directly | Samruddhi Samant | [Date] |
+| Re-run with the updated RTL (LED outputs gated by reset) | Update the Vivado source, run `game_tb` and `game_tb_full` (run all), re-run synthesis, implementation and the bitstream, re-check timing and utilization, and reprogram the board | Samruddhi Samant | [Date] |
 
 ## 11. Current Overall Status
 

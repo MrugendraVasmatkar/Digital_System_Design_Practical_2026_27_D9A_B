@@ -66,12 +66,15 @@ module game_tb_full;
     end
 
     function [2:0] model_out;
+        input       s_reset;
         input [1:0] st;
         input       s_start;
         input       s_ack;
         input [3:0] sc;
         begin
-            if (st == M_IDLE)
+            if (s_reset)                    // all LEDs are off whenever reset = 1 (as in Logisim)
+                model_out = 3'b000;
+            else if (st == M_IDLE)
                 model_out = s_start ? led_of(sc) : 3'b000;
             else if (s_ack)
                 model_out = 3'b000;
@@ -182,12 +185,12 @@ module game_tb_full;
             apply(1'b0, 1'b0, 1'b0, other);
             check(led_of(other), "T5 result held");
             apply(1'b1, 1'b0, 1'b0, other);
-            check(led_of(other), "T5 reset asserted (sync, still shown)");
+            check(3'b000, "T5 reset asserted: LEDs off at once");
             apply(1'b0, 1'b0, 1'b0, other);
             check(3'b000, "T5 after reset edge: IDLE, LEDs off");
         end
         apply(1'b1, 1'b1, 1'b0, 4'd13);
-        check(3'b100, "T5 START+RESET in IDLE: Mealy LED shows");
+        check(3'b000, "T5 START+RESET in IDLE: LEDs stay off");
         apply(1'b0, 1'b0, 1'b0, 4'd13);
         check(3'b000, "T5 reset has priority: stayed IDLE");
 
@@ -213,7 +216,7 @@ module game_tb_full;
             ack   = $random(seed);
             score = $random(seed);
             #3;
-            check(model_out(mstate, start, ack, score), "T7 random vs model");
+            check(model_out(reset, mstate, start, ack, score), "T7 random vs model");
         end
 
         // ---------------- Summary ----------------
