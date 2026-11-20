@@ -18,7 +18,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 7 | Testbench and simulation completed | Completed | [Testbench code] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/blob/main/Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation/Testbench/tb_game.v) | [19/11/2026 21:56] |
 | 8 | FPGA synthesis and implementation completed | Completed | [simulation results] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/03_Verilog_Implementation/Simulation_Results) | [20/11/2026 10:21] |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
-| 10 | Results, presentation and report uploaded | Completed | [Presentation] - () | [ 20/11/2026 10:29 ] |
+| 10 | Results, presentation and report uploaded | Completed | [Presentation] - (https://github.com/hardikpatil0317-star/DSD-2026-D9AB-GROUP11/tree/main/Group_Submissions/D9AB_GROUP11/06_Presentation) | [ 20/11/2026 10:29 ] |
 | 11 | Final Pull Request created | Not Started | [ ] | [ ] |
 
 ## 2. Time-wise progress log
