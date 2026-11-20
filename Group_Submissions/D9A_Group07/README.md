@@ -66,7 +66,7 @@ Summary: X0 never affects the result. Values 6 to 9 are rejected (4 values). Val
 
 ## 4. Architecture
 Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
-
+<Group_Submissions/D9A_Group07/02_FSM_Logisim/state diagram and state table.jpg>
 
 **Modules:**
 - Forbidden-zone detector: combinational logic that computes FZ from X3, X2, X1.
