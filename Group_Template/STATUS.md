@@ -19,7 +19,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 7 | Testbench and simulation completed |Completed | [https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B/blob/839c1c8bcd5967ab639841677b97142a98431ef0/Group_Template/03_Verilog_Implementation/README.md ] | [ ] |
 | 8 | FPGA synthesis and implementation completed | Not Started | [ ] | [ ] |
 | 9 | Hardware demonstration completed | Not Started | [ ] | [ ] |
-| 10 | Results, presentation and report uploaded | Completed | [ ] | [ ] |
+| 10 | Results, presentation and report uploaded | Completed | [ https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B/tree/cc56e021bdef989d80dba08c10116ab4ca11f8dc/Group_Template/06_Presentation] | [ ] |
 | 11 | Final Pull Request created | Not Started | [ ] | [ ] |
 
 ## 2. Time-wise progress log
