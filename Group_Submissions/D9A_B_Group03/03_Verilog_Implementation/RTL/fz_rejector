@@ -1,0 +1,49 @@
+module fz_rejector #(
+    parameter N = 7,
+    parameter L = 62,
+    parameter H = 89
+)(
+    input  wire         clk,
+    input  wire         reset,
+    input  wire         start,
+    input  wire         ack,
+    input  wire [N-1:0] x,
+    output reg  [N-1:0] x_reg,
+    output wire         accept_led,
+    output wire         reject_led
+);
+
+    localparam IDLE   = 2'b00;
+    localparam REJECT = 2'b01;
+
+    reg [1:0] state, next_state;
+
+    wire fz = (x >= L) && (x <= H);
+
+    always @(posedge clk) begin
+        if (reset)
+            x_reg <= {N{1'b0}};
+        else if (start)
+            x_reg <= x;
+    end
+
+    always @(posedge clk) begin
+        if (reset)
+            state <= IDLE;
+        else
+            state <= next_state;
+    end
+
+    always @(*) begin
+        next_state = state;
+        case (state)
+            IDLE:    if (start && fz) next_state = REJECT;
+            REJECT:  if (ack)         next_state = IDLE;
+            default:                  next_state = IDLE;
+        endcase
+    end
+
+    assign accept_led = (state == IDLE);
+    assign reject_led = (state == REJECT);
+
+endmodule
