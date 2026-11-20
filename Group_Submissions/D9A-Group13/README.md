@@ -40,7 +40,7 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 
 ## 6. Logisim Implementation
 - Logisim version: logisim-win-2.7.1
-- Circuit file: [Path to `.circ`]
+- Circuit file: Group_Submissions/D9A-Group13/02_FSM_Logisim/GRAY_CODE_TRANSITION_DETECTOR.circ
 - Test cases and expected/observed behaviour: [Details]
 - Issues and corrections: [Details]
 - Screenshot/evidence: [Path/link]
