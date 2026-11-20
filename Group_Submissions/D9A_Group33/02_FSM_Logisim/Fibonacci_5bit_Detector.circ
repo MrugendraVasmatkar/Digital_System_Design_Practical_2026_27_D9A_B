@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="3.8.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v3.8.0(https://github.com/logisim-evolution/).
+
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4"/>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#TTL" name="6"/>
+  <lib desc="#TCL" name="7"/>
+  <lib desc="#Base" name="8">
+    <tool name="Text Tool">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="text" val=""/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <lib desc="#BFH-Praktika" name="9"/>
+  <lib desc="#Input/Output-Extra" name="10"/>
+  <lib desc="#Soc" name="11"/>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="8" map="Button2" name="Menu Tool"/>
+    <tool lib="8" map="Button3" name="Menu Tool"/>
+    <tool lib="8" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="8" name="Poke Tool"/>
+    <tool lib="8" name="Edit Tool"/>
+    <tool lib="8" name="Wiring Tool"/>
+    <tool lib="8" name="Text Tool"/>
+    <sep/>
+    <tool lib="0" name="Pin"/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </tool>
+    <sep/>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+    <tool lib="4" name="Register"/>
+  </toolbar>
+
+  <circuit name="main">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="main"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+
+    <!-- ==================== SECTION HEADERS ==================== -->
+    <comp lib="8" loc="(110,30)" name="Text">
+      <a name="font" val="SansSerif bold 14"/>
+      <a name="text" val="INPUTS / CONTROL"/>
+    </comp>
+    <comp lib="8" loc="(330,30)" name="Text">
+      <a name="font" val="SansSerif bold 14"/>
+      <a name="text" val="1) 5-BIT INPUT REGISTER"/>
+    </comp>
+    <comp lib="8" loc="(960,30)" name="Text">
+      <a name="font" val="SansSerif bold 14"/>
+      <a name="text" val="2) FIBONACCI COMPARATOR (F=1 for 0,1,2,3,5,8,13,21)"/>
+    </comp>
+    <comp lib="8" loc="(960,805)" name="Text">
+      <a name="font" val="SansSerif bold 14"/>
+      <a name="text" val="3) MOORE FSM (IDLE=00, FIB=01, NON_FIB=10)"/>
+    </comp>
+    <comp lib="8" loc="(1480,30)" name="Text">
+      <a name="font" val="SansSerif bold 14"/>
+      <a name="text" val="OUTPUTS"/>
+    </comp>
+    <comp lib="8" loc="(1480,1410)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="state[1:0] = {S1,S0} | Ctrl+K runs clk"/>
+    </comp>
+
+    <!-- ==================== INPUT & CONTROL PINS ==================== -->
+    <comp lib="0" loc="(80,60)" name="Pin"><a name="label" val="START"/></comp>
+    <comp lib="0" loc="(80,80)" name="Clock"><a name="label" val="clk"/></comp>
+    <comp lib="0" loc="(80,100)" name="Pin"><a name="label" val="reset"/></comp>
+
+    <comp lib="0" loc="(80,150)" name="Pin"><a name="label" val="X_in0"/></comp>
+    <comp lib="0" loc="(80,280)" name="Pin"><a name="label" val="X_in1"/></comp>
+    <comp lib="0" loc="(80,410)" name="Pin"><a name="label" val="X_in2"/></comp>
+    <comp lib="0" loc="(80,540)" name="Pin"><a name="label" val="X_in3"/></comp>
+    <comp lib="0" loc="(80,670)" name="Pin"><a name="label" val="X_in4"/></comp>
+
+    <comp lib="0" loc="(80,1220)" name="Pin"><a name="label" val="ACK"/></comp>
+
+    <!-- Shared Control Buses: START (X=150), clk (X=180), reset (X=210) -->
+    <wire from="(80,60)" to="(150,60)"/>
+    <wire from="(150,60)" to="(150,840)"/>
+
+    <wire from="(80,80)" to="(180,80)"/>
+    <wire from="(180,80)" to="(180,1140)"/>
+
+    <wire from="(80,100)" to="(210,100)"/>
+    <wire from="(210,100)" to="(210,1170)"/>
+
+    <!-- ==================== 1) 5-BIT INPUT REGISTER ==================== -->
+    <!-- X_reg0 -->
+    <comp lib="4" loc="(260,120)" name="Register"><a name="label" val="X_reg0"/><a name="width" val="1"/></comp>
+    <wire from="(80,150)" to="(260,150)"/>
+    <wire from="(150,170)" to="(260,170)"/>
+    <wire from="(180,190)" to="(260,190)"/>
+    <wire from="(210,220)" to="(290,220)"/>
+    <wire from="(290,210)" to="(290,220)"/>
+
+    <!-- X_reg1 -->
+    <comp lib="4" loc="(260,250)" name="Register"><a name="label" val="X_reg1"/><a name="width" val="1"/></comp>
+    <wire from="(80,280)" to="(260,280)"/>
+    <wire from="(150,300)" to="(260,300)"/>
+    <wire from="(180,320)" to="(260,320)"/>
+    <wire from="(210,350)" to="(290,350)"/>
+    <wire from="(290,340)" to="(290,350)"/>
+
+    <!-- X_reg2 -->
+    <comp lib="4" loc="(260,380)" name="Register"><a name="label" val="X_reg2"/><a name="width" val="1"/></comp>
+    <wire from="(80,410)" to="(260,410)"/>
+    <wire from="(150,430)" to="(260,430)"/>
+    <wire from="(180,450)" to="(260,450)"/>
+    <wire from="(210,480)" to="(290,480)"/>
+    <wire from="(290,470)" to="(290,480)"/>
+
+    <!-- X_reg3 -->
+    <comp lib="4" loc="(260,510)" name="Register"><a name="label" val="X_reg3"/><a name="width" val="1"/></comp>
+    <wire from="(80,540)" to="(260,540)"/>
+    <wire from="(150,560)" to="(260,560)"/>
+    <wire from="(180,580)" to="(260,580)"/>
+    <wire from="(210,610)" to="(290,610)"/>
+    <wire from="(290,600)" to="(290,610)"/>
+
+    <!-- X_reg4 -->
+    <comp lib="4" loc="(260,640)" name="Register"><a name="label" val="X_reg4"/><a name="width" val="1"/></comp>
+    <wire from="(80,670)" to="(260,670)"/>
+    <wire from="(150,690)" to="(260,690)"/>
+    <wire from="(180,710)" to="(260,710)"/>
+    <wire from="(210,740)" to="(290,740)"/>
+    <wire from="(290,730)" to="(290,740)"/>
+
+    <!-- ==================== 2) FIBONACCI COMPARATOR ==================== -->
+    <!-- Inverters for X_reg0..X_reg4 -->
+    <comp lib="1" loc="(440,180)" name="NOT Gate"/>
+    <comp lib="1" loc="(440,280)" name="NOT Gate"/>
+    <comp lib="1" loc="(440,440)" name="NOT Gate"/>
+    <comp lib="1" loc="(440,570)" name="NOT Gate"/>
+    <comp lib="1" loc="(440,700)" name="NOT Gate"/>
+
+    <!-- Register Q outputs to Inverters and Vertical Rails (X=500..660) -->
+    <!-- Xr0 (X=500) & nX0 (X=520) -->
+    <wire from="(320,150)" to="(500,150)"/>
+    <wire from="(360,150)" to="(360,180)"/>
+    <wire from="(360,180)" to="(410,180)"/>
+    <wire from="(440,180)" to="(520,180)"/>
+
+    <!-- nX1 (X=540) -->
+    <wire from="(320,280)" to="(410,280)"/>
+    <wire from="(440,280)" to="(540,280)"/>
+
+    <!-- Xr2 (X=560) & nX2 (X=580) -->
+    <wire from="(320,410)" to="(560,410)"/>
+    <wire from="(360,410)" to="(360,440)"/>
+    <wire from="(360,440)" to="(410,440)"/>
+    <wire from="(440,440)" to="(580,440)"/>
+
+    <!-- Xr3 (X=600) & nX3 (X=620) -->
+    <wire from="(320,540)" to="(600,540)"/>
+    <wire from="(360,540)" to="(360,570)"/>
+    <wire from="(360,570)" to="(410,570)"/>
+    <wire from="(440,570)" to="(620,570)"/>
+
+    <!-- Xr4 (X=640) & nX4 (X=660) -->
+    <wire from="(320,670)" to="(640,670)"/>
+    <wire from="(360,670)" to="(360,700)"/>
+    <wire from="(360,700)" to="(410,700)"/>
+    <wire from="(440,700)" to="(660,700)"/>
+
+    <!-- Comparator Vertical Bus Rails -->
+    <wire from="(500,150)" to="(500,500)"/>
+    <wire from="(520,180)" to="(520,360)"/>
+    <wire from="(540,280)" to="(540,480)"/>
+    <wire from="(560,410)" to="(560,460)"/>
+    <wire from="(580,170)" to="(580,440)"/>
+    <wire from="(600,250)" to="(600,620)"/>
+    <wire from="(620,140)" to="(620,570)"/>
+    <wire from="(640,600)" to="(640,670)"/>
+    <wire from="(660,120)" to="(660,700)"/>
+
+    <!-- Term T1 = nX4 & nX3 & nX2 (covers 0,1,2,3) -->
+    <comp lib="1" loc="(760,130)" name="AND Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(660,120)" to="(730,120)"/>
+    <wire from="(620,140)" to="(730,140)"/>
+
+    <comp lib="1" loc="(880,160)" name="AND Gate"><a name="inputs" val="2"/><a name="label" val="T1"/><a name="size" val="30"/></comp>
+    <wire from="(760,130)" to="(810,130)"/>
+    <wire from="(810,130)" to="(810,150)"/>
+    <wire from="(810,150)" to="(850,150)"/>
+    <wire from="(580,170)" to="(850,170)"/>
+
+    <!-- Term T2 = nX4 & Xr3 & nX2 & nX1 & nX0 (covers 8) -->
+    <comp lib="1" loc="(760,240)" name="AND Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(660,230)" to="(730,230)"/>
+    <wire from="(600,250)" to="(730,250)"/>
+
+    <comp lib="1" loc="(880,260)" name="AND Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(760,240)" to="(800,240)"/>
+    <wire from="(800,240)" to="(800,250)"/>
+    <wire from="(800,250)" to="(850,250)"/>
+    <wire from="(580,270)" to="(850,270)"/>
+
+    <comp lib="1" loc="(980,310)" name="AND Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(880,260)" to="(910,260)"/>
+    <wire from="(910,260)" to="(910,300)"/>
+    <wire from="(910,300)" to="(950,300)"/>
+    <wire from="(540,320)" to="(950,320)"/>
+
+    <comp lib="1" loc="(1080,350)" name="AND Gate"><a name="inputs" val="2"/><a name="label" val="T2"/><a name="size" val="30"/></comp>
+    <wire from="(980,310)" to="(1010,310)"/>
+    <wire from="(1010,310)" to="(1010,340)"/>
+    <wire from="(1010,340)" to="(1050,340)"/>
+    <wire from="(520,360)" to="(1050,360)"/>
+
+    <!-- Term T3 = Xr2 & nX1 & Xr0 & NOT(Xr4 & Xr3) (covers 5,13,21; blocks 29) -->
+    <comp lib="1" loc="(760,470)" name="AND Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(560,460)" to="(730,460)"/>
+    <wire from="(540,480)" to="(730,480)"/>
+
+    <comp lib="1" loc="(880,490)" name="AND Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(760,470)" to="(800,470)"/>
+    <wire from="(800,470)" to="(800,480)"/>
+    <wire from="(800,480)" to="(850,480)"/>
+    <wire from="(500,500)" to="(850,500)"/>
+
+    <comp lib="1" loc="(760,610)" name="AND Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(640,600)" to="(730,600)"/>
+    <wire from="(600,620)" to="(730,620)"/>
+
+    <comp lib="1" loc="(880,610)" name="NOT Gate"/>
+    <wire from="(760,610)" to="(850,610)"/>
+
+    <comp lib="1" loc="(1080,550)" name="AND Gate"><a name="inputs" val="2"/><a name="label" val="T3"/><a name="size" val="30"/></comp>
+    <wire from="(880,490)" to="(970,490)"/>
+    <wire from="(970,490)" to="(970,540)"/>
+    <wire from="(970,540)" to="(1050,540)"/>
+    <wire from="(880,610)" to="(970,610)"/>
+    <wire from="(970,560)" to="(970,610)"/>
+    <wire from="(970,560)" to="(1050,560)"/>
+
+    <!-- Final OR: F = (T1 | T2) | T3 -->
+    <comp lib="1" loc="(1190,260)" name="OR Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(880,160)" to="(1130,160)"/>
+    <wire from="(1130,160)" to="(1130,250)"/>
+    <wire from="(1130,250)" to="(1160,250)"/>
+    <wire from="(1080,350)" to="(1130,350)"/>
+    <wire from="(1130,270)" to="(1130,350)"/>
+    <wire from="(1130,270)" to="(1160,270)"/>
+
+    <comp lib="1" loc="(1290,400)" name="OR Gate"><a name="inputs" val="2"/><a name="label" val="F"/><a name="size" val="30"/></comp>
+    <wire from="(1190,260)" to="(1230,260)"/>
+    <wire from="(1230,260)" to="(1230,390)"/>
+    <wire from="(1230,390)" to="(1260,390)"/>
+    <wire from="(1080,550)" to="(1230,550)"/>
+    <wire from="(1230,410)" to="(1230,550)"/>
+    <wire from="(1230,410)" to="(1260,410)"/>
+
+    <!-- F output to Pin & routed down to FSM bus -->
+    <wire from="(1290,400)" to="(1480,400)"/>
+    <wire from="(1320,400)" to="(1320,770)"/>
+    <wire from="(620,770)" to="(1320,770)"/>
+
+    <!-- ==================== 3) START DELAY & MOORE FSM ==================== -->
+    <!-- START_delayed Register -->
+    <comp lib="4" loc="(260,810)" name="Register"><a name="label" val="START_delayed"/><a name="width" val="1"/></comp>
+    <wire from="(150,840)" to="(260,840)"/>
+    <wire from="(180,880)" to="(260,880)"/>
+    <wire from="(210,910)" to="(290,910)"/>
+    <wire from="(290,900)" to="(290,910)"/>
+
+    <!-- state_S0 Register -->
+    <comp lib="4" loc="(260,940)" name="Register"><a name="label" val="state_S0"/><a name="width" val="1"/></comp>
+    <wire from="(180,1010)" to="(260,1010)"/>
+    <wire from="(210,1040)" to="(290,1040)"/>
+    <wire from="(290,1030)" to="(290,1040)"/>
+
+    <!-- state_S1 Register -->
+    <comp lib="4" loc="(260,1070)" name="Register"><a name="label" val="state_S1"/><a name="width" val="1"/></comp>
+    <wire from="(180,1140)" to="(260,1140)"/>
+    <wire from="(210,1170)" to="(290,1170)"/>
+    <wire from="(290,1160)" to="(290,1170)"/>
+
+    <!-- FSM Inverters (nS0, nS1, nACK, nF) -->
+    <comp lib="1" loc="(440,1000)" name="NOT Gate"/>
+    <comp lib="1" loc="(440,1130)" name="NOT Gate"/>
+    <comp lib="1" loc="(440,1220)" name="NOT Gate"/>
+    <comp lib="1" loc="(660,810)" name="NOT Gate"/>
+
+    <!-- Register & Control outputs to FSM Vertical Bus Rails (X=500..680) -->
+    <!-- SD (X=500) -->
+    <wire from="(320,840)" to="(500,840)"/>
+    <wire from="(500,840)" to="(500,900)"/>
+
+    <!-- S0 (X=520) & nS0 (X=540) -->
+    <wire from="(320,970)" to="(520,970)"/>
+    <wire from="(360,970)" to="(360,1000)"/>
+    <wire from="(360,1000)" to="(410,1000)"/>
+    <wire from="(440,1000)" to="(540,1000)"/>
+    <wire from="(520,970)" to="(520,1330)"/>
+    <wire from="(540,880)" to="(540,1180)"/>
+
+    <!-- S1 (X=560) & nS1 (X=580) -->
+    <wire from="(320,1100)" to="(560,1100)"/>
+    <wire from="(360,1100)" to="(360,1130)"/>
+    <wire from="(360,1130)" to="(410,1130)"/>
+    <wire from="(440,1130)" to="(580,1130)"/>
+    <wire from="(560,1100)" to="(560,1360)"/>
+    <wire from="(580,860)" to="(580,1130)"/>
+
+    <!-- nACK (X=600) -->
+    <wire from="(80,1220)" to="(410,1220)"/>
+    <wire from="(440,1220)" to="(600,1220)"/>
+    <wire from="(600,1080)" to="(600,1220)"/>
+
+    <!-- F (X=620) & nF (X=680) -->
+    <wire from="(620,770)" to="(620,940)"/>
+    <wire from="(620,810)" to="(630,810)"/>
+    <wire from="(660,810)" to="(680,810)"/>
+    <wire from="(680,810)" to="(680,990)"/>
+
+    <!-- State Decode: idle = nS1 & nS0; d1 = idle & SD -->
+    <comp lib="1" loc="(780,870)" name="AND Gate"><a name="inputs" val="2"/><a name="label" val="idle"/><a name="size" val="30"/></comp>
+    <wire from="(580,860)" to="(750,860)"/>
+    <wire from="(540,880)" to="(750,880)"/>
+
+    <comp lib="1" loc="(890,890)" name="AND Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(780,870)" to="(820,870)"/>
+    <wire from="(820,870)" to="(820,880)"/>
+    <wire from="(820,880)" to="(860,880)"/>
+    <wire from="(500,900)" to="(860,900)"/>
+
+    <!-- Moore LED Decode: fib_led = nS1 & S0; non_fib_led = S1 & nS0 -->
+    <comp lib="1" loc="(780,1040)" name="AND Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(580,1030)" to="(750,1030)"/>
+    <wire from="(520,1050)" to="(750,1050)"/>
+    <wire from="(780,1040)" to="(1480,1040)"/>
+
+    <comp lib="1" loc="(780,1170)" name="AND Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(560,1160)" to="(750,1160)"/>
+    <wire from="(540,1180)" to="(750,1180)"/>
+    <wire from="(780,1170)" to="(1480,1170)"/>
+
+    <!-- Next-State Product Terms: N0a, N1a, N0b, N1b -->
+    <!-- d1 trunk -->
+    <wire from="(890,890)" to="(940,890)"/>
+    <wire from="(940,890)" to="(940,970)"/>
+
+    <!-- N0a = d1 & F -->
+    <comp lib="1" loc="(1040,930)" name="AND Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(940,920)" to="(1010,920)"/>
+    <wire from="(620,940)" to="(1010,940)"/>
+
+    <!-- N1a = d1 & nF -->
+    <comp lib="1" loc="(1040,980)" name="AND Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(940,970)" to="(1010,970)"/>
+    <wire from="(680,990)" to="(1010,990)"/>
+
+    <!-- N0b = fib_led & nACK -->
+    <comp lib="1" loc="(1040,1070)" name="AND Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(900,1040)" to="(900,1060)"/>
+    <wire from="(900,1060)" to="(1010,1060)"/>
+    <wire from="(600,1080)" to="(1010,1080)"/>
+
+    <!-- N1b = non_fib_led & nACK -->
+    <comp lib="1" loc="(1040,1200)" name="AND Gate"><a name="inputs" val="2"/><a name="size" val="30"/></comp>
+    <wire from="(900,1170)" to="(900,1190)"/>
+    <wire from="(900,1190)" to="(1010,1190)"/>
+    <wire from="(600,1210)" to="(1010,1210)"/>
+
+    <!-- Next-State OR Gates & Feedback Loops to state_S0 / state_S1 -->
+    <!-- N0 = N0a | N0b -->
+    <comp lib="1" loc="(1200,960)" name="OR Gate"><a name="inputs" val="2"/><a name="label" val="N0"/><a name="size" val="30"/></comp>
+    <wire from="(1040,930)" to="(1110,930)"/>
+    <wire from="(1110,930)" to="(1110,950)"/>
+    <wire from="(1110,950)" to="(1170,950)"/>
+    <wire from="(1040,1070)" to="(1110,1070)"/>
+    <wire from="(1110,970)" to="(1110,1070)"/>
+    <wire from="(1110,970)" to="(1170,970)"/>
+
+    <!-- N0 feedback to state_S0 (D) -->
+    <wire from="(1200,960)" to="(1260,960)"/>
+    <wire from="(1260,960)" to="(1260,1260)"/>
+    <wire from="(110,1260)" to="(1260,1260)"/>
+    <wire from="(110,970)" to="(110,1260)"/>
+    <wire from="(110,970)" to="(260,970)"/>
+
+    <!-- N1 = N1a | N1b -->
+    <comp lib="1" loc="(1200,1110)" name="OR Gate"><a name="inputs" val="2"/><a name="label" val="N1"/><a name="size" val="30"/></comp>
+    <wire from="(1040,980)" to="(1080,980)"/>
+    <wire from="(1080,980)" to="(1080,1100)"/>
+    <wire from="(1080,1100)" to="(1170,1100)"/>
+    <wire from="(1040,1200)" to="(1110,1200)"/>
+    <wire from="(1110,1120)" to="(1110,1200)"/>
+    <wire from="(1110,1120)" to="(1170,1120)"/>
+
+    <!-- N1 feedback to state_S1 (D) -->
+    <wire from="(1200,1110)" to="(1290,1110)"/>
+    <wire from="(1290,1110)" to="(1290,1290)"/>
+    <wire from="(130,1290)" to="(1290,1290)"/>
+    <wire from="(130,1100)" to="(130,1290)"/>
+    <wire from="(130,1100)" to="(260,1100)"/>
+
+    <!-- ==================== OUTPUT PINS ==================== -->
+    <comp lib="0" loc="(1480,400)" name="Pin"><a name="facing" val="west"/><a name="label" val="F"/><a name="output" val="true"/></comp>
+    <comp lib="0" loc="(1480,1040)" name="Pin"><a name="facing" val="west"/><a name="label" val="fib_led"/><a name="output" val="true"/></comp>
+    <comp lib="0" loc="(1480,1170)" name="Pin"><a name="facing" val="west"/><a name="label" val="non_fib_led"/><a name="output" val="true"/></comp>
+
+    <wire from="(520,1330)" to="(1480,1330)"/>
+    <comp lib="0" loc="(1480,1330)" name="Pin"><a name="facing" val="west"/><a name="label" val="S0"/><a name="output" val="true"/></comp>
+
+    <wire from="(560,1360)" to="(1480,1360)"/>
+    <comp lib="0" loc="(1480,1360)" name="Pin"><a name="facing" val="west"/><a name="label" val="S1"/><a name="output" val="true"/></comp>
+  </circuit>
+</project>

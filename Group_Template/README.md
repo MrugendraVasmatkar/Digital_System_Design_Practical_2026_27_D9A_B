@@ -5,20 +5,20 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Atharva Manoj Jaiswal | 21 | 2025atharvajaiswal-art |
+| Member 2 | Yukta Jadhav | 20 | [Username] |
+| Member 3 | Mrunmay Dhuri | 11 | [Username] |
+| Member 4 | Nishchay  | 67 | [Username] |
 
-**Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
-**Repository URL:** [Fork URL]  
+**Class:** D9A  
+**Group ID:** D9A_Group33  
+**Repository URL:** https://github.com/2025atharvajaiswal-art/DSD-2026-D9A-Group33
 **Final Pull Request URL:** [URL]
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
-- **Problem summary:** [In your own words]
-- **Objective:** [What must the system achieve?]
+- **Number/title:** 5H1-Fibonacci Number Detector.
+- **Problem summary:** The original design checks a 4-bit input (0–15) and lights an LED if it is a Fibonacci number. H1 widens the input to 5 bits (0–31) and extends the Fibonacci set to include 21. The system also keeps the START/ACK/RESET control sequence with a Moore FSM.
+- **Objective:** Read a 5-bit unsigned number when START is applied and decide whether it belongs to {0, 1, 2, 3, 5, 8, 13, 21}. Show the result on a Fibonacci LED or a Non-Fibonacci LED. Hold the result until ACK, then return to IDLE ready for the next number.
 - **Inputs and outputs:** [List signals, widths and meaning]
 - **Constraints and assumptions:** [List and justify]
 
