@@ -11,7 +11,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | No. | Milestone | Status | Evidence path/link | Last updated |
 |---:|---|---|---|---|
 | 1 | Problem requirements and assumptions documented | Completed | [ ] | [ ] |
-| 2 | Architecture and block diagram prepared | Completed | [ ] | [ ] |
+| 2 | Architecture and block diagram prepared | Completed | [https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B/blob/e1b1394f22d00cdab46ab716e14d479cd3286863/Group_Template/README.md ] | [ ] |
 | 3 | FSM diagram/table completed, if applicable | Not Started | [ ] | [ ] |
 | 4 | Logisim circuit implemented | Completed | [ https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B/tree/bb188e9ad75c3067253becb99d7b4ddf5b44a10d/Group_Template/02_FSM_Logisim] | [ ] |
 | 5 | Logisim simulation verified | Completed | [ https://github.com/shlokkesarkar22-tech/Digital_System_Design_Practical_2026_27_D9A_B/tree/bb188e9ad75c3067253becb99d7b4ddf5b44a10d/Group_Template/02_FSM_Logisim] | [ ] |
