@@ -315,14 +315,14 @@ What did the team learn? What would you improve?
 | FPGA | Run on the board and record timing and utilisation reports | Confirms real
 
 ## 15. Final Submission Checklist
-- [ ] Team details and problem analysis complete.
-- [ ] Architecture/block diagram included.
-- [ ] FSM diagram/table or justified alternative included.
-- [ ] Logisim source and simulation evidence uploaded.
-- [ ] Verilog RTL and testbench uploaded.
-- [ ] Simulation results and test cases documented.
+- [Completed ] Team details and problem analysis complete.
+- [Completed ] Architecture/block diagram included.
+- [Completed ] FSM diagram/table or justified alternative included.
+- [Completed ] Logisim source and simulation evidence uploaded.
+- [Completed ] Verilog RTL and testbench uploaded.
+- [ Completed] Simulation results and test cases documented.
 - [ ] FPGA implementation and hardware evidence uploaded.
 - [ ] Results, challenges and conclusion documented.
-- [ ] Presentation and final report uploaded.
-- [ ] STATUS.md is up to date.
-- [ ] Final Pull Request created and URL recorded.
+- [Completed ] Presentation and final report uploaded.
+- [Completed ] STATUS.md is up to date.
+- [Completed ] Final Pull Request created and URL recorded.
