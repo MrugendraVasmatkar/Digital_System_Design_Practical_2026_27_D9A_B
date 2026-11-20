@@ -1,0 +1,117 @@
+// =====================================================================
+//  Age Group Detector - MEALY FSM (H2)
+//  Structural Verilog that mirrors Age_Group_Detector_Mealy.circ
+//  component-for-component (same names, same wires).
+//
+//  Logisim component              ->  Verilog
+//  -------------------------------------------------------------------
+//  Pins A4..A0 + Splitter         ->  age_sw[4:0]   (A4 = bit 4)
+//  Pins START / ACK / RESET       ->  start / ack / reset
+//  Clock                          ->  clk
+//  Register 5-bit  "AGE_REG"      ->  logisim_register #(5) AGE_REG
+//  Constant 0x0D (13)             ->  K13
+//  Constant 0x14 (20)             ->  K20
+//  Comparator (unsigned) CMP1     ->  logisim_comparator CMP1  (Age vs 13)
+//  Comparator (unsigned) CMP2     ->  logisim_comparator CMP2  (Age vs 20)
+//  NOT gates (5)                  ->  NOT_CHILD, NOT_ADULT, NOT_ACK, NOT_RESET, NOT_Q
+//  AND gates (5)                  ->  AND_TEEN, AND_E (3-input), AND_CHILD, AND_TEEN_LED, AND_ADULT
+//  OR gate (1)                    ->  OR_S
+//  Register 1-bit  "STATE_Q"      ->  logisim_register #(1) STATE_Q
+//  LEDs CHILD / TEEN / ADULT      ->  child_led / teen_led / adult_led
+//
+//  Equations implemented:
+//    CHILD = (Age < 13)
+//    TEEN  = NOT(Age < 13) . (Age < 20)
+//    ADULT = NOT(Age < 20)
+//    E     = RESET' . ACK' . (START + Q)      D(STATE_Q) = E
+//    LED   = E . group                        (Mealy output)
+//    EN(AGE_REG) = Q'                         (load age only in IDLE)
+// =====================================================================
+
+// ---------------------------------------------------------------------
+// Logisim "Register": stores D on the rising clock edge when EN = 1.
+// Logisim registers power up at 0; CLR is left unconnected in the circuit.
+// ---------------------------------------------------------------------
+module logisim_register #(parameter W = 1) (
+    input  wire         clk,
+    input  wire         en,
+    input  wire [W-1:0] d,
+    output reg  [W-1:0] q
+);
+    initial q = {W{1'b0}};
+    always @(posedge clk)
+        if (en) q <= d;
+endmodule
+
+// ---------------------------------------------------------------------
+// Logisim "Comparator" with Numeric Type = Unsigned
+// ---------------------------------------------------------------------
+module logisim_comparator #(parameter W = 5) (
+    input  wire [W-1:0] a,
+    input  wire [W-1:0] b,
+    output wire         gt,
+    output wire         eq,
+    output wire         lt
+);
+    assign gt = (a >  b);
+    assign eq = (a == b);
+    assign lt = (a <  b);
+endmodule
+
+// ---------------------------------------------------------------------
+// Top level: the Logisim "main" circuit
+// ---------------------------------------------------------------------
+module age_group_mealy (
+    input  wire       clk,        // Clock
+    input  wire       reset,      // RESET pin (synchronous, active-high)
+    input  wire       start,      // START pin
+    input  wire       ack,        // ACK pin
+    input  wire [4:0] age_sw,     // switches {A4,A3,A2,A1,A0} -> splitter
+    output wire       child_led,  // CHILD LED (green)
+    output wire       teen_led,   // TEEN LED  (yellow)
+    output wire       adult_led   // ADULT LED (red)
+);
+    // ---- wires (named as in the Logisim circuit) ----
+    wire [4:0] age;       // AGE_REG output bus, Age[4:0]
+    wire       q;         // STATE_Q output (0 = IDLE, 1 = ACTIVE)
+    wire       qn;        // Q'
+    wire       lt13;      // CMP1 '<' : Age < 13  (= CHILD group)
+    wire       lt20;      // CMP2 '<' : Age < 20
+    wire       cn;        // NOT(Age < 13)
+    wire       teen;      // TEEN group
+    wire       adult;     // ADULT group
+    wire       ackn;      // ACK'
+    wire       resetn;    // RESET'
+    wire       s;         // START + Q
+    wire       e;         // next state / output enable
+
+    // ---- Constants ----
+    wire [4:0] K13 = 5'h0D;   // 13
+    wire [4:0] K20 = 5'h14;   // 20
+
+    // ---- Input section: 5-bit input register, EN = Q' ----
+    logisim_register #(5) AGE_REG (.clk(clk), .en(qn), .d(age_sw), .q(age));
+
+    // ---- Range decoder: two unsigned comparators ----
+    logisim_comparator #(5) CMP1 (.a(age), .b(K13), .gt(), .eq(), .lt(lt13));
+    logisim_comparator #(5) CMP2 (.a(age), .b(K20), .gt(), .eq(), .lt(lt20));
+
+    not NOT_CHILD (cn,    lt13);           // NOT(Age < 13)
+    and AND_TEEN  (teen,  cn, lt20);       // TEEN  = NOT(Age<13) . (Age<20)
+    not NOT_ADULT (adult, lt20);           // ADULT = NOT(Age<20)
+
+    // ---- FSM controller: next-state logic ----
+    not NOT_ACK   (ackn,   ack);
+    not NOT_RESET (resetn, reset);
+    or  OR_S      (s, start, q);           // START + Q
+    and AND_E     (e, s, ackn, resetn);    // E = RESET'.ACK'.(START+Q)
+
+    // ---- State register (1 bit), D = E, EN left unconnected (= enabled) ----
+    logisim_register #(1) STATE_Q (.clk(clk), .en(1'b1), .d(e), .q(q));
+    not NOT_Q (qn, q);                     // Q' -> AGE_REG enable
+
+    // ---- Mealy output logic: LED = E . group ----
+    and AND_CHILD    (child_led, lt13,  e);
+    and AND_TEEN_LED (teen_led,  teen,  e);
+    and AND_ADULT    (adult_led, adult, e);
+endmodule

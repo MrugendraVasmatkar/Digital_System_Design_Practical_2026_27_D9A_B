@@ -1,0 +1,78 @@
+`timescale 1ns/1ps
+// Self-checking testbench for the Mealy Age Group Detector
+module tb_age_group_mealy;
+    reg        clk = 0, reset = 0, start = 0, ack = 0;
+    reg  [4:0] age_sw = 0;
+    wire       child_led, teen_led, adult_led;
+    integer    i, errors = 0;
+
+    age_group_mealy dut (.clk(clk), .reset(reset), .start(start), .ack(ack),
+                         .age_sw(age_sw), .child_led(child_led),
+                         .teen_led(teen_led), .adult_led(adult_led));
+
+    always #5 clk = ~clk;
+
+    task check(input [2:0] exp, input [8*24-1:0] what);
+        begin
+            if ({child_led, teen_led, adult_led} !== exp) begin
+                $display("FAIL age=%0d %0s : got CTA=%b%b%b exp=%b",
+                         i, what, child_led, teen_led, adult_led, exp);
+                errors = errors + 1;
+            end
+        end
+    endtask
+
+    function [2:0] expected(input [4:0] v);
+        expected = (v <= 12) ? 3'b100 : (v <= 19) ? 3'b010 : 3'b001;
+    endfunction
+
+    initial begin
+        // Synchronous reset
+        reset = 1; @(posedge clk); #1 reset = 0;
+        check(3'b000, "after reset");
+        if (dut.q !== 1'b0) begin $display("FAIL: not IDLE after reset"); errors = errors + 1; end
+
+        for (i = 0; i < 32; i = i + 1) begin
+            age_sw = i;
+            @(posedge clk); #1;                    // register samples age while IDLE
+            check(3'b000, "IDLE, START=0");
+            start = 1; #1;
+            check(expected(i), "START=1 (immediate)"); // Mealy: output before clock edge
+            @(posedge clk); #1 start = 0;          // -> ACTIVE
+            if (dut.q !== 1'b1) begin $display("FAIL age=%0d not ACTIVE", i); errors = errors + 1; end
+            age_sw = ~i;  #1;                      // switches change, register is frozen
+            check(expected(i), "ACTIVE hold");
+            ack = 1; #1;
+            check(3'b000, "ACK=1 (immediate off)");
+            @(posedge clk); #1 ack = 0;            // -> IDLE
+            if (dut.q !== 1'b0) begin $display("FAIL age=%0d not back to IDLE", i); errors = errors + 1; end
+        end
+
+        // RESET while ACTIVE
+        age_sw = 25; @(posedge clk); #1 start = 1; @(posedge clk); #1 start = 0;
+        reset = 1; #1 check(3'b000, "RESET in ACTIVE");
+        @(posedge clk); #1 reset = 0;
+        if (dut.q !== 1'b0) begin $display("FAIL: RESET did not return to IDLE"); errors = errors + 1; end
+
+        // START held at 1 permanently: ACK=1 must keep LEDs off (no blinking)
+        for (i = 0; i < 32; i = i + 1) begin
+            start = 1; ack = 1; age_sw = i;
+            repeat (6) begin
+                @(posedge clk); #1;
+                check(3'b000, "START=1,ACK=1 no blink");
+                if (dut.q !== 1'b0) begin $display("FAIL age=%0d left IDLE while ACK held", i); errors = errors + 1; end
+            end
+            ack = 0; #1;
+            check(expected(i), "ACK released, START=1");
+            repeat (3) begin
+                @(posedge clk); #1;
+                check(expected(i), "START=1 steady ACTIVE");
+            end
+        end
+        start = 0; ack = 1; @(posedge clk); #1 ack = 0;
+
+        if (errors == 0) $display("ALL TESTS PASSED (32 ages, START/ACK/RESET, START held)");
+        else             $display("%0d TEST(S) FAILED", errors);
+        $finish;
+    end
+endmodule
