@@ -2,70 +2,129 @@
 
 **Class / group:** D9A  
 **Group ID:** D9A_Group29  
-**Assigned problem statement:** H3 — age-group classification / detector FSM (confirm exact official title and wording)  
-**Group leader:** Kaif Bagwan (@kaifjbagwan4116-coder)
+**Assigned problem statement:** H3 — Add ERROR State for Invalid Input  
+**Group leader:** Kaif Bagwan (@kaifjbagwan4116-coder) — **Roll number 1 / D9A**  
+**Repository:** https://github.com/kaifjbagwan4116-coder/DSD-2026-D9A-Group29  
+**Default branch:** `main`  
+**Status updated:** 20 November 2026
 
 ## 1. Current milestone status
 
-Use only: `Not Started`, `In Progress`, `Completed` or `Blocked`. File presence alone does not prove that simulation or hardware verification is complete.
+Statuses describe the state of the work and its evidence. A file being present is not by itself proof that its contents match the latest source or that a test passed.
 
-| No. | Milestone | Status | Evidence path/link | Last updated / notes |
+| No. | Milestone | Status | Evidence path / link | Current notes / next action |
 |---:|---|---|---|---|
-| 1 | Problem requirements and assumptions documented | In Progress | `01_Problem_Analysis/` | Exact official H3 title/wording and requirements still need confirmation |
-| 2 | Architecture and block diagram prepared | In Progress | `01_Problem_Analysis/` | RTL structure can be described; final block diagram still pending |
-| 3 | FSM diagram/table completed | In Progress | `02_FSM_Logisim/`, `README.md` §5 | Five-state model documented in README; separate diagram still pending |
-| 4 | Logisim circuit files organized | In Progress | `02_FSM_Logisim/DSDlogs.circ`, `02_FSM_Logisim/DSDPRA.circ` | Two circuit files are present; verify which one is final and add simulation evidence |
-| 5 | Logisim simulation verified | Not Started | `02_FSM_Logisim/` | Fresh evidence and expected/observed comparison pending |
-| 6 | Current 5-bit Verilog RTL uploaded | Completed | `03_Verilog_Implementation/RTL/age_group_detector_core.v` | Current dedicated RTL uses 5-bit age input and separate range decoder/FSM/wrapper |
-| 7 | Updated testbench uploaded | Completed | `03_Verilog_Implementation/Testbench/tb_age_group_detector.v` | Includes boundary checks, full 0–31 decoder sweep, ERROR injection, ACK and reset checks; execution must still be freshly verified |
-| 8 | Fresh simulation run and verification summary | Blocked | `03_Verilog_Implementation/Simulation_Results/XSim/` | Stored compile/elaboration artefacts appear to be from the older archived project; rerun current 5-bit RTL/testbench and save fresh output |
-| 9 | FPGA constraints aligned with current 5-bit RTL | Blocked | `04_FPGA_Hardware/age_group_detector_boolean.xdc` | XDC still contains `sw[5]`, while current RTL declares `sw[4:0]`; update after confirming physical board pinout |
-| 10 | Vivado project aligned with current RTL | Blocked | `04_FPGA_Hardware/Vivado_Project/age_group_fsm/` | Archived project source and testbench are still 6-bit; update them to match the 5-bit dedicated RTL/testbench |
-| 11 | Fresh FPGA synthesis/implementation and bitstream | Blocked | `04_FPGA_Hardware/Implementation_Reports/`, `04_FPGA_Hardware/Bitstream/` | Existing reports/bitstream are present but must be regenerated after project and XDC alignment |
-| 12 | Hardware demonstration completed | Not Started | `04_FPGA_Hardware/` | Physical board testing and direct evidence pending |
-| 13 | Results, presentation and final report completed | Not Started | `05_Results/`, `06_Presentation/`, `07_Final_Report/` | Complete using fresh verified simulation and hardware results |
-| 14 | Final Pull Request created | Not Started | Pending | Create after final review; base is faculty master repository and faculty-specified branch |
-| 15 | Individual contribution roles and supporting artefact links documented | Completed | `README.md` §11 | Kartik: ideation/design; Vedant: Logisim; Arya: testbench/simulation; related repository files are linked. Fresh simulation validation remains pending | Each member should review and confirm their row; retain individual commits/work logs if authorship evidence is requested |
+| 1 | Group repository and required folder structure | Completed | `Group_Submissions/D9A_Group29/` | Seven numbered folders and the group README/STATUS are present. |
+| 2 | Team details recorded | In Progress | `README.md` §1 | Kaif Bagwan is confirmed as roll 1 / D9A. Verify the remaining member roll/class details against the official faculty roster, especially the D9B entries in a D9A group. |
+| 3 | Official H3 requirements documented | In Progress | `README.md` §2; `01_Problem_Analysis/` | H3 is documented as adding an ERROR state for age values greater than 31. Check the final wording against the faculty-issued statement before submission. |
+| 4 | Architecture/block diagram | In Progress | `README.md` §3–4; `01_Problem_Analysis/` | Architecture is documented as decoder → Moore FSM → board wrapper. Ensure the diagram in the submission matches the final six-bit design. |
+| 5 | FSM design and state table | Completed | `README.md` §5 | Five states are documented: IDLE, CHILD, TEEN, ADULT and ERROR. Add/retain a separate diagram if required by faculty. |
+| 6 | Logisim source files | Completed (files uploaded) | `02_FSM_Logisim/DSDPRA.circ`; `02_FSM_Logisim/DSDlogs.circ` | Both circuit files are present. Confirm the final circuit matches the six-bit ranges and add/retain current simulation evidence. |
+| 7 | Logisim simulation evidence | In Progress | `02_FSM_Logisim/` | Source files exist; final six-bit behaviour screenshots/expected-versus-observed results still need to be verified and organized. |
+| 8 | Six-bit Verilog RTL | Completed | `03_Verilog_Implementation/RTL/age_group_detector_core.v` | Repository `main` contains six-bit `sw[5:0]` / `age_in[5:0]` design with decoder, FSM and FPGA wrapper. |
+| 9 | Six-bit testbench | Completed | `03_Verilog_Implementation/Testbench/tb_age_group_detector.v` | Testbench checks all 64 values and category boundaries, ERROR, ACK and RESET using the board wrapper inputs. |
+| 10 | Six-bit simulation rerun | Completed (group-confirmed) | `03_Verilog_Implementation/Simulation_Results/XSim/` | Group reports that the simulation has been updated for the current project. The repository evidence folder still requires synchronization: current `image.png` shows an older five-bit signal/forced no-match setup, and `simulate.log` is empty. |
+| 11 | Simulation waveform/log synchronized with final six-bit run | In Progress | `03_Verilog_Implementation/Simulation_Results/XSim/image.png`; `simulate.log` | Replace the old five-bit screenshot and empty log with the actual six-bit waveform and fresh XSim output. Do not mark repository evidence fully closed until the files match the current RTL/testbench. |
+| 12 | Boolean Board XDC updated for six inputs | Completed | `04_FPGA_Hardware/age_group_detector_boolean.xdc` | Six switch pins are constrained, including SW5 → R2. Buttons, LEDs and the 100 MHz clock are also assigned. |
+| 13 | Vivado project/reports/bitstream aligned with final six-bit source | In Progress | `04_FPGA_Hardware/Vivado_Project/`; `Implementation_Reports/`; `Bitstream/age_group_detector_core.bit` | Project archive, reports and bitstream are present. Confirm/regenerate from the exact six-bit RTL and XDC and retain the final build evidence. |
+| 14 | Physical FPGA demonstration evidence | Completed (evidence uploaded) | `05_Results/WhatsApp Image 2026-11-20 at 10.44.46 AM.jpeg`; `05_Results/WhatsApp Video 2026-11-20 at 10.45.07 AM.mp4` | The group confirms the photo/video are current-project evidence. The photo shows the Boolean Board with LED activity; include a small observed-results table for each tested category and invalid range if required. |
+| 15 | Presentation uploaded | Completed | `06_Presentation/PPT.GROUP29.pdf` | Presentation file is present in the submission folder as a PDF named `PPT.GROUP29.pdf`. |
+| 16 | Results and final report | In Progress | `05_Results/`; `07_Final_Report/` | Hardware evidence has been uploaded. Add the expected-versus-observed table and complete the final written report/conclusion. |
+| 17 | Contribution allocation and supporting links | Completed (documented) | `README.md` §11 | Kartik: ideation/design; Vedant: Logisim; Arya: testbench/simulation; Kaif: leadership/integration. Have each member verify their row. |
+| 18 | Final pull request to faculty master | Not Started | Pending | Review the complete diff, ensure it changes only the group's submission folder (plus any expressly required metadata), then create the PR to the faculty master `main` and record its URL. |
 
-## 2. Time-wise progress log
+## 2. Current technical baseline
 
-Update at least once every two hours and at every major milestone. Use actual completion times, evidence paths, blockers and next actions. Do not backdate entries or pre-fill future work.
+The latest agreed H3 implementation is a **six-bit comparator-based Moore FSM** for the RealDigital Boolean Board and Spartan-7 target `xc7s50csga324-1`.
 
-| Date | Actual time (IST) | Work completed | Evidence path | Blocker | Next action | Updated by |
-|---|---|---|---|---|---|---|
-| 19 Nov 2026 | Time not recorded | Prepared the group submission directory and copied the template/project assets into the faculty-required folder structure | `Group_Submissions/D9A_Group29/` | Documentation and file verification pending at that point | Verify required folders and files | Kaif Bagwan |
-| 19 Nov 2026 | Time not recorded | Checked all nine required directories and six key files; local check reported 18 files in Simulation_Results, 12 implementation reports and one bitstream | `Group_Submissions/D9A_Group29/` | Counts represent existing files, not newly run tests | Review README/STATUS and keep evidence claims accurate | Kaif Bagwan |
-| 19 Nov 2026 | 22:16–22:18 (repository activity) | Latest GitHub commits updated the age detector RTL/input size and refactored the testbench; the repository now contains dedicated 5-bit RTL and testbench files | `03_Verilog_Implementation/RTL/age_group_detector_core.v`; `03_Verilog_Implementation/Testbench/tb_age_group_detector.v` | Archived Vivado project and XDC do not yet match the 5-bit sources | Update archived project sources/testbench and XDC, then rerun simulation and implementation | Kaif Bagwan |
-| 19 Nov 2026 | Time not recorded | Prepared the revised README and STATUS from the current group-repository files, documenting the 5-bit RTL and outstanding Vivado/XDC mismatch | `README.md`, `STATUS.md` | Exact H3 title, roll number for Kaif, and roster confirmation pending | Copy the revised documentation into the group folder and commit/push it | Kaif Bagwan |
-| 19 Nov 2026 | Time not recorded — enter actual time when committing | Updated contribution allocation and linked supporting project artefacts: Kartik—ideation/design; Vedant—Logisim; Arya—testbench/simulation. Revised the final checklist to separate completed repository contents from pending verification and final deliverables | `README.md` §11 and §15; linked files under `01_Problem_Analysis/`, `02_FSM_Logisim/`, and `03_Verilog_Implementation/` | Individual authorship is not independently established by the linked group artefacts; fresh 5-bit simulation, Logisim verification and FPGA refresh remain pending | Have members review their contribution rows; copy/commit both revised docs and enter the actual time | Kaif Bagwan |
-
-Add a new row at each major milestone and at least once every two hours while work is active. After copying and committing these files, add a separate log entry with the actual local time of that update.
-
-## 3. Current blockers and support required
-
-| Blocker | Impact | Action being taken | Faculty support required |
+| Input range | Decoder output | FSM state | LED |
 |---|---|---|---|
-| Kaif's roll number is not recorded | Team details remain incomplete | Confirm from the official roster | No, unless roster information is unavailable |
-| Screenshot lists Kartik as D9A roll 36, Vedant as D9B roll 47 and Arya as D9B roll 66, while this is a D9A group | Class/group allocation needs confirmation | Verify against the official faculty group roster | Ask faculty if the roster does not match |
-| Exact H3 title and official wording not copied into README | Requirements cannot be finally signed off | Copy the assigned H3 statement from the faculty repository | Only if the statement is unclear |
-| Current 5-bit RTL and archived Vivado project are inconsistent | Synthesis/implementation from archived project would not necessarily represent current RTL | Copy the current 5-bit RTL and testbench into the Vivado project's source set and update project files | No, unless project/device configuration needs clarification |
-| XDC still constrains `sw[5]`, but current RTL has `sw[4:0]` | Constraint mismatch may cause implementation warnings/errors or an incorrect pin mapping | Verify the actual board pinout and remove/update the obsolete sixth switch constraint as appropriate | Board pinout/faculty help if not available |
-| Existing XSim logs are from the archived project snapshot | They do not certify the latest 5-bit testbench | Run a fresh simulation with current RTL and testbench; save logs and waveform | No |
-| Collaborator invitations were sent, but acceptance has not been confirmed | Teammates may not yet have write access | Each teammate should accept the invitation | Faculty only if invitation/permission fails |
+| 0–12 | CHILD detect | CHILD | LD0 |
+| 13–19 | TEEN detect | TEEN | LD1 |
+| 20–31 | ADULT detect | ADULT | LD2 |
+| 32–63 | No valid category detected | ERROR | LD3 |
 
-## 4. End-of-day summary
+- `no_match = ~(child_detect | teen_detect | adult_detect)`.
+- For ages 32–63, all three category outputs are zero and `no_match` is one.
+- START initiates classification from IDLE; ACK returns a result state to IDLE; RESET returns the FSM to IDLE.
+- The design uses a six-bit age input so invalid values greater than 31 can be selected directly with SW5–SW0.
+- Synthesis top: `age_group_detector_core`.
+- Simulation top: `tb_age_group_detector`.
+- Vivado version: 2018.3.
+- Target part: `xc7s50csga324-1`.
 
-### 19 November 2026
-- **Completed:** Group submission directory prepared; required folder structure checked; existing Logisim, Verilog, testbench, simulation and FPGA files organized; latest dedicated 5-bit RTL and refactored testbench are present in GitHub.
-- **In progress:** Final documentation, Logisim circuit verification, FSM diagram and roster confirmation.
-- **Pending / blocked:** Fresh simulation using the latest 5-bit RTL/testbench; matching Vivado project update; XDC correction after board pinout verification; regenerated reports/bitstream; physical hardware demonstration; results, presentation and final report.
-- **Evidence paths:** `03_Verilog_Implementation/RTL/`, `03_Verilog_Implementation/Testbench/`, `03_Verilog_Implementation/Simulation_Results/`, `04_FPGA_Hardware/`.
-- **Next action:** Align the archived Vivado source/testbench and constraints with the current 5-bit implementation, then run a fresh simulation before updating verification results. Have each member confirm the contribution row and keep their individual commits/work log if requested.
+## 3. Current evidence inventory
 
-## 5. Group leader confirmation
+### Presentation
 
-This status is based on repository inspection and the project files currently uploaded. It is an interim progress record, not a declaration that final simulation or hardware verification is complete.
+- Uploaded file: [`06_Presentation/PPT.GROUP29.pdf`](06_Presentation/PPT.GROUP29.pdf).
+- The presentation is present in the repository. It is stored as a PDF despite the `PPT.GROUP29` filename.
+
+### Hardware
+
+- Photograph: [`05_Results/WhatsApp Image 2026-11-20 at 10.44.46 AM.jpeg`](05_Results/WhatsApp%20Image%202026-11-20%20at%2010.44.46%20AM.jpeg).
+- Video: [`05_Results/WhatsApp Video 2026-11-20 at 10.45.07 AM.mp4`](05_Results/WhatsApp%20Video%202026-11-20%20at%2010.45.07%20AM.mp4).
+- The group confirms that the hardware evidence reflects the current project. The photograph visibly shows the Boolean Board powered and LED activity. Preserve the video as the full demonstration evidence.
+
+### Simulation
+
+- Six-bit RTL: `03_Verilog_Implementation/RTL/age_group_detector_core.v`.
+- Six-bit testbench: `03_Verilog_Implementation/Testbench/tb_age_group_detector.v`.
+- XSim artefacts: `03_Verilog_Implementation/Simulation_Results/XSim/`.
+- The group confirms that the simulation has been rerun/updated for the current six-bit project.
+- **Repository consistency issue:** the retained `image.png` still shows `age_in[4:0]` and a `force_no_match` signal from the earlier five-bit test setup; `simulate.log` is empty; compile/elaboration logs also reference an older source snapshot. Replace these artefacts with the matching six-bit waveform and fresh non-empty simulation log before treating the repository's simulation evidence as self-contained and final.
+
+## 4. Boolean Board pin mapping
+
+| Board signal | FPGA package pin | Function |
+|---|---|---|
+| 100 MHz clock | F14 | `clk` |
+| SW0 | V2 | `sw[0]`, age LSB |
+| SW1 | U2 | `sw[1]` |
+| SW2 | U1 | `sw[2]` |
+| SW3 | T2 | `sw[3]` |
+| SW4 | T1 | `sw[4]` |
+| SW5 | R2 | `sw[5]`, age MSB |
+| BTN0 | J2 | `btn[0]`, RESET |
+| BTN1 | J5 | `btn[1]`, START |
+| BTN2 | H2 | `btn[2]`, ACK |
+| LD0 | G1 | `led[0]`, CHILD |
+| LD1 | G2 | `led[1]`, TEEN |
+| LD2 | F1 | `led[2]`, ADULT |
+| LD3 | F2 | `led[3]`, ERROR |
+
+The committed XDC path is `04_FPGA_Hardware/age_group_detector_boolean.xdc`. Its external port names must match the synthesis top module. The clock constraint is 10 ns (100 MHz).
+
+## 5. Time-wise progress log
+
+| Date | Time (IST) | Work completed / evidence update | Next action | Updated by |
+|---|---|---|---|---|
+| 19 Nov 2026 | 22:29 | Updated project README with project objective, team information and implementation notes. | Verify exact H3 wording and team roster. | Kaif Bagwan |
+| 19 Nov 2026 | 22:38 | Revised task allocation and final checklist; documented Kartik's ideation/design, Vedant's Logisim role and Arya's testbench/simulation role. | Have members confirm their contributions and retain individual evidence if required. | Kaif Bagwan |
+| 19 Nov 2026 | 22:39 | Updated STATUS with milestone tracking, blockers and evidence paths. | Resolve five-bit/six-bit source mismatch. | Kaif Bagwan |
+| 20 Nov 2026 | 10:49 | Group leader roll number confirmed as 1 / D9A. | Verify remaining team roster details. | Kaif Bagwan |
+| 20 Nov 2026 | Time from filename: 10:44–10:45 | Current-project board photograph and demonstration video uploaded under `05_Results/`. | Add observed input/LED results from the video if a detailed test table is required. | Group |
+| 20 Nov 2026 | Time not recorded | Presentation PDF `PPT.GROUP29.pdf` uploaded under `06_Presentation/`. | Ensure the final README and status point to the presentation. | Group |
+| 20 Nov 2026 | Time not recorded | Group confirmed the six-bit simulation was rerun/updated for the current design. | Replace the retained five-bit waveform and empty simulation log in the repository with the matching six-bit evidence. | Group |
+
+Use actual local time for future entries; do not backdate work.
+
+## 6. Remaining blockers and actions
+
+| Item | Impact | Required action |
+|---|---|---|
+| Official H3 wording | Final requirements traceability | Verify the wording against the original faculty-issued problem statement. |
+| Team roster | Team eligibility/details | Confirm the D9B class entries for Vedant and Arya against the official roster. |
+| Logisim final verification | Cross-tool consistency | Open the submitted Logisim circuits, confirm the six-bit invalid range and save evidence. |
+| Simulation evidence consistency | Repository evidence does not yet prove the latest run | Replace stale five-bit `image.png`, empty `simulate.log` and old compile/elaboration logs with files from the latest six-bit simulation. |
+| Vivado build provenance | Existing reports/bitstream may be from an earlier project snapshot | Confirm or regenerate synthesis, implementation, timing reports and bitstream using the six-bit RTL and current XDC. |
+| Hardware results table | Photo/video alone do not record each expected/observed case in tabular form | Record tested ages 0, 12, 13, 19, 20, 31, 32 and 63; include corresponding LEDs and ACK/RESET behaviour. |
+| Final written report | `07_Final_Report/` still contains a placeholder | Prepare and upload the final report using verified simulation/hardware observations. |
+| Faculty pull request | Formal submission incomplete | Check PR diff and create a PR to the faculty master `main`; record the URL. |
+
+## 7. Group leader confirmation
 
 **Group leader:** Kaif Bagwan  
-**Date:** 19 November 2026  
-**Confirmation:** Pending review of fresh simulation and hardware evidence.
+**Roll number:** 1 / D9A  
+**Status date:** 20 November 2026  
+**Confirmation:** The six-bit RTL/testbench and XDC are present in the repository. The group has confirmed the current simulation rerun and uploaded current-project hardware photo/video evidence. The presentation PDF is uploaded. The retained repository simulation screenshot/log still needs synchronization with the current six-bit run, and the Vivado build provenance, final report, roster check and faculty pull request remain open.
