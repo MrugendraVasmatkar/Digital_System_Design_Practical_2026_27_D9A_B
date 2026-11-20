@@ -223,13 +223,13 @@ Three output signals represent the COLD, NEUTRAL and HOT valve conditions.
 | T02 | [ ] | [ ] | [ ] | [ ] |
 | T03 | [ ] | [ ] | [ ] | [ ] |
 
-Tool/version: [Details]  
+Tool/version: Vivado 2018.3 
 Number passed/failed: [Details]  
 Waveform/log path: [Path]
 
 ## 9. FPGA Hardware Implementation
-- FPGA board/device: [Details]
-- Tool/version: [Details]
+- FPGA board/device: Spartan 7(xc7s50csga324-1)
+- Tool/version: Vivado 2018.3
 - Clock/constraints: [Details]
 - Synthesis/implementation summary: [Details]
 - Programming and hardware test result: [Details]
