@@ -38,16 +38,16 @@ Target: Boolean Board, Spartan-7 xc7s50csga324-1, Vivado 2018.3, top `gaming_xp_
 | Resource | Used | Available | Util % |
 |---|---:|---:|---:|
 | Slice LUTs | 8 | 32,600 | 0.02 |
-| Flip-flops | 24 | 65,200 | 0.04 |
-| Bonded IOB | 13 | 210 | 6.19 |
+| Flip-flops | 25 | 65,200 | 0.04 |
+| Bonded IOB | 14 | 210 | 6.67 |
 | BUFG | 1 | 32 | 3.13 |
 | CARRY4, Block RAM, DSP | 0 | – | 0 |
 
-The 24 flip-flops are 3 (STATE) + 5 (XP_REG) in the FSM and 16 in the 2-FF synchronizers (2 × 5 switch bits + 2 × 3 button bits). The comparators against constants are absorbed into LUTs, so no CARRY4 is used.
+The FSM itself uses 8 flip-flops (3 STATE + 5 XP_REG); the rest are the 2-FF synchronizers on the switches and buttons and the debug-LED path (LD5). The comparators against constants are absorbed into LUTs, so no CARRY4 is used.
 
-Timing at 100 MHz: WNS +7.656 ns, WHS +0.173 ns, 0 failing endpoints. DRC and methodology checks: 0 violations. Power estimate: 0.073 W total (0.001 W dynamic).
+Timing at 100 MHz: WNS +7.172 ns, WHS +0.178 ns, 0 failing endpoints. DRC and methodology checks: 0 violations. Power estimate: 0.074 W total.
 
-**Hardware demonstration: not yet performed (board not available).** The FPGA column in Section 1 stays empty until the board test is done.
+**Hardware demonstration:** done on the Boolean Board on 20 Nov 2026 (demo video embedded in `06_Presentation/Gaming_XP_Level_Decoder_H3_ERROR_State.pptx` (slide 4)). Slide switch SW4 on the board was faulty, so XP bit 4 was moved to SW5 and a debug LED (LD5) was added.
 
 ## 4. Limitations
 - **One-clock input delay.** The level is decided from XP sampled on the previous clock. If START arrives in the first IDLE cycle after ACK (before XP_REG has reloaded), the level can be decided from a stale XP. Keeping XP stable for one clock before START avoids it.
@@ -56,7 +56,7 @@ Timing at 100 MHz: WNS +7.656 ns, WHS +0.173 ns, 0 failing endpoints. DRC and me
 
 ## 5. Conclusion
 The design meets requirements R1–R9 in simulation: five Moore states with 3-bit encoding, correct level classification for all 32 XP values, a held level until ACK, a synchronous reset with top priority, and safe recovery from unused state codes.
-On the FPGA the design synthesizes and implements cleanly on the Spartan-7 (8 LUTs, 24 FFs, timing met at 100 MHz with 7.656 ns slack). Hardware conclusion: pending the board demonstration.
+On the FPGA the design synthesizes and implements cleanly on the Spartan-7 (8 LUTs, 25 FFs, timing met at 100 MHz with 7.172 ns slack). The design was then demonstrated on the Boolean Board (video in the presentation, slide 4).
 
 ## 6. Future improvements
 - Load XP_REG every clock (or add a one-cycle guard after ACK) to remove the stale-XP case.

@@ -7,7 +7,8 @@
 | Simulators | Vivado 2018.3 XSim (behavioural) and Icarus Verilog 12.0 (`iverilog -g2005`), both on 19 Nov 2026 |
 | Result (both simulators) | **81 checks, 0 failures – "ALL TESTS PASSED"** |
 | Vivado evidence | `vivado_tcl_all_tests_passed.png` (Tcl console), `vivado_waveform_0-850ns.png` (reset, directed tests, start of sweep), `vivado_waveform_350-900ns.png` (EXP/ERR tests and sweep, state names in ASCII) |
-| Icarus log | `sim_log_iverilog.txt` |
+| Icarus log | `sim_log_iverilog.txt` (testbench v3, 20 Nov 2026) |
+| Waveform configuration | `tb_gaming_xp_decoder_behav.wcfg` (open in Vivado to restore the wave view) |
 
 ## What the testbench covers
 | Group | Checks |

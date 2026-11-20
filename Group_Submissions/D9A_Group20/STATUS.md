@@ -17,8 +17,8 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 5 | Logisim simulation verified | Completed | `02_FSM_Logisim/logisim_1_idle.png` … `logisim_7_ack_idle.png`, results table in `FSM_Design.md` (7/7 pass) | 19/11/2026 |
 | 6 | Verilog RTL completed | Completed | `03_Verilog_Implementation/RTL/gaming_xp_decoder.v` | 19/11/2026 |
 | 7 | Testbench and simulation completed | Completed | `03_Verilog_Implementation/Simulation_Results/` (Vivado XSim 81/81 pass: Tcl and waveform screenshots; Icarus log) | 19/11/2026 |
-| 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/reports/` (8 LUT, 24 FF, timing met WNS +7.656 ns, 0 DRC), `gaming_xp_top.bit` | 19/11/2026 |
-| 9 | Hardware demonstration completed | Blocked | Board not available; bitstream ready, test steps in `04_FPGA_Hardware/FPGA_Steps.md` | 19/11/2026 |
+| 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/reports/` (8 LUT, 25 FF, timing met WNS +7.172 ns, 0 DRC; rebuilt 20/11 with SW5 for XP bit 4), `gaming_xp_top.bit` | 19/11/2026 |
+| 9 | Hardware demonstration completed | Completed | Boolean Board demo, demo video embedded in `06_Presentation/Gaming_XP_Level_Decoder_H3_ERROR_State.pptx` (slide 4) | 20/11/2026 |
 | 10 | Results, presentation and report uploaded | In Progress | `05_Results/Results_and_Conclusion.md`; presentation `06_Presentation/Gaming_XP_Level_Decoder_H3_ERROR_State.pptx`; final report not yet uploaded | 20/11/2026 |
 | 11 | Final Pull Request created | Completed | [PR #12](https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/12) (open; updates with each push) | 19/11/2026 |
 
@@ -32,13 +32,13 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 22:00 IST | Added board top `gaming_xp_top` and Boolean Board constraints; synthesis, implementation and bitstream completed (timing met, 0 DRC violations) | `04_FPGA_Hardware/` | Boolean Board not available for the demo | Program the board and record the demo when available | Parth Joshi |
 | 19/11/2026 | 22:58 IST | Found and fixed unconnected inputs on the ACTIVE OR gate in Logisim; ran 7 Logisim tests (IDLE, BEG, hold, INT, EXP, ERR, ACK), all passed; screenshots uploaded | `02_FSM_Logisim/` | None | Upload fixed `.circ`; presentation and report | Parth Joshi |
 | 20/11/2026 | 14:20 IST | Uploaded the presentation (title + 4 content slides) | `06_Presentation/` | None | Upload final report; board demonstration when a board is available | Parth Joshi |
+| 20/11/2026 | 14:30 IST | Board test: SW4 found faulty, XP bit 4 moved to SW5 with a debug LED on LD5; rebuilt and recorded the board demo (video in the presentation); updated top module, constraints, bitstream, reports and testbench (v3) in the repo | `04_FPGA_Hardware/`, `03_Verilog_Implementation/` | None | Final report | Parth Joshi |
 
 Add rows as needed.
 
 ## 3. Current blockers and support required
 | Blocker | Impact | Action being taken | Faculty support required |
 |---|---|---|---|
-| Boolean Board not available | Milestone 9 (hardware demo) blocked | Bitstream ready; will program and record when a board is available | Access to a lab Boolean Board |
 
 ## 4. End-of-day summary
 ### 19 November 2026

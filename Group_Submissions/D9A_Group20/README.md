@@ -103,22 +103,22 @@ Waveform/log path: `03_Verilog_Implementation/Simulation_Results/` (Vivado Tcl c
 ## 9. FPGA Hardware Implementation
 - FPGA board/device: Real Digital Boolean Board, Spartan-7 `xc7s50csga324-1`
 - Tool/version: Vivado v2018.3 (64-bit)
-- Clock/constraints: 100 MHz on-board clock (F14, 10 ns `create_clock`); XP on SW4–SW0, START/ACK/RESET on BTN0/BTN1/BTN2, LEDs on LD0–LD3. Board top module `gaming_xp_top` adds 2-FF synchronizers. Files: `04_FPGA_Hardware/boolean_gaming_xp.xdc`, `03_Verilog_Implementation/RTL/gaming_xp_top.v`; steps in `04_FPGA_Hardware/FPGA_Steps.md`
+- Clock/constraints: 100 MHz on-board clock (F14, 10 ns `create_clock`); XP on SW5 (bit 4) and SW3–SW0 – SW4 on our board is faulty (always reads 1), so XP bit 4 is wired to SW5; START/ACK/RESET on BTN0/BTN1/BTN2; level LEDs on LD0–LD3, plus a debug LED on LD5 that shows XP bit 4 live. Board top module `gaming_xp_top` adds 2-FF synchronizers. Files: `04_FPGA_Hardware/boolean_gaming_xp.xdc`, `03_Verilog_Implementation/RTL/gaming_xp_top.v`; steps in `04_FPGA_Hardware/FPGA_Steps.md`
 - Synthesis/implementation summary (top `gaming_xp_top`, post-route, Vivado 2018.3):
 
 | Resource | Used | Available | Util % |
 |---|---:|---:|---:|
 | Slice LUTs | 8 | 32,600 | 0.02 |
-| Flip-flops | 24 (8 FSM + 16 synchronizer) | 65,200 | 0.04 |
-| Bonded IOB | 13 | 210 | 6.19 |
+| Flip-flops | 25 | 65,200 | 0.04 |
+| Bonded IOB | 14 | 210 | 6.67 |
 | BUFG | 1 | 32 | 3.13 |
 | CARRY4 / Block RAM / DSP | 0 | – | 0 |
 
-  Timing at 100 MHz: WNS = +7.656 ns, WHS = +0.173 ns, 0 failing endpoints – all constraints met. DRC: 0 violations; methodology checks: 0 violations; 0 critical warnings in synthesis and implementation. Estimated on-chip power 0.073 W (0.001 W dynamic). The I/O report confirms all 13 pins placed as in the XDC. Reports: `04_FPGA_Hardware/reports/`; bitstream: `04_FPGA_Hardware/gaming_xp_top.bit`.
-- Programming and hardware test result: **Not yet done – board not available to the group.** The bitstream is generated and ready; the test sequence is in `04_FPGA_Hardware/FPGA_Steps.md`.
+  Timing at 100 MHz: WNS = +7.172 ns, WHS = +0.178 ns, 0 failing endpoints – all constraints met. DRC: 0 violations; methodology checks: 0 violations; 0 critical warnings in synthesis and implementation. Estimated on-chip power 0.074 W. The I/O report confirms all 14 pins placed as in the XDC. Reports: `04_FPGA_Hardware/reports/`; bitstream: `04_FPGA_Hardware/gaming_xp_top.bit`.
+- Programming and hardware test result: programmed and demonstrated on the Boolean Board on 20 Nov 2026; demo video embedded in `06_Presentation/Gaming_XP_Level_Decoder_H3_ERROR_State.pptx` (slide 4). Test sequence in `04_FPGA_Hardware/FPGA_Steps.md`.
 - Evidence path: `04_FPGA_Hardware/`
 
-Explain differences between simulation and hardware results, if any: not yet known, because the board demonstration has not been done. Note: the board top `gaming_xp_top` synchronizes switches and buttons with 2-FF synchronizers; no debouncer is needed because START is ignored outside IDLE and ACK is ignored in IDLE, so a held or bouncing button still gives one action.
+Explain differences between simulation and hardware results, if any: the faulty SW4 switch made XP bit 4 always read 1 on the board, which simulation could not show; XP bit 4 was moved to SW5 (see Section 10). Note: the board top `gaming_xp_top` synchronizes switches and buttons with 2-FF synchronizers; no debouncer is needed because START is ignored outside IDLE and ACK is ignored in IDLE, so a held or bouncing button still gives one action.
 
 ## 10. Challenges, Debugging and Improvements
 | Issue | Root cause | Correction | Outcome |
@@ -126,6 +126,7 @@ Explain differences between simulation and hardware results, if any: not yet kno
 | START in the first IDLE cycle after ACK can give a stale level (found in review, reproduced in simulation) | XP_REG loads only in IDLE, so after a held level it still holds the XP from before the previous START | Documented limitation: keep XP stable for one clock before START (`[team to decide whether to change the RTL]`) | Known limitation, see `05_Results/` |
 | Testbench does not detect removal of the XP_REG IDLE enable | No test applies START right after ACK | Suggested extra test in `Verification_Summary.md` | Open |
 | Logisim: ACTIVE wire red (error), level did not reliably hold until ACK | S_INT and S_EXP inputs of the 4-input OR gate were not connected to the gate pins (floating) | Replaced the OR gate and reconnected all four inputs and the output | Hold verified in Logisim (`02_FSM_Logisim/logisim_3_hold.png`) |
+| Board: XP bit 4 always read as 1, so XP 0–15 showed ERROR | Slide switch SW4 on the board is faulty | Moved XP bit 4 to SW5 (pin R2) and added a debug LED on LD5 (pin E2) showing XP bit 4 live | Levels correct on the board with SW5 as bit 4 |
 | Vivado: first behavioural simulation run ended with an empty log and an XSim crash file | Run did not complete (cause not identified) | Re-ran Behavioral Simulation → Run All | ALL TESTS PASSED (81 checks) |
 
 Future improvements: load XP_REG every clock to remove the stale case; add the missing test; show the XP value on the 7-segment display.
@@ -146,8 +147,8 @@ Maintain time-wise updates in `STATUS.md`.
 ## 13. Final Results and Conclusion
 - **Logisim:** 7/7 tests passed (IDLE, BEGINNER, hold until ACK, INTERMEDIATE, EXPERT, ERROR, ACK → IDLE) after fixing an unconnected OR gate in the next-state logic.
 - **Verilog simulation:** 81/81 checks passed in Vivado 2018.3 XSim (also in Icarus Verilog): all 32 XP values give the correct level, outputs are Moore, the level is held until ACK, RESET has top priority, and unused state codes 101–111 recover to IDLE.
-- **FPGA:** the design synthesizes and implements on the Boolean Board's Spartan-7 using 8 LUTs and 24 flip-flops, with timing met at 100 MHz (WNS +7.656 ns) and 0 DRC violations. Bitstream generated.
-- **Hardware demonstration:** not yet performed, because a board was not available. This is the one requirement not yet shown.
+- **FPGA:** the design synthesizes and implements on the Boolean Board's Spartan-7 using 8 LUTs and 25 flip-flops, with timing met at 100 MHz (WNS +7.172 ns) and 0 DRC violations. Bitstream generated.
+- **Hardware demonstration:** done on the Boolean Board after moving XP bit 4 from the faulty SW4 to SW5; demo video embedded in `06_Presentation/Gaming_XP_Level_Decoder_H3_ERROR_State.pptx` (slide 4).
 - **Limitation:** one-clock input delay – XP must be stable for one clock in IDLE before START (Section 10).
 
 **Conclusion:** the H3 Gaming XP Level Decoder meets requirements R1–R9 in Logisim and in RTL simulation, and is ready to program on the FPGA. Details in `05_Results/Results_and_Conclusion.md`.

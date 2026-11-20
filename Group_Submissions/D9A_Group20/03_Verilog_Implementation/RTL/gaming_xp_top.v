@@ -4,7 +4,8 @@
 //
 // Board connections (see 04_FPGA_Hardware/boolean_gaming_xp.xdc):
 //   clk      100 MHz oscillator (F14)
-//   sw[4:0]  XP value, SW4 = MSB ... SW0 = LSB
+//   sw[4:0]  XP value: SW5 = MSB (bit 4), SW3..SW0 = bits 3..0
+//            (SW4 on our board is faulty, so bit 4 is wired to SW5)
 //   btn[0]   START
 //   btn[1]   ACK
 //   btn[2]   RESET
@@ -25,7 +26,7 @@ module gaming_xp_top (
     input  wire       clk,
     input  wire [4:0] sw,
     input  wire [2:0] btn,
-    output wire [3:0] led
+    output wire [4:0] led   // led[4] = DEBUG on LD5: shows XP bit 4 (SW5) live
 );
 
     // 2-FF synchronizers for all asynchronous inputs
@@ -38,6 +39,9 @@ module gaming_xp_top (
         btn_meta <= btn;
         btn_sync <= btn_meta;
     end
+
+    // DEBUG: LD5 lights whenever the FPGA reads XP bit 4 (SW5) as 1
+    assign led[4] = sw_sync[4];
 
     gaming_xp_decoder u_fsm (
         .clk              (clk),
