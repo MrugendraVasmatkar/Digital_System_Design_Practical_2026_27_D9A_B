@@ -181,10 +181,10 @@ Future improvements:
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
 |---|---|---|
-| Group leader (Snehal Gharmude) | [ ] | [ ] |
-| Member 2 (Sachin Mane) | [ ] | [ ] |
-| Member 3 (Sheetal Panda) | [ ] | [ ] |
-| Member 4 (Vidisha Bagwe) | [ ] | [ ] |
+| Group leader (Snehal Gharmude) | VERILOG/ FPGA Implementation | [ ] |
+| Member 2 (Sachin Mane) |  |  |
+| Member 3 (Sheetal Panda) | Logisim/State diagram | [ ] |
+| Member 4 (Vidisha Bagwe) | Logisim | [ ] |
 
 Every student must be ready to explain the complete design.
 
