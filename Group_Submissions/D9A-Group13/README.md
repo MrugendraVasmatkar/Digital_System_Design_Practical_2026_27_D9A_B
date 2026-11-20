@@ -39,7 +39,7 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 **State table:** Group_Submissions/D9A-Group13/02_FSM_Logisim/State Table.png
 
 ## 6. Logisim Implementation
-- Logisim version: [Version]
+- Logisim version: logisim-win-2.7.1
 - Circuit file: [Path to `.circ`]
 - Test cases and expected/observed behaviour: [Details]
 - Issues and corrections: [Details]
