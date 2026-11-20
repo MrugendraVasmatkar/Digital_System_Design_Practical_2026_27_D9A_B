@@ -41,9 +41,9 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 ## 6. Logisim Implementation
 - Logisim version: logisim-win-2.7.1
 - Circuit file: Group_Submissions/D9A-Group13/02_FSM_Logisim/GRAY_CODE_TRANSITION_DETECTOR.circ
-- Test cases and expected/observed behaviour: [Details]
-- Issues and corrections: [Details]
-- Screenshot/evidence: [Path/link]
+- Test cases and expected/observed behaviour: To verify the Mealy Gray Code Transition Detector, I tested it in Logisim using the full sequence 0000 -> 0001 -> 0011 -> 0111 -> 0101 -> 1101 -> 1100 -> 1111 along with RESET, START, and ACK controls. After resetting the circuit and pulsing START with 0000, every valid 1-bit Gray code step (0000 to 0001, 0001 to 0011, up to 1100) turned the Green LED ON immediately as soon as the input switch changed, without waiting for a clock pulse. When two bits were changed together (1100 to 1111) or no bits changed (1111 to 1111), the Red LED turned ON immediately to flag an invalid transition, and asserting ACK cleanly returned the circuit to IDLE with both LEDs turned OFF.
+- Issues and corrections: While building and testing the circuit in Logisim, I faced a few small issues and fixed them step by step. First, when I changed two input switches one by one, the Mealy LEDs flickered briefly because the output reacts immediately; I solved this by making sure both switches settle cleanly before the rising clock edge. Second, the Red LED stayed ON even before pressing START because the XOR detector was always running, so I connected the state flip-flop output (ACTIVE) to the LED gates so both LEDs stay OFF during IDLE. Lastly, I got red and orange wire errors when connecting the 4-bit input X to single-bit gates, which I fixed by setting Register P and the XOR gate to 4 bits and adding a 4-bit splitter before the AND/OR gates.
+- Screenshot/evidence: Group_Submissions/D9A-Group13/02_FSM_Logisim/logism.pdf
 
 ## 7. Verilog HDL Implementation
 - Tool/version: [Details]
