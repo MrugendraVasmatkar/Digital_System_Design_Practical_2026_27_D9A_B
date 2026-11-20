@@ -48,10 +48,37 @@ Counter overflow: Since the counters are 4 bits wide, they return to zero after 
 Category independence: Each category has its own counter, allowing the system to maintain separate attempt totals.]
 
 ## 3. Problem Analysis and Proposed Solution
-Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
-
-[Write here]
-
+Requirements:-
+The Password Attempt Monitor is designed to classify 3-bit input combinations into three categories: NOW, WARN, and LOCK. It also maintains a separate counter for each category.
+The main requirements are:
+Accept a 3-bit input (A2, A1, A0).
+Classify all eight possible input combinations into three categories.
+Generate separate output signals for NOW, WARN, and LOCK.
+Maintain three independent 4-bit counters.
+Increment the corresponding counter when START is activated.
+Use a common clock signal to synchronize counter operations.
+Provide a RESET input to clear all counters.
+Display the total number of attempts in each category.
+2. Edge Case:-
+The design considers the following edge cases:
+Minimum input: Input 000 must be classified as NOW.
+Category boundaries: Inputs 001, 010, and 101 must be assigned to their correct categories.
+Maximum input: Input 111 must be classified as LOCK.
+START is LOW: No counter should increment when START is LOW.
+RESET activation: All counters must return to zero when RESET is activated.
+Multiple attempts: Repeated attempts in the same category must increment only that category's counter.
+Counter overflow: A 4-bit counter returns to zero after reaching 15 and receiving another increment.
+Simultaneous category outputs: Only one category output should be HIGH for any valid 3-bit input.
+3. Proposed Solution
+The proposed solution uses combinational logic and sequential counter circuits.
+First, three input bits (A2, A1, A0) are given to a category decoder. The decoder classifies the input into one of three categories:
+NOW: 000–001
+WARN: 010–100
+LOCK: 101–111
+Boolean logic gates generate the three category output signals.
+Next, three AND gates combine the category outputs with the START signal. Their outputs enable the corresponding counters.
+Three independent 4-bit counters are used to maintain the number of attempts in each category. All counters share the same clock and reset signals.
+Finally, the counter values are available through three separate 4-bit outputs.
 ## 4. Architecture
 Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
 
