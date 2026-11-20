@@ -9,57 +9,26 @@ module tb_age_group_detector;
     localparam ERROR = 3'b100;
 
     reg clk;
-    reg reset;
-    reg start;
-    reg ack;
-    reg [4:0] age_in;
-    reg force_no_match;
+    reg [5:0] sw;
+    reg [2:0] btn;
 
-    wire child_from_decoder;
-    wire teen_from_decoder;
-    wire adult_from_decoder;
-    wire child_to_fsm;
-    wire teen_to_fsm;
-    wire adult_to_fsm;
-    wire [3:0] led_status;
-    wire no_match_debug;
-    wire [2:0] state_debug;
-    wire [4:0] age_latched;
-
+    wire [3:0] led;
     reg [8*5-1:0] state_text;
     integer errors;
     integer i;
+    reg [2:0] expected_compare;
 
-    assign child_to_fsm = force_no_match ? 1'b0 : child_from_decoder;
-    assign teen_to_fsm  = force_no_match ? 1'b0 : teen_from_decoder;
-    assign adult_to_fsm = force_no_match ? 1'b0 : adult_from_decoder;
-
-    age_range_decoder decoder (
-        .age_in(age_in),
-        .child_detect(child_from_decoder),
-        .teen_detect(teen_from_decoder),
-        .adult_detect(adult_from_decoder)
-    );
-
-    age_group_fsm dut (
+    age_group_detector_core dut (
         .clk(clk),
-        .reset(reset),
-        .start(start),
-        .ack(ack),
-        .age_in(age_in),
-        .child_detect(child_to_fsm),
-        .teen_detect(teen_to_fsm),
-        .adult_detect(adult_to_fsm),
-        .led(led_status),
-        .no_match_debug(no_match_debug),
-        .state_debug(state_debug),
-        .age_latched(age_latched)
+        .sw(sw),
+        .btn(btn),
+        .led(led)
     );
 
     always #5 clk = ~clk;
 
     always @(*) begin
-        case (state_debug)
+        case (dut.state_debug)
             IDLE:  state_text = "IDLE";
             CHILD: state_text = "CHILD";
             TEEN:  state_text = "TEEN";
@@ -71,159 +40,122 @@ module tb_age_group_detector;
 
     always @(posedge clk) begin
         #1;
-        $display("T=%0t AGE=%0d CMP[C,T,A]=%b%b%b FSM[C,T,A]=%b%b%b STATE=%0s LED=%b",
-                 $time, age_in,
-                 child_from_decoder, teen_from_decoder, adult_from_decoder,
-                 child_to_fsm, teen_to_fsm, adult_to_fsm,
-                 state_text, led_status);
+        $display("T=%0t AGE_SW=%0d AGE_SYNC=%0d AGE_LATCHED=%0d CMP[C,T,A]=%b%b%b NO_MATCH=%b STATE=%0s LED[ERR,AD,TE,CH]=%b",
+                 $time, sw, dut.age_sync, dut.age_latched,
+                 dut.child_detect, dut.teen_detect, dut.adult_detect,
+                 dut.no_match, state_text, led);
     end
 
     task check_result;
         input [2:0] expected_state;
         input [3:0] expected_led;
-        input [8*24-1:0] test_name;
+        input [8*28-1:0] test_name;
         begin
+            @(negedge clk);
             #1;
-            if ((state_debug !== expected_state) || (led_status !== expected_led)) begin
+            if ((dut.state_debug !== expected_state) || (led !== expected_led)) begin
                 $display("FAIL: %0s STATE=%b EXPECTED=%b LED=%b EXPECTED_LED=%b",
-                         test_name, state_debug, expected_state, led_status, expected_led);
+                         test_name, dut.state_debug, expected_state, led, expected_led);
                 errors = errors + 1;
             end else begin
-                $display("PASS: %0s STATE=%0s LED=%b", test_name, state_text, led_status);
+                $display("PASS: %0s STATE=%0s LED=%b", test_name, state_text, led);
             end
         end
     endtask
 
-    task pulse_start;
+    task press_button;
+        input integer button_index;
         begin
             @(negedge clk);
-            start = 1'b1;
-            @(negedge clk);
-            start = 1'b0;
+            btn[button_index] = 1'b1;
+            repeat (4) @(negedge clk);
+            btn[button_index] = 1'b0;
+            repeat (4) @(negedge clk);
         end
     endtask
 
-    task pulse_ack;
-        begin
-            @(negedge clk);
-            ack = 1'b1;
-            @(negedge clk);
-            ack = 1'b0;
-        end
-    endtask
-
-    task check_decoder;
-        input [4:0] value;
-        input expected_child;
-        input expected_teen;
-        input expected_adult;
-        input [8*24-1:0] test_name;
-        begin
-            age_in = value;
-            force_no_match = 1'b0;
-            #1;
-            if ((child_from_decoder !== expected_child) ||
-                (teen_from_decoder !== expected_teen) ||
-                (adult_from_decoder !== expected_adult)) begin
-                $display("FAIL DECODER: %0s AGE=%0d CMP=%b%b%b",
-                         test_name, value, child_from_decoder,
-                         teen_from_decoder, adult_from_decoder);
-                errors = errors + 1;
-            end else begin
-                $display("PASS DECODER: %0s AGE=%0d CMP=%b%b%b",
-                         test_name, value, child_from_decoder,
-                         teen_from_decoder, adult_from_decoder);
-            end
-        end
-    endtask
-
-    task test_valid_age;
-        input [4:0] value;
+    task test_age;
+        input [5:0] value;
         input [2:0] expected_state;
         input [3:0] expected_led;
-        input [8*24-1:0] test_name;
+        input [8*28-1:0] test_name;
         begin
-            age_in = value;
-            force_no_match = 1'b0;
-            #1;
-            pulse_start;
+            @(negedge clk);
+            sw = value;
+            repeat (4) @(negedge clk);
+            press_button(1);
             check_result(expected_state, expected_led, test_name);
 
-            if (age_latched !== value) begin
-                $display("FAIL AGE LATCH: EXPECTED=%0d ACTUAL=%0d", value, age_latched);
+            if (dut.age_latched !== value) begin
+                $display("FAIL AGE LATCH: %0s EXPECTED=%0d ACTUAL=%0d",
+                         test_name, value, dut.age_latched);
                 errors = errors + 1;
+            end else begin
+                $display("PASS AGE LATCH: %0s AGE=%0d", test_name, dut.age_latched);
             end
 
-            pulse_ack;
+            press_button(2);
             check_result(IDLE, 4'b0000, "ACK_TO_IDLE");
         end
     endtask
 
     initial begin
         clk = 1'b0;
-        reset = 1'b0;
-        start = 1'b0;
-        ack = 1'b0;
-        age_in = 5'd0;
-        force_no_match = 1'b0;
+        sw = 6'd0;
+        btn = 3'b000;
         errors = 0;
+        expected_compare = 3'b000;
 
-        @(negedge clk);
-        reset = 1'b1;
-        @(negedge clk);
-        reset = 1'b0;
+        // Initialize the FSM through the physical reset input.
+        press_button(0);
         check_result(IDLE, 4'b0000, "INITIAL_RESET");
 
-        check_decoder(5'd0,  1'b1, 1'b0, 1'b0, "CHILD_MIN");
-        check_decoder(5'd12, 1'b1, 1'b0, 1'b0, "CHILD_MAX");
-        check_decoder(5'd13, 1'b0, 1'b1, 1'b0, "TEEN_MIN");
-        check_decoder(5'd19, 1'b0, 1'b1, 1'b0, "TEEN_MAX");
-        check_decoder(5'd20, 1'b0, 1'b0, 1'b1, "ADULT_MIN");
-        check_decoder(5'd31, 1'b0, 1'b0, 1'b1, "ADULT_MAX");
+        // Check decoder outputs for every possible six-bit input.
+        for (i = 0; i < 64; i = i + 1) begin
+            @(negedge clk);
+            sw = i;
+            repeat (4) @(negedge clk);
+            if (i <= 12)
+                expected_compare = 3'b100;
+            else if (i <= 19)
+                expected_compare = 3'b010;
+            else if (i <= 31)
+                expected_compare = 3'b001;
+            else
+                expected_compare = 3'b000;
 
-        for (i = 0; i < 32; i = i + 1) begin
-            age_in = i;
-            force_no_match = 1'b0;
             #1;
-            if (!((child_from_decoder && !teen_from_decoder && !adult_from_decoder) ||
-                  (!child_from_decoder && teen_from_decoder && !adult_from_decoder) ||
-                  (!child_from_decoder && !teen_from_decoder && adult_from_decoder))) begin
-                $display("FAIL ONE-HOT DECODER: AGE=%0d CMP=%b%b%b",
-                         i, child_from_decoder, teen_from_decoder, adult_from_decoder);
+            if ({dut.child_detect, dut.teen_detect, dut.adult_detect} !== expected_compare) begin
+                $display("FAIL DECODER AGE=%0d CMP=%b%b%b EXPECTED=%b",
+                         i, dut.child_detect, dut.teen_detect,
+                         dut.adult_detect, expected_compare);
+                errors = errors + 1;
+            end
+            if (dut.no_match !== (i >= 32)) begin
+                $display("FAIL NO_MATCH AGE=%0d NO_MATCH=%b", i, dut.no_match);
                 errors = errors + 1;
             end
         end
-        $display("INFO: Decoder sweep checked all 32 possible 5-bit ages.");
+        $display("INFO: All 64 six-bit input values checked.");
 
-        test_valid_age(5'd0,  CHILD, 4'b0001, "AGE_0_CHILD");
-        test_valid_age(5'd12, CHILD, 4'b0001, "AGE_12_CHILD");
-        test_valid_age(5'd13, TEEN,  4'b0010, "AGE_13_TEEN");
-        test_valid_age(5'd19, TEEN,  4'b0010, "AGE_19_TEEN");
-        test_valid_age(5'd20, ADULT, 4'b0100, "AGE_20_ADULT");
-        test_valid_age(5'd31, ADULT, 4'b0100, "AGE_31_ADULT");
+        // Test every category boundary and both ends of the invalid range.
+        test_age(6'd0,  CHILD, 4'b0001, "AGE_0_CHILD");
+        test_age(6'd12, CHILD, 4'b0001, "AGE_12_CHILD");
+        test_age(6'd13, TEEN,  4'b0010, "AGE_13_TEEN");
+        test_age(6'd19, TEEN,  4'b0010, "AGE_19_TEEN");
+        test_age(6'd20, ADULT, 4'b0100, "AGE_20_ADULT");
+        test_age(6'd31, ADULT, 4'b0100, "AGE_31_ADULT");
+        test_age(6'd32, ERROR, 4'b1000, "AGE_32_ERROR");
+        test_age(6'd33, ERROR, 4'b1000, "AGE_33_ERROR");
+        test_age(6'd63, ERROR, 4'b1000, "AGE_63_ERROR");
 
-        age_in = 5'd10;
-        force_no_match = 1'b1;
-        #1;
-        if (({child_to_fsm, teen_to_fsm, adult_to_fsm} !== 3'b000) ||
-            (no_match_debug !== 1'b1)) begin
-            $display("FAIL: Comparator no-match input was not 000.");
-            errors = errors + 1;
-        end
-        pulse_start;
-        check_result(ERROR, 4'b1000, "ALL_COMPARATORS_ZERO");
-        pulse_ack;
-        check_result(IDLE, 4'b0000, "ACK_FROM_ERROR");
-
-        force_no_match = 1'b0;
-        age_in = 5'd31;
-        force_no_match = 1'b1;
-        pulse_start;
-        check_result(ERROR, 4'b1000, "ERROR_SECOND_TEST");
+        // Verify RESET can clear an active ERROR state.
         @(negedge clk);
-        reset = 1'b1;
-        @(negedge clk);
-        reset = 1'b0;
+        sw = 6'd40;
+        repeat (4) @(negedge clk);
+        press_button(1);
+        check_result(ERROR, 4'b1000, "ERROR_BEFORE_RESET");
+        press_button(0);
         check_result(IDLE, 4'b0000, "RESET_FROM_ERROR");
 
         if (errors == 0)
@@ -231,7 +163,7 @@ module tb_age_group_detector;
         else
             $display("TESTS FAILED: %0d", errors);
 
-        #10;
+        #20;
         $finish;
     end
 
