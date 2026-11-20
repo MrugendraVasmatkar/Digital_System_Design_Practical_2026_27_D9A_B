@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-B-Group14 |
-| Last Updated | 2026-11-20, 21:30 |
+| Last Updated | 2026-11-20, 22:00 |
 
 ## 2. Problem Statement
 
@@ -77,7 +77,7 @@ Status values: **Not Started**, **In Progress**, **Completed**, or **Needs Corre
 | 3 — FPGA | Assign FPGA pins and configure constraints | Completed | `04_FPGA_Hardware/constraints.xdc` |
 | 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/implemented_design.png`, `04_FPGA_Hardware/utilization_report.png` (timing met with a 10 ns clock constraint) |
 | 3 — FPGA | Demonstrate the design on FPGA hardware | Completed | `04_FPGA_Hardware/hardware_low_led.jpg`, `hardware_medium_led.jpg`, `hardware_high_led.jpg` (LOW, MEDIUM, HIGH LEDs lit on the Boolean board) |
-| 3 — Results | Record observations and verify expected behaviour | In Progress | `05_Results/README.md` (simulation results recorded; hardware results pending) |
+| 3 — Results | Record observations and verify expected behaviour | Completed | `05_Results/README.md` (simulation and hardware results recorded; expected and observed agree) |
 | 3 — Presentation | Prepare slides and demonstration | Completed | `06_Presentation/Group14_DSD_Presentation.pptx` (3 slides: title; Logisim simulation, implementation, timing and FPGA demo; results, challenges and contributions) |
 | 3 — Submission | Complete final report and checklist | In Progress | `07_Final_Report/Group14_Final_Report.docx` and `.pdf` (report uploaded; checklist items for simulation and results still open) |
 
@@ -150,6 +150,7 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 20:00 | Dated progress-log summary added to README section 12 | Samruddhi Samant | Repository |
 | 2026-11-20, 21:15 | Review checkpoint dates set to 19 November 2026 (Day 1) and 20 November 2026 (Day 2); target completion dates filled in the issues table | Samruddhi Samant | Repository |
 | 2026-11-20, 21:30 | Tcl console log of the game_tb simulation added (`Simulation_Results/tcl_console_log.png`, `simulation_log.txt`): 9 of 9 printed lines match the expected values | Samruddhi Samant | Repository |
+| 2026-11-20, 22:00 | Results, challenges and conclusion documented: README section 10 now lists three challenges (timing constraint, Logisim comparator, reset difference); checklist item ticked; Results stage marked Completed | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 

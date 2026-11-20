@@ -148,6 +148,8 @@ Explain differences between simulation and hardware results, if any.
 | Issue | Root cause | Correction | Outcome |
 |---|---|---|---|
 | Design was unconstrained: Timing Summary showed WNS/WHS = inf and "no user specified timing constraints" | The constraints file had only pin and I/O-standard lines, with no clock definition | Added `create_clock -period 10.000 [get_ports clk]` to the constraints, re-ran implementation and regenerated the bitstream | Timing met at 10 ns (WNS 7.665 ns, WHS 0.540 ns, 0 failing endpoints); bitstream regenerated |
+| Logisim design was complex at first | The comparator was built from its internal gate circuit | Used Logisim's built-in comparator block instead | Simpler circuit that behaves the same |
+| Logisim reset behaviour differs from the Verilog | The Logisim circuit ANDs every LED output with NOT reset, but the Verilog LED outputs are not gated by reset, so with START held an LED can light during reset | Kept the Verilog that was used for the Vivado reports, bitstream and board demo, and documented the difference (section 7) | Known difference documented; states and transitions are the same |
 
 Future improvements: debouncing/synchronising `start` and `ack`; seven-segment display of the score; parameterised thresholds.
 
@@ -228,7 +230,7 @@ What did the team learn? What would you improve?
 - [x] Verilog RTL and testbench uploaded.
 - [x] Simulation results and test cases documented.
 - [x] FPGA implementation and hardware evidence uploaded.
-- [ ] Results, challenges and conclusion documented.
+- [x] Results, challenges and conclusion documented.
 - [x] Presentation and final report uploaded.
 - [x] STATUS.md is up to date.
 - [x] Final Pull Request created and URL recorded (PR #33; the PR stays open for updates).
