@@ -1,0 +1,24 @@
+# run 1000ns
+[PASS] Initial RESET
+X= 0 (0000) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X= 1 (0001) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X= 2 (0010) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X= 3 (0011) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X= 4 (0100) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X= 5 (0101) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X= 6 (0110) | State=01 | ACCEPT=0 | REJECT=1 | PASS
+X= 7 (0111) | State=01 | ACCEPT=0 | REJECT=1 | PASS
+X= 8 (1000) | State=01 | ACCEPT=0 | REJECT=1 | PASS
+X= 9 (1001) | State=01 | ACCEPT=0 | REJECT=1 | PASS
+X=10 (1010) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X=11 (1011) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X=12 (1100) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X=13 (1101) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X=14 (1110) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+X=15 (1111) | State=00 | ACCEPT=1 | REJECT=0 | PASS
+
+ALL TESTS PASSED for N=4, Range=[6, 9]!
+$finish called at time : 500 ns : File "C:/VIVADO_PROJECTS_DSD/FSM_ZONE/TB/tb_fz_rejector.v" Line 107
+xsim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1189.582 ; gain = 19.094
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_fz_rejector_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns

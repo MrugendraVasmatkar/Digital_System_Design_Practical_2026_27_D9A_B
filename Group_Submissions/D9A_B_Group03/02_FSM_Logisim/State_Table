@@ -1,0 +1,6 @@
+| Present state | Condition | Next state |
+|---|---|---|
+| IDLE | start_d = 1 and fz = 1 | REJECT |
+| IDLE | otherwise | IDLE |
+| REJECT | ack = 1, or (start_d = 1 and fz = 0) | IDLE |
+| REJECT | otherwise | REJECT |

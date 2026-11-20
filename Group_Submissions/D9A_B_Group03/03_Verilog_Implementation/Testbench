@@ -1,0 +1,86 @@
+// H1 Range Settings (change to 4, 7 or 8, 11 to test other ranges)
+`define N      4
+`define L      6
+`define H      9
+`define IDLE   2'b00
+`define REJECT 2'b01
+
+module tb_fz_rejector;
+
+    reg           clk, reset, start, ack;
+    reg  [`N-1:0] x;
+    wire [`N-1:0] x_reg;
+    wire          accept_led, reject_led;
+
+    fz_rejector #(
+        .N (`N),
+        .L (`L),
+        .H (`H)
+    ) uut (
+        .clk        (clk),
+        .reset      (reset),
+        .start      (start),
+        .ack        (ack),
+        .x          (x),
+        .x_reg      (x_reg),
+        .accept_led (accept_led),
+        .reject_led (reject_led)
+    );
+
+    // 10 ns clock
+    always #5 clk = ~clk;
+
+    // Named block hides i, errors, exp_reject, exp_accept from the default waveform
+    initial begin : test_seq
+        integer i, errors;
+        reg     exp_reject, exp_accept;
+
+        clk = 1'b0; reset = 1'b1; start = 1'b0; ack = 1'b0; x = {`N{1'b0}};
+        errors = 0;
+
+        // Initial synchronous active-high RESET
+        @(posedge clk); @(negedge clk);
+        if (uut.state === `IDLE && accept_led === 1'b1 && reject_led === 1'b0 && x_reg === {`N{1'b0}})
+            $display("[PASS] Initial RESET");
+        else begin
+            $display("[FAIL] Initial RESET");
+            errors = errors + 1;
+        end
+        reset = 1'b0;
+
+        // Clean sweep of all 2^N inputs (0 to 15)
+        for (i = 0; i < (1 << `N); i = i + 1) begin
+            @(negedge clk);
+            x     = i[`N-1:0];
+            start = 1'b1;
+
+            @(negedge clk); // Cycle 1: x_reg latches x
+            start = 1'b0;
+
+            @(negedge clk); // Cycle 2: Moore FSM updates outputs
+
+            exp_reject = (i >= `L) && (i <= `H);
+            exp_accept = ~exp_reject;
+
+            if (x_reg === i[`N-1:0] &&
+                uut.state === (exp_reject ? `REJECT : `IDLE) &&
+                accept_led === exp_accept &&
+                reject_led === exp_reject) begin
+                $display("X=%2d (%b) | State=%b | ACCEPT=%b | REJECT=%b | PASS",
+                         i, i[`N-1:0], uut.state, accept_led, reject_led);
+            end else begin
+                $display("X=%2d (%b) | State=%b | ACCEPT=%b | REJECT=%b | FAIL",
+                         i, i[`N-1:0], uut.state, accept_led, reject_led);
+                errors = errors + 1;
+            end
+        end
+
+        if (errors == 0)
+            $display("\nALL TESTS PASSED for N=%0d, Range=[%0d, %0d]!", `N, `L, `H);
+        else
+            $display("\nFAILED WITH %0d ERROR(S).", errors);
+
+        #10 $finish;
+    end
+
+endmodule
