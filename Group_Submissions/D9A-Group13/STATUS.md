@@ -15,7 +15,7 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 3 | FSM diagram/table completed, if applicable | Completed | [ ] | [ ] |
 | 4 | Logisim circuit implemented | Completed | Group_Submissions/D9A-Group13/02_FSM_Logisim/GRAY_CODE_TRANSITION_DETECTOR.circ | [ ] |
 | 5 | Logisim simulation verified | Completed | Group_Submissions/D9A-Group13/02_FSM_Logisim/logism.pdf | [ ] |
-| 6 | Verilog RTL completed | Completed | [ ] | [ ] |
+| 6 | Verilog RTL completed | Completed | Group_Submissions/D9A-Group13/03_Verilog_Implementation/simulation/RTL_Schematic.png | [ ] |
 | 7 | Testbench and simulation completed | Completed | [ ] | [ ] |
 | 8 | FPGA synthesis and implementation completed | Completed | [ ] | [ ] |
 | 9 | Hardware demonstration completed | In Progress | [ ] | [ ] |
