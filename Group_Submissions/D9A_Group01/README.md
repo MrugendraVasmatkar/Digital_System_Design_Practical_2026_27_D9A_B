@@ -13,7 +13,7 @@
 **Class:** D9A (group leader's class; group includes D9A and D9B students)  
 **Group ID:** D9A_Group01  
 **Repository URL:** https://github.com/ojaskarmarkar15/DSD-2026-D9A-Group01  
-**Final Pull Request URL:** [URL]
+**Final Pull Request URL:** https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/29
 
 ## 2. Assigned Problem Statement
 - **Number/title:** Gray Code Transition Detector (4-bit) – selected modification **H1: N-bit Gray Code Transition Detector**
@@ -104,6 +104,7 @@ Waveform/log path: `03_Verilog_Implementation/Simulation_Results/gray_code_nbit_
 - Synthesis/implementation summary: synthesis, implementation and bitstream generation completed for `xc7s50csga324-1` (screenshots in `04_FPGA_Hardware/`); utilisation: 8 LUTs, 7 registers, 3 slices, 10 IOBs (`04_FPGA_Hardware/`); timing summary shows NA because no clock constraint is defined
 - Programming and hardware test result: bitstream programmed on the Boolean board (DONE LED lit); photos in `04_FPGA_Hardware/boolean_board_demo_1.jpg` (VALID LED lit) and `boolean_board_demo_2.jpg` (INVALID LED lit); the input values for each photo are still to be recorded
 - Evidence path: `04_FPGA_Hardware/`
+- FPGA implementation video: https://drive.google.com/drive/folders/1sUIFIuBdsAn9yVEbG7qO0inIdqmfWgPn?usp=sharing
 
 Explain differences between simulation and hardware results, if any.
 
@@ -129,10 +130,10 @@ Every student must be ready to explain the complete design.
 Maintain time-wise updates in `STATUS.md`.
 
 ## 13. Final Results and Conclusion
-[To be written after simulation and hardware testing.]
+The H1 N-bit Gray code transition detector was implemented in Logisim and in parameterised Verilog. In the Vivado simulation (N = 4 and N = 5) 11 of 12 testbench steps pass; the single failing step (1100 -> 1111) comes from a wrong expected value in the testbench, while the design output (INVALID) matches the problem sheet. The design uses 8 LUTs and 7 flip-flops on the XC7S50, a bitstream was generated, and the Boolean Board photos show both a VALID and an INVALID result. Limitations: the testbench expected value must be corrected, timing is unconstrained (no clock constraint), buttons are not debounced, and the input values behind the hardware photos are not yet recorded. See `07_Final_Report/` for the full report.
 
 ## 14. Team Reflection
-[To be written.]
+We learned to turn a block diagram and a Moore state table into working hardware: a width-independent one-bit-change test (D and (D - 1)), a parameterised Verilog module and a self-checking testbench. We also learned why a design needs a clock constraint and why testbench expectations must be checked against the specification. Next time we would write more thorough tests earlier, add the clock constraint before implementation, debounce the buttons and record the exact inputs used in the hardware demonstration.
 
 ## 15. Final Submission Checklist
 - [x] Team details and problem analysis complete (all four GitHub usernames recorded).
@@ -142,7 +143,7 @@ Maintain time-wise updates in `STATUS.md`.
 - [x] Verilog RTL and testbench uploaded.
 - [ ] Simulation results and test cases documented (waveform and 11/12 result uploaded; testbench fix pending).
 - [ ] FPGA implementation and hardware evidence uploaded (constraints, schematic and implemented-design screenshots uploaded; hardware photos uploaded; per-input results pending).
-- [ ] Results, challenges and conclusion documented.
-- [ ] Presentation and final report uploaded.
+- [x] Results, challenges and conclusion documented.
+- [x] Presentation and final report uploaded.
 - [ ] STATUS.md is up to date.
-- [ ] Final Pull Request created and URL recorded.
+- [x] Final Pull Request created and URL recorded (PR 29, open).

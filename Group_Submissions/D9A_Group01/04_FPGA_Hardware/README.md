@@ -83,6 +83,9 @@ The switch settings used for each photo are not recorded yet; add them next to t
 
 ![Boolean board - photo 2: INVALID](boolean_board_demo_2.jpg)
 
+### FPGA implementation video
+[FPGA implementation video (Google Drive)](https://drive.google.com/drive/folders/1sUIFIuBdsAn9yVEbG7qO0inIdqmfWgPn?usp=sharing)
+
 ### Still to record
 - Timing slack after adding the clock constraint.
 - The switch settings (x[3:0]) and button sequence behind each photo, and further input cases (no change, two-bit change, ACK, RST) if tested.

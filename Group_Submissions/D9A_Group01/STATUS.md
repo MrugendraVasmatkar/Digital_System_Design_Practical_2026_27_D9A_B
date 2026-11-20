@@ -67,9 +67,9 @@ Sequence: `START` → X, P registers load → next clock V is evaluated → `IDL
 | 3 — FPGA | Assign FPGA pins and configure constraints | Completed | `04_FPGA_Hardware/gray_code_nbit.xdc` (pins to be checked against the board) |
 | 3 — FPGA | Synthesize, implement, and generate bitstream | Completed | `04_FPGA_Hardware/` (schematic, implemented-design, utilisation and timing-summary screenshots; timing is unconstrained – no clock constraint yet) |
 | 3 — FPGA | Demonstrate the design on FPGA hardware | In Progress | `04_FPGA_Hardware/boolean_board_demo_1.jpg`, `boolean_board_demo_2.jpg` (board programmed; photo 1 = VALID, photo 2 = INVALID; input values still to be recorded) |
-| 3 — Results | Record observations and verify expected behaviour | Not Started | `05_Results/` |
-| 3 — Presentation | Prepare slides and final demonstration | Not Started | `06_Presentation/` |
-| 3 — Submission | Complete final report and checklist | Not Started | `07_Final_Report/` |
+| 3 — Results | Record observations and verify expected behaviour | In Progress | `05_Results/README.md` (testbench fix and per-input hardware table pending) |
+| 3 — Presentation | Prepare slides and final demonstration | Completed | `06_Presentation/` (PPTX and PDF) |
+| 3 — Submission | Complete final report and checklist | Completed | `07_Final_Report/` (PDF and DOCX) |
 
 ## 6. Functional Test Plan
 
@@ -102,8 +102,8 @@ Use: `Not Started`, `In Progress`, `Completed` or `Blocked`.
 | 7 | Testbench and simulation completed | In Progress | `03_Verilog_Implementation/Testbench/` (simulated: 11 of 12 steps pass; fix one expected value and re-run) | 19/11/2026 20:15 |
 | 8 | FPGA synthesis and implementation completed | Completed | `04_FPGA_Hardware/` (bitstream generated; screenshots) | 19/11/2026 20:15 |
 | 9 | Hardware demonstration completed | In Progress | `04_FPGA_Hardware/boolean_board_demo_*.jpg` (photo 1 = VALID, photo 2 = INVALID; input values pending) | 20/11/2026 11:03 |
-| 10 | Results, presentation and report uploaded | Not Started | - | - |
-| 11 | Final Pull Request created | Not Started | - | - |
+| 10 | Results, presentation and report uploaded | Completed | `05_Results/`, `06_Presentation/`, `07_Final_Report/` | 20/11/2026 |
+| 11 | Final Pull Request created | In Progress | https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/29 (open) | 20/11/2026 |
 
 ## 8. Time-wise Progress Log
 Update at least once every two hours and at each major milestone. Record actual work and actual times; do not pre-fill future updates.
@@ -122,6 +122,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 20/11/2026 | 10:00 | Recorded the GitHub usernames of all members in the group README (adityasuhanda-beep, vedantcrazy81, 2025.sohamkundargi-afk) | `Group_Submissions/D9A_Group01/README.md` | Collaborator invitations not yet sent | Group leader adds the three as collaborators on the fork | Ojas Karmarkar |
 | 20/11/2026 | 11:03 | Uploaded photos of the RealDigital Boolean Board programmed with the bitstream (DONE LED lit, user LEDs lit) | `04_FPGA_Hardware/boolean_board_demo_1.jpg`, `boolean_board_demo_2.jpg` | Observed LED states per input not yet listed | Record a table of inputs vs VALID/INVALID LED on the board | Ojas Karmarkar |
 | 20/11/2026 | 11:08 | Recorded the hardware observations: photo 1 shows the VALID LED lit, photo 2 shows the INVALID LED lit | `04_FPGA_Hardware/README.md` | Switch settings behind each photo not recorded | Note the x[3:0] values and button sequence for each photo | Ojas Karmarkar |
+| 20/11/2026 | 11:30 | Uploaded the project report (PDF and DOCX) to 07_Final_Report and added the link to the FPGA implementation video (Google Drive) in the FPGA README and the report | `07_Final_Report/`, `04_FPGA_Hardware/README.md` | Testbench expected value still to fix; input values behind the hardware photos not recorded | Fix testbench and re-run; record hardware inputs; update results and report | Ojas Karmarkar |
 
 Add rows as needed.
 
