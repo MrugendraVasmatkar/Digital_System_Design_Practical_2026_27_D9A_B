@@ -15,7 +15,7 @@
 | Member 3 | Deven Shailendra Bhadane — D9B Roll No. 2 |
 | Member 4 | Ojas Nitin Kadam — D9B Roll No. 20 |
 | Repository | https://github.com/planetsamzz77/DSD-2026-D9A-B-Group14 |
-| Last Updated | 2026-11-20, 19:00 |
+| Last Updated | 2026-11-20, 19:30 |
 
 ## 2. Problem Statement
 
@@ -146,12 +146,13 @@ Record work completed by the group. Add a new row for every meaningful update.
 | 2026-11-20, 18:00 | README section 6 "Issues and corrections" filled: comparator built from internal gates at first, later replaced by the built-in comparator block | Samruddhi Samant | Repository |
 | 2026-11-20, 18:30 | README section 14 (team reflection) written | Samruddhi Samant | Repository |
 | 2026-11-20, 19:00 | RTL `mealy_simple.v` restored to the earlier version (LED outputs not gated by reset), so the Verilog matches the Vivado project, reports, bitstream and board photos; the reset difference from the Logisim circuit is documented in README section 7 | Samruddhi Samant | Repository |
+| 2026-11-20, 19:30 | Samruddhi Samant contributions updated in README section 11 and STATUS section 8: added FPGA constraints, final report (alongside bitstream) | Samruddhi Samant | Repository |
 
 ## 8. Individual Contributions
 
 | Member | Assigned Responsibility | Work Actually Completed | Evidence / Commit Link |
 |---|---|---|---|
-| Samruddhi Samant | Source code, testbench, bitstream, FPGA implementation, documentation, state diagram | Done (see README section 11) | `03_Verilog_Implementation/`, `04_FPGA_Hardware/`, `02_FSM_Logisim/fsm_state_diagram.png`, `06_Presentation/` |
+| Samruddhi Samant | Source code, testbench, FPGA constraints, bitstream, FPGA implementation, final report, documentation, state diagram, presentation | Done (see README section 11) | `03_Verilog_Implementation/`, `04_FPGA_Hardware/constraints.xdc`, `04_FPGA_Hardware/`, `07_Final_Report/`, `02_FSM_Logisim/fsm_state_diagram.png`, `06_Presentation/` |
 | Siddharth Sanjeev Tiwari | Logisim circuit design and simulation | Done | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ`, simulation screenshots in `02_FSM_Logisim/` |
 | Deven Shailendra Bhadane | Logisim circuit design and simulation, FPGA implementation | Done | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ`, `04_FPGA_Hardware/` |
 | Ojas Nitin Kadam | Source code, testbench, state diagram | Done | `03_Verilog_Implementation/RTL/`, `03_Verilog_Implementation/Testbench/`, `02_FSM_Logisim/fsm_state_diagram.png` |

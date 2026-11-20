@@ -153,7 +153,7 @@ Future improvements: debouncing/synchronising `start` and `ack`; seven-segment d
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
 |---|---|---|
-| Samruddhi Samant (Group leader) | Source code, testbench, bitstream, FPGA implementation, documentation, state diagram | `03_Verilog_Implementation/`, `04_FPGA_Hardware/`, `02_FSM_Logisim/fsm_state_diagram.png`, `06_Presentation/` |
+| Samruddhi Samant (Group leader) | Source code, testbench, FPGA constraints, bitstream, FPGA implementation, final report, documentation, state diagram, presentation | `03_Verilog_Implementation/`, `04_FPGA_Hardware/constraints.xdc` (constraints), `04_FPGA_Hardware/` (bitstream and implementation reports), `07_Final_Report/` (final report), `02_FSM_Logisim/fsm_state_diagram.png`, `06_Presentation/` |
 | Siddharth Sanjeev Tiwari | Logisim circuit design and simulation | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ`, `02_FSM_Logisim/low.png`, `medium.png`, `high.png`, `idle.png` |
 | Deven Shailendra Bhadane | Logisim circuit design and simulation, FPGA implementation | `02_FSM_Logisim/Game_Score_Categorizer_H2_Mealy_Machine_v2_comparators.circ`, `04_FPGA_Hardware/` |
 | Ojas Nitin Kadam | Source code, testbench, state diagram | `03_Verilog_Implementation/RTL/`, `03_Verilog_Implementation/Testbench/`, `02_FSM_Logisim/fsm_state_diagram.png` |
