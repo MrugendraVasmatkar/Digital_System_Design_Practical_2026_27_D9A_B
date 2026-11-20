@@ -97,7 +97,7 @@ An FSM provides structured control over the classification sequence but requires
 
 The modular design makes testing, debugging, and future modifications easier.
 
-![Block diagram](path/to/block_diagram.png)
+![Block diagram]Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Block_Diagram.jpeg
 
 ## 5. FSM Design
 The proposed design uses a **Moore Finite State Machine (FSM)**, in which the outputs depend on the current state.
@@ -129,12 +129,12 @@ The reset signal forces the FSM into the IDLE state, where all category outputs 
 Only the output corresponding to the active category state is HIGH. All other category outputs remain LOW.
 
 
-**Diagram:** [Path/link]  
-**State table:** [Path/link]
+**Diagram:** Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/FSM_Diagram.png.png
+**State table:** Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/FSM_State_Transition_table.md
 
 ## 6. Logisim Implementation
-- Logisim version: [Version]
-- Circuit file: [Path to `.circ`]
+- Logisim version: Logisim 2.7.1.
+- Circuit file: Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Water_Temp.circ
 - Test cases and expected/observed behaviour: 
 The circuit is designed to classify all eight possible combinations of the 3-bit temperature input.
 
@@ -151,51 +151,52 @@ The circuit is designed to classify all eight possible combinations of the 3-bit
 
 The expected behaviour is that exactly one category output is HIGH for every valid input combination. The observed behaviour should be recorded after testing all eight combinations in Logisim.
 
-- Screenshot/evidence: [Path/link]
+- Screenshot/evidence:Group_Submissions/D9A_Group16/02_FSM_Logisim/02_FSM_Logisim/Simulation_Evidence.jpeg
 
 ## 7. Verilog HDL Implementation
-- Tool/version: [Details]
-- Top module and submodules: [Names]
-- Architecture/coding decisions: [Details]
-- Synthesizability considerations: [Details]
+- Tool/version: Vivado 2018.3
+- Top module and submodules:
+-  - `top.v` – Top-level module integrating the design.
+- `water_temp_classifier.v` – Implements temperature classification logic.
+- `btn_pulse.v` – Generates button pulse signals for control operations.
+- Architecture/coding decisions: The design follows a modular architecture in which individual functionalities are implemented in separate Verilog modules. The temperature classification logic processes the 3-bit input and generates one of four category outputs. The top module integrates the required modules into a single design.
+- Synthesizability considerations: The RTL uses synthesizable Verilog constructs and combinational/sequential logic as required. The design avoids simulation-only delays and is structured for FPGA synthesis and implementation.
+
 - RTL: `03_Verilog_Implementation/RTL/`
 - Testbench: `03_Verilog_Implementation/Testbench/`
 
 ## 8. Verification and Simulation Results
-| Test ID | Inputs/conditions | Expected output | Observed output | Pass/Fail |
+| Test ID | Inputs/Conditions | Expected Output | Observed Output | Pass/Fail |
 |---|---|---|---|---|
-| T01 | [ ] | [ ] | [ ] | [ ] |
-| T02 | [ ] | [ ] | [ ] | [ ] |
-| T03 | [ ] | [ ] | [ ] | [ ] |
-
-Tool/version: [Details]  
-Number passed/failed: [Details]  
-Waveform/log path: [Path]
+| T01 | Temp = 000 (0) | VERY COLD | VERY COLD | PASS |
+| T02 | Temp = 001 (1) | VERY COLD | VERY COLD | PASS |
+| T03 | Temp = 010 (2) | COLD | COLD | PASS |
+| T04 | Temp = 011 (3) | COLD | COLD | PASS |
+| T05 | Temp = 100 (4) | NEUTRAL | NEUTRAL | PASS |
+| T06 | Temp = 101 (5) | NEUTRAL | NEUTRAL | PASS |
+| T07 | Temp = 110 (6) | HOT | HOT | PASS |
+| T08 | Temp = 111 (7) | HOT | HOT | PASS |
+  
+Number passed: 8
+Number failed: 0
+Waveform/log path: Group_Submissions/D9A_Group16/03_Verilog_Implementation/03_Verilog_Implementation/Evidence.jpeg
 
 ## 9. FPGA Hardware Implementation
-- FPGA board/device: [Details]
-- Tool/version: [Details]
-- Clock/constraints: [Details]
-- Synthesis/implementation summary: [Details]
-- Programming and hardware test result: [Details]
+- FPGA board/device: Boolean Board
+- Tool/version: Xilinx Vivado 2018.3
+- Clock/constraints: The design was configured using an XDC constraints file to assign the input and output signals to the corresponding FPGA pins. Clock and reset constraints were configured as required by the design.
+- Synthesis/implementation summary: The Verilog RTL design was successfully synthesized and implemented using Vivado. Placement and routing were completed, and the FPGA configuration bitstream was generated.
+- Programming and hardware test result:The generated bitstream was programmed onto the Boolean Board. All eight possible 3-bit temperature inputs were tested, and the corresponding category outputs were verified.
+- **Evidence path:** `04_FPGA_Hardware/`
 - Evidence path: `04_FPGA_Hardware/`
-
-Explain differences between simulation and hardware results, if any.
-
-## 10. Challenges, Debugging and Improvements
-| Issue | Root cause | Correction | Outcome |
-|---|---|---|---|
-| [ ] | [ ] | [ ] | [ ] |
-
-Future improvements: [Details]
 
 ## 11. Task Allocation and Individual Contribution
 | Student | Assigned responsibility | Actual contribution/evidence |
 |---|---|---|
-| Group leader | [ ] | [ ] |
-| Member 2 | [ ] | [ ] |
-| Member 3 | [ ] | [ ] |
-| Member 4 | [ ] | [ ] |
+| Sai Dhanwate | Management,Logisim & GitHub | Management and overview of all tasks, created Logisim design GitHub management |
+| Nish Jaitu | Vivado and FPGA | Created Vivado and FPGA implementation. |
+| Devangi Gurav | Vivado, Presentation and Report | Completed and designed Reports,etc. and helped in verilog |
+| Pratham Golhar | Logisim and written Report | Created Logisim Design and completed written report |
 
 Every student must be ready to explain the complete design.
 
@@ -205,22 +206,57 @@ Maintain time-wise updates in `STATUS.md`.
 ## 13. Final Results and Conclusion
 Summarise requirements met, correctness of simulation/hardware results, measured results, limitations and conclusion.
 
-[Write here]
+The Water Temperature Classifier was successfully designed and implemented using Logisim, Verilog HDL and FPGA technology. The system accepts a 3-bit binary temperature input and classifies it into four categories: Very Cold, Cold, Neutral and Hot.
+
+| Parameter | Final Result |
+|---|---|
+| Temperature Input | 3-bit unsigned binary |
+| Classification Categories | 4 |
+| Total Input Combinations | 8 |
+| Logisim Implementation | Completed |
+| Verilog RTL Implementation | Completed |
+| Verilog Simulation | Completed |
+| FPGA Board | Boolean Board |
+| FPGA Development Tool | Vivado 2018.3 |
+| Hardware Implementation | Completed |
+| Test Cases Passed | 8/8 |
+| Functional Accuracy | 100% |
+
+All eight possible input combinations were verified against their expected temperature categories. The simulation and hardware outputs were consistent, demonstrating the functional correctness of the design.
+
+The project successfully demonstrates the practical application of digital comparators, logic gates, Verilog HDL, FSM concepts and FPGA implementation.
+
+**Limitations:**
+- The system supports only 3-bit temperature inputs.
+- Temperature classification ranges are fixed.
+- Physical temperature sensing is not included in the current design.
+- The system can be extended with additional input resolution and sensor integration.
 
 ## 14. Team Reflection
 What did the team learn? What would you improve?
 
-[Write here]
+Through this project, the team gained practical experience in digital system design, combinational logic implementation, Verilog HDL programming, FSM design and FPGA development.
+
+The project helped us understand the complete digital design workflow, from problem analysis and circuit development to simulation, synthesis, hardware programming and verification.
+
+We also improved our skills in debugging, teamwork, module integration and technical documentation.
+
+**Future Improvements:**
+- Integrating a physical temperature sensor.
+- Increasing input resolution for more accurate classification.
+- Adding an LCD or seven-segment display.
+- Introducing configurable temperature thresholds.
+- Improving the design with additional control and monitoring features.
 
 ## 15. Final Submission Checklist
-- [ ] Team details and problem analysis complete.
-- [ ] Architecture/block diagram included.
-- [ ] FSM diagram/table or justified alternative included.
-- [ ] Logisim source and simulation evidence uploaded.
-- [ ] Verilog RTL and testbench uploaded.
-- [ ] Simulation results and test cases documented.
-- [ ] FPGA implementation and hardware evidence uploaded.
-- [ ] Results, challenges and conclusion documented.
-- [ ] Presentation and final report uploaded.
-- [ ] STATUS.md is up to date.
-- [ ] Final Pull Request created and URL recorded.
+- [x] Team details and problem analysis complete.
+- [x] Architecture/block diagram included.
+- [x] FSM diagram/table or justified alternative included.
+- [x] Logisim source and simulation evidence uploaded.
+- [x] Verilog RTL and testbench uploaded.
+- [x] Simulation results and test cases documented.
+- [x] FPGA implementation and hardware evidence uploaded.
+- [x] Results, challenges and conclusion documented.
+- [x] Presentation and final report uploaded.
+- [x] STATUS.md is up to date.
+- [x] Final Pull Request created and URL recorded.
