@@ -64,7 +64,7 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 
 Tool/version: logisim-win-2.7.1
 Number passed/failed: 5  
-Waveform/log path: [Path]
+Waveform/log path: Group_Submissions/D9A-Group13/02_FSM_Logisim/logism.pdf
 
 ## 9. FPGA Hardware Implementation
 - FPGA board/device: [Details]
