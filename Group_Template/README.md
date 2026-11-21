@@ -5,13 +5,13 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Snehal Gharmude | 16 | lumora-driod |
+| Member 2 | Sachin Mane | 30 | 2025sachinmane |
+| Member 3 | Sheetal Panda | 44 | Sheetal-VESIT |
+| Member 4 | Vidisha Bagwe | 02 | VidishaBagwe |
 
 **Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
+**Group ID:** [D9A/D9B_Group07]  
 **Repository URL:** [Fork URL]  
 **Final Pull Request URL:** [URL]
 
